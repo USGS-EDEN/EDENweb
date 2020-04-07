@@ -13,23 +13,29 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   </script>
   <style>
   	body { background-color:white }
+    table { border-collapse:collapse }
+    table, td, th { border:2px solid #477489 }
+    td, th { padding:2px }
+    .navhtd { background-color:#4b7e83; padding:1px; border:1px solid #bdbdbd }
+    .navtd { background-color:#f4e1b4; padding:1px; border:1px solid #bdbdbd }
+    .navbump { background-color:#8eaf9b; padding:1px; height:3px; border:1px solid #bdbdbd }
   </style>
 </head>
 <body>
-<table style="width:100%">
+<table style="width:100%;border:0px">
 <?php require ('ssi/eden-head.txt'); ?>
   <tr>
-    <td style="vertical-align:top;width:100%"><!--Begin body of page -->
+    <td style="vertical-align:top;width:100%;border:0px"><!--Begin body of page -->
       <div style="text-align:center">
         <img src="images/logos/EDEN-logoth.gif" alt="" height="111" width="288">
         <p style="color:#009999;font-weight:bold;font-style:italic;">Providing real-time hydrologic tools for biological and ecological assessments for adaptive management</p>
       </div>
-      <table style="width:250px;border:2px solid #477489;border-collapse:collapse;float:left">
+      <table style="width:250px;float:left">
         <tr>
-          <th class="gtablehead" style="padding:2px;border:2px solid #477489">What's New @ EDEN</th>
+          <th class="gtablehead">What's New @ EDEN</th>
         </tr>
         <tr>
-          <td class="tablecell" style="padding:2px;border:2px solid #477489;background-color:#ffffcc">
+          <td class="tablecell" style="background-color:#ffffcc">
             <ul>
               <li><a href="models/watersurfacemod_download.php"><strong>2019 <abbr title="fourth quarter">Q4</abbr> Provisional</strong> Water Surfaces</a></li>
               <li><a href="models/watersurfacemod_download.php"><strong>2019 <abbr title="third quarter">Q3</abbr> Provisional</strong> Water Surfaces</a></li>
@@ -39,12 +45,12 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
           </td>
         </tr>
         <tr>
-          <td class="tablecell" style="text-align:center;padding:2px;border:2px solid #477489;background-color:#f4f4b4">
+          <td class="tablecell" style="text-align:center;background-color:#f4f4b4">
             To be notified when major updates or additions are made to the EDEN site, enter in your email address below:
           </td>
         </tr>
         <tr>
-          <td style="text-align:center;padding:2px;border:2px solid #477489;">
+          <td style="text-align:center">
             <form action="https://sofia.usgs.gov/cgi-bin/dada/mail.cgi" method="get">
               <input type="hidden" name="list" value="edennews">
               <input type="hidden" name="f" value="subscribe">
@@ -55,11 +61,11 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         </tr>
       </table>
       <div style="text-align:center">
-        <div style="display:inline-block;width:60%;border:4px solid #663340;padding:2px;background-color:#fff8ca;text-align:left">
+        <div style="display:inline-block;width:60%;border:4px solid #663340;background-color:#fff8ca">
           <h3 style="color:#663340;text-align:center">EDEN Announcements</h3>
           <p style="text-align:center"><a href="csss/"><strong>Cape Sable Seaside Sparrow (CSSS) Viewer</strong></a></p>
           <a href="csss/"><img src="images/CSSS_viewer_update.jpg" width="288" height="260" alt="screenshot of viewer" style="float:left;padding:3px"></a>
-          <p>Newly added features include a new expanded subarea A sparrow habitat ("AX"), new daily statistics (mean water depth and water depth standard deviation), new display surfaces (4 year hydroperiod and hydroperiod standard deviation), new annual summary statistics (4 year hydroperiod and hydroperiod standard deviation), and some fun new widgets: check out the popup statistics graphs on the Summary Statistics tab linked to the column headers.<br><br>Take a look at the updated <a href="csss/">CSSS Viewer</a>!</p>
+          <p style="text-align:left">Newly added features include a new expanded subarea A sparrow habitat ("AX"), new daily statistics (mean water depth and water depth standard deviation), new display surfaces (4 year hydroperiod and hydroperiod standard deviation), new annual summary statistics (4 year hydroperiod and hydroperiod standard deviation), and some fun new widgets: check out the popup statistics graphs on the Summary Statistics tab linked to the column headers.<br><br>Take a look at the updated <a href="csss/">CSSS Viewer</a>!</p>
         </div>
       </div>
       <p>The Everglades Depth Estimation Network (EDEN) is an integrated network of water-level gages, interpolation models, and applications that generates daily water-level data and derived hydrologic data across the freshwater part of the greater Everglades landscape. The <abbr title="Comprehensive Everglades Restoration Plan">Comprehensive Everglades Restoration Plan (CERP)</abbr> through the U.S. Army Corps of Engineers and U.S. Geological Survey Greater Everglades Priority Ecosystem Sciences provides support for EDEN and for the goal of providing consistent, documented, and readily accessible hydrologic and ground-elevation data for the Everglades.</p>
@@ -71,15 +77,15 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         </div>
       </div>
     </td><!--End body of page -->
-    <td style="width:8px;background-color:white"> </td>
-    <td style="vertical-align:top;width:170px;background-color:#ebcf8c">
+    <td style="width:8px;border:0px"> </td>
+    <td style="vertical-align:top;width:170px;background-color:#ebcf8c;border:0px;padding:0px">
 <!-- navigation include-->
 <?php require ('ssi/navindex.txt');?>
-      <img src="images/photos/waterleveldatagagethf.jpg" alt="Photo of a water level gage" height="218" width="160">
+      <img src="images/photos/waterleveldatagagethf.jpg" alt="Photo of a water level gage" height="218" width="160" style="padding-left:5px">
     </td>
   </tr>
   <tr>
-    <td style="background-color:#4d7c86" colspan="3">
+    <td style="background-color:#4d7c86;border:0px" colspan="3">
       <span class="footer">Technical support for this Web site is provided by the <a href="http://www.usgs.gov/" class="footer">U.S. Geological Survey</a><br>This page is:
 <?php
 $filename = htmlentities($_SERVER['SCRIPT_NAME'], ENT_QUOTES); 
