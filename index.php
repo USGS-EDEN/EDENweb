@@ -12,13 +12,29 @@ a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0020/3757.
 a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   </script>
   <style>
-  	body { background-color:white }
-    table { border-collapse:collapse }
-    table, td, th { border:2px solid #477489 }
-    td, th { padding:2px }
-    .navhtd { background-color:#4b7e83; padding:1px; border:1px solid #bdbdbd }
-    .navtd { background-color:#f4e1b4; padding:1px; border:1px solid #bdbdbd }
-    .navbump { background-color:#8eaf9b; padding:1px; height:3px; border:1px solid #bdbdbd }
+  	body { background-color: white }
+    table { border-collapse: collapse }
+    table, td, th { border: 2px solid #477489 }
+    td, th { padding: 2px }
+    .rightnavbuttonheader {
+      background-color: #4b7e83;
+      padding: 1px;
+      border: 1px solid #bdbdbd
+    }
+    .rightnavbutton {
+      background-color: #f4e1b4;
+      padding: 1px;
+      border: 1px solid #bdbdbd
+    }
+    .rightnavbutton a {
+      text-decoration: none
+    }
+    .navbump {
+      background-color: #8eaf9b;
+      padding: 1px;
+      height: 3px;
+      border: 1px solid #bdbdbd
+    }
   </style>
 </head>
 <body>
@@ -71,13 +87,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
       <p>The Everglades Depth Estimation Network (EDEN) is an integrated network of water-level gages, interpolation models, and applications that generates daily water-level data and derived hydrologic data across the freshwater part of the greater Everglades landscape. The <abbr title="Comprehensive Everglades Restoration Plan">Comprehensive Everglades Restoration Plan (CERP)</abbr> through the U.S. Army Corps of Engineers and U.S. Geological Survey Greater Everglades Priority Ecosystem Sciences provides support for EDEN and for the goal of providing consistent, documented, and readily accessible hydrologic and ground-elevation data for the Everglades.</p>
       <div style="text-align:center">
         <div style="display:inline-block;width:75%;padding:3px;background-color:#f4e1b4">
-          <a href="http://sofia.usgs.gov/publications/fs/2006-3087/index.html"><img src="images/thumbs/fs2006-3087th.jpg" alt="EDEN Fact Sheet" height="216" width="167" style="float:left"></a>
+          <a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/publications/fs/2006-3087/index.html"><img src="images/thumbs/fs2006-3087th.jpg" alt="EDEN Fact Sheet" height="216" width="167" style="float:left"></a>
           <p>For more information:</p>
-          <p>USGS Fact Sheets on EDEN: &quot;<a href="http://sofia.usgs.gov/publications/fs/2006-3087/index.html">The Everglades Depth Estimation Network (EDEN) for Support of Ecological and Biological Assessments</a>&quot; and &quot;<a href="http://pubs.usgs.gov/fs/2009/3052/">Everglades Depth Estimation Network (EDEN) Applications: <em>Tools to View, Extract, Plot, and Manipulate EDEN Data</em></a>.&quot; Or visit our &quot;<a href="abouteden.php">Learn About EDEN</a>&quot; page</p>
+          <p>USGS Fact Sheets on EDEN: &quot;<a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/publications/fs/2006-3087/index.html">The Everglades Depth Estimation Network (EDEN) for Support of Ecological and Biological Assessments</a>&quot; and &quot;<a href="http://pubs.usgs.gov/fs/2009/3052/">Everglades Depth Estimation Network (EDEN) Applications: <em>Tools to View, Extract, Plot, and Manipulate EDEN Data</em></a>.&quot; Or visit our &quot;<a href="abouteden.php">Learn About EDEN</a>&quot; page</p>
         </div>
       </div>
     </td><!--End body of page -->
-    <td style="width:8px;border:0px"> </td>
+    <td style="width:8px;border:0px"></td>
     <td style="vertical-align:top;width:170px;background-color:#ebcf8c;border:0px;padding:0px">
 <!-- navigation include-->
 <?php require ('ssi/navindex.txt');?>
@@ -91,7 +107,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 $filename = htmlentities($_SERVER['SCRIPT_NAME'], ENT_QUOTES); 
 echo "http://sofia.usgs.gov$filename";
 ?>
-      <br>Comments and suggestions? Contact: <a href="/comments.html" class="footer">Heather Henkel - Webmaster</a><br>Last updated:
+      <br>Comments and suggestions? Contact: <a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/comments.html" class="footer">Heather Henkel - Webmaster</a><br>Last updated:
 <?php echo date ("F d, Y h:i A", getlastmod()); ?> (BJM)</span>
     </td>
   </tr>
