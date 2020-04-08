@@ -1,13 +1,13 @@
   <tr>
-    <td colspan="3" style="background-image:url('images/backgrounds/biscbay-blueabstract-tallbg.jpg');border:0px">
+    <td colspan="3" style="background-image:url('/eden/images/backgrounds/biscbay-blueabstract-tallbg.jpg');border:0px">
       <div style="float:left">
-        <a href="http://141.232.10.32/pm/recover/recover.aspx"><img src="images/logos/recoverbl.gif" width="94" height="89" alt="The Journey to Restore America's Everglades - Recover Home Page"></a>
+        <a href="http://141.232.10.32/pm/recover/recover.aspx"><img src="/eden/images/logos/recoverbl.gif" width="94" height="89" alt="The Journey to Restore America's Everglades - Recover Home Page"></a>
       </div>
       <div style="float:right">
-        <a href="http://www.nps.gov/"><img src="images/logos/NPSlogosm-grbkgd.gif" alt="National Park Service Home Page" height="48" width="41"></a>
-        <a href="http://www.sfwmd.gov/"><img src="images/logos/sfwmd-logosm-grnbkgd.gif" alt="South Florida Water Management District Home Page" height="48" width="48"></a>
-        <a href="http://www.usace.army.mil/"><img src="images/logos/usace-logosm.gif" alt="U.S. Army Corps of Engineers Home Page" width="57" height="44"></a>
-        <a href="http://www.usgs.gov"><img src="images/logos/usgslogosm-greybkgrd.gif" alt="U.S. Geological Survey Home Page" height="45" width="118"></a>
+        <a href="http://www.nps.gov/"><img src="/eden/images/logos/NPSlogosm-grbkgd.gif" alt="National Park Service Home Page" height="48" width="41"></a>
+        <a href="http://www.sfwmd.gov/"><img src="/eden/images/logos/sfwmd-logosm-grnbkgd.gif" alt="South Florida Water Management District Home Page" height="48" width="48"></a>
+        <a href="http://www.usace.army.mil/"><img src="/eden/images/logos/usace-logosm.gif" alt="U.S. Army Corps of Engineers Home Page" width="57" height="44"></a>
+        <a href="http://www.usgs.gov"><img src="/eden/images/logos/usgslogosm-greybkgrd.gif" alt="U.S. Geological Survey Home Page" height="45" width="118"></a>
       </div>
       <div class="pagetopheader">Everglades Depth Estimation Network (EDEN) for Support of Biological and Ecological Assessments</div>
     </td>

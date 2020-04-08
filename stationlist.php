@@ -50,7 +50,7 @@
 <?php require ('ssi/eden-head.txt'); ?>
   <tr>
     <td style="vertical-align:top;width:100%;border:0px"><!--Begin body of page -->
-      <h2 style="margin-top:5px">Gage Data for EDEN Network</h2>
+      <h2>Gage Data for EDEN Network</h2>
       <div style="text-align:center">
         <div style="display:inline-block;width:766px">
           <table style="width:350px;float:left">
@@ -96,14 +96,14 @@
             <tr>
               <td style="text-align:left">
                 <form action="latlongsearch.php" method="post">
-                  <span class="rightnavbuttoncurrent">Latitude:<br>
+                  <div class="rightnavbuttoncurrent">Latitude:<br>
                   From: <input type='text' size='10' name="lat_from">
                   <br>To: <span style="padding-left:18px"><input type='text' size='10' name="lat_to"></span>
                   <p class="desc">Enter a latitude range from 25 to 27 degrees north.</p>
                   Longitude:<br>
                   From: <input type='text' size='10' name="long_from">
                   <br>To: <span style="padding-left:18px"><input type='text' size='10' name="long_to"></span>
-                  <p class="desc">Enter a longitude range from 80 to 82 degrees west.</p></span>
+                  <p class="desc">Enter a longitude range from 80 to 82 degrees west.</p></div>
                   <input type="submit">
                 </form>
               </td>
@@ -126,7 +126,7 @@
             </tr>
           </table>
         </div>
-        <a name="stationlisting"></a>
+        <a id="stationlisting"></a>
 <?php
 require ('ssi/login.php');
 mysql_select_db('eden_new');
@@ -174,7 +174,7 @@ foreach ($letter_range as $letter)
 
 		echo "'><td>";
 		if ($j == 0)
-			echo "<a name='$letter'></a>\n";
+			echo "<a id='$letter'></a>\n";
 
 		echo "<a href='station.php?stn_name={$row['station_name_web']}'>{$row['station_name_web']}";
 		if ($row['station_name_web'] == 'MO-214') echo ' (formerly LO1)';
@@ -207,10 +207,10 @@ foreach ($letter_range as $letter)
 		{
 			echo "</a></td></tr>\n<tr class='gtablecell";
 			if (!$row_color % 2 == 0) echo '2';
-			echo "'><td align='center'><a href='station.php?stn_name=Tamiami_Canal_40-Mile_Bend_to_Monroe'>BCA6 (now Tamiami_Canal_40-Mile_Bend_to_Monroe)";
+			echo "'><td><a href='station.php?stn_name=Tamiami_Canal_40-Mile_Bend_to_Monroe'>BCA6 (now Tamiami_Canal_40-Mile_Bend_to_Monroe)";
 			echo "</a></td></tr>\n<tr class='gtablecell";
 			if ($row_color % 2) echo '2';
-			echo "'><td align='center'><a href='station.php?stn_name=Tamiami_Canal_Monroe_to_Carnestown'>BCA7 (now Tamiami_Canal_Monroe_to_Carnestown)";
+			echo "'><td><a href='station.php?stn_name=Tamiami_Canal_Monroe_to_Carnestown'>BCA7 (now Tamiami_Canal_Monroe_to_Carnestown)";
 		}
 		echo "</a></td></tr>\n";
 		$row_color++;

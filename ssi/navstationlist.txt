@@ -7,7 +7,7 @@
           <td class="rightnavbuttonheader">Data</td>
         </tr>
         <tr>
-          <td class="rightnavbuttoncurrent" style="border:1px solid #bdbdbd">Water Levels (Gage)</td>
+          <td class="rightnavbuttoncurrent" style="padding: 1px;border:1px solid #bdbdbd">Water Levels (Gage)</td>
         </tr>
         <tr>
           <td class="rightnavbutton">- <a href="explanation.php">Explanation of Terms and Methods</a></td>
@@ -102,7 +102,7 @@
         <tr>
           <td class="rightnavbutton"><a href="contacts.php">Contacts</a></td>
         </tr>
-        <tr height="3">
+        <tr>
           <td style="background-color:#477489;height:3px;border:1px solid #bdbdbd"></td>
         </tr>
       </table>
