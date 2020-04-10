@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Everglades Depth Estimation Network (EDEN)</title>
-  <link rel="stylesheet" href="css/eden-dbweb.css">
+  <link rel="stylesheet" href="css/eden-dbweb-html5.css">
   <script src="https://www2.usgs.gov/scripts/analytics/usgs-analytics.js"></script>
   <script>
 setTimeout(function(){var a=document.createElement("script");
@@ -16,25 +16,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     table { border-collapse: collapse }
     table, td, th { border: 2px solid #477489 }
     td, th { padding: 2px }
-    .rightnavbuttonheader {
-      background-color: #4b7e83;
-      padding: 1px;
-      border: 1px solid #bdbdbd
-    }
-    .rightnavbutton {
-      background-color: #f4e1b4;
-      padding: 1px;
-      border: 1px solid #bdbdbd
-    }
-    .rightnavbutton a {
-      text-decoration: none
-    }
-    .navbump {
-      background-color: #8eaf9b;
-      padding: 1px;
-      height: 3px;
-      border: 1px solid #bdbdbd
-    }
   </style>
 </head>
 <body>
@@ -96,7 +77,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     <td style="width:8px;border:0px"></td>
     <td style="vertical-align:top;width:170px;background-color:#ebcf8c;border:0px;padding:0px">
 <!-- navigation include-->
-<?php require ('ssi/navindex.txt');?>
+<?php require ('ssi/nav.php');?>
       <img src="images/photos/waterleveldatagagethf.jpg" alt="Photo of a water level gage" height="218" width="160" style="padding-left:5px">
     </td>
   </tr>
@@ -104,7 +85,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     <td style="background-color:#4d7c86;border:0px" colspan="3">
       <span class="footer">Technical support for this Web site is provided by the <a href="http://www.usgs.gov/" class="footer">U.S. Geological Survey</a><br>This page is:
 <?php
-$filename = htmlentities($_SERVER['SCRIPT_NAME'], ENT_QUOTES); 
+$filename = htmlentities($_SERVER['SCRIPT_NAME'], ENT_QUOTES);
 echo "http://sofia.usgs.gov$filename";
 ?>
       <br>Comments and suggestions? Contact: <a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/comments.html" class="footer">Heather Henkel - Webmaster</a><br>Last updated:

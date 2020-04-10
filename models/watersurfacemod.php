@@ -3,32 +3,13 @@
 <head>
   <meta charset="utf-8">
   <title>Water Surfaces - Everglades Depth Estimation Network (EDEN)</title>
-  <link rel="stylesheet" href="../css/eden-dbweb.css">
+  <link rel="stylesheet" href="../css/eden-dbweb-html5.css">
   <script src="http://www.usgs.gov/scripts/analytics/usgs-analytics.js"></script>
   <style>
   	body { background-color: white }
     table { border-collapse: collapse }
     table, td, th { border: 1px solid #477489 }
     td, th { padding: 2px }
-    .rightnavbuttonheader {
-      background-color: #4b7e83;
-      padding: 1px;
-      border: 1px solid #bdbdbd
-    }
-    .rightnavbutton {
-      background-color: #f4e1b4;
-      padding: 1px;
-      border: 1px solid #bdbdbd;
-    }
-    .rightnavbutton a {
-      text-decoration: none
-    }
-    .navbump {
-      background-color: #8eaf9b;
-      padding: 1px;
-      height: 3px;
-      border: 1px solid #bdbdbd
-    }
     .sectionheader {
       text-align: left;
       background-color: #e5f4cc
@@ -115,7 +96,7 @@
     <td style="width:8px;border:0px"></td>
     <td style="vertical-align:top;width:170px;background-color:#ebcf8c;border:0px;padding:0px">
 <!-- navigation include-->
-<?php require ('../ssi/navmodelswatersurfacemod.txt');?>
+<?php require ('../ssi/nav.php');?>
 <img src="../images/photos/prairie_landscapef.jpg" alt="Photo of sawgrass with tree islands in the distance" height="181" width="160" style="padding-left:5px">
     </td>
   </tr>

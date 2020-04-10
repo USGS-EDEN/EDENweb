@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Water-Level Data - Everglades Depth Estimation Network (EDEN)</title>
-  <link rel="stylesheet" href="css/eden-dbweb.css">
+  <link rel="stylesheet" href="css/eden-dbweb-html5.css">
   <script src="https://www2.usgs.gov/scripts/analytics/usgs-analytics.js"></script>
   <style>
   	body { background-color: white }
@@ -13,25 +13,6 @@
     p {
       text-align: left;
       margin: 2px 1px
-    }
-    .rightnavbuttonheader {
-      background-color: #4b7e83;
-      padding: 1px;
-      border: 1px solid #bdbdbd
-    }
-    .rightnavbutton {
-      background-color: #f4e1b4;
-      padding: 1px;
-      border: 1px solid #bdbdbd;
-    }
-    .rightnavbutton a {
-      text-decoration: none
-    }
-    .navbump {
-      background-color: #8eaf9b;
-      padding: 1px;
-      height: 3px;
-      border: 1px solid #bdbdbd
     }
     .sectionheader {
       text-align: left;
@@ -139,8 +120,7 @@ $letter_result = mysql_query($letter_query);
 while ($letter_row = mysql_fetch_array($letter_result))
 	$used_letters[] = $letter_row['left'];
 
-foreach (array_merge(range('0', '9'), range('A', 'Z')) as $letter)
-{
+foreach (array_merge(range('0', '9'), range('A', 'Z')) as $letter) {
 	echo in_array($letter, $used_letters) ? "<a href='#$letter'>$letter</a> " : "$letter ";
 	if ($letter != 'Z')
 		echo '| ';
@@ -160,11 +140,9 @@ $row_color = 0;
 $letter_range = array_merge(range('0', '9'), range('A', 'Z'));
 
 // Loop for title starting letters
-foreach ($letter_range as $letter)
-{
+foreach ($letter_range as $letter) {
 	$j = 0;
-	while (substr($one_gage, 0, 1) == $letter)
-	{
+	while (substr($one_gage, 0, 1) == $letter) {
 		$query = "select station_name_web from station where display = 1 and station_name_web = '$one_gage'";
 		$result = mysql_query($query);
 		$row = mysql_fetch_array($result);
@@ -182,29 +160,25 @@ foreach ($letter_range as $letter)
 		else if ($row['station_name_web'] == 'MO-216') echo ' (formerly CH1)';
 		else if ($row['station_name_web'] == 'Tamiami_Canal_40-Mile_Bend_to_Monroe') echo ' (formerly BCA6)';
 		else if ($row['station_name_web'] == 'Tamiami_Canal_Monroe_to_Carnestown') echo ' (formerly BCA7)';
-		else if ($row['station_name_web'] == 'C111_wetland_east_of_FIU_LTER_TSPH5')
-		{
+		else if ($row['station_name_web'] == 'C111_wetland_east_of_FIU_LTER_TSPH5') {
 			echo "</a></td></tr>\n<tr class='gtablecell";
 			if ($row_color % 2 == 0) echo '2';
 			echo "'><td><a href='station.php?stn_name=MO-216'>CH1 (now MO-216)";
 			$row_color++;
 		}
-		else if ($row['station_name_web'] == 'L31W')
-		{
+		else if ($row['station_name_web'] == 'L31W') {
 			echo "</a></td></tr>\n<tr class='gtablecell";
 			if (!$row_color % 2 == 0) echo '2';
 			echo "'><td><a href='station.php?stn_name=MO-214'>LO1 (now MO-214)";
 			$row_color++;
 		}
-		else if ($row['station_name_web'] == 'S380_H')
-		{
+		else if ($row['station_name_web'] == 'S380_H') {
 			echo "</a></td></tr>\n<tr class='gtablecell";
 			if (!$row_color % 2 == 0) echo '2';
 			echo "'><td><a href='station.php?stn_name=MO-215'>SH1 (now MO-215)";
 			$row_color++;
 		}
-		else if ($row['station_name_web'] == 'BCA5')
-		{
+		else if ($row['station_name_web'] == 'BCA5') {
 			echo "</a></td></tr>\n<tr class='gtablecell";
 			if (!$row_color % 2 == 0) echo '2';
 			echo "'><td><a href='station.php?stn_name=Tamiami_Canal_40-Mile_Bend_to_Monroe'>BCA6 (now Tamiami_Canal_40-Mile_Bend_to_Monroe)";
@@ -225,7 +199,7 @@ foreach ($letter_range as $letter)
     <td style="width:8px;border:0px"></td>
     <td style="vertical-align:top;width:170px;background-color:#ebcf8c;border:0px;padding:0px">
 <!-- navigation include-->
-<?php require ('ssi/navstationlist.txt');?>
+<?php require ('ssi/nav.php');?>
 <img src="images/photos/sofia-ecopondbirdsf.jpg" alt="Photo of birds" height="120" width="160" style="padding-left:5px">
     </td>
   </tr>
