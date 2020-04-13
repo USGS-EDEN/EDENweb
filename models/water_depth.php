@@ -10,16 +10,6 @@
     table { border-collapse: collapse }
     table, td, th { border: 1px solid #477489 }
     td, th { padding: 2px }
-    .sectionheader {
-      text-align: left;
-      background-color: #e5f4cc
-    }
-    .desc {
-      text-transform: none;
-      font-size: 85%;
-      font-style: italic;
-      color:blue;
-    }
   </style>
 </head>
 <body>
@@ -352,7 +342,7 @@ foreach($size as $a => $b) {
             <ul>
               <li><a href="release_notes_watersurfaces.php">Surface-Water Model Release Notes</a> (for <abbr title="version 1">V1</abbr> and <abbr title="version 2">V2</abbr> of the water surface model)</li>
               <li><a href="wsreleaselog.php">Water-Surface Release Log</a></li>
-              <li><a href="../../metadata/sflwww/water_depth.html">Metadata - EDEN Water-Depth Data</a></li>
+              <li><a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/metadata/sflwww/water_depth.html">Metadata - EDEN Water-Depth Data</a></li>
               <li><a href="../edenapps/EDEN_NetCDF_Data_Format.pdf">EDEN <abbr title="Net C D F">NetCDF</abbr> Data Format</a> (.pdf, 4 <abbr title="kilobytes">KB</abbr>)</li>
               <li><a href="../edenapps/Quick_Guide_Using_EDEN_NetCDF_Files_ArcGIS.pdf">A Quick Guide to Using EDEN <abbr title="Net C D F">NetCDF</abbr> Files in <abbr title="Arc G I S">ArcGIS</abbr> 9.2</a> (.pdf, 62 <abbr title="kilobytes">KB</abbr>)</li>
             </ul>

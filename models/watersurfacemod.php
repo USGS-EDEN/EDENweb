@@ -10,16 +10,6 @@
     table { border-collapse: collapse }
     table, td, th { border: 1px solid #477489 }
     td, th { padding: 2px }
-    .sectionheader {
-      text-align: left;
-      background-color: #e5f4cc
-    }
-    .desc {
-      text-transform: none;
-      font-size: 85%;
-      font-style: italic;
-      color:blue;
-    }
   </style>
 </head>
 <body>
