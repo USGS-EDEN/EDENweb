@@ -15,12 +15,11 @@ a.navtopbutton:visited { color: #ffffff }
 a.navtopbutton:hover { color: #FF9900; text-decoration: none }
 
 /* Right-hand navigation buttons */
-.rightnavbuttonhome { font-family: verdana,geneva,arial,helvetica,sans-serif; font-weight: bold; color: #ffffff; font-size: 12px; background-color: #ebcf8c; padding: 1px; border: 1px solid #bdbdbd }
-.rightnavbuttonheader { font-family: verdana,geneva,arial,helvetica,sans-serif; font-weight: bold; color: #ffffff; font-size: 14px; background-color: #4b7e83; padding: 1px; border: 1px solid #bdbdbd }
-.rightnavbuttonheadercurrent { font-family: verdana,geneva,arial,helvetica,sans-serif; font-weight: bold; background:#ffffff;  font-size: 14px }
-.rightnavbutton { font-family: verdana,geneva,arial,helvetica,sans-serif; font-weight: bold; color: #000000; font-size: 12px; background-color: #f4e1b4; padding: 1px; border: 1px solid #bdbdbd }
-.rightnavbuttoncurrent { font-family: verdana,geneva,arial,helvetica,sans-serif; font-weight: bold; color: #000000; font-size: 12px; background: #ffffff; padding: 1px; border:1px solid #bdbdbd }
-.navbump { background-color: #8eaf9b; padding: 1px; height: 3px; border: 1px solid #bdbdbd }
+.rightnavbuttonhome { font-family: verdana,geneva,arial,helvetica,sans-serif; font-weight: bold; color: #ffffff; font-size: 12px; background-color: #ebcf8c; padding: 1px; border-bottom: 1px solid #bdbdbd }
+.rightnavbuttonheader { font-family: verdana,geneva,arial,helvetica,sans-serif; font-weight: bold; color: #ffffff; font-size: 14px; background-color: #4b7e83; padding: 1px; border-bottom: 1px solid #bdbdbd }
+.rightnavbutton { font-family: verdana,geneva,arial,helvetica,sans-serif; font-weight: bold; color: #000000; font-size: 12px; background-color: #f4e1b4; padding: 1px; border-bottom: 1px solid #bdbdbd }
+.rightnavbuttoncurrent { font-family: verdana,geneva,arial,helvetica,sans-serif; font-weight: bold; color: #000000; font-size: 12px; background: #ffffff; padding: 1px; border-bottom:1px solid #bdbdbd }
+.navbump { background-color: #8eaf9b; padding: 1px; height: 3px; border-bottom: 1px solid #bdbdbd }
 a.rightnavbutton { color:#5C4D29 }
 .rightnavbutton a { text-decoration: none }
 a.rightnavbutton:visited { color:#937C43; }

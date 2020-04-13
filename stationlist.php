@@ -6,7 +6,6 @@
   <link rel="stylesheet" href="css/eden-dbweb-html5.css">
   <script src="https://www2.usgs.gov/scripts/analytics/usgs-analytics.js"></script>
   <style>
-  	body { background-color: white }
     table { border-collapse: collapse }
     table, td, th { border: 1px solid #477489 }
     td, th { padding: 2px }
@@ -27,87 +26,86 @@
   </style>
 </head>
 <body>
-<table style="width:100%;border:0px">
-<?php require ('ssi/eden-head.txt'); ?>
-  <tr>
-    <td style="vertical-align:top;width:100%;border:0px"><!--Begin body of page -->
-      <h2>Gage Data for EDEN Network</h2>
-      <div style="text-align:center">
-        <div style="display:inline-block;width:766px">
-          <table style="width:350px;float:left">
-            <tr>
-              <td class="sectionheader">Search by Area</td>
-            </tr>
-            <tr>
-              <td>
-          	    <img src="images/maps/EDEN_website_map_w_legend_w_inserts-sm.gif" alt="map showing areas within south Florida" height="366" width="326" usemap="#area-location-map-trim">
-          	    <map name="area-location-map-trim">
-          	      <area shape="poly" coords="153,316,212,286,177,269,159,218,98,165,68,166,125,224,136,257,132,292" href="stationlist-area.php?area=GOM" alt="">
-          	      <area shape="poly" coords="290,299,207,359,154,317,208,292,274,284" href="stationlist-area.php?area=FLBay" alt="">
-          	      <area shape="poly" coords="279,278,223,290,180,267,163,220,202,217,203,188,269,188,251,240,254,262" href="stationlist-area.php?area=ENP" alt="">
-          	      <area shape="poly" coords="273,186,319,186,319,168,275,162" href="stationlist-area.php?area=Pennsuco" alt="">
-          	      <area shape="poly" coords="297,7,281,22,284,46,302,63,316,66,326,54,321,25" href="stationlist-area.php?area=WCA1" alt="">
-          	      <area shape="poly" coords="279,44,293,64,309,69,310,101,296,113,281,111,276,88,264,71" href="stationlist-area.php?area=WCA2" alt="">
-          	      <area shape="poly" coords="206,73,263,74,275,90,280,126,281,150,272,160,271,184,203,184,201,118" href="stationlist-area.php?area=WCA3" alt="">
-          	      <area shape="poly" coords="105,87,195,88,201,213,164,216,98,156" href="stationlist-area.php?area=BCNP" alt="">
-          	      <area shape="rect" coords="2,105,72,204" href="images/maps/EDEN_website_map-NPSWCAonly_sm.gif" alt="">
-          	      <area shape="rect" coords="2,225,72,327" href="images/maps/EDEN_website_map-EDENonly_sm.gif" alt="">
-          	    </map>
-          	  </td>
-            </tr>
-            <tr>
-              <td>
-                <h3 class="caption" style="margin-top:2px"><a href="stationlist-area.php?area=WCA1">WCA1</a> | <a href="stationlist-area.php?area=WCA2">WCA2</a> | <a href="stationlist-area.php?area=WCA3">WCA3</a> | <a href="stationlist-area.php?area=BCNP">Big Cypress National Preserve</a> | <a href="stationlist-area.php?area=ENP">Everglades National Park</a> | <a href="stationlist-area.php?area=Pennsuco">Pennsuco Wetlands</a> | <a href="stationlist-area.php?area=FLBay">Coast of Florida Bay</a> | <a href="stationlist-area.php?area=GOM">Coast of Gulf of Mexico</a></h3>
-                <p class="caption" style="text-align:left">(full station list below)</p>
-              </td>
-            </tr>
-          </table>
-          <table style="width:413px;float:right">
-            <tr>
-              <td class="sectionheader">Gages by Name</td>
-            </tr>
-            <tr>
-              <td>
-                <p>Access stations quickly by name: <a href="station.php?stn_name=2A300">2A300</a>, <a href="station.php?stn_name=3A-5">3A-5</a>, <a href="station.php?stn_name=3A9">3A9</a>, <a href="station.php?stn_name=BARW4">BARW4</a>, <a href="station.php?stn_name=EDEN_7">EDEN_7</a>, and more. A <a href="#stationlisting">full list is below</a>...</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="sectionheader">Search by Bounding Coordinates</td>
-            </tr>
-            <tr>
-              <td style="text-align:left">
-                <form action="latlongsearch.php" method="post">
-                  <div class="rightnavbuttoncurrent">Latitude:<br>
-                  From: <input type='text' size='10' name="lat_from">
-                  <br>To: <span style="padding-left:18px"><input type='text' size='10' name="lat_to"></span>
-                  <p class="desc">Enter a latitude range from 25 to 27 degrees north.</p>
-                  Longitude:<br>
-                  From: <input type='text' size='10' name="long_from">
-                  <br>To: <span style="padding-left:18px"><input type='text' size='10' name="long_to"></span>
-                  <p class="desc">Enter a longitude range from 80 to 82 degrees west.</p></div>
-                  <input type="submit">
-                </form>
-              </td>
-            </tr>
-            <tr>
-              <td class="sectionheader">Download Station Information</td>
-            </tr>
-            <tr>
-              <td>
-                <p><a href="data_download.php"><img src="images/db-thumb.gif" alt="screenshot of an excel file" height="57" width="122" style="float:right">Download metadata information about stations</a> including Latitude, Longitude, datum, vegetation, more.... This new feature allows you to <a href="data_download.php">download the data from our database</a> directly into a tab-delineated text format.</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="sectionheader">Google Earth (KML) - View EDEN Stations</td>
-            </tr>
-            <tr>
-              <td>
-                <p><img src="images/eden_google_maps_thumbnail.jpg" alt="screenshot of a Google Earth showing eden gage locations" height="49" width="72" style="float:right;border:1px solid black">A Google Earth file (.kml) is available for those users who wish to view EDEN&nbsp;gages in Google Earth. <a href="EDEN_gages.kml">Download the EDEN (.kml) file</a>.</p>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <a id="stationlisting"></a>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.txt'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/nav.php'); ?>
+<div style="overflow:hidden;padding-right:8px;background-color:white"><!--Begin body of page -->
+  <h2>Gage Data for EDEN Network</h2>
+  <div style="text-align:center">
+    <div style="display:inline-block;width:766px">
+      <table style="width:350px;float:left">
+        <tr>
+          <td class="sectionheader">Search by Area</td>
+        </tr>
+        <tr>
+          <td>
+      	    <img src="images/maps/EDEN_website_map_w_legend_w_inserts-sm.gif" alt="map showing areas within south Florida" height="366" width="326" usemap="#area-location-map-trim">
+      	    <map name="area-location-map-trim">
+      	      <area shape="poly" coords="153,316,212,286,177,269,159,218,98,165,68,166,125,224,136,257,132,292" href="stationlist-area.php?area=GOM" alt="">
+      	      <area shape="poly" coords="290,299,207,359,154,317,208,292,274,284" href="stationlist-area.php?area=FLBay" alt="">
+      	      <area shape="poly" coords="279,278,223,290,180,267,163,220,202,217,203,188,269,188,251,240,254,262" href="stationlist-area.php?area=ENP" alt="">
+      	      <area shape="poly" coords="273,186,319,186,319,168,275,162" href="stationlist-area.php?area=Pennsuco" alt="">
+      	      <area shape="poly" coords="297,7,281,22,284,46,302,63,316,66,326,54,321,25" href="stationlist-area.php?area=WCA1" alt="">
+      	      <area shape="poly" coords="279,44,293,64,309,69,310,101,296,113,281,111,276,88,264,71" href="stationlist-area.php?area=WCA2" alt="">
+      	      <area shape="poly" coords="206,73,263,74,275,90,280,126,281,150,272,160,271,184,203,184,201,118" href="stationlist-area.php?area=WCA3" alt="">
+      	      <area shape="poly" coords="105,87,195,88,201,213,164,216,98,156" href="stationlist-area.php?area=BCNP" alt="">
+      	      <area shape="rect" coords="2,105,72,204" href="images/maps/EDEN_website_map-NPSWCAonly_sm.gif" alt="">
+      	      <area shape="rect" coords="2,225,72,327" href="images/maps/EDEN_website_map-EDENonly_sm.gif" alt="">
+      	    </map>
+      	  </td>
+        </tr>
+        <tr>
+          <td>
+            <h3 class="caption" style="margin-top:2px"><a href="stationlist-area.php?area=WCA1">WCA1</a> | <a href="stationlist-area.php?area=WCA2">WCA2</a> | <a href="stationlist-area.php?area=WCA3">WCA3</a> | <a href="stationlist-area.php?area=BCNP">Big Cypress National Preserve</a> | <a href="stationlist-area.php?area=ENP">Everglades National Park</a> | <a href="stationlist-area.php?area=Pennsuco">Pennsuco Wetlands</a> | <a href="stationlist-area.php?area=FLBay">Coast of Florida Bay</a> | <a href="stationlist-area.php?area=GOM">Coast of Gulf of Mexico</a></h3>
+            <p class="caption" style="text-align:left">(full station list below)</p>
+          </td>
+        </tr>
+      </table>
+      <table style="width:413px;float:right">
+        <tr>
+          <td class="sectionheader">Gages by Name</td>
+        </tr>
+        <tr>
+          <td>
+            <p>Access stations quickly by name: <a href="station.php?stn_name=2A300">2A300</a>, <a href="station.php?stn_name=3A-5">3A-5</a>, <a href="station.php?stn_name=3A9">3A9</a>, <a href="station.php?stn_name=BARW4">BARW4</a>, <a href="station.php?stn_name=EDEN_7">EDEN_7</a>, and more. A <a href="#stationlisting">full list is below</a>...</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="sectionheader">Search by Bounding Coordinates</td>
+        </tr>
+        <tr>
+          <td style="text-align:left">
+            <form action="latlongsearch.php" method="post">
+              <div class="rightnavbuttoncurrent">Latitude:<br>
+              From: <input type='text' size='10' name="lat_from">
+              <br>To: <span style="padding-left:18px"><input type='text' size='10' name="lat_to"></span>
+              <p class="desc">Enter a latitude range from 25 to 27 degrees north.</p>
+              Longitude:<br>
+              From: <input type='text' size='10' name="long_from">
+              <br>To: <span style="padding-left:18px"><input type='text' size='10' name="long_to"></span>
+              <p class="desc">Enter a longitude range from 80 to 82 degrees west.</p></div>
+              <input type="submit">
+            </form>
+          </td>
+        </tr>
+        <tr>
+          <td class="sectionheader">Download Station Information</td>
+        </tr>
+        <tr>
+          <td>
+            <p><a href="data_download.php"><img src="images/db-thumb.gif" alt="screenshot of an excel file" height="57" width="122" style="float:right">Download metadata information about stations</a> including Latitude, Longitude, datum, vegetation, more.... This new feature allows you to <a href="data_download.php">download the data from our database</a> directly into a tab-delineated text format.</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="sectionheader">Google Earth (KML) - View EDEN Stations</td>
+        </tr>
+        <tr>
+          <td>
+            <p><img src="images/eden_google_maps_thumbnail.jpg" alt="screenshot of a Google Earth showing eden gage locations" height="49" width="72" style="float:right;border:1px solid black">A Google Earth file (.kml) is available for those users who wish to view EDEN&nbsp;gages in Google Earth. <a href="EDEN_gages.kml">Download the EDEN (.kml) file</a>.</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <a id="stationlisting"></a>
 <?php
 require ('ssi/login.php');
 mysql_select_db('eden_new');
@@ -194,26 +192,17 @@ foreach ($letter_range as $letter) {
 }
 	echo "</table>\n";
 ?>
-      </div>
-    </td><!--End body of page -->
-    <td style="width:8px;border:0px"></td>
-    <td style="vertical-align:top;width:170px;background-color:#ebcf8c;border:0px;padding:0px">
-<!-- navigation include-->
-<?php require ('ssi/nav.php');?>
-<img src="images/photos/sofia-ecopondbirdsf.jpg" alt="Photo of birds" height="120" width="160" style="padding-left:5px">
-    </td>
-  </tr>
-  <tr>
-    <td style="background-color:#4d7c86;border:0px" colspan="3">
-      <span class="footer">Technical support for this Web site is provided by the <a href="http://www.usgs.gov/" class="footer">U.S. Geological Survey</a><br>This page is:
+  </div>
+</div><!--End body of page -->
+<div><!--End content and nav -->
+<div style="width:100%;background-color:#4d7c86">
+  <span class="footer">Technical support for this Web site is provided by the <a href="http://www.usgs.gov/" class="footer">U.S. Geological Survey</a><br>This page is:
 <?php
 $filename = htmlentities($_SERVER['SCRIPT_NAME'], ENT_QUOTES); 
 echo "http://sofia.usgs.gov$filename";
 ?>
-      <br>Comments and suggestions? Contact: <a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/comments.html" class="footer">Heather Henkel - Webmaster</a><br>Last updated:
+  <br>Comments and suggestions? Contact: <a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/comments.html" class="footer">Heather Henkel - Webmaster</a><br>Last updated:
 <?php echo date ("F d, Y h:i A", getlastmod()); ?> (BJM)</span>
-    </td>
-  </tr>
-</table>
+</div>
 </body>
 </html>
