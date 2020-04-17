@@ -41,7 +41,7 @@
     </tr>
   </table>
 </div><!--End body of page -->
-<div><!--End content and nav -->
+</div><!--End content and nav -->
 <div style="clear:both;width:100%;background-color:#4d7c86">
   <span class="footer">Technical support for this Web site is provided by the <a href="http://www.usgs.gov/" class="footer">U.S. Geological Survey</a><br>This page is:
 <?php

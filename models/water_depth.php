@@ -356,7 +356,7 @@ foreach($size as $a => $b) {
     <p style="background-color:#e5f4cc;padding:10px;margin:1px"><a href="../edenapps/xylocator.php"><strong>Download the xyLocator tool.</strong></a></p>
   </div>
 </div><!--End body of page -->
-<div><!--End content and nav -->
+</div><!--End content and nav -->
 <div style="background-color:#4d7c86;border:0px" colspan="3">
   <span class="footer">Technical support for this Web site is provided by the <a href="http://www.usgs.gov/" class="footer">U.S. Geological Survey</a><br>This page is:
 <?php

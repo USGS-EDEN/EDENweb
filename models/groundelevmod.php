@@ -63,7 +63,7 @@
     <li>The <a href="edengrid.php">EDEN grid</a> is used to grid the ground elevation <abbr title="Digital Elevation Model">DEM</abbr> into 400<abbr title="meter">m</abbr> by 400<abbr title="meter">m</abbr> rectangles (&ldquo;cells&rdquo;) and allows for georeferenced layering with other EDEN datasets.</li>
   </ul>
 </div><!--End body of page -->
-<div><!--End content and nav -->
+</div><!--End content and nav -->
 <div style="width:100%;background-color:#4d7c86">
   <span class="footer">Technical support for this Web site is provided by the <a href="http://www.usgs.gov/" class="footer">U.S. Geological Survey</a><br>This page is:
 <?php

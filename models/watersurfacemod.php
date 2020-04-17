@@ -81,7 +81,7 @@
   <p>All gages in the EDEN network are operated and maintained by four separate agencies including <abbr title=" Everglades National Park">Everglades National Park (ENP)</abbr>, <abbr title="South Florida Water Management District">South Florida Water Management District (SFWMD)</abbr>, <abbr title="Big Cypress National Preserve">Big Cypress National Preserve (BCNP)</abbr>, and the <abbr title="U.S. Geological Survey">USGS</abbr>. Data is transferred via a local <abbr title="U.S. Geological Survey">USGS</abbr> <abbr title="file transmission protocol">FTP</abbr> server to the <abbr title="Everglades Depth Estimation Network">EDEN</abbr> database where it is available for surfacing.</p>
   <p>(Graphic from &quot;<a href="http://edis.ifas.ufl.edu/UW278">Spatially Continuous Interpolation of Water Stage and Water Depths Using the Everglades Depth Estimation Network (EDEN)</a>&quot;, University of Florida, <abbr title="Institute of Food and Agricultural Sciences">IFAS</abbr>,CIR1521.)</p>
 </div><!--End body of page -->
-<div><!--End content and nav -->
+</div><!--End content and nav -->
 <div style="width:100%;background-color:#4d7c86">
   <span class="footer">Technical support for this Web site is provided by the <a href="http://www.usgs.gov/" class="footer">U.S. Geological Survey</a><br>This page is:
 <?php
