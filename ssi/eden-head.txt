@@ -10,4 +10,4 @@
   </div>
   <div class="pagetopheader">Everglades Depth Estimation Network (EDEN) for Support of Biological and Ecological Assessments</div>
 </div>
-<div style="clear:both;background-color:#ebcf8c"><!--Begin page content and nav -->
+<div style="clear:both;background-color:#ebcf8c;height:auto;overflow:hidden"><!--Begin page content and nav -->
