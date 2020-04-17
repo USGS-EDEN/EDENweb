@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Meteorologic Data - Everglades Depth Estimation Network (EDEN)</title>
   <link rel="stylesheet" href="/eden/css/eden-dbweb-html5.css">
-  <script src="http://www.usgs.gov/scripts/analytics/usgs-analytics.js"></script>
+  <script src="https://www.usgs.gov/scripts/analytics/usgs-analytics.js"></script>
   <style>
     table { border-collapse: collapse }
     table, td, th { border: 1px solid #477489 }
@@ -14,7 +14,7 @@
 <body>
 <?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.txt'); ?>
 <?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/nav.php'); ?>
-<div style="overflow:hidden;padding-right:8px;background-color:white;min-height:800px"><!--Begin body of page -->
+<div style="overflow:hidden;padding-right:8px;background-color:white;min-height:825px"><!--Begin body of page -->
   <h3>Meteorologic Data</h3>
   <h2><a href="nexrad.php">Rainfall Data</a></h2>
   <p>Rainfall data based on Next Generation Radar (NEXRAD) data from the U.S. National Weather Service provides complete spatial coverage of rainfall amounts for the State of Florida. The accuracy of NEXRAD data is enhanced when adjusted using the local rain-gage data. The NEXRAD coverage for the South Florida Water Management District area includes rainfall amounts for 15-minute intervals for the period January 1, 2002 to present for 2 <abbr title="kilometer">km</abbr> by 2 <abbr title="kilometer">km</abbr> grid resolution. <strong>(Please note that EDEN data is on a 400 <abbr title="meter">m</abbr> by 400 <abbr title="meter">m</abbr> grid.)</strong> The <abbr title="South Florida Water Management District">SFWMD</abbr> receives &ldquo;near real-time&rdquo; 15-minute data (<abbr title="near real time data">NRD</abbr>) continuously. These <abbr title="near real time data">NRD</abbr> are compiled, verified, and quality-assured at the end of each month in the end-of-month (EOM) sets of 15-minute files. The <abbr title="end of the month">EOM</abbr> files use 81 additional rain gage data that are not available real-time and a proprietary algorithm based on the Brandes method to adjust radar rainfall values. <strong><a href="nexrad.php">Download Rainfall data.</a></strong></p>

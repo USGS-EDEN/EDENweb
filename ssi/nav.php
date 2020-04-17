@@ -96,10 +96,10 @@ if ($filename == '/eden/evapotrans.php')
   echo "  <div class='rightnavbuttoncurrent'>- Evapotranspiration</div>\n";
 elseif (in_array($filename, array('/eden/meteorologic.php', '/eden/nexrad.php')))
   echo "  <div class='rightnavbutton'>- <a href='/eden/evapotrans.php'>Evapotranspiration</a></div>\n";
-echo "  <div class='" . ($filename == '/eden/benchmarks.php' ? "rightnavbuttoncurrent'>Benchmarks" : "rightnavbutton'><a href='/eden/benchmarks.php'>Benchmarks</a>") . "</div>\n";
+echo "  <div class='" . ($filename == '/eden/benchmarks/index.php' ? "rightnavbuttoncurrent'>Benchmarks" : "rightnavbutton'><a href='/eden/benchmarks'>Benchmarks</a>") . "</div>\n";
 if ($filename == '/eden/bm-installation.php')
   echo "  <div class='rightnavbuttoncurrent'>- Installation Details</div>\n";
-elseif ($filename == '/eden/benchmarks.php')
+elseif ($filename == '/eden/benchmarks/index.php')
   echo "  <div class='rightnavbutton'>- <a href='/eden/bm-installation.php'>Installation Details</a></div>\n";
 echo "  <div class='rightnavbuttonheader'>EDENapps</div>
   <div class='" . ($filename == '/eden/edenapps/index.php' ? "rightnavbuttoncurrent'>Introduction" : "rightnavbutton'><a href='/eden/edenapps/index.php'>Introduction</a>") . "</div>

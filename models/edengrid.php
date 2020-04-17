@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>EDEN Grid GIS Files - Everglades Depth Estimation Network (EDEN)</title>
   <link rel="stylesheet" href="/eden/css/eden-dbweb-html5.css">
-  <script src="http://www.usgs.gov/scripts/analytics/usgs-analytics.js"></script>
+  <script src="https://www.usgs.gov/scripts/analytics/usgs-analytics.js"></script>
   <style>
     table { border-collapse: collapse }
     table, td, th { border: 1px solid #477489 }
@@ -14,7 +14,7 @@
 <body>
 <?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.txt'); ?>
 <?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/nav.php'); ?>
-<div style="overflow:hidden;padding-right:8px;background-color:white;min-height:800px"><!--Begin body of page -->
+<div style="overflow:hidden;padding-right:8px;background-color:white;min-height:825px"><!--Begin body of page -->
   <h3>EDEN Grid</h3>
   <div style="width:200px;border:1px solid #710a11;background-color:#f4e1b4;float:left;font-size:12px;padding:2px;margin-right:10px">
     <h4 style="margin-top:2px">For More Information:</h4>
