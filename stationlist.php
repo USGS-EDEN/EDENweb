@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Water-Level Data - Everglades Depth Estimation Network (EDEN)</title>
-  <link rel="stylesheet" href="css/eden-dbweb-html5.css">
+  <link rel="stylesheet" href="/eden/css/eden-dbweb-html5.css">
   <script src="https://www2.usgs.gov/scripts/analytics/usgs-analytics.js"></script>
   <style>
     table { border-collapse: collapse }
