@@ -117,9 +117,9 @@ echo "  <div class='rightnavbuttonheader'>EDENapps</div>
   <div class='" . ($filename == '/eden/personnel.php' ? "rightnavbuttoncurrent'>EDEN Personnel" : "rightnavbutton'><a href='/eden/personnel.php'>EDEN Personnel</a>") . "</div>
   <div class='" . ($filename == '/eden/contacts.php' ? "rightnavbuttoncurrent'>Contacts" : "rightnavbutton'><a href='/eden/contacts.php'>Contacts</a>") . "</div>
   <div style='background-color:#477489;height:3px;border:1px solid #bdbdbd'></div>\n";
-$imgs = array('prairie_landscapef', 'sofia-ecopondbirdsf', 'waterleveldatagagethf', 'lox_purpleflowerfadedf');
-$alts = array('Photo of sawgrass with tree islands in the distance', 'Photo of birds', 'Photo of a water level gage', 'Photo of a flower');
-$hgts = array(181, 120, 218, 210);
+$imgs = array('prairie_landscapef', 'sofia-ecopondbirdsf', 'waterleveldatagagethf', 'lox_purpleflowerfadedf', 'nps-fltrailf');
+$alts = array('Photo of sawgrass with tree islands in the distance', 'Photo of birds', 'Photo of a water level gage', 'Photo of a flower', 'Photo of a person walking through trees on a trail');
+$hgts = array(181, 120, 218, 210, 104);
 $rnd = rand(0, count($imgs) - 1);
 echo "  <img src='/eden/images/photos/{$imgs[$rnd]}.jpg' alt='{$alts[$rnd]}' height='{$hgts[$rnd]}' width='160' style='padding-left:5px'>
 </div>
