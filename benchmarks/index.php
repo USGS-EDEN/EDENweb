@@ -18,7 +18,7 @@
 <body>
 <?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.txt'); ?>
 <?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/nav.php'); ?>
-<div style="overflow:hidden;padding-right:8px;background-color:white;min-height:825px"><!--Begin body of page -->
+<div style="overflow:hidden;padding-right:8px;background-color:white"><!--Begin body of page -->
   <h2>Network of Benchmarks Used to Evaluate and Verify the EDEN Surface-Water Model</h2>
   <table style="width:700px;border:3px solid #4b7e83;margin:10px auto">
     <tr>

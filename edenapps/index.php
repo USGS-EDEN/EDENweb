@@ -14,7 +14,7 @@
 <body>
 <?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.txt'); ?>
 <?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/nav.php'); ?>
-<div style="overflow:hidden;padding-right:8px;background-color:white;min-height:825px"><!--Begin body of page -->
+<div style="overflow:hidden;padding-right:8px;background-color:white"><!--Begin body of page -->
   <h3>EDENapps Introduction</h3>
   <p>EDENapps is a series of independent EDEN tools that assist users in using the EDEN spatial data layers.  These tools interface with the <a href="../models/watersurfacemod.php">EDEN water surfaces</a> and <a href="../models/groundelevmod-edenapps.php">EDENapps DEM</a>. <strong>Please note that these tools were developed initally developed for 32-bit systems</strong>; however, most tools do have a 64-bit version available.</p>
   <table style="width:90%;border:3px solid #4b7e83;margin:10px auto">

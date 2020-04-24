@@ -5,21 +5,21 @@ echo "<!--Navigation-->
   <div class='" . ($filename == '/eden/index.php' ? "rightnavbuttoncurrent'>Home" : "rightnavbuttonhome'><a href='/eden/index.php'>Home</a>") . "</div>
   <div class='rightnavbuttonheader'>Data</div>
   <div class='" . ($filename == '/eden/stationlist.php' ? "rightnavbuttoncurrent'>Water Levels (Gage)" : "rightnavbutton'><a href='/eden/stationlist.php'>Water Levels (Gage)</a>") . "</div>\n";
-if ($filename == '/eden/explanations.php')
+if ($filename == '/eden/explanation.php')
   echo "  <div class='rightnavbuttoncurrent'>- Explanation of Terms and Methods</div>\n";
 elseif (in_array($filename, array('/eden/stationlist.php', '/eden/hindcasted.php', '/eden/data_download.php', '/eden/latlongsearch.php')))
   echo "  <div class='rightnavbutton'>- <a href='/eden/explanation.php'>Explanation of Terms and Methods</a></div>\n";
 if ($filename == '/eden/hindcasted.php')
   echo "  <div class='rightnavbuttoncurrent'>- Hindcasted</div>\n";
-elseif (in_array($filename, array('/eden/stationlist.php', '/eden/explanations.php', '/eden/data_download.php', '/eden/latlongsearch.php')))
+elseif (in_array($filename, array('/eden/stationlist.php', '/eden/explanation.php', '/eden/data_download.php', '/eden/latlongsearch.php')))
   echo "  <div class='rightnavbutton'>- <a href='hindcasted.php'>Hindcasted</a></div>\n";
 if ($filename == '/eden/data_download.php')
   echo "  <div class='rightnavbuttoncurrent'>- Download Station <abbr title='Information'>Info</abbr></div>\n";
-elseif (in_array($filename, array('/eden/stationlist.php', '/eden/explanations.php', '/eden/hindcasted.php', '/eden/latlongsearch.php')))
+elseif (in_array($filename, array('/eden/stationlist.php', '/eden/explanation.php', '/eden/hindcasted.php', '/eden/latlongsearch.php')))
   echo "  <div class='rightnavbutton'>- <a href='data_download.php'>Download Station <abbr title='Information'>Info</abbr></a></div>\n";
 if ($filename == '/eden/latlongsearch.php')
   echo "  <div class='rightnavbuttoncurrent'>- Coordinates Search</div>\n";
-elseif (in_array($filename, array('/eden/stationlist.php', '/eden/explanations.php', '/eden/hindcasted.php', '/eden/data_download.php')))
+elseif (in_array($filename, array('/eden/stationlist.php', '/eden/explanation.php', '/eden/hindcasted.php', '/eden/data_download.php')))
   echo "  <div class='rightnavbutton'>- <a href='latlongsearch.php'>Coordinates Search</a></div>\n";
 echo "  <div class='" . ($filename == '/eden/models/watersurfacemod.php' ? "rightnavbuttoncurrent'>Water Surfaces" : "rightnavbutton'><a href='/eden/models/watersurfacemod.php'>Water Surfaces</a>") . "</div>\n";
 if ($filename == '/eden/watersurfacemod_download.php')
@@ -117,9 +117,9 @@ echo "  <div class='rightnavbuttonheader'>EDENapps</div>
   <div class='" . ($filename == '/eden/personnel.php' ? "rightnavbuttoncurrent'>EDEN Personnel" : "rightnavbutton'><a href='/eden/personnel.php'>EDEN Personnel</a>") . "</div>
   <div class='" . ($filename == '/eden/contacts.php' ? "rightnavbuttoncurrent'>Contacts" : "rightnavbutton'><a href='/eden/contacts.php'>Contacts</a>") . "</div>
   <div style='background-color:#477489;height:3px;border:1px solid #bdbdbd'></div>\n";
-$imgs = array('prairie_landscapef', 'sofia-ecopondbirdsf', 'waterleveldatagagethf', 'lox_purpleflowerfadedf', 'nps-fltrailf', 'sofia-enpsunsetf');
-$alts = array('Photo of sawgrass with tree islands in the distance', 'Photo of birds', 'Photo of a water level gage', 'Photo of a flower', 'Photo of a person walking through trees on a trail', 'Photo of a sunset');
-$hgts = array(181, 120, 218, 210, 104, 120);
+$imgs = array('prairie_landscapef', 'sofia-ecopondbirdsf', 'waterleveldatagagethf', 'lox_purpleflowerfadedf', 'nps-fltrailf', 'sofia-enpsunsetf', 'tat-treeislandf');
+$alts = array('Photo of sawgrass with tree islands in the distance', 'Photo of birds', 'Photo of a water level gage', 'Photo of a flower', 'Photo of a person walking through trees on a trail', 'Photo of a sunset', 'Photo of tree islands');
+$hgts = array(181, 120, 218, 210, 104, 120, 110);
 $rnd = rand(0, count($imgs) - 1);
 echo "  <img src='/eden/images/photos/{$imgs[$rnd]}.jpg' alt='{$alts[$rnd]}' height='{$hgts[$rnd]}' width='160' style='padding-left:5px'>
 </div>

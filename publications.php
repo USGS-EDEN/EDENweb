@@ -14,7 +14,7 @@
 <body>
 <?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.txt'); ?>
 <?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/nav.php'); ?>
-<div style="overflow:hidden;padding-right:8px;background-color:white;min-height:825px"><!--Begin body of page -->
+<div style="overflow:hidden;padding-right:8px;background-color:white"><!--Begin body of page -->
   <h2>EDEN Publications</h2>
   <p style="text-align:center">| <a href="#papers">Papers, <abbr title="U.S. Geological Survey">USGS</abbr> Publications, etc.</a> | <a href="#annualreports">Annual Reports</a> | <a href="#posters">Posters and Talks</a> | <a href="#outside">Outside Articles on EDEN</a> |</p>
   <h3><a id="papers"></a>Papers, <abbr title="U.S. Geological Survey">USGS</abbr> Publications, Etc.</h3>
