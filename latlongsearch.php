@@ -57,7 +57,7 @@ $long_cent = ($long_to + $long_from) / 2;
 <?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/nav.php'); ?>
 <div style="overflow:hidden;padding-right:8px;background-color:white"><!--Begin body of page -->
   <h3>Bounding Coordinates Search</h3>
-  <div style="width:350px; background-color: #ffffcc; border: 1px solid black; padding-left: 5px">
+  <div style="width:350px;background-color:#ffffcc;border:1px solid black;padding-left:5px">
     <p><strong>New Search:</strong></p>
     <form action="latlongsearch.php" method="post">
     <p><strong>Latitude</strong></p>
@@ -83,7 +83,7 @@ echo "<table style='width: 800px'>
                   <th class='gtablehead'>Result Set Map</th>
                 </tr>
                 <tr>
-                  <td><div id='map' style='height: 600px; background-color: black'></div>
+                  <td><div id='map' style='height:600px'></div>
 <script>
 var map = L.map('map').setView([$lat_cent, -$long_cent], 10);
 
@@ -109,19 +109,19 @@ echo "map.fitBounds([[$lat_from, -$long_to], [$lat_to, -$long_from]]);</script>
                   </td>
                 </tr>
                 <tr>
-                  <td style='background-color:#f8f1bc'><p style='font-size: small'>Leaflet Map (showing location of <strong>$num_results</strong> gages). To use the map, zoom in or out using the buttons on the left. To view information for a gage, click on the orange pin<img src='images/icons/google-orange-bubble.gif' height='13' width='10' alt='orange pin'>. This map requires enabled JavaScript to view; if you cannot fully access the information on this page, please contact <a href='mailto:hhenkel@usgs.gov'>Heather Henkel</a>.</p>
-                    <p style='font-size: x-small'>References to non-<abbr title='United States'>U.S.</abbr> Department of the Interior (<abbr title='Department of the Interior'>DOI</abbr>) products do not constitute an endorsement by the <abbr title='Department of the Interior'>DOI</abbr>.</p></td>
+                  <td style='background-color:#f8f1bc'><p style='font-size:small'>Leaflet Map (showing location of <strong>$num_results</strong> gages). To use the map, zoom in or out using the buttons on the left. To view information for a gage, click on the orange pin<img src='images/icons/google-orange-bubble.gif' height='13' width='10' alt='orange pin'>. This map requires enabled JavaScript to view; if you cannot fully access the information on this page, please contact <a href='mailto:hhenkel@usgs.gov'>Heather Henkel</a>.</p>
+                    <p style='font-size:x-small'>References to non-<abbr title='United States'>U.S.</abbr> Department of the Interior (<abbr title='Department of the Interior'>DOI</abbr>) products do not constitute an endorsement by the <abbr title='Department of the Interior'>DOI</abbr>.</p></td>
                 </tr>
               </table><br><br>";
 if ($num_results != 0) {
 	mysql_data_seek($result, 0);
-	echo "<table style='border: 0px; margin-bottom: 20px'><tr class='gtablehead' style='background-color: white'><th style='border: 0px'>Station name</th><th style='border: 0px'>Latitude</th><th style='border: 0px'>Longitude</th></tr>\n";
+	echo "<table style='border: 0px; margin-bottom: 20px'><tr class='gtablehead' style='background-color:white'><th style='border:0px'>Station name</th><th style='border:0px'>Latitude</th><th style='border:0px'>Longitude</th></tr>\n";
 	for ($i=0; $i<$num_results; $i++) {
 		$row = mysql_fetch_array($result);
-		echo "<tr class='gtablecell' style='background-color: white'><td style='border: 0px'><a href='http://sofia.usgs.gov/eden/station.php?stn_name={$row['station_name_web']}";
+		echo "<tr class='gtablecell' style='background-color:white'><td style='border:0px'><a href='http://sofia.usgs.gov/eden/station.php?stn_name={$row['station_name_web']}";
 		if ($row['station_name_web'] == 'S150_T')
 			echo "&op_agency=SFWMD";
-		echo "'>{$row['station_name_web']}</a></td><td style='border: 0px'>" . round($row['lat'], 2) . "&deg; N</td><td style='border: 0px'>" . round($row['lon'], 2) . "&deg; W</td></tr>";
+		echo "'>{$row['station_name_web']}</a></td><td style='border:0px'>" . round($row['lat'], 2) . "&deg; N</td><td style='border:0px'>" . round($row['lon'], 2) . "&deg; W</td></tr>";
 	}
 	echo "</table>\n";
 }
