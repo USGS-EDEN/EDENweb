@@ -54,7 +54,7 @@ if (empty($_SESSION['field'])) $_SESSION['field']['station_name_web'] = 'station
   <p><strong>Please note: Some gages may not have data for all fields (such as location description or vegetation information).</strong></p>
 <?php
 require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/login.php');
-mysql_select_db("eden_new");
+mysql_select_db('eden_new');
 
 if ($submit) {
 	if ($_SESSION['station'] && ($_SESSION['field'] || $_SESSION['vegetation'])) {
