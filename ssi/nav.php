@@ -22,7 +22,7 @@ if ($filename == '/eden/latlongsearch.php')
 elseif (in_array($filename, array('/eden/stationlist.php', '/eden/explanation.php', '/eden/hindcasted.php', '/eden/data_download.php')))
   echo "  <div class='rightnavbutton'>- <a href='/eden/latlongsearch.php'>Coordinates Search</a></div>\n";
 echo "  <div class='" . ($filename == '/eden/models/watersurfacemod.php' ? "rightnavbuttoncurrent'>Water Surfaces" : "rightnavbutton'><a href='/eden/models/watersurfacemod.php'>Water Surfaces</a>") . "</div>\n";
-if ($filename == '/eden/watersurfacemod_download.php')
+if ($filename == '/eden/models/watersurfacemod_download.php')
   echo "  <div class='rightnavbuttoncurrent'>- Download Surfaces</div>\n";
 elseif (in_array($filename, array('/eden/models/watersurfacemod.php', '/eden/models/wsreleaselog.php', '/eden/models/real-time.php', '/eden/models/differencemaps.php', '/eden/models/confidenceindexmaps.php', '/eden/models/watersurfacemod-archive.php')))
   echo "  <div class='rightnavbutton'>- <a href='/eden/models/watersurfacemod_download.php'>Download Surfaces</a></div>\n";
