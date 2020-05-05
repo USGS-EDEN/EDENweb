@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Water Surfaces: Release Log - Everglades Depth Estimation Network (EDEN)</title>
-  <link rel="stylesheet" href="/eden/css/eden-dbweb-html5.css">
-  <script src="https://www.usgs.gov/scripts/analytics/usgs-analytics.js"></script>
-  <style>
-    table { border-collapse: collapse }
-    table, td, th { border: 1px solid #477489 }
-    td, th { padding: 2px }
-  </style>
-</head>
-<body>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.txt'); ?>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/nav.php'); ?>
-<div style="overflow:hidden;padding-right:8px;background-color:white"><!--Begin body of page -->
+<?php
+$title = "<title>Water Surfaces: Release Log - Everglades Depth Estimation Network (EDEN)</title>\n";
+require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+?>
 <h2>Water Surfaces - Release Log</h2>
 <table style="width:95%;margin-bottom:20px">
   <tr class="gtablehead">
@@ -303,16 +290,4 @@
     <td>Provisional data replaces real-time data. Data gaps filled using simple regression with nearby gage data.</td>
   </tr>
 </table>
-</div><!--End body of page -->
-</div><!--End content and nav -->
-<div style="clear:both;width:100%;background-color:#4d7c86">
-  <span class="footer">Technical support for this Web site is provided by the <a href="http://www.usgs.gov/" class="footer">U.S. Geological Survey</a><br>This page is:
-<?php
-$filename = htmlentities($_SERVER['SCRIPT_NAME'], ENT_QUOTES); 
-echo "http://sofia.usgs.gov$filename";
-?>
-  <br>Comments and suggestions? Contact: <a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/comments.html" class="footer">Heather Henkel - Webmaster</a><br>Last updated:
-<?php echo date ("F d, Y h:i A", getlastmod()); ?> (BJM)</span>
-</div>
-</body>
-</html>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>

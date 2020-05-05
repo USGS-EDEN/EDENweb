@@ -1,8 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <?php echo $title; ?>
+  <link rel='stylesheet' href='/eden/css/eden-dbweb-html5.css'>
+  <?php echo $link; ?>
+  <script src='https://www2.usgs.gov/scripts/analytics/usgs-analytics.js'></script>
+  <?php echo $script; ?>
+  <style>
+    table { border-collapse: collapse }
+    table, td, th { border: 1px solid #477489 }
+    td, th { padding: 2px }
+    .sectionheader {
+      text-align: left;
+      background-color: #e5f4cc
+    }
+    .desc {
+      text-transform: none;
+      font-size: 85%;
+      font-style: italic;
+      color:blue;
+    }
+  <?php echo $style; ?>
+  </style>
+</head>
+<body>
+<div style="width:100%;height:90px;background-image:url('/eden/images/backgrounds/biscbay-blueabstract-tallbg.jpg');padding:2px">
+  <div style='float:left'>
+    <a href='http://141.232.10.32/pm/recover/recover.aspx'><img src='/eden/images/logos/recoverbl.gif' width='94' height='89' alt="The Journey to Restore America's Everglades - Recover Home Page"></a>
+  </div>
+  <div style='float:right'>
+    <a href='http://www.nps.gov/'><img src='/eden/images/logos/NPSlogosm-grbkgd.gif' alt='National Park Service Home Page' height='48' width='41'></a>
+    <a href='http://www.sfwmd.gov/'><img src='/eden/images/logos/sfwmd-logosm-grnbkgd.gif' alt='South Florida Water Management District Home Page' height='48' width='48'></a>
+    <a href='http://www.usace.army.mil/'><img src='/eden/images/logos/usace-logosm.gif' alt='U.S. Army Corps of Engineers Home Page' width='57' height='44'></a>
+    <a href='http://www.usgs.gov'><img src='/eden/images/logos/usgslogosm-greybkgrd.gif' alt='U.S. Geological Survey Home Page' height='45' width='118'></a>
+  </div>
+  <div class='pagetopheader'>Everglades Depth Estimation Network (EDEN) for Support of Biological and Ecological Assessments</div>
+</div>
+<div style='clear:both;background-color:#ebcf8c;height:auto;overflow:hidden'><!--Begin page content and nav -->
+<!--Navigation-->
+<div style='width:170px;float:right;border:1px solid #bdbdbd'>
 <?php
 $filename = htmlentities($_SERVER['SCRIPT_NAME'], ENT_QUOTES);
-echo "<!--Navigation-->
-<div style='width:170px;float:right;border:1px solid #bdbdbd'>
-  <div class='" . ($filename == '/eden/index.php' ? "rightnavbuttoncurrent'>Home" : "rightnavbuttonhome'><a href='/eden/index.php'>Home</a>") . "</div>
+echo "  <div class='" . ($filename == '/eden/index.php' ? "rightnavbuttoncurrent'>Home" : "rightnavbuttonhome'><a href='/eden/index.php'>Home</a>") . "</div>
   <div class='rightnavbuttonheader'>Data</div>
   <div class='" . ($filename == '/eden/stationlist.php' ? "rightnavbuttoncurrent'>Water Levels (Gage)" : "rightnavbutton'><a href='/eden/stationlist.php'>Water Levels (Gage)</a>") . "</div>\n";
 if ($filename == '/eden/explanation.php')
@@ -123,5 +163,6 @@ $hgts = array(181, 120, 218, 210, 104, 120, 110);
 $rnd = rand(0, count($imgs) - 1);
 echo "  <img src='/eden/images/photos/{$imgs[$rnd]}.jpg' alt='{$alts[$rnd]}' height='{$hgts[$rnd]}' width='160' style='padding-left:5px'>
 </div>
-<!--end navigation -->\n";
+<!--end navigation -->
+<div style='overflow:hidden;padding-right:8px;background-color:white;min-height:875px'><!--Begin body of page -->\n";
 ?>

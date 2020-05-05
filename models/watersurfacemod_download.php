@@ -47,28 +47,13 @@ foreach($size as $a => $b) {
 		${$a . '_tbl'} .=  "</tr>\n";
 	}
 }
+$title = "<title>Download Water Surfaces Data - Everglades Depth Estimation Network (EDEN)</title>\n";
+require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Download Water Surfaces Data - Everglades Depth Estimation Network (EDEN)</title>
-  <link rel="stylesheet" href="/eden/css/eden-dbweb-html5.css">
-  <script src="https://www.usgs.gov/scripts/analytics/usgs-analytics.js"></script>
-  <style>
-    table { border-collapse: collapse }
-    table, td, th { border: 1px solid #477489 }
-    td, th { padding: 2px }
-  </style>
-</head>
-<body>
 <div id='PopUp' style='position:absolute;top:200px;left:100px;z-index:1000;border:solid black 1px;padding:50px;background-color:rgb(200,200,225);font-size:16px;font-weight:bold;width:500px;font-family:Arial;text-align:left' onclick="document.getElementById('PopUp').style.display='none';">
   <span id='PopUpText'>Notice: Starting July 1st, 2019, a newly revised EDEN surface water model (V3) is being used to create EDEN real-time surfaces. As with V2 surfaces, real-time data is considered provisional and may be subject to revision.
   <br><br>The EDEN project is in the process of releasing a new publication which will document V3 of the model.  The report will specify which updates and modifications were made, as well as identify the differences between the two models.  Overall, the differences between V2 and V3 surfaces are minor.<br><br><br><span style='font-size:14px;color:red'>Click to dismiss.</span></span>
 </div>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.txt'); ?>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/nav.php'); ?>
-<div style="overflow:hidden;padding-right:8px;background-color:white"><!--Begin body of page -->
 <h2>Download Water Surfaces Data</h2>
 <img src="../images/maps/watersurfacesV2sm.jpg" alt="sample graphic of a version2 water surface map" height="216" width="153" style="float:right">
 <p>Data for modeled EDEN water surfaces are available in two different formats:</p>
@@ -201,16 +186,4 @@ foreach($size as $a => $b) {
     </td>
   </tr>
 </table>
-</div><!--End body of page -->
-</div><!--End content and nav -->
-<div style="clear:both;width:100%;background-color:#4d7c86">
-  <span class="footer">Technical support for this Web site is provided by the <a href="http://www.usgs.gov/" class="footer">U.S. Geological Survey</a><br>This page is:
-<?php
-$filename = htmlentities($_SERVER['SCRIPT_NAME'], ENT_QUOTES); 
-echo "http://sofia.usgs.gov$filename";
-?>
-  <br>Comments and suggestions? Contact: <a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/comments.html" class="footer">Heather Henkel - Webmaster</a><br>Last updated:
-<?php echo date ("F d, Y h:i A", getlastmod()); ?> (BJM)</span>
-</div>
-</body>
-</html>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>

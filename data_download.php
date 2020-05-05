@@ -30,28 +30,14 @@ foreach ((array) $_SESSION['station'] as $h) {
 		unset($_SESSION['station'][$h]);
 }
 if (empty($_SESSION['field'])) $_SESSION['field']['station_name_web'] = 'station_name_web';
+$title = "<title>EDEN Station Information Data Download - Everglades Depth Estimation Network (EDEN)</title>\n";
+$style = "p, h2, table { text-align:center }\n";
+require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require_once ($_SERVER['DOCUMENT_ROOT'] . '/eden/pclzip.lib.php');
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>EDEN Station Information Data Download - Everglades Depth Estimation Network (EDEN)</title>
-  <link rel="stylesheet" href="/eden/css/eden-dbweb-html5.css">
-  <script src="https://www.usgs.gov/scripts/analytics/usgs-analytics.js"></script>
-  <style>
-    table { border-collapse: collapse }
-    table, td, th { border: 1px solid #477489 }
-    td, th { padding: 2px }
-  </style>
-</head>
-<body>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.txt'); ?>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/nav.php'); ?>
-<?php require_once ($_SERVER['DOCUMENT_ROOT'] . '/eden/pclzip.lib.php'); ?>
-<div style="overflow:hidden;padding-right:8px;background-color:white;text-align:center"><!--Begin body of page -->
-  <h2>EDEN Station Information Data Download</h2>
-  <p>This form will allow you to download station information (found on each <a href="stationlist.php#stationlisting">water level gage page</a>) for EDEN gages in tab-delineated text format, which may then be imported into Excel or any other program. Select any data fields below and stations for which you would like station and/or vegetation data, and then press the &quot;Download data&quot; button. This will then produce a .zip file containing text files with the data you have requested along with a &quot;readme&quot; explaining some of the terms used in data fields.</p>
-  <p><strong>Please note: Some gages may not have data for all fields (such as location description or vegetation information).</strong></p>
+<h2>EDEN Station Information Data Download</h2> 
+<p>This form will allow you to download station information (found on each <a href="stationlist.php#stationlisting">water level gage page</a>) for EDEN gages in tab-delineated text format, which may then be imported into Excel or any other program. Select any data fields below and stations for which you would like station and/or vegetation data, and then press the &quot;Download data&quot; button. This will then produce a .zip file containing text files with the data you have requested along with a &quot;readme&quot; explaining some of the terms used in data fields.</p>
+<p><strong>Please note: Some gages may not have data for all fields (such as location description or vegetation information).</strong></p>
 <?php
 require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/login.php');
 mysql_select_db('eden_new');
@@ -206,117 +192,117 @@ elseif ($fields_clear == 1) {
 	$_SESSION['vegetation'] = array();
 }
 ?>
-  <form action='data_download.php' method='post'>
-    <p><strong><a href='http://sofia.usgs.gov/eden/data_download.php?fields_all=1&stations_all=1'>Select All Data/Ground Elevation & Vegetation Fields & All Stations</a></strong></p>
-    <p><a href='http://sofia.usgs.gov/eden/data_download.php?fields_clear=1&stations_clear=1'>Clear All Selections</a></p>
-    <table style="width:400px;margin:20px auto">
-      <tr class="gtablehead">
-        <th colspan='2'>Data fields</th>
-      </tr>
-      <tr class="gvegtablehead">
-        <td colspan='2'><a href='http://sofia.usgs.gov/eden/data_download.php?fields_all=1'>Select All Data/Ground Elevation & Vegetation</a> | <a href='http://sofia.usgs.gov/eden/data_download.php?fields_clear=1'>Clear Selected Data/Ground Elevation & Vegetation</a></td>
-      </tr>
-      <tr class="gtablecell">
-        <td><input type='checkbox' name='field[]' value='station_name_web'<?php echo $_SESSION['field']['station_name_web'] ? ' checked' : ''; ?>></td>
-        <td>EDEN Station Name</td>
-      </tr>
-      <tr class="gtablecell2">
-        <td><input type='checkbox' name='field[]' value='operating_agency'<?php echo $_SESSION['field']['operating_agency'] ? ' checked' : ''; ?>></td>
-        <td>Operating Agency</td>
-      </tr>
-      <tr class="gtablecell">
-        <td><input type='checkbox' name='field[]' value='latitude'<?php echo $_SESSION['field']['latitude'] ? ' checked' : ''; ?>></td>
-        <td>Latitude (NAD83)</td>
-      </tr>
-      <tr class="gtablecell2">
-        <td><input type='checkbox' name='field[]' value='longitude'<?php echo $_SESSION['field']['longitude'] ? ' checked' : ''; ?>></td>
-        <td>Longitude (NAD83)</td>
-      </tr>
-      <tr class="gtablecell">
-        <td><input type='checkbox' name='field[]' value='utm_easting'<?php echo $_SESSION['field']['utm_easting'] ? ' checked' : ''; ?>></td>
-        <td>UTM Easting Zone 17N (meters NAD83)</td>
-      </tr>
-      <tr class="gtablecell2">
-        <td><input type='checkbox' name='field[]' value='utm_northing'<?php echo $_SESSION['field']['utm_northing'] ? ' checked' : ''; ?>></td>
-        <td>UTM Northing Zone 17N (meters NAD83)</td>
-      </tr>
-      <tr class="gtablecell">
-        <td><input type='checkbox' name='field[]' value='location'<?php echo $_SESSION['field']['location'] ? ' checked' : ''; ?>></td>
-        <td>Location Area</td>
-      </tr>
-      <tr class="gtablecell2">
-        <td><input type='checkbox' name='field[]' value='location_description'<?php echo $_SESSION['field']['location_description'] ? ' checked' : ''; ?>></td>
-        <td>Location Description</td>
-      </tr>
-      <tr class="gtablecell">
-        <td><input type='checkbox' name='field[]' value='recent_hourly_data'<?php echo $_SESSION['field']['recent_hourly_data'] ? ' checked' : ''; ?>></td>
-        <td>Real-Time Daily Data Available (Yes/No)</td>
-      </tr>
-      <tr class="gtablecell2">
-        <td><input type='checkbox' name='field[]' value='vertical_datum'<?php echo $_SESSION['field']['vertical_datum'] ? ' checked' : ''; ?>></td>
-        <td>Vertical Datum for Water Level Data</td>
-      </tr>
-      <tr class="gtablecell">
-        <td><input type='checkbox' name='field[]' value='vertical_conversion'<?php echo $_SESSION['field']['vertical_conversion'] ? ' checked' : ''; ?>></td>
-        <td>Vertical Conversion at Gage (ft) (NGVD29 to NAVD88)</td>
-      </tr>
-      <tr class="gtablecell2">
-        <td><input type='checkbox' name='field[]' value='station_type'<?php echo $_SESSION['field']['station_type'] ? ' checked' : ''; ?>></td>
-        <td>Type of Station (Physical Location)</td>
-      </tr>
-      <tr class="gtablecell">
-        <td><input type='checkbox' name='field[]' value='water_type'<?php echo $_SESSION['field']['water_type'] ? ' checked' : ''; ?>></td>
-        <td>Type of Station (Freshwater/Tidal)</td>
-      </tr>
-      <tr class="gtablecell2">
-        <td><input type='checkbox' name='field[]' value='edenmaster_new'<?php echo $_SESSION['field']['edenmaster_new'] ? ' checked' : ''; ?>></td>
-        <td>Station Used in Surfacing Program?</td>
-      </tr>
-    </table>
-    <table style="width:400px;margin:20px auto">
-      <tr class="gtablehead">
-        <th colspan='2'>Ground Elevation & Vegetation fields</th>
-      </tr>
-      <tr class="gtablecell">
-        <td><input type='checkbox' name='vegetation[]' value='station_name_web'<?php echo $_SESSION['vegetation']['station_name_web'] ? ' checked' : ''; ?>></td>
-        <td>EDEN Station Name</td>
-      </tr>
-      <tr class="gtablecell2">
-        <td><input type='checkbox' name='vegetation[]' value='community_level'<?php echo $_SESSION['vegetation']['community_level'] ? ' checked' : ''; ?>></td>
-        <td>Vegetation Community (Major/Secondary)</td>
-      </tr>
-      <tr class="gtablecell">
-        <td><input type='checkbox' name='vegetation[]' value='vegetation_community'<?php echo $_SESSION['vegetation']['vegetation_community'] ? ' checked' : ''; ?>></td>
-        <td>Vegetation Community</td>
-      </tr>
-      <tr class="gtablecell2">
-        <td><input type='checkbox' name='vegetation[]' value='average_elevation'<?php echo $_SESSION['vegetation']['average_elevation'] ? ' checked' : ''; ?>></td>
-        <td>Average Ground Elevation (ft NAVD88)</td>
-      </tr>
-      <tr class="gtablecell">
-        <td><input type='checkbox' name='vegetation[]' value='maximum_elevation'<?php echo $_SESSION['vegetation']['maximum_elevation'] ? ' checked' : ''; ?>></td>
-        <td>Maximum Ground Elevation (ft NAVD88)</td>
-      </tr>
-      <tr class="gtablecell2">
-        <td><input type='checkbox' name='vegetation[]' value='minimum_elevation'<?php echo $_SESSION['vegetation']['minimum_elevation'] ? ' checked' : ''; ?>></td>
-        <td>Minimum Ground Elevation (ft NAVD88)</td>
-      </tr>
-      <tr class="gtablecell">
-        <td><input type='checkbox' name='vegetation[]' value='measurements'<?php echo $_SESSION['vegetation']['measurements'] ? ' checked' : ''; ?>></td>
-        <td>Number of Measurements</td>
-      </tr>
-      <tr class="gtablecell2">
-        <td><input type='checkbox' name='vegetation[]' value='agency_date'<?php echo $_SESSION['vegetation']['agency_date'] ? ' checked' : ''; ?>></td>
-        <td>Collecting Agency and Date</td>
-      </tr>
-    </table>
-    <table style="width:600px;margin:20px auto">
-      <tr class="gtablehead">
-        <th colspan='6'>Station Listing</th>
-      </tr>
-      <tr class="gvegtablehead">
-        <td colspan='6'><a href='http://sofia.usgs.gov/eden/data_download.php?stations_all=1'>Select All Stations</a> | <a href='http://sofia.usgs.gov/eden/data_download.php?stations_clear=1'>Clear Selected Stations</a></td>
-      </tr>
+<form action='data_download.php' method='post'>
+<p><strong><a href='http://sofia.usgs.gov/eden/data_download.php?fields_all=1&stations_all=1'>Select All Data/Ground Elevation & Vegetation Fields & All Stations</a></strong></p>
+<p><a href='http://sofia.usgs.gov/eden/data_download.php?fields_clear=1&stations_clear=1'>Clear All Selections</a></p>
+<table style="width:400px;margin:20px auto">
+  <tr class="gtablehead">
+    <th colspan='2'>Data fields</th>
+  </tr>
+  <tr class="gvegtablehead">
+    <td colspan='2'><a href='http://sofia.usgs.gov/eden/data_download.php?fields_all=1'>Select All Data/Ground Elevation & Vegetation</a> | <a href='http://sofia.usgs.gov/eden/data_download.php?fields_clear=1'>Clear Selected Data/Ground Elevation & Vegetation</a></td>
+  </tr>
+  <tr class="gtablecell">
+    <td><input type='checkbox' name='field[]' value='station_name_web'<?php echo $_SESSION['field']['station_name_web'] ? ' checked' : ''; ?>></td>
+    <td>EDEN Station Name</td>
+  </tr>
+  <tr class="gtablecell2">
+    <td><input type='checkbox' name='field[]' value='operating_agency'<?php echo $_SESSION['field']['operating_agency'] ? ' checked' : ''; ?>></td>
+    <td>Operating Agency</td>
+  </tr>
+  <tr class="gtablecell">
+    <td><input type='checkbox' name='field[]' value='latitude'<?php echo $_SESSION['field']['latitude'] ? ' checked' : ''; ?>></td>
+    <td>Latitude (NAD83)</td>
+  </tr>
+  <tr class="gtablecell2">
+    <td><input type='checkbox' name='field[]' value='longitude'<?php echo $_SESSION['field']['longitude'] ? ' checked' : ''; ?>></td>
+    <td>Longitude (NAD83)</td>
+  </tr>
+  <tr class="gtablecell">
+    <td><input type='checkbox' name='field[]' value='utm_easting'<?php echo $_SESSION['field']['utm_easting'] ? ' checked' : ''; ?>></td>
+    <td>UTM Easting Zone 17N (meters NAD83)</td>
+  </tr>
+  <tr class="gtablecell2">
+    <td><input type='checkbox' name='field[]' value='utm_northing'<?php echo $_SESSION['field']['utm_northing'] ? ' checked' : ''; ?>></td>
+    <td>UTM Northing Zone 17N (meters NAD83)</td>
+  </tr>
+  <tr class="gtablecell">
+    <td><input type='checkbox' name='field[]' value='location'<?php echo $_SESSION['field']['location'] ? ' checked' : ''; ?>></td>
+    <td>Location Area</td>
+  </tr>
+  <tr class="gtablecell2">
+    <td><input type='checkbox' name='field[]' value='location_description'<?php echo $_SESSION['field']['location_description'] ? ' checked' : ''; ?>></td>
+    <td>Location Description</td>
+  </tr>
+  <tr class="gtablecell">
+    <td><input type='checkbox' name='field[]' value='recent_hourly_data'<?php echo $_SESSION['field']['recent_hourly_data'] ? ' checked' : ''; ?>></td>
+    <td>Real-Time Daily Data Available (Yes/No)</td>
+  </tr>
+  <tr class="gtablecell2">
+    <td><input type='checkbox' name='field[]' value='vertical_datum'<?php echo $_SESSION['field']['vertical_datum'] ? ' checked' : ''; ?>></td>
+    <td>Vertical Datum for Water Level Data</td>
+  </tr>
+  <tr class="gtablecell">
+    <td><input type='checkbox' name='field[]' value='vertical_conversion'<?php echo $_SESSION['field']['vertical_conversion'] ? ' checked' : ''; ?>></td>
+    <td>Vertical Conversion at Gage (ft) (NGVD29 to NAVD88)</td>
+  </tr>
+  <tr class="gtablecell2">
+    <td><input type='checkbox' name='field[]' value='station_type'<?php echo $_SESSION['field']['station_type'] ? ' checked' : ''; ?>></td>
+    <td>Type of Station (Physical Location)</td>
+  </tr>
+  <tr class="gtablecell">
+    <td><input type='checkbox' name='field[]' value='water_type'<?php echo $_SESSION['field']['water_type'] ? ' checked' : ''; ?>></td>
+    <td>Type of Station (Freshwater/Tidal)</td>
+  </tr>
+  <tr class="gtablecell2">
+    <td><input type='checkbox' name='field[]' value='edenmaster_new'<?php echo $_SESSION['field']['edenmaster_new'] ? ' checked' : ''; ?>></td>
+    <td>Station Used in Surfacing Program?</td>
+  </tr>
+</table>
+<table style="width:400px;margin:20px auto">
+  <tr class="gtablehead">
+    <th colspan='2'>Ground Elevation & Vegetation fields</th>
+  </tr>
+  <tr class="gtablecell">
+    <td><input type='checkbox' name='vegetation[]' value='station_name_web'<?php echo $_SESSION['vegetation']['station_name_web'] ? ' checked' : ''; ?>></td>
+    <td>EDEN Station Name</td>
+  </tr>
+  <tr class="gtablecell2">
+    <td><input type='checkbox' name='vegetation[]' value='community_level'<?php echo $_SESSION['vegetation']['community_level'] ? ' checked' : ''; ?>></td>
+    <td>Vegetation Community (Major/Secondary)</td>
+  </tr>
+  <tr class="gtablecell">
+    <td><input type='checkbox' name='vegetation[]' value='vegetation_community'<?php echo $_SESSION['vegetation']['vegetation_community'] ? ' checked' : ''; ?>></td>
+    <td>Vegetation Community</td>
+  </tr>
+  <tr class="gtablecell2">
+    <td><input type='checkbox' name='vegetation[]' value='average_elevation'<?php echo $_SESSION['vegetation']['average_elevation'] ? ' checked' : ''; ?>></td>
+    <td>Average Ground Elevation (ft NAVD88)</td>
+  </tr>
+  <tr class="gtablecell">
+    <td><input type='checkbox' name='vegetation[]' value='maximum_elevation'<?php echo $_SESSION['vegetation']['maximum_elevation'] ? ' checked' : ''; ?>></td>
+    <td>Maximum Ground Elevation (ft NAVD88)</td>
+  </tr>
+  <tr class="gtablecell2">
+    <td><input type='checkbox' name='vegetation[]' value='minimum_elevation'<?php echo $_SESSION['vegetation']['minimum_elevation'] ? ' checked' : ''; ?>></td>
+    <td>Minimum Ground Elevation (ft NAVD88)</td>
+  </tr>
+  <tr class="gtablecell">
+    <td><input type='checkbox' name='vegetation[]' value='measurements'<?php echo $_SESSION['vegetation']['measurements'] ? ' checked' : ''; ?>></td>
+    <td>Number of Measurements</td>
+  </tr>
+  <tr class="gtablecell2">
+    <td><input type='checkbox' name='vegetation[]' value='agency_date'<?php echo $_SESSION['vegetation']['agency_date'] ? ' checked' : ''; ?>></td>
+    <td>Collecting Agency and Date</td>
+  </tr>
+</table>
+<table style="width:600px;margin:20px auto">
+  <tr class="gtablehead">
+    <th colspan='6'>Station Listing</th>
+  </tr>
+  <tr class="gvegtablehead">
+    <td colspan='6'><a href='http://sofia.usgs.gov/eden/data_download.php?stations_all=1'>Select All Stations</a> | <a href='http://sofia.usgs.gov/eden/data_download.php?stations_clear=1'>Clear Selected Stations</a></td>
+  </tr>
 <?php
 $query2 = 'select max(station_id) as max from station';
 $result2 = mysql_query($query2);
@@ -341,19 +327,7 @@ for ($i = 0; $i < $num_results; $i++) {
 		echo "</tr>\n";
 }
 ?>
-    </table>
-    <p><input type='submit' value='Download data' name='submit'></p>
-  </form>
-</div><!--End body of page -->
-</div><!--End content and nav -->
-<div style="clear:both;width:100%;background-color:#4d7c86">
-  <span class="footer">Technical support for this Web site is provided by the <a href="http://www.usgs.gov/" class="footer">U.S. Geological Survey</a><br>This page is:
-<?php
-$filename = htmlentities($_SERVER['SCRIPT_NAME'], ENT_QUOTES); 
-echo "http://sofia.usgs.gov$filename";
-?>
-  <br>Comments and suggestions? Contact: <a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/comments.html" class="footer">Heather Henkel - Webmaster</a><br>Last updated:
-<?php echo date ("F d, Y h:i A", getlastmod()); ?> (BJM)</span>
-</div>
-</body>
-</html>
+</table>
+<p><input type='submit' value='Download data' name='submit'></p>
+</form>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
