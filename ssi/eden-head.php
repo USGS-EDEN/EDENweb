@@ -137,10 +137,10 @@ if ($filename == '/eden/evapotrans.php')
 elseif (in_array($filename, array('/eden/meteorologic.php', '/eden/nexrad.php')))
   echo "  <div class='rightnavbutton'>- <a href='/eden/evapotrans.php'>Evapotranspiration</a></div>\n";
 echo "  <div class='" . ($filename == '/eden/benchmarks/index.php' ? "rightnavbuttoncurrent'>Benchmarks" : "rightnavbutton'><a href='/eden/benchmarks'>Benchmarks</a>") . "</div>\n";
-if ($filename == '/eden/bm-installation.php')
+if ($filename == '/eden/benchmarks/bm-installation.php')
   echo "  <div class='rightnavbuttoncurrent'>- Installation Details</div>\n";
 elseif ($filename == '/eden/benchmarks/index.php')
-  echo "  <div class='rightnavbutton'>- <a href='/eden/bm-installation.php'>Installation Details</a></div>\n";
+  echo "  <div class='rightnavbutton'>- <a href='/eden/benchmarks/bm-installation.php'>Installation Details</a></div>\n";
 echo "  <div class='rightnavbuttonheader'>EDENapps</div>
   <div class='" . ($filename == '/eden/edenapps/index.php' ? "rightnavbuttoncurrent'>Introduction" : "rightnavbutton'><a href='/eden/edenapps/index.php'>Introduction</a>") . "</div>
   <div class='" . ($filename == '/eden/edenapps/dataviewer.php' ? "rightnavbuttoncurrent'>DataViewer" : "rightnavbutton'><a href='/eden/edenapps/dataviewer.php'>DataViewer</a>") . "</div>
@@ -157,9 +157,9 @@ echo "  <div class='rightnavbuttonheader'>EDENapps</div>
   <div class='" . ($filename == '/eden/personnel.php' ? "rightnavbuttoncurrent'>EDEN Personnel" : "rightnavbutton'><a href='/eden/personnel.php'>EDEN Personnel</a>") . "</div>
   <div class='" . ($filename == '/eden/contacts.php' ? "rightnavbuttoncurrent'>Contacts" : "rightnavbutton'><a href='/eden/contacts.php'>Contacts</a>") . "</div>
   <div style='background-color:#477489;height:3px;border:1px solid #bdbdbd'></div>\n";
-$imgs = array('prairie_landscapef', 'sofia-ecopondbirdsf', 'waterleveldatagagethf', 'lox_purpleflowerfadedf', 'nps-fltrailf', 'sofia-enpsunsetf', 'tat-treeislandf');
-$alts = array('Photo of sawgrass with tree islands in the distance', 'Photo of birds', 'Photo of a water level gage', 'Photo of a flower', 'Photo of a person walking through trees on a trail', 'Photo of a sunset', 'Photo of tree islands');
-$hgts = array(181, 120, 218, 210, 104, 120, 110);
+$imgs = array('gt_bwoodnmangfringethf', 'lox_purpleflowerf', 'lox_trailf', 'nps-fltrailf', 'prairie_landscapef', 'sofia-ecopondbirdsf', 'sofia-ecopondf', 'sofia-enpsunsetf', 'tat-treeislandf', 'waterleveldatagagethf');
+$alts = array('Photo of a mangrove fringe', 'Photo of a flower', 'Photo of a trail through the woods', 'Photo of a person walking through trees on a trail', 'Photo of sawgrass with tree islands in the distance', 'Photo of birds', 'Photo of a pond', 'Photo of a sunset', 'Photo of tree islands', 'Photo of a water level gage');
+$hgts = array(203, 210, 210, 104, 181, 120, 120, 120, 110, 218);
 $rnd = rand(0, count($imgs) - 1);
 echo "  <img src='/eden/images/photos/{$imgs[$rnd]}.jpg' alt='{$alts[$rnd]}' height='{$hgts[$rnd]}' width='160' style='padding-left:5px'>
 </div>
