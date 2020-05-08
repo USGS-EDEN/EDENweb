@@ -21,7 +21,7 @@
       font-style: italic;
       color:blue;
     }
-  <?php echo $style; ?>
+    <?php echo $style; ?>
   </style>
 </head>
 <body>

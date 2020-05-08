@@ -1,6 +1,6 @@
 <?php
 $title = "<title>Explanation of Terms and Methods: Water-Level Data - Everglades Depth Estimation Network (EDEN)</title>\n";
-$style = "table { border-collapse: collapse; margin: 20px 20px }\n";
+$style = "table { margin: 20px 20px }\n";
 require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
 ?>
 <h4>Explanations of Terms and Methods (for Water-Level Values)</h4>
