@@ -389,7 +389,7 @@ foreach ((array) $site_list as $a => $c) {
 	}
 }
 if ($graph) {
-	echo "<div id='hydrograph_legend' style='border:solid #4b7e83;border-radius:5px;width:240px;padding:3px;float:right;margin-bottom:5px'>
+	echo "<div id='hydrograph_legend' style='border:solid #4b7e83;border-radius:5px;width:240px;padding:3px;float:right;margin-bottom:20px'>
 <table style='width:100%;border:0px'>
   <tr><th class='gtablehead' style='background:#ccd' colspan='2'>Legend</th></tr>\n";
 	$colors = array("#000080", "#FFA500", "#800000", "#008000", "#000000", "#00FFA5", "#A500FF", "#FF00A5", "#00A5FF", "#A5FF00");
