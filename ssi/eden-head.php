@@ -43,8 +43,13 @@
 <?php
 $filename = htmlentities($_SERVER['SCRIPT_NAME'], ENT_QUOTES);
 echo "  <div class='" . ($filename == '/eden/index.php' ? "rightnavbuttoncurrent'>Home" : "rightnavbuttonhome'><a href='/eden/index.php'>Home</a>") . "</div>
-  <div class='rightnavbuttonheader'>Data</div>
-  <div class='" . ($filename == '/eden/stationlist.php' ? "rightnavbuttoncurrent'>Water Levels (Gage)" : "rightnavbutton'><a href='/eden/stationlist.php'>Water Levels (Gage)</a>") . "</div>\n";
+  <div class='rightnavbuttonheader'>Data</div>\n";
+if ($filename == '/eden/stationlist.php')
+  echo "  <div class='rightnavbuttoncurrent'>Water Levels (Gage)</div>\n";
+elseif (in_array($filename, array('/eden/stationlist-area.php', '/eden/station.php')))
+  echo "  <div class='rightnavbuttoncurrent'><a href='/eden/stationlist.php'>Water Levels (Gage)</a></div>\n";
+else
+   echo " <div class='rightnavbutton'><a href='/eden/stationlist.php'>Water Levels (Gage)</a></div>\n";
 if ($filename == '/eden/explanation.php')
   echo "  <div class='rightnavbuttoncurrent'>- Explanation of Terms and Methods</div>\n";
 elseif (in_array($filename, array('/eden/stationlist.php', '/eden/hindcasted.php', '/eden/data_download.php', '/eden/latlongsearch.php')))
