@@ -51,7 +51,7 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
 
 if ($val && $in_database) {
 	echo "<h3>EDEN station name: {$row['station_name_web']}<br>Location Area: <a href='stationlist-area.php?area=$area'>{$row['location']}</a></h3>
-<p><a href='station-print.php?stn_name={$row['station_name_web']}'><img src='images/printer.gif' alt='print page' height='18' width='19'>Print page</a></p>";
+<p><a href='station-print.php?stn_name={$row['station_name_web']}'><img src='images/printer.gif' alt='print page' height='18' width='19'>Print page</a></p>\n";
 	if ($row['comments'])
 		echo "<p>{$row['comments']}</p>\n";
 }

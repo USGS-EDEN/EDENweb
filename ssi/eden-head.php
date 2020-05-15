@@ -33,7 +33,7 @@
     <a href='http://www.nps.gov/'><img src='/eden/images/logos/NPSlogosm-grbkgd.gif' alt='National Park Service Home Page' height='48' width='41'></a>
     <a href='http://www.sfwmd.gov/'><img src='/eden/images/logos/sfwmd-logosm-grnbkgd.gif' alt='South Florida Water Management District Home Page' height='48' width='48'></a>
     <a href='http://www.usace.army.mil/'><img src='/eden/images/logos/usace-logosm.gif' alt='U.S. Army Corps of Engineers Home Page' width='57' height='44'></a>
-    <a href='http://www.usgs.gov'><img src='/eden/images/logos/usgslogosm-greybkgrd.gif' alt='U.S. Geological Survey Home Page' height='45' width='118'></a>
+    <a href='http://www.usgs.gov'><img src='/eden/images/logos/usgslogosm-greybkgrd.gif' alt='U.S. Geological Survey Home Page' height='45' width='117'></a>
   </div>
   <div class='pagetopheader'>Everglades Depth Estimation Network (EDEN) for Support of Biological and Ecological Assessments</div>
 </div>
