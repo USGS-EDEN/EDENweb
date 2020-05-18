@@ -33,7 +33,7 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
         <li>PDF:
           <ul>
             <li><a href="../images/maps/EDEN_ja10_release_graphic.pdf">473 <abbr title="kilobytes">KB</abbr> (quick view)</a></li>
-            <li><a href="../images/maps/EDEN_ja10_release_graphic.pdf">861 <abbr title="kilobytes">KB</abbr> (print-quality)</a></li>
+            <li><a href="../images/maps/EDEN_ja10_release_graphic_p.pdf">861 <abbr title="kilobytes">KB</abbr> (print-quality)</a></li>
           </ul>
         </li>
         <li>Arc .e00:
@@ -41,14 +41,14 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
             <li><a href="http://sofia.usgs.gov/eden/data/dem/eden_em_ja10.zip">zipped</a>, with metadata files, 243 <abbr title="kilobytes">KB</abbr></li>
           </ul>
         </li>
-        <li><a href="http://sofia.usgs.gov/metadata/sflwww/eden_em_ja10.html">EDEN DEM Metadata file </a>
+        <li><a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/metadata/sflwww/eden_em_ja10.html">EDEN DEM Metadata file </a>
       </ul>
       <p><strong>NOTE: THIS <abbr title="Digital Elevation Model">DEM</abbr> FILE REPLACES EDEN_EM_OCT07</strong></p>
     </td>
   </tr>
 </table>
 <h4>2007 (October) Version:</h4>
-<p>This <abbr title="Digital Elevation Model">DEM</abbr> was produced using the <a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/exchange/desmond/desmondelev.html">version <abbr title="high accuracy elevation data">HAED</abbr>_v01 of the <abbr title="high accuracy elevation data">HAED</abbr></a>, all available <abbr title="aerial height finder">aerial height finder (AHF)</abbr> data points posted to the <a href="http://sofia.usgs.gov/">SOFIA website</a> as of October 2007. To create a realistic region-wide elevation model for EDEN purposes, the elevation data were segregated by Water Conservation Areas and National Park boundaries so that local trends could be isolated, sub-region specific interpolation models could be developed, and realistic breaks in elevation along sub-region boundaries could be imbedded in a final, region-wide <abbr title="Digital Elevation Model">DEM</abbr>. To-date, the best performing <abbr title="Digital Elevation Model">DEM</abbr>s for all subareas have been produced using the geostatistical approach called &quot;anisotropic ordinary kriging&quot;.</p>
+<p>This <abbr title="Digital Elevation Model">DEM</abbr> was produced using the <a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/exchange/desmond/desmondelev.html">version <abbr title="high accuracy elevation data">HAED</abbr>_v01 of the <abbr title="high accuracy elevation data">HAED</abbr></a>, all available <abbr title="aerial height finder">aerial height finder (AHF)</abbr> data points posted to the <a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/">SOFIA website</a> as of October 2007. To create a realistic region-wide elevation model for EDEN purposes, the elevation data were segregated by Water Conservation Areas and National Park boundaries so that local trends could be isolated, sub-region specific interpolation models could be developed, and realistic breaks in elevation along sub-region boundaries could be imbedded in a final, region-wide <abbr title="Digital Elevation Model">DEM</abbr>. To-date, the best performing <abbr title="Digital Elevation Model">DEM</abbr>s for all subareas have been produced using the geostatistical approach called &quot;anisotropic ordinary kriging&quot;.</p>
 <p>The ground elevation, and therefore water depth, in the Everglades can vary by centimeters or tens of centimeters within a few meters of a given location as a result of microtopographic features. In addition, ground surface elevations in the peat soils of the Everglades can drop during droughts due to compaction as the peat dries and can rise again in the wet season with re-hydration. The elevation value for each EDEN 400<abbr title="meter">m</abbr> by 400<abbr title="meter">m</abbr> grid cell is a modelled value influenced by variation in the AHF data surrounding the grid cell. Users are cautioned to use the EDEN data appropriately for site-specific assessments.</p>
 <table style="width:350px;margin:20px auto">
   <tr>

@@ -33,7 +33,7 @@ foreach($stack2 as $value2) {
     $tbl .= "<tr class='gtablecell";
     $tbl .= $i++ % 2 == 1 ? '2' : '';
     $tbl .= "'>\n<td>\n$d</td>\n<td>\n";
-    $tbl .= file_exists("../data/realtime2/{$filedate}_median_flag_v3rt.txt") ? "<a href='../data/realtime2/{$filedate}_median_flag_v2rt.txt'>Daily&nbsp;Median</a>\n" : '(missing)';
+    $tbl .= file_exists("../data/realtime2/{$filedate}_median_flag_v3rt.txt") ? "<a href='../data/realtime2/{$filedate}_median_flag_v3rt.txt' target='_blank'>Daily&nbsp;Median</a>\n" : '(missing)';
     $tbl .= "<br><a href='../data/realtime2/$value'>GeoTiff</a>\n</td>\n<td>\n";
     $tbl .= is_file("../data/pngs/EDENsurface_$filedate.png") ? "<a href='../data/pngs/EDENsurface_$filedate.png' target='_blank'><img src='../data/pngs/EDENsurface_{$filedate}_small.png' alt='EDEN surface for $filedate'></a></td>\n" : "(missing)</td>\n";
     $tbl .= $stack_first_pass == 1 ? "<td rowspan='$c' style='vertical-align:top'><a href='../data/realtime2/" . substr($value2, 0, 13) . "geotif.zip'>$y Quarter $q <strong>Water Surface</strong> GeoTiff</a><br>(contains the dates for this quarter listed at left)<br></td>

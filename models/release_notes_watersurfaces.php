@@ -1,0 +1,31 @@
+<?php
+$title = "<title>Release Notes - Water Surfaces - Everglades Depth Estimation Network (EDEN)</title>\n";
+require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+?>
+<h3>Release Notes</h3>
+<p>Date: Updated 12/9/11<br>Water surface model: Versions 1 and 2<br>Surface dates: 1/1/91 - current</p>
+<h4>ACCURACY OF GAGE DATA</h4>
+<p>Gage data are used by the EDEN water surface model to create daily surfaces of water level throughout the Everglades. The accuracy of the surface depends, in part, on the accuracy and completeness of the gage data. The Daily Median Output files provide a list of gages and their values for each daily surface. Some surfaces are marked PROVISIONAL to indicate that all or some of the gage data has not been finalized by the operating agencies. When all the gage data are finalized the surfaces will be rerun and will replace the PROVISIONAL surfaces.</p>
+<p>For provisional and final surfaces, missing gage data has been gapfilled or hindcasted, if possible, using one of several data estimation methods. Missing gage data for the real-time surfaces is not estimated at this time.</p>
+<h4>DRY CONDITIONS AT GAGES</h4>
+<p>Limited or no information exists on the depth of the gaging wells below ground at most gages, therefore when water level drops below ground at a gage, the recorded stage is of uncertain quality. Because the reliability of the gage below ground is unknown, the accuracy of the EDEN water surface is these &quot;dry&quot; areas is unknown. Future versions of the model may address shallow subsurface flow conditions in the wetlands.</p>
+<h4>MODEL CONFIDENCE NEAR CANALS</h4>
+<p>The canal and levee boundaries act as major discontinuities in the EDEN area, and water levels from one section have minimal or no influence into adjacent sections. Steep changes in elevation can occur between areas at these levees. Since stratification of the data is not feasible due to the limited number of water gages, boundary conditions were simulated by linearly interpolating along both sides of levels in the canals using head and tail stage data. Simulated data at these pseudo-stations were re-sampled every 200 m and re-introduced into the interpolation exercise. The marsh gage data together with the interpolated data along canals represent the new extended data used for water surface modeling. In this way, data from the marsh in one conservation area would not influence the values in the marsh across a canal in a different area. Even though track data (very densely sampled preferential lines) alone may be problematic for interpolation, our mixture of track data along canals and levees, plus randomly distributed stage data, and the provision to use only the closest data point to the interpolated location in each of the 8 sectors of a search neighborhood overcomes some of the problems. Nevertheless, we still place a reduced confidence in the interpolated surface close to canal data.</p>
+<h4>SUBAREA MODELS (VERSION 2)</h4>
+<p>Several subareas of the greater Everglades, WCA1, WCA2B, WCA3B, and Pennsuco Wetlands, do not have boundary canal gages that measure water levels that are in hydraulic connection with the interior wetlands. For these subareas, data at the canal gages are not used to surface the water levels. Subarea models were developed that extrapolate the water level surface separately for each of these subareas. The surfaces are then clipped at the subarea boundary and merged to the full domain model to create that day&rsquo;s water level surface.</p>
+<p>Other Revisions for Version 2 include:</p>
+<ol>
+  <li>Expansion of EDEN domain to include the remainder of the freshwater portion of Big Cypress National Preserve and Everglades National Park.</li>
+  <li>Changes to the canal files; several canal files were extended to form more complete boundaries between subareas, one canal file was removed because the canal gages were not in hydraulic connection with the interior wetlands, and a canal file was added to represent the L67 canal extension in the northern portion of Everglades National Park.
+  <li>Although the network of gages is constantly changing as gages are added or removed, significant changes were made in Version 2 of the model. Twenty-two gages were added, 23 gages were deleted, the designation of one headwater-tailwater pair of gages was reversed, the datum conversions for 14 gages were adjusted, and a pseudo-gage in the coastal area of Everglades National Park was added.</li>
+</ol>
+<h4>WATER-LEVEL SURFACES (VERSION 2)</h4>
+<p>For the provisional surfaces 1991-1999 (posted 12/9/11), users are cautioned about the quality of water-level surfaces for several subareas prior to using the data:</p>
+<ul>
+  <li><strong>WCA2A:</strong> For the period 1/1/1990-12/31/1999, most of the water-level data for gages in WCA2A were hindcasted. Resulting water-level surfaces show inconsistencies compared with surfaces post-2000 and will require further analysis. Water-level surfaces in WCA2A should be used with caution for this period until further analysis is completed and revised surfaces are generated.</li>
+  <li><strong>WCA2B:</strong> For the period 1/1/1990 - 4/27/1993, no data is available for the northern boundary structures (S144_T, S145_T, S146_T), therefore the water-level surfaces in WCA3B are not considered valid in the northern portion of the subarea.</li>
+  <li><strong>Pennsuco Wetlands:</strong> The surface for this subarea is modeled only when data for 5 or more gages is available.</li>
+</ul>
+<h4>MODEL VALIDATION (VERSION 2)</h4>
+<p>The Version 2 model revisions were tested by: 1. Comparing modeled and measured water levels at benchmark locations, 2. Comparing mapped differences in water-level surfaces with the Version 1 surfaces, 3. Evaluating contour maps of the water levels for comparison with expected and know flow conditions, and 4. Assessing the impacts of the subarea models by comparing the Version 2 model results with results from a full-domain model with no subarea models using the same input datasets.</p>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
