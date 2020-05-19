@@ -13,8 +13,8 @@ else if ($op_agency == 'SFWMD')
 	$query .= ' AND operating_agency_id = 3';
 $result = mysql_query($query);
 $row = mysql_fetch_array($result);
-$dec_lat = substr(substr($row['latitude'], 0, 2)+(substr($row['latitude'], 3, 2)/60)+(substr($row['latitude'], 6)/3600), 0, 8);
-$dec_long = -substr(substr($row['longitude'], 0, 2)+(substr($row['longitude'], 3, 2)/60)+(substr($row['longitude'], 6)/3600), 0, 8);
+$dec_lat = substr(substr($row['latitude'], 0, 2) + (substr($row['latitude'], 3, 2) / 60) + (substr($row['latitude'], 6) / 3600), 0, 8);
+$dec_long = -substr(substr($row['longitude'], 0, 2) + (substr($row['longitude'], 3, 2) / 60) + (substr($row['longitude'], 6) / 3600), 0, 8);
 
 $check_result = mysql_query("SELECT * FROM station WHERE station_name_web = '$val'");
 $check_num_results = mysql_num_rows($check_result);
@@ -27,10 +27,7 @@ if ($val && $in_database)
 	$title .= "EDEN Station: $val - ";
 $title .= "Everglades Depth Estimation Network (EDEN)</title>\n";
 $link = "<link rel='stylesheet' href='./css/leaflet.css'>\n";
-$style = ".pagetopheaderprint { font-family: arial, helvetica, sans-serif; color:x#000000; font-weight: bold; font-size:x1.25em }
-  .footerprint { font-family: verdana,xgeneva,xarial,xhelvetica,xsans-serif; font-size: 12px; color: #000000 }
-  a.footerprint { color: #5c4d29 }
-  a.footerprint:visited { color: #937c43 }\n";
+$style = ".pagetopheaderprint { font-family: arial, helvetica, sans-serif; color: #000000; font-weight: bold; font-size: x1.25em }\n";
 ?>
 <!DOCTYPE html>
 <html lang='en'>

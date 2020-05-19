@@ -18,7 +18,7 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
 <table style="width:645px;background-color:#f4e1b4;font-size:small;margin:20px auto">
   <tr>
     <td colspan="3"><p><strong>Big Cypress National Preserve Sampling Site Photos</strong></p>
-      <p>The following photographs show an evapotranspiration gaging station and some of the equipment used to collect data. Photographs were taken from a &quot;Carbon Cycling in a Big Cypress National Preserve Marsh&quot; presentation given by Barclay Shoemaker, Jordan Barr, Christian Lopez, and Vic Engel at the <a href="../geer/2010/">Greater Everglades Ecosystem Restoration 2010 Conference</a>. Posted here with permission.</p>
+      <p>The following photographs show an evapotranspiration gaging station and some of the equipment used to collect data. Photographs were taken from a &quot;Carbon Cycling in a Big Cypress National Preserve Marsh&quot; presentation given by Barclay Shoemaker, Jordan Barr, Christian Lopez, and Vic Engel at the <a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/geer/2010/">Greater Everglades Ecosystem Restoration 2010 Conference</a>. Posted here with permission.</p>
     </td>
   </tr>
   <tr style="background-color:white;text-align:center">

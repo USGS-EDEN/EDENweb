@@ -121,19 +121,24 @@ echo "  <div class='" . ($filename == '/eden/models/edengrid.php' ? "rightnavbut
   <div class='navbump'></div>
   <div class='" . ($filename == '/eden/eve/index.php' ? "rightnavbuttoncurrent'>Explore and View EDEN (EVE)" : "rightnavbutton'><a href='/eden/eve/index.php'>Explore and View EDEN (EVE)</a>") . "</div>
   <div class='" . ($filename == '/eden/csss/index.php' ? "rightnavbuttoncurrent'>Cape Sable Seaside Sparrow (CSSS) Viewer" : "rightnavbutton'><a href='/eden/csss/index.php'>Cape Sable Seaside Sparrow (CSSS) Viewer</a>") . "</div>
-  <div class='" . ($filename == '/eden/coastal.php' ? "rightnavbuttoncurrent'>Coastal EDEN" : "rightnavbutton'><a href='/eden/coastal.php'>Coastal EDEN</a>") . "</div>
-  <div class='" . ($filename == '/eden/water_level_percentiles_map.php' ? "rightnavbuttoncurrent'>Daily Water Level Percentiles by Month" : "rightnavbutton'><a href='/eden/water_level_percentiles_map.php'>Daily Water Level Percentiles by Month</a>") . "</div>\n";
+  <div class='" . ($filename == '/eden/coastal.php' ? "rightnavbuttoncurrent'>Coastal EDEN" : "rightnavbutton'><a href='/eden/coastal.php'>Coastal EDEN</a>") . "</div>\n";
+if ($filename == '/eden/water_level_percentiles_map.php')
+  echo "  <div class='rightnavbuttoncurrent'>Daily Water Level Percentiles by Month</div>\n";
+elseif ($filename == '/eden/water_level_percentiles.php')
+  echo "  <div class='rightnavbuttoncurrent'><a href='/eden/water_level_percentiles_map.php'>Daily Water Level Percentiles by Month</a></div>\n";
+else
+  echo "  <div class='rightnavbutton'><a href='/eden/water_level_percentiles_map.php'>Daily Water Level Percentiles by Month</a></div>\n";
 if ($filename == '/eden/water_level_percentiles_about.php')
   echo "  <div class='rightnavbuttoncurrent'>- About Water-level Data</div>\n";
-elseif (in_array($filename, array('/eden/water_level_percentiles_map.php', '/eden/water_level_percentiles_methods.php', '/eden/water_level_percentiles_alert.php')))
+elseif (in_array($filename, array('/eden/water_level_percentiles_map.php', '/eden/water_level_percentiles_methods.php', '/eden/water_level_percentiles_alert.php', '/eden/water_level_percentiles.php')))
   echo "  <div class='rightnavbutton'>- <a href='/eden/water_level_percentiles_about.php'>About Water-level Data</a></div>\n";
 if ($filename == '/eden/water_level_percentiles_methods.php')
   echo "  <div class='rightnavbuttoncurrent'>- Methods</div>\n";
-elseif (in_array($filename, array('/eden/water_level_percentiles_map.php', '/eden/water_level_percentiles_about.php', '/eden/water_level_percentiles_alert.php')))
+elseif (in_array($filename, array('/eden/water_level_percentiles_map.php', '/eden/water_level_percentiles_about.php', '/eden/water_level_percentiles_alert.php', '/eden/water_level_percentiles.php')))
   echo "  <div class='rightnavbutton'>- <a href='/eden/water_level_percentiles_methods.php'>Methods</a></div>\n";
 if ($filename == '/eden/water_level_percentiles_alert.php')
   echo "  <div class='rightnavbuttoncurrent'>- Email Alert System</div>\n";
-elseif (in_array($filename, array('/eden/water_level_percentiles_map.php', '/eden/water_level_percentiles_about.php', '/eden/water_level_percentiles_methods.php')))
+elseif (in_array($filename, array('/eden/water_level_percentiles_map.php', '/eden/water_level_percentiles_about.php', '/eden/water_level_percentiles_methods.php', '/eden/water_level_percentiles.php')))
   echo "  <div class='rightnavbutton'>- <a href='/eden/water_level_percentiles_alert.php'>Email Alert System</a></div>\n";
 echo "  <div class='navbump'></div>
   <div class='" . ($filename == '/eden/meteorologic.php' ? "rightnavbuttoncurrent'>Meteorologic" : "rightnavbutton'><a href='/eden/meteorologic.php'>Meteorologic</a>") . "</div>\n";
@@ -145,10 +150,15 @@ if ($filename == '/eden/evapotrans.php')
   echo "  <div class='rightnavbuttoncurrent'>- Evapotranspiration</div>\n";
 elseif (in_array($filename, array('/eden/meteorologic.php', '/eden/nexrad.php')))
   echo "  <div class='rightnavbutton'>- <a href='/eden/evapotrans.php'>Evapotranspiration</a></div>\n";
-echo "  <div class='" . ($filename == '/eden/benchmarks/index.php' ? "rightnavbuttoncurrent'>Benchmarks" : "rightnavbutton'><a href='/eden/benchmarks'>Benchmarks</a>") . "</div>\n";
+if ($filename == '/eden/benchmarks/index.php')
+  echo "  <div class='rightnavbuttoncurrent'>Benchmarks</div>\n";
+elseif ($filename == '/eden/benchmarks/benchmark.php')
+  echo "  <div class='rightnavbuttoncurrent'><a href='/eden/benchmarks/index.php'>Benchmarks</a></div>\n";
+else
+  echo "  <div class='rightnavbutton'><a href='/eden/benchmarks'>Benchmarks</a></div>\n";
 if ($filename == '/eden/benchmarks/bm-installation.php')
   echo "  <div class='rightnavbuttoncurrent'>- Installation Details</div>\n";
-elseif ($filename == '/eden/benchmarks/index.php')
+elseif (in_array($filename, array('/eden/benchmarks/index.php', '/eden/benchmarks/benchmark.php')))
   echo "  <div class='rightnavbutton'>- <a href='/eden/benchmarks/bm-installation.php'>Installation Details</a></div>\n";
 echo "  <div class='rightnavbuttonheader'>EDENapps</div>
   <div class='" . ($filename == '/eden/edenapps/index.php' ? "rightnavbuttoncurrent'>Introduction" : "rightnavbutton'><a href='/eden/edenapps/index.php'>Introduction</a>") . "</div>
