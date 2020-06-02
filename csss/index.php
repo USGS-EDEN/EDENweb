@@ -287,7 +287,8 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
   <h3>Monitoring water depths in <abbr title="Cape Sable seaside sparrow">CSSS</abbr> habitats A through F</h3>
   <p>The endangered Cape Sable seaside sparrow (CSSS) (<em>Ammodramus maritima mirabilis</em>) is one of eight remaining subspecies of seaside sparrow. The <abbr title="Cape Sable seaside sparrow">CSSS</abbr> once ranged throughout freshwater and brackish marsh habitats in southern Florida; the current known distribution is restricted to six separate subpopulation areas (A through F) in Everglades National Park. Changes in habitat and hydrology threaten the <abbr title="Cape Sable seaside sparrow">CSSS</abbr> with extinction, and efforts by regulatory and water-management agencies to protect and increase populations have been of limited success. The sparrows build their nests on the ground and up to six inches (about 17 centimeters) above the ground in mixed marl prairies. To increase nesting success, these short-hydroperiod prairies must remain mostly dry during the nesting season (March through July). Previously, a single water-level gage was used to estimate water depths in one or more subpopulation areas. Recently, several water-level gages used to estimate water depths in CSSS habitats were discontinued following a reduction in funding. An alternative and improved method for estimating and evaluating water depths was needed.</p>
   <p>The Everglades Depth Estimation Network (EDEN) provides daily water-level and water-depth surfaces for the freshwater Everglades for the period 1991 to current. The <abbr title="Cape Sable seaside sparrow">CSSS</abbr> Viewer was developed to use these surfaces to estimate and evaluate water levels and water depths in <abbr title="Cape Sable seaside sparrow">CSSS</abbr> habitat on a real-time basis. An animated viewer shows flooded areas and calculates 1) the percent area that is dry, 2) the percent area having water depth less than or equal to six inches of water, and 3) the percent area that has been dry for 90 days for more (baby birds are fledged from the nest in about 90 days), each day by subpopulation areas. Wildlife-resource scientists and managers can use the <abbr title="Cape Sable seaside sparrow">CSSS</abbr> Viewer to assess impacts on nesting success and develop management strategies for the future. Water-control managers can use these results to manage movement of water through water-control structures and, when possible, reduce flooding in these areas during the nesting season. This application of the <abbr title="Everglades Depth Estimation Network">EDEN</abbr> water-level and water-depth data demonstrates how scientists and resource managers can use <abbr title="Everglades Depth Estimation Network">EDEN</abbr> to analyze the effects of water management practices on vulnerable species in the Everglades.</p>
-  <p>Please send any questions or comments to the <a href="mailto:bmccloskey@usgs.gov">EDEN team</a>.</p></div>
+  <p>Please send any questions or comments to the <a href="mailto:bmccloskey@usgs.gov">EDEN team</a>.</p>
+</div>
 <div id="inst" class="tabcontentdiv">
   <h2>Using the Cape Sable Seaside Sparrow (CSSS) Viewer</h2>
   <p>The <abbr title="Cape Sable seaside sparrow">CSSS</abbr> Water-Depth Maps contain daily water depth based on the daily <abbr title='Everglades Depth Estimation Network'>EDEN</abbr> water-level surfaces, which are generated each day using water-level gage data, and ground elevation data. Water-depth values are displayed in both centimeters and inches (relative to North American Vertical Datum of 1988 (NAVD 88)). The data is served using the same 400 meters by 400 meters grid as other <abbr title='Everglades Depth Estimation Network'>EDEN</abbr> data. See details below ("Quality water-level data used to generate the daily water-level surfaces") about the daily water-level surfaces based on the quality of the water-level gage data.</p>
@@ -362,7 +363,6 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
         </li>
       </ol>
     </li>
-    <li>Coordinate information &mdash; clicking on the map once displays lat/long information.</li>
     <li>Display date &mdash; the date of the map displayed is shown in the bottom right of the display window</li>
   </ol>
   <h3>Quality water-level data used to generate the daily water-level surfaces:</h3>
@@ -432,7 +432,7 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
   </div>
   <div id="controls" style="position:relative;top:1025px;height:36px">
     <div id="dateList" style="position:absolute;left:10px">Select water depth date range:
-      <select id="dtSelect" onchange="imgtime('0');showdt('0');document.getElementById('timerange').value=0;preloadimgs();rangelngth();">
+      <select id="dtSelect" onchange="imgtime('0'); showdt('0'); document.getElementById('timerange').value = 0; preloadimgs(); rangelngth();">
         <option disabled="disabled">Nesting season</option>
 <?php
 $yr = date('Y');
@@ -448,7 +448,7 @@ for ($i = 1992; $i <= $yr; $i++) {
       <div style="position:absolute;text-align:left;width:150px;top:35px;white-space:nowrap">
         Date range<br>
         <!-- need both onchange and oninput for IE to work, and for other browsers to update "live" -->
-        <input id="timerange" type="range" min="0" max="1" value="0" style="width:150px" onchange="imgtime(value);showdt(value);" oninput="imgtime(value);showdt(value);">
+        <input id="timerange" type="range" min="0" max="1" value="0" style="width:150px" onchange="imgtime(value); showdt(value);" oninput="imgtime(value); showdt(value);">
       </div>
       <div style="position:absolute;left:175px;top:35px">
         <button id="pp" class="pure-button" value="0" onclick="playpause();">&#9658;</button>
@@ -457,7 +457,7 @@ for ($i = 1992; $i <= $yr; $i++) {
       <div style="position:absolute;top:35px;left:245px;width:120px;font-size:14px">Displayed water depth date:<br><a href="" style="text-decoration:none" onclick="return step(-1);">&larr;</a>&nbsp;&nbsp;<span id="theDt" style="font-weight:bold">0/0/0000</span>&nbsp;&nbsp;<a href="" style="text-decoration:none" onclick="return step(1);">&rarr;</a></div>
     </div>
     <div id="hydroList" style="position:absolute;left:10px;top:100px">Select 4yr hydroperiod year:
-      <select id="hydroSelect" onchange="if(document.getElementById('mask_chk').checked || document.getElementById('hydroSelect').value.indexOf('_sd')) hydrop.setUrl('hydrop4/four_year_hydroperiod_'+value+'_altRange2.png'); else hydrop.setUrl('hydrop4/four_year_hydroperiod_'+parseInt(value)+'_altRange2.png');document.getElementById('theDt2').innerHTML=parseInt(value);">
+      <select id="hydroSelect" onchange="if(document.getElementById('mask_chk').checked || document.getElementById('hydroSelect').value.indexOf('_sd')) hydrop.setUrl('hydrop4/four_year_hydroperiod_' + value + '_altRange2.png'); else hydrop.setUrl('hydrop4/four_year_hydroperiod_' + parseInt(value) + '_altRange2.png'); document.getElementById('theDt2').innerHTML = parseInt(value);">
         <option disabled="disabled">Four-year hydroperiod and stnd dev</option>
 <?php
 for ($i = 1995; $i <= $yr; $i++) {
@@ -642,7 +642,7 @@ for ($i = 1995; $i <= $yr; $i++) {
   </table>
 </div>
 </div> <!-- end tabset -->
-<div id='PopUp' style='display:none;position:absolute;z-index:1000;border:solid black 1px;padding:10px;background-color:rgb(200,200,225);font-size:12px;width:380px;font-family:Arial;text-align:left' onclick="document.getElementById('PopUp').style.display='none';">
+<div id='PopUp' style='display:none;position:absolute;z-index:1000;border:solid black 1px;padding:10px;background-color:rgb(200,200,225);font-size:12px;width:380px;font-family:Arial;text-align:left' onclick="document.getElementById('PopUp').style.display = 'none';">
   <span id='PopUpText'>TEXT</span>
 </div>
 <script>
@@ -655,17 +655,17 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 var demUrl = 'dem.png',
 	imageBounds = [[25.168, -81.948], [26.654, -79.657]],
-	layerOptions = {opacity: 0.0};
+	layerOptions = { opacity: 0.0 };
 var dem = L.imageOverlay(demUrl, imageBounds, layerOptions).addTo(map);
 
 var imageUrl = '../csss/imgs4/2020/trans0000.png',
 	imageBounds = [[25.222, -81.363], [26.688, -80.222]],
-	layerOptions = {opacity: 1.0};
+	layerOptions = { opacity: 1.0 };
 var eden = L.imageOverlay(imageUrl, imageBounds, layerOptions).addTo(map);
 
 var hydroUrl = 'hydrop4/four_year_hydroperiod_2020_mask65_altRange2.png',
 	imageBounds = [[25.222, -81.363], [26.688, -80.222]],
-	layerOptions = {opacity: 0.0};
+	layerOptions = { opacity: 0.0 };
 var hydrop = L.imageOverlay(hydroUrl, imageBounds, layerOptions).addTo(map);
 
 //Test positioning markers for x[c(1, 287)], y[c(1, 405)] image corners
@@ -690,7 +690,7 @@ for ($i = 0; $i < $num_results; $i++) {
 	$row = mysql_fetch_array($result);
 	$wl_result = mysql_query("SELECT date, `stage_{$row['station_name_web']}` + {$row['conv']} AS stage FROM stage_daily WHERE `stage_{$row['station_name_web']}` IS NOT NULL ORDER BY date DESC LIMIT 1");
 	$wl_row = mysql_fetch_array($wl_result);
-	echo "var gage{$row['sname']} = L.marker([{$row['lat']}, {$row['long']}], {icon: myIcon";
+	echo "var gage{$row['sname']} = L.marker([{$row['lat']}, {$row['long']}], { icon: myIcon";
 	echo (substr($row['sname'], 0, 1) == 'G') ? 2 : 3;
 	echo ", title: '{$row['sname']}'}).bindPopup('Gage: <strong><a href=\"../station.php?stn_name={$row['station_name_web']}\" target=\"_blank\">{$row['sname']}</a></strong> (<a href=\"../eve/index.php?site_list%5B%5D={$row['station_name_web']}\" target=\"_blank\"><abbr title=\"Explore and View EDEN\">EVE</abbr></a>)<br>" . round($row['lat'], 2) . "&deg;<abbr title=\"north\">N</abbr> " . round($row['long'], 2) . "&deg;<abbr title=\"west\">W</abbr><br><strong>{$wl_row['date']}</strong> Water Level: <strong>" . round($wl_row['stage'], 2) . " ft.</strong> <abbr title=\"North American Vertical Datum of 1988\">NAVD88</abbr><br><a href=\"http://sofia.usgs.gov/eden/water_level_percentiles.php?name={$row['station_name_web']}&amp;type=gage\" target=\"_blank\"><img src=\"../thumbnails/{$row['station_name_web']}_monthly_thumb.jpg\" alt=\"{$row['sname']} hydrograph thumbnail\" height=\"160\" width=\"240\"><br><span style=\"font-size:small\">[larger graph with axes]</font></a>').addTo(map);\n";
 }
@@ -1126,6 +1126,7 @@ $('#tabset').tabify({
   tab_activeClass: 'tab-active',
   content_activeClass: 'tabcontentdiv-active'
 });
+
 new jBox('Modal', {
 	width: 600,
   height: 435,

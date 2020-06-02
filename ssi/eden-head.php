@@ -121,6 +121,7 @@ echo "  <div class='" . ($filename == '/eden/models/edengrid.php' ? "rightnavbut
   <div class='navbump'></div>
   <div class='" . ($filename == '/eden/eve/index.php' ? "rightnavbuttoncurrent'>Explore and View EDEN (EVE)" : "rightnavbutton'><a href='/eden/eve/index.php'>Explore and View EDEN (EVE)</a>") . "</div>
   <div class='" . ($filename == '/eden/csss/index.php' ? "rightnavbuttoncurrent'>Cape Sable Seaside Sparrow (CSSS) Viewer" : "rightnavbutton'><a href='/eden/csss/index.php'>Cape Sable Seaside Sparrow (CSSS) Viewer</a>") . "</div>
+  <div class='" . ($filename == '/eden/wadem/index.php' ? "rightnavbuttoncurrent'>WADEM<br>Wading Bird Viewer" : "rightnavbutton'><a href='/eden/wadem/index.php'>WADEM<br>Wading Bird Viewer</a>") . "</div>
   <div class='" . ($filename == '/eden/coastal.php' ? "rightnavbuttoncurrent'>Coastal EDEN" : "rightnavbutton'><a href='/eden/coastal.php'>Coastal EDEN</a>") . "</div>\n";
 if ($filename == '/eden/water_level_percentiles_map.php')
   echo "  <div class='rightnavbuttoncurrent'>Daily Water Level Percentiles by Month</div>\n";
@@ -174,7 +175,7 @@ if ($filename == '/eden/abouteden.php')
 elseif (in_array($filename, array('/eden/annual-rpt/summary-annrpt06.php', '/eden/annual-rpt/summary-annrpt07.php', '/eden/annual-rpt/status-annrpt08.php', '/eden/annual-rpt/status-annrpt09.php', '/eden/annual-rpt/status-annrpt10.php', '/eden/annual-rpt/status-annrpt11.php', '/eden/annual-rpt/status-annrpt12.php', '/eden/annual-rpt/status-annrpt13.php')))
   echo "  <div class='rightnavbuttoncurrent'><a href='/eden/abouteden.php'>Learn About EDEN</a></div>\n";
 else
-  echo "<div class='rightnavbutton'><a href='/eden/abouteden.php'>Learn About EDEN</div>\n";
+  echo "<div class='rightnavbutton'><a href='/eden/abouteden.php'>Learn About EDEN</a></div>\n";
 echo "  <div class='" . ($filename == '/eden/datause_citation.php' ? "rightnavbuttoncurrent'>Data Use & Citation" : "rightnavbutton'><a href='/eden/datause_citation.php'>Data Use & Citation</a>") . "</div>
   <div class='" . ($filename == '/eden/publications.php' ? "rightnavbuttoncurrent'>Publications" : "rightnavbutton'><a href='/eden/publications.php'>Publications</a>") . "</div>
   <div class='" . ($filename == '/eden/newsletter.php' ? "rightnavbuttoncurrent'>Newsletter" : "rightnavbutton'><a href='/eden/newsletter.php'>Newsletter</a>") . "</div>
