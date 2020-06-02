@@ -32,7 +32,7 @@ var greenIcon = L.icon({
 });
 <?php
 require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/login.php');
-mysql_select_db('benchmark');
+mysql_select_db('eden_new');
 $stations_query = 'select * from benchmark2 where kind = 1';
 $stations_result = mysql_query($stations_query);
 $stations_num_results = mysql_num_rows($stations_result);
