@@ -2,11 +2,11 @@
 <html lang='en'>
 <head>
   <meta charset='utf-8'>
-  <?php if ($title) echo $title; ?>
+  <?php echo $title; ?>
   <link rel='stylesheet' href='/../eden/css/eden-dbweb-html5.css'>
-  <?php if ($title) echo $link; ?>
+  <?php if ($link) echo $link; ?>
   <script src='https://www2.usgs.gov/scripts/analytics/usgs-analytics.js'></script>
-  <?php if ($title) echo $script; ?>
+  <?php if ($script) echo $script; ?>
   <style>
     table { border-collapse: collapse }
     table, td, th { border: 1px solid #477489 }
@@ -21,7 +21,7 @@
       font-style: italic;
       color:blue;
     }
-    <?php if ($title) echo $style; ?>
+    <?php if ($style) echo $style; ?>
   </style>
 </head>
 <body>
