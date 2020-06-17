@@ -27,7 +27,6 @@ else {
 }
 
 require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
-mysql_select_db('eden_new');
 
 $title = "<title>Coastal EDEN - Everglades Depth Estimation Network (EDEN)</title>\n";
 $link = "<link rel='stylesheet' href='./css/leaflet.css'>

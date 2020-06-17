@@ -1,6 +1,5 @@
 <?php
 require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
-mysql_select_db('eden_new');
 
 $submit = htmlentities(trim($_GET['hydrograph_query']), ENT_QUOTES);
 $gapfill = htmlentities(trim($_GET['gapfill']), ENT_QUOTES);

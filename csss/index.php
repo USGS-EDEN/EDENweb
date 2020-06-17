@@ -1,6 +1,5 @@
 <?php
 require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
-mysql_select_db('eden_new');
 
 $int = $_GET['int'];
 $result = mysql_query("SELECT REPLACE(short_name, '-', '_') AS sname, station_name_web, SUBSTR(latitude, 1, 2) + SUBSTR(latitude, 4, 2) / 60 + SUBSTR(latitude, 7) / 3600 AS lat, -(SUBSTR(longitude, 1, 2) + SUBSTR(longitude, 4, 2) / 60 + SUBSTR(longitude, 7) / 3600) AS `long`, convert_to_navd88_feet AS conv 

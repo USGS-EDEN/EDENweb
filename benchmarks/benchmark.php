@@ -1,6 +1,5 @@
 <?php
 require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
-mysql_select_db('eden_new');
 
 $benchmark = htmlentities(trim($_GET['benchmark']), ENT_QUOTES);
 $result = mysql_query("SELECT * FROM benchmark2 WHERE benchmark = '$benchmark' LIMIT 1");

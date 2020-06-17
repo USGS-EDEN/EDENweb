@@ -1,6 +1,5 @@
 <?php
 require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
-mysql_select_db('eden_new');
 
 $type = htmlentities(trim($_GET['type']), ENT_QUOTES);
 $name = htmlentities(trim($_GET['name']), ENT_QUOTES);

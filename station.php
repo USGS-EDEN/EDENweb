@@ -1,6 +1,5 @@
 <?php
 require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
-mysql_select_db('eden_new');
 
 $stn_name = htmlentities(trim($_GET['stn_name']), ENT_QUOTES);
 $op_agency = htmlentities(trim($_GET['op_agency']), ENT_QUOTES);
@@ -240,8 +239,7 @@ if ($val && $in_database) {
     <td><a href='explanation.php#typeofstation'>Type of Station</a> (Freshwater/Tidal):</td>
     <td>{$row['water_type']}</td>
   </tr>\n";
-	mysql_select_db('gazetteer');
-	$result = mysql_query("SELECT point_id FROM gage_site_survey WHERE EDEN_name = '{$row['station_name_web']}'");
+		$result = mysql_query("SELECT point_id FROM gage_site_survey WHERE EDEN_name = '{$row['station_name_web']}'");
 	$num_results = mysql_num_rows($result);
 	for ($i = 0; $i < $num_results; $i++) {
 		$row2 = mysql_fetch_array($result);

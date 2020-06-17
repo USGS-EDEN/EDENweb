@@ -81,7 +81,6 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
   <a id="stationlisting"></a>
 <?php
 require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
-mysql_select_db('eden_new');
 echo "<table style='width:450px;margin:20px auto'><tr class='gtablehead'><th>Station Listing</th></tr>\n";
 echo "<tr class='gvegtablehead'><td style='text-align:center'>[ ";
 

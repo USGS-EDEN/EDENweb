@@ -1,6 +1,5 @@
 <?php
 require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
-mysql_select_db('eden_new');
 
 if ($_POST['lat_from'] && $_POST['lat_to'] && $_POST['long_from'] && $_POST['long_to']) {
 	$lat_from = (float) mysql_real_escape_string(htmlspecialchars($_POST['lat_from']));

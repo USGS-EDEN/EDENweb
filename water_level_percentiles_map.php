@@ -1,6 +1,5 @@
 <?php
 require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
-mysql_select_db('eden_new');
 
 $gage_result = mysql_query('SELECT station_name_web AS name, SUBSTRING(latitude, 1, 2) + SUBSTRING(latitude, 4, 2) / 60 + SUBSTRING(latitude, 7) / 3600 AS latitude, SUBSTRING(longitude, 1, 2) + SUBSTRING(longitude, 4, 2) / 60 + SUBSTRING(longitude, 7) / 3600 AS longitude FROM station WHERE ertp_ge_flag IS NOT NULL AND edenmaster_end = "curren" ORDER BY name');
 $ti_result = mysql_query('SELECT island AS name, latitude, longitude FROM tree_islands ORDER BY `order`');
