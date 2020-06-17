@@ -4,9 +4,9 @@
   <meta charset='utf-8'>
   <?php echo $title; ?>
   <link rel='stylesheet' href='/../eden/css/eden-dbweb-html5.css'>
-  <?php if ($link) echo $link; ?>
+  <?php if (isset($link)) echo $link; ?>
   <script src='https://www2.usgs.gov/scripts/analytics/usgs-analytics.js'></script>
-  <?php if ($script) echo $script; ?>
+  <?php if (isset($script)) echo $script; ?>
   <style>
     table { border-collapse: collapse }
     table, td, th { border: 1px solid #477489 }
@@ -21,7 +21,7 @@
       font-style: italic;
       color:blue;
     }
-    <?php if ($style) echo $style; ?>
+    <?php if (isset($style)) echo $style; ?>
   </style>
 </head>
 <body>
