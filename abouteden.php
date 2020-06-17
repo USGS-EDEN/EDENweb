@@ -10,7 +10,7 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
     <li>Annual Report: <a href="annual-rpt/summary-annrpt06.php">2006</a>, <a href="annual-rpt/summary-annrpt07.php">2007</a>, <a href="annual-rpt/status-annrpt08.php">2008</a>, <a href="annual-rpt/status-annrpt09.php">2009</a>, <a href="annual-rpt/status-annrpt10.php">2010</a>, <a href="annual-rpt/status-annrpt11.php">2011</a>, <a href="annual-rpt/status-annrpt12.php">2012</a>, <a href="annual-rpt/status-annrpt13.php">2013</a></li>
     <li><a href="http://pubs.usgs.gov/fs/2009/3052/">Everglades Depth Estimation Network (EDEN) Applications: <i>Tools to View, Extract, Plot, and Manipulate EDEN Data</i></a> (<abbr title="U.S. Geological Survey">USGS</abbr> Fact Sheet 2009-3052)</li>
     <li>&quot;<a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/publications/fs/2006-3087/index.html">The Everglades Depth Estimation Network (EDEN) for Support of Ecological and Biological Assessments</a>&quot; (<abbr title="U.S. Geological Survey">USGS</abbr> Fact Sheet 2006-3087)</li>
-    <li><a href="../projects/eden/">EDEN Project page on <abbr title="U.S. Geological Survey">USGS</abbr> SOFIA Website</a></li>
+    <li><a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/projects/index.php-project_url=eden.html">EDEN Project page on <abbr title="U.S. Geological Survey">USGS</abbr> SOFIA Website</a></li>
   </ul>
 </div>
 <p>The purpose of this website is to make hydrologic and ground elevation data readily available to scientists, managers, and others working in the Everglades.</p>
