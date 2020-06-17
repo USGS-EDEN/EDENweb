@@ -1,6 +1,6 @@
 <?php
 $title = "<title>Learn About EDEN - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h4>Learn About EDEN</h4>
 <div style="width:230px;border:1px solid #710a11;background-color:#f4e1b4;float:left;font-size:12px;padding:2px;margin-right:10px">
@@ -26,4 +26,4 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
 </table>
 <p>A set of EDEN application tools (<a href="edenapps.php">EDENapps</a>) make data in the daily water-level surfaces accessible by allowing users to view, plot, and manipulate the data. The tools include: <a href="edenapps/dataviewer.php">DataViewer</a>, <a href="edenapps/xylocator.php"><abbr title="x y">xy</abbr>Locator </a>, <a href="edenapps/transectplotter.php">TransectPlotter</a>, <abbr title="Depth and Days Since Dry"><a href="edenapps/depth-dayssincedry.php">Depth&amp;DaysSinceDry</a></abbr>, and <abbr title="Net C D F to Grid"><a href="edenapps/netcdftogrid.php">NetCDFtoGrid</a></abbr>.</p>
 <p>For more information about EDEN, please see our <a href="publications.php">publications page</a>.</p>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

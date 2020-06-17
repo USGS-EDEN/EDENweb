@@ -1,6 +1,6 @@
 <?php
 $title = "<title>Confidence Index Maps - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h2>Confidence Index Maps</h2>
 <p>(updated July 10, 2012)</p>
@@ -46,4 +46,4 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
 <p>Although a <abbr title="confidence index">CI</abbr> map would provide users with a general guideline about the accuracy of water levels modeled by EDEN, the parameters that define the areas with lower confidence are not yet clear. See the USGS-series report documenting the EDEN <abbr title="version 2">V2</abbr> surface-water model due later this year for more details about the accuracy of the EDEN water-level surfaces.</p>
 <hr>
 <p>Pearlstine, L., Higer, A., Palaseanu, M., Fujisaki, I., and Mazzotti, F., 2007, Spatially continuous interpolation of water stage and water depths using the Everglades Depth Estimation Network (EDEN): Gainesville, FL. Institute of Food and Agriculture, University of Florida, <abbr title="circular">CIR</abbr> 1521, 18 <abbr title="pages">p.</abbr>, 2 apps.</p>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

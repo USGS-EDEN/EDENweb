@@ -1,9 +1,9 @@
 <?php
 $title = "<title>Water Depth - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 $size = array("netcdf" => array(0), "geotiff" => array(0), "dailymedian" => array(0), "depth" => array(0));
 foreach($size as $a => $b) {
-	$dir = "/export1/htdocs/eden/data/$a/v2";
+	$dir = "/var/www/eden/data/$a/v2";
 	if ($handle = opendir($dir)) {
 		while (false !== ($file = readdir($handle)))
 			if (preg_match("/^[0-9]{4}_q[1-4]{1}_[A-Za-z0-9_]{2,}\.zip$/", $file))
@@ -340,4 +340,4 @@ foreach($size as $a => $b) {
   <img src="../images/xylocator_output_example.gif" alt="" height="250" width="176" style="border:1px black solid;margin-bottom:25px;">
   <p style="background-color:#e5f4cc;padding:10px;margin:1px"><a href="../edenapps/xylocator.php"><strong>Download the xyLocator tool.</strong></a></p>
 </div>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

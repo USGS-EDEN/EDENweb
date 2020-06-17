@@ -3,7 +3,7 @@ $size = $files = array('netcdf' => array(), 'geotiff' => array(), 'dailymedian' 
 $o = array(1 => 'first', 2 => 'second', 3 => 'third', 4 => 'fourth');
 foreach($size as $a => $b) {
 	for ($i = 2; $i <= 3; $i++) {
-		$dir = "/export1/htdocs/eden/data/$a/v$i";
+		$dir = "/var/www/eden/data/$a/v$i";
 		if ($handle = opendir($dir)) {
 			while (false !== ($file = readdir($handle)))
 				if (preg_match("/^2[0-9]{3}_q[1-4]{1}_[A-Za-z0-9_]{2,}\.zip$/", $file)) {
@@ -14,7 +14,7 @@ foreach($size as $a => $b) {
 			closedir($handle);
 		}
 	}
-	$dir = '/export1/htdocs/eden/data/realtime2';
+	$dir = '/var/www/eden/data/realtime2';
 	if ($handle = opendir($dir)) {
 		while (false !== ($file = readdir($handle)))
 			if (preg_match("/^2[0-9]{3}_q[1-4]{1}_v3rt_nc\.zip$/", $file)) {
@@ -48,7 +48,7 @@ foreach($size as $a => $b) {
 	}
 }
 $title = "<title>Download Water Surfaces Data - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <div id='PopUp' style='position:absolute;top:200px;left:100px;z-index:1000;border:solid black 1px;padding:50px;background-color:rgb(200,200,225);font-size:16px;font-weight:bold;width:500px;font-family:Arial;text-align:left' onclick="document.getElementById('PopUp').style.display='none';">
   <span id='PopUpText'>Notice: Starting July 1st, 2019, a newly revised EDEN surface water model (V3) is being used to create EDEN real-time surfaces. As with V2 surfaces, real-time data is considered provisional and may be subject to revision.
@@ -186,4 +186,4 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
     </td>
   </tr>
 </table>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

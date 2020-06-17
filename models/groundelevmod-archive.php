@@ -1,6 +1,6 @@
 <?php
 $title = "<title>Ground Elevation Model - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <div style="background-color:#f0edd9">
 <h2>Ground Elevation Model &ndash; Archive</h2>
@@ -38,7 +38,7 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
         </li>
         <li>Arc .e00:
           <ul>
-            <li><a href="http://sofia.usgs.gov/eden/data/dem/eden_em_ja10.zip">zipped</a>, with metadata files, 243 <abbr title="kilobytes">KB</abbr></li>
+            <li><a href="/../eden/data/dem/eden_em_ja10.zip">zipped</a>, with metadata files, 243 <abbr title="kilobytes">KB</abbr></li>
           </ul>
         </li>
         <li><a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/metadata/sflwww/eden_em_ja10.html">EDEN DEM Metadata file </a>
@@ -107,4 +107,4 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
 </ul>
 <p>For more information, see &quot;<a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/publications/ofr/2007-1034/">Initial Everglades Depth Estimation Network (EDEN) Digital Elevation Model Research and Development</a>&quot; (USGS Open File Report 2007-1034) and the <a href="demreleaselog.php">ground elevation model release log</a>, or contact <a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/personnel.php-per=51.html">John Jones</a>.</p>
 </div>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

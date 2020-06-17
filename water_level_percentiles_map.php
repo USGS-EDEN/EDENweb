@@ -1,5 +1,5 @@
 <?php
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/login.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
 mysql_select_db('eden_new');
 
 $gage_result = mysql_query('SELECT station_name_web AS name, SUBSTRING(latitude, 1, 2) + SUBSTRING(latitude, 4, 2) / 60 + SUBSTRING(latitude, 7) / 3600 AS latitude, SUBSTRING(longitude, 1, 2) + SUBSTRING(longitude, 4, 2) / 60 + SUBSTRING(longitude, 7) / 3600 AS longitude FROM station WHERE ertp_ge_flag IS NOT NULL AND edenmaster_end = "curren" ORDER BY name');
@@ -9,7 +9,7 @@ $ti_num_results = mysql_num_rows($ti_result);
 $title = "<title>Daily Water Level Percentiles by Month for Gages and Tree Islands - Everglades Depth Estimation Network (EDEN)</title>\n";
 $link = "<link rel='stylesheet' href='./css/leaflet.css'>
   <link rel='stylesheet' href='./css/leaflet.label.css'>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h3>Monitoring Water Levels Under the Everglades Restoration Transition Plan (ERTP) Using <abbr title='Everglades Depth Estimation Network'>EDEN</abbr></h3>
 <p>On October 19, 2012, the <a href="http://www.evergladesplan.org/pm/program_docs/ertp.aspx">Everglades Restoration Transition Plan (ERTP)</a>, a new water control plan for the Central and South Florida project, replaced the <a href="http://www.saj.usace.army.mil/Portals/44/docs/Planning/EnvironmentalBranch/EnvironmentalDocs/IOP_02_SEIS_37.pdf">Interim Operational Plan (IOP)</a>, the previous water control plan.</p>
@@ -23,7 +23,7 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
       <td colspan="2">
         <ul>
           <li>A <a href="#gages_treeislands">list of gages and tree islands</a> is available below.</li>
-          <li><a href="https://sofia.usgs.gov/eden/WCA3-ENP_treeislands-gages.kml">Download a Google Earth (KML)</a> file</li>
+          <li><a href="/../eden/WCA3-ENP_treeislands-gages.kml">Download a Google Earth (KML)</a> file</li>
         </ul>
       </td>
     </tr>
@@ -48,7 +48,7 @@ foreach($type as $a => $b) {
   $r = $a . '_table';
 	for ($i = 0; $i < $$num_results; $i++) {
 		$row = mysql_fetch_array($$result);
-		$filename = '/export1/htdocs/eden/table/' . $row['name'] . '.txt';
+		$filename = '/var/www/eden/table/' . $row['name'] . '.txt';
 		$contents = trim(file_get_contents($filename));
 		$rowcontents = explode("\n", $contents);
 		$cur = explode("\t", array_shift($rowcontents));
@@ -62,7 +62,7 @@ foreach($type as $a => $b) {
 			$col = 'dkbl_alt';
 			${$names}[$i] = '<strong>' . $row['name'] . '</strong>'; //highlight alerted gages & TIs in table
 		}
-		$pins .= "	var stn_$j = L.marker([{$row['latitude']}, -{$row['longitude']}], { icon: {$b[0]}$col }).bindPopup(\"$b[2]: <strong><a href='http://sofia.usgs.gov/eden/water_level_percentiles.php?name={$row['name']}&amp;type=$b[1]' target='_blank'>{$row['name']}</a></strong><br>" . round($row['latitude'], 2) . "&deg;<abbr title='north'>N</abbr>, -" . round($row['longitude'], 2) . "&deg;<abbr title='west'>W</abbr><br>$cur[0] Water Level: <strong>" . round($cur[1], 2) . " ft.</strong><br><a href='http://sofia.usgs.gov/eden/water_level_percentiles.php?name={$row['name']}&amp;type=$b[1]' target='_blank'><img src='thumbnails/{$row['name']}_monthly_thumb.jpg' alt='{$row['name']} hydrograph thumbnail' height='160' width='240'><br><span style='font-size:x-smaill'>[larger graph with axes]</span></a>\").bindLabel('{$row['name']}').addTo(map);
+		$pins .= "	var stn_$j = L.marker([{$row['latitude']}, -{$row['longitude']}], { icon: {$b[0]}$col }).bindPopup(\"$b[2]: <strong><a href='/../eden/water_level_percentiles.php?name={$row['name']}&amp;type=$b[1]' target='_blank'>{$row['name']}</a></strong><br>" . round($row['latitude'], 2) . "&deg;<abbr title='north'>N</abbr>, -" . round($row['longitude'], 2) . "&deg;<abbr title='west'>W</abbr><br>$cur[0] Water Level: <strong>" . round($cur[1], 2) . " ft.</strong><br><a href='/../eden/water_level_percentiles.php?name={$row['name']}&amp;type=$b[1]' target='_blank'><img src='thumbnails/{$row['name']}_monthly_thumb.jpg' alt='{$row['name']} hydrograph thumbnail' height='160' width='240'><br><span style='font-size:x-smaill'>[larger graph with axes]</span></a>\").bindLabel('{$row['name']}').addTo(map);
 		document.getElementById('info$j').addEventListener('change', function () { stn_$j.openPopup(); });\n";
 		${$r}[] = "<td><input type='radio' id='info$j' value='$j'> <a href='water_level_percentiles.php?name=" . strip_tags(${$names}[$i]) . "&amp;type=$b[1]'>" . ${$names}[$i] . "</a></td>\n";
 		$j++;
@@ -137,4 +137,4 @@ map.fitBounds(polygon_iop.getBounds());
     </tr>
   </table>
 </div>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

@@ -1,6 +1,6 @@
 <?php
 $title = "<title>EDENapps Introduction - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h3>EDENapps Introduction</h3>
 <p>EDENapps is a series of independent EDEN tools that assist users in using the EDEN spatial data layers.  These tools interface with the <a href="../models/watersurfacemod.php">EDEN water surfaces</a> and <a href="../models/groundelevmod-edenapps.php">EDENapps DEM</a>. <strong>Please note that these tools were developed initally developed for 32-bit systems</strong>; however, most tools do have a 64-bit version available.</p>
@@ -45,4 +45,4 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
     <td></td>
   </tr>
 </table>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

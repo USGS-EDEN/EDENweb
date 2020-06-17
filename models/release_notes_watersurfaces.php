@@ -1,6 +1,6 @@
 <?php
 $title = "<title>Release Notes - Water Surfaces - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h3>Release Notes</h3>
 <p>Date: Updated 12/9/11<br>Water surface model: Versions 1 and 2<br>Surface dates: 1/1/91 - current</p>
@@ -28,4 +28,4 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
 </ul>
 <h4>MODEL VALIDATION (VERSION 2)</h4>
 <p>The Version 2 model revisions were tested by: 1. Comparing modeled and measured water levels at benchmark locations, 2. Comparing mapped differences in water-level surfaces with the Version 1 surfaces, 3. Evaluating contour maps of the water levels for comparison with expected and know flow conditions, and 4. Assessing the impacts of the subarea models by comparing the Version 2 model results with results from a full-domain model with no subarea models using the same input datasets.</p>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

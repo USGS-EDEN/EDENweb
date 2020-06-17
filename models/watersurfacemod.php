@@ -1,6 +1,6 @@
 <?php
 $title = "<title>Water Surfaces - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h2>Water Surfaces</h2>
 <p>In October of 2011, the EDEN project released a new version (Version 2, V2) of the EDEN Water Surface Model. This version replaces the last version (Version 1, V1) of the EDEN model. As part of this upgrade, most (4/1/00-6/30/11) EDEN water surfaces were recreated, new data was processed (1991-1999), and several new map datasets are now available (see below).</p>
@@ -67,4 +67,4 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
 <p>The <abbr title="U.S. Geological Survey">USGS</abbr> retrieves water-level data daily from nearly 300 gaging stations. Most gages record and transmit several water-level values throughout the day, mostly hourly from recorders. A subset of these gages do not have telemetry and are manually read and added to the network when provisional and final data is produced. All transmitted data are entered and stored in the <abbr title="Everglades Depth Estimation Network">EDEN</abbr> database. There are over 240 gages used for water surface interpolation of the freshwater Everglades.</p>
 <p>All gages in the EDEN network are operated and maintained by four separate agencies including <abbr title=" Everglades National Park">Everglades National Park (ENP)</abbr>, <abbr title="South Florida Water Management District">South Florida Water Management District (SFWMD)</abbr>, <abbr title="Big Cypress National Preserve">Big Cypress National Preserve (BCNP)</abbr>, and the <abbr title="U.S. Geological Survey">USGS</abbr>. Data is transferred via a local <abbr title="U.S. Geological Survey">USGS</abbr> <abbr title="file transmission protocol">FTP</abbr> server to the <abbr title="Everglades Depth Estimation Network">EDEN</abbr> database where it is available for surfacing.</p>
 <p>(Graphic from &quot;<a href="http://edis.ifas.ufl.edu/UW278">Spatially Continuous Interpolation of Water Stage and Water Depths Using the Everglades Depth Estimation Network (EDEN)</a>&quot;, University of Florida, <abbr title="Institute of Food and Agricultural Sciences">IFAS</abbr>,CIR1521.)</p>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

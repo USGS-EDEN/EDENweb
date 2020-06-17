@@ -1,5 +1,5 @@
 <?php
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/login.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
 mysql_select_db('eden_new');
 
 $benchmark = htmlentities(trim($_GET['benchmark']), ENT_QUOTES);
@@ -16,7 +16,7 @@ if (!$check)
 	exit('Please select a <a href="index.php#benchmarks">valid benchmark</a> from the list.');
 $title = "<title>Benchmark: {$row['benchmark']} - Benchmark Data - Everglades Depth Estimation Network (EDEN)</title>\n";
 $link = "<link rel='stylesheet' href='../css/leaflet.css'>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h5><a href="index.php">Benchmarks Network</a><?php echo " > Benchmark: $abbr"; ?></h5>
 <p class="caption" style="float:right"><?php echo "[ <a href='benchmark-print.php?benchmark={$row['benchmark']}'><img src='../images/printer.gif' alt='print page' height='18' width='19'></a> <a href='benchmark-print.php?benchmark={$row['benchmark']}'>Printer-friendly version</a> ]"; ?></p>
@@ -88,4 +88,4 @@ var mkr = L.marker([<?php echo $dec_lat; ?>, <?php echo $dec_long; ?>], {icon: m
     </td>
   </tr>
 </table>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

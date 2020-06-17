@@ -1,6 +1,6 @@
 <?php
 $title = "<title>EDEN Personnel - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <div style=";text-align:center">
   <p><strong>EDEN Project Team Leader:</strong></p>
@@ -23,4 +23,4 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
   Eduardo Patino (retired)<br>
   Paul Conrads, (deceased)</p>
 </div>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

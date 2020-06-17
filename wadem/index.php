@@ -1,5 +1,5 @@
 <?php
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/login.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
 mysql_select_db('eden_new');
 
 $result = mysql_query("SELECT REPLACE(short_name, '-', '_') AS sname, station_name_web, SUBSTR(latitude, 1, 2) + SUBSTR(latitude, 4, 2) / 60 + SUBSTR(latitude, 7) / 3600 AS lat, -(SUBSTR(longitude, 1, 2) + SUBSTR(longitude, 4, 2) / 60 + SUBSTR(longitude, 7) / 3600) AS `long`, convert_to_navd88_feet AS conv 
@@ -197,7 +197,7 @@ $style = ".tabs {
   .tabcontentdiv-active, .no-js .tabcontentdiv {
 	display:block
   }\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <p style="color:#009999"><strong><em>WADEM Wading Bird Viewer</em></strong></p>
 <!--MAP STUFF-->
@@ -400,7 +400,7 @@ for ($i = 0; $i < $num_results; $i++) {
 	$wl_row = mysql_fetch_array($wl_result);
 	echo "var gage{$row['sname']} = L.marker([{$row['lat']}, {$row['long']}], { icon: myIcon";
 	echo (substr($row['sname'], 0, 1) == 'G') ? 2 : 3;
-	echo ", title: '{$row['sname']}'}).bindPopup('Gage: <strong><a href=\"../station.php?stn_name={$row['station_name_web']}\" target=\"_blank\">{$row['sname']}</a></strong> (<a href=\"../eve/index.php?site_list%5B%5D={$row['station_name_web']}\" target=\"_blank\"><abbr title=\"Explore and View EDEN\">EVE</abbr></a>)<br>" . round($row['lat'], 2) . "&deg;<abbr title=\"north\">N</abbr> " . round($row['long'], 2) . "&deg;<abbr title=\"west\">W</abbr><br><strong>{$wl_row['date']}</strong> Water Level: <strong>" . round($wl_row['stage'], 2) . " ft.</strong> <abbr title=\"North American Vertical Datum of 1988\">NAVD88</abbr><br><a href=\"https://sofia.usgs.gov/eden/water_level_percentiles.php?name={$row['station_name_web']}&amp;type=gage\" target=\"_blank\"><img src=\"../thumbnails/{$row['station_name_web']}_monthly_thumb.jpg\" alt=\"{$row['sname']} hydrograph thumbnail\" height=\"160\" width=\"240\"><br><font size=\"1\">[larger graph with axes]</font></a>').addTo(map);
+	echo ", title: '{$row['sname']}'}).bindPopup('Gage: <strong><a href=\"../station.php?stn_name={$row['station_name_web']}\" target=\"_blank\">{$row['sname']}</a></strong> (<a href=\"../eve/index.php?site_list%5B%5D={$row['station_name_web']}\" target=\"_blank\"><abbr title=\"Explore and View EDEN\">EVE</abbr></a>)<br>" . round($row['lat'], 2) . "&deg;<abbr title=\"north\">N</abbr> " . round($row['long'], 2) . "&deg;<abbr title=\"west\">W</abbr><br><strong>{$wl_row['date']}</strong> Water Level: <strong>" . round($wl_row['stage'], 2) . " ft.</strong> <abbr title=\"North American Vertical Datum of 1988\">NAVD88</abbr><br><a href=\"/../eden/water_level_percentiles.php?name={$row['station_name_web']}&amp;type=gage\" target=\"_blank\"><img src=\"../thumbnails/{$row['station_name_web']}_monthly_thumb.jpg\" alt=\"{$row['sname']} hydrograph thumbnail\" height=\"160\" width=\"240\"><br><font size=\"1\">[larger graph with axes]</font></a>').addTo(map);
 gage{$row['sname']}.setOpacity(0);\n";
 }
 ?>
@@ -472,4 +472,4 @@ $('#tabset').tabify({
   content_activeClass: 'tabcontentdiv-active'
 });
 </script>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

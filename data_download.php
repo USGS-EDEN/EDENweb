@@ -32,14 +32,14 @@ foreach ((array) $_SESSION['station'] as $h) {
 if (empty($_SESSION['field'])) $_SESSION['field']['station_name_web'] = 'station_name_web';
 $title = "<title>EDEN Station Information Data Download - Everglades Depth Estimation Network (EDEN)</title>\n";
 $style = "p, h2, table { text-align:center }\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
-require_once ($_SERVER['DOCUMENT_ROOT'] . '/eden/pclzip.lib.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
+require_once ($_SERVER['DOCUMENT_ROOT'] . '/../eden/pclzip.lib.php');
 ?>
 <h2>EDEN Station Information Data Download</h2> 
 <p>This form will allow you to download station information (found on each <a href="stationlist.php#stationlisting">water level gage page</a>) for EDEN gages in tab-delineated text format, which may then be imported into Excel or any other program. Select any data fields below and stations for which you would like station and/or vegetation data, and then press the &quot;Download data&quot; button. This will then produce a .zip file containing text files with the data you have requested along with a &quot;readme&quot; explaining some of the terms used in data fields.</p>
 <p><strong>Please note: Some gages may not have data for all fields (such as location description or vegetation information).</strong></p>
 <?php
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/login.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
 mysql_select_db('eden_new');
 
 if ($submit) {
@@ -56,7 +56,7 @@ if ($submit) {
 		@ $fp2 = fopen($dir . '/' . $time . 'vegetation_data.txt', 'w');
 		if (!$fp || !$fp2)
 			exit('Could not process your request. Please try again later.</body></html>');
-		$filename = "/export1/htdocs/eden/$dir/$time.zip";
+		$filename = "/var/www/eden/$dir/$time.zip";
 		$archive = new PclZip($filename);
 
 		if ($_SESSION['field']) {
@@ -193,14 +193,14 @@ elseif ($fields_clear == 1) {
 }
 ?>
 <form action='data_download.php' method='post'>
-<p><strong><a href='http://sofia.usgs.gov/eden/data_download.php?fields_all=1&stations_all=1'>Select All Data/Ground Elevation & Vegetation Fields & All Stations</a></strong></p>
-<p><a href='http://sofia.usgs.gov/eden/data_download.php?fields_clear=1&stations_clear=1'>Clear All Selections</a></p>
+<p><strong><a href='/../eden/data_download.php?fields_all=1&stations_all=1'>Select All Data/Ground Elevation & Vegetation Fields & All Stations</a></strong></p>
+<p><a href='/../eden/data_download.php?fields_clear=1&stations_clear=1'>Clear All Selections</a></p>
 <table style="width:400px;margin:20px auto">
   <tr class="gtablehead">
     <th colspan='2'>Data fields</th>
   </tr>
   <tr class="gvegtablehead">
-    <td colspan='2'><a href='http://sofia.usgs.gov/eden/data_download.php?fields_all=1'>Select All Data/Ground Elevation & Vegetation</a> | <a href='http://sofia.usgs.gov/eden/data_download.php?fields_clear=1'>Clear Selected Data/Ground Elevation & Vegetation</a></td>
+    <td colspan='2'><a href='/../eden/data_download.php?fields_all=1'>Select All Data/Ground Elevation & Vegetation</a> | <a href='/../eden/data_download.php?fields_clear=1'>Clear Selected Data/Ground Elevation & Vegetation</a></td>
   </tr>
   <tr class="gtablecell">
     <td><input type='checkbox' name='field[]' value='station_name_web'<?php echo $_SESSION['field']['station_name_web'] ? ' checked' : ''; ?>></td>
@@ -301,7 +301,7 @@ elseif ($fields_clear == 1) {
     <th colspan='6'>Station Listing</th>
   </tr>
   <tr class="gvegtablehead">
-    <td colspan='6'><a href='http://sofia.usgs.gov/eden/data_download.php?stations_all=1'>Select All Stations</a> | <a href='http://sofia.usgs.gov/eden/data_download.php?stations_clear=1'>Clear Selected Stations</a></td>
+    <td colspan='6'><a href='/../eden/data_download.php?stations_all=1'>Select All Stations</a> | <a href='/../eden/data_download.php?stations_clear=1'>Clear Selected Stations</a></td>
   </tr>
 <?php
 $query2 = 'select max(station_id) as max from station';
@@ -330,4 +330,4 @@ for ($i = 0; $i < $num_results; $i++) {
 </table>
 <p><input type='submit' value='Download data' name='submit'></p>
 </form>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

@@ -1,6 +1,6 @@
 <?php
 $title = "<title>Rainfall Data - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h3>Rainfall Data</h3>
 <div class="tablecell" style="width:200px;background-color:#f4e1b4;border:1px solid #663340;float:left;margin:5px;padding:5px">
@@ -20,4 +20,4 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
   <li>Skinner, C., 2006, Developing a Relationship Between NEXRAD Generated Rainfall Values and Rain Gauges in South Florida. Master's Thesis. Department of Civil Engineering. Florida Atlantic University, Boca Raton, Florida.</li>
   <li>Skinner, C., Bloetscher, F., and Pathak, C.S., 2009, Comparison of NEXRAD and Rain Gauge Precipitation Measurements in South Florida. Journal of Hydrologic Engineering, 14(3):248-260.</li>
 </ul>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

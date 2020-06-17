@@ -1,6 +1,6 @@
 <?php
 $title = "<title>Learn About EDEN - Summary of Fiscal Year 06 Annual Report - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h4>Learn About EDEN</h4>
 <h3><a href="../../projects/summary_reports06/EDEN_AnnReportFY06Sum-Final.pdf">Summary of <abbr title="Fiscal Year 06">FY06</abbr>Annual Status Report</a></h3>
@@ -19,4 +19,4 @@ Submitted by: Pamela Telis, Project Leader, <abbr title="U.S. Geological Survey"
 <p>The purpose of the annual progress report is to document work and products completed in <abbr title="Fiscal Year 06">FY06</abbr>. Many of the products completed in FY06 were a culmination of work effort from the project start in <abbr title="Fiscal Year 2004">FY2004</abbr>.</p>
 <p>Each section of the report begins with a section summary page (presented in the summary version without the complete section text and figures) which provides an overview of what was completed by project component. Potential future direction is documented in a brief discussion under Future Work Considerations. Since this is a summary of the <abbr title="Fiscal Year 06">FY06</abbr> Annual Progress Report, only a list of the contents of each section is provided.</p>
 <p>Because EDEN has many component pieces, two flow diagrams show the relationships,  data flow, and feedback among the project components (see diagrams attached). These diagrams at various levels of complexity offer the reader a less detailed or more detailed understanding of these interconnections. On the EDEN project diagram, the report sections are identified by a letter A through G, which corresponds to sections of the report.</p>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

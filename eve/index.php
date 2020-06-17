@@ -1,5 +1,5 @@
 <?php
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/login.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
 mysql_select_db('eden_new');
 
 $submit = htmlentities(trim($_GET['hydrograph_query']), ENT_QUOTES);
@@ -144,7 +144,7 @@ $style = substr($style, 0, -1) . "{
       font-family: Arial, Helvetica, sans-serif;
       font-size: 12px
     }\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 require_once('../pclzip.lib.php');
 echo "<div id='plot_data' style='display:none'>\n";
 for ($i = 0; $i < $data_num_results; $i++) {
@@ -375,7 +375,7 @@ foreach ((array) $site_list as $a => $c) {
   <tr><td class='gtablecell2'>Evapotranspiration</td><td class='gtablecell2'>{$et_range_row['min']} &mdash; {$et_range_row['max']}</td></tr>
 </table>\n";
 		if ($stn_row['station_name_web'] == 'TSB')
-			echo "<p>Go to <a href='javascript:Popup(\"popup.php?popup={$stn_row['operating_agency']}\")'><abbr title='{$stn_row['agency_name']}'>{$stn_row['operating_agency']}</abbr></a> for complete datasets for this gage<br /><strong>Note:</strong> Nearby gage <a href='http://sofia.usgs.gov/eden/station.php?stn_name=TS2'>TS2</a> was used before being discontinued in<br>2005; the merged TS2/TSB record is presented here</p></div>\n";
+			echo "<p>Go to <a href='javascript:Popup(\"popup.php?popup={$stn_row['operating_agency']}\")'><abbr title='{$stn_row['agency_name']}'>{$stn_row['operating_agency']}</abbr></a> for complete datasets for this gage<br /><strong>Note:</strong> Nearby gage <a href='/../eden/station.php?stn_name=TS2'>TS2</a> was used before being discontinued in<br>2005; the merged TS2/TSB record is presented here</p></div>\n";
 		else if ($stn_row['operating_agency'] == 'ENP')
 			echo "<p>Go to <a href='javascript:Popup(\"popup.php?popup={$stn_row['operating_agency']}\")'><abbr title='{$stn_row['agency_name']}'>{$stn_row['operating_agency']}</abbr></a> for complete datasets for this gage</p></div>\n";
 		else if (!$stn_row['other_databases'])
@@ -793,4 +793,4 @@ if ($et) {
 $(document).ready(function () {$('#menu').tabify();});
 // ]]>
 </script>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

@@ -1,5 +1,5 @@
 <?php
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/login.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
 mysql_select_db('eden_new');
 
 $type = htmlentities(trim($_GET['type']), ENT_QUOTES);
@@ -24,12 +24,12 @@ if ($type == 'treeisland') {
 	$row['latitude'] = substr($row['dec_latitude'], 0, 2) . ',' . substr(substr($row['dec_latitude'], 2) * 60, 0, 2) . ',' . substr(substr($row['dec_latitude'], 2) * 60, 2) * 60;
 	$row['longitude'] = substr($row['dec_longitude'], 0, 2) . ',' . substr(substr($row['dec_longitude'], 2) * 60, 0, 2) . ',' . substr(substr($row['dec_longitude'], 2) * 60, 2) * 60;
 }
-$filename = "/export1/htdocs/eden/table/$name.txt";
+$filename = "/var/www/eden/table/$name.txt";
 $contents = trim(file_get_contents($filename));
 $rowcontents = explode("\n", $contents);
 $cur = explode("\t", array_shift($rowcontents));
 $title = "<title>Everglades Depth Estimation Network (EDEN) Daily Water Level Percentiles by Month for $name</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h3>Daily Water Level Percentiles by Month</h3>
 <h4>For monitoring water levels during the <a href="http://www.evergladesplan.org/pm/program_docs/ertp.aspx">Everglades Restoration Transition Plan (ERTP)</a> in <abbr title="Water Conservation Area 3 A">WCA3A</abbr>, <abbr title="Water Conservation Area 3 B">WCA3B</abbr>, and Everglades National Park</h4>
@@ -151,4 +151,4 @@ foreach($rowcontents as $i => $a) {
     </td>
   </tr>
 </table>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

@@ -1,5 +1,5 @@
 <?php
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/login.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
 mysql_select_db('eden_new');
 
 $benchmark = htmlentities(trim($_GET['benchmark']), ENT_QUOTES);
@@ -23,7 +23,7 @@ $style = ".pagetopheaderprint { font-family: arial, helvetica, sans-serif; color
 <head>
   <meta charset='utf-8'>
   <?php echo $title; ?>
-  <link rel='stylesheet' href='/eden/css/eden-dbweb-html5.css'>
+  <link rel='stylesheet' href='/../eden/css/eden-dbweb-html5.css'>
   <?php echo $link; ?>
   <script src='https://www2.usgs.gov/scripts/analytics/usgs-analytics.js'></script>
   <?php echo $script; ?>
@@ -47,13 +47,13 @@ $style = ".pagetopheaderprint { font-family: arial, helvetica, sans-serif; color
 <body>
 <div style="width:100%;height:90px;background-color:#c5c5c5;padding:2px">
   <div style='float:left'>
-    <a href='http://141.232.10.32/pm/recover/recover.aspx'><img src='/eden/images/logos/recoverbl.gif' width='94' height='89' alt="The Journey to Restore America's Everglades - Recover Home Page"></a>
+    <a href='http://141.232.10.32/pm/recover/recover.aspx'><img src='/../eden/images/logos/recoverbl.gif' width='94' height='89' alt="The Journey to Restore America's Everglades - Recover Home Page"></a>
   </div>
   <div style='float:right'>
-    <a href='http://www.nps.gov/'><img src='/eden/images/logos/NPSlogosm-grbkgd.gif' alt='National Park Service Home Page' height='48' width='41'></a>
-    <a href='http://www.sfwmd.gov/'><img src='/eden/images/logos/sfwmd-logosm-grnbkgd.gif' alt='South Florida Water Management District Home Page' height='48' width='48'></a>
-    <a href='http://www.usace.army.mil/'><img src='/eden/images/logos/usace-logosm.gif' alt='U.S. Army Corps of Engineers Home Page' width='57' height='44'></a>
-    <a href='http://www.usgs.gov'><img src='/eden/images/logos/usgslogosm-black.gif' alt='U.S. Geological Survey Home Page' height='42' width='115'></a>
+    <a href='http://www.nps.gov/'><img src='/../eden/images/logos/NPSlogosm-grbkgd.gif' alt='National Park Service Home Page' height='48' width='41'></a>
+    <a href='http://www.sfwmd.gov/'><img src='/../eden/images/logos/sfwmd-logosm-grnbkgd.gif' alt='South Florida Water Management District Home Page' height='48' width='48'></a>
+    <a href='http://www.usace.army.mil/'><img src='/../eden/images/logos/usace-logosm.gif' alt='U.S. Army Corps of Engineers Home Page' width='57' height='44'></a>
+    <a href='http://www.usgs.gov'><img src='/../eden/images/logos/usgslogosm-black.gif' alt='U.S. Geological Survey Home Page' height='42' width='115'></a>
   </div>
   <div class='pagetopheader' style='color:black'>Everglades Depth Estimation Network (EDEN) for Support of Biological and Ecological Assessments</div>
 </div>
@@ -120,4 +120,4 @@ if($row2['elevation']) {
 }
 ?>
 </table>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

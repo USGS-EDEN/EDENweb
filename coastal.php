@@ -26,7 +26,7 @@ else {
   $range = array(-2, -1, 0, 1, 2, 3);
 }
 
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/login.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
 mysql_select_db('eden_new');
 
 $title = "<title>Coastal EDEN - Everglades Depth Estimation Network (EDEN)</title>\n";
@@ -39,7 +39,7 @@ $style = "#map {
   background: #F6F6F6;
   float: right
 }\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <form action="coastal.php" method='post'>
 <h1>Coastal <abbr title='Everglades Depth Estimation Network'>EDEN</abbr></h1>
@@ -318,4 +318,4 @@ for ($i = 1; $i <= 5 - $num_results % 5; $i++)
   </tr>
 </table>
 </form>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

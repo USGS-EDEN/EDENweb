@@ -1,6 +1,6 @@
 <?php
 $title = "<title>Data Use & Citation - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h2>EDEN Data Use & Citation</h2>
 <h3>DATA RELIABILITY</h3>
@@ -10,4 +10,4 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
 <h3>SUGGESTED DATA CITATION</h3>
 <p>The only provision for use of these datasets is that we request acknowledgement of the EDEN website and the USGS in all instances of publication or reference. We suggest using the following text:</p>
 <p><em>The authors acknowledge the Everglades Depth Estimation Network (EDEN) project and the US Geological Survey for providing the [insert data type here] for the purpose of this research/report.</em></p>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

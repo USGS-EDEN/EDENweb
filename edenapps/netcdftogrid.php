@@ -1,6 +1,6 @@
 <?php
 $title = "<title>NetCDFtoGrid Tool - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h3>NetCDFtoGrid Utility</h3>
 <img src="../images/screenshots/netcdftogridscreen.jpg" alt="Screenshot of the netcdf to grid tool" height="289" width="360" style="float:left;margin:20px">
@@ -54,21 +54,21 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
           <ul>
             <li><abbr title="Net C D F">NetCDF</abbr> format file(s) (.nc) containing daily water level surfaces</li>
             <li>Multiple one-quarter-year files can be used for requested time series (be sure that continuous data files are present for accurate time series calculations)</li>
-            <li>Available for download at <a href="http://sofia.usgs.gov/eden/models/watersurfacemod.php">http://sofia.usgs.gov/eden/models/watersurfacemod.php</a>.</li>
+            <li>Available for download at <a href="/../eden/models/watersurfacemod.php">http://sofia.usgs.gov/eden/models/watersurfacemod.php</a>.</li>
           </ul>
         </li>
         <li>EDEN daily water depth
           <ul>
             <li><abbr title="Net C D F">NetCDF</abbr> format file(s) (.nc) containing daily water depth</li>
             <li>Multiple one-quarter-year files can be used for requested time series (be sure that continuous data files are present for accurate time series calculations)</li>
-            <li>Can be derived from EDEN daily water level surfaces and ground elevation surface using the EDEN Depth&amp;DaysSinceDry Tool, available for download at <a href="http://sofia.usgs.gov/eden/edenapps/index.php">http://sofia.usgs.gov/eden/edenapps/index.php</a></li>
+            <li>Can be derived from EDEN daily water level surfaces and ground elevation surface using the EDEN Depth&amp;DaysSinceDry Tool, available for download at <a href="/../eden/edenapps/index.php">http://sofia.usgs.gov/eden/edenapps/index.php</a></li>
           </ul>
         </li>
         <li>EDEN days since dry
           <ul>
             <li><abbr title="Net C D F">NetCDF</abbr> format file(s) (.nc) containing days since dry</li>
             <li>Multiple one-quarter-year files can be used for requested time series (be sure that continuous data files are present for accurate time series calculations)</li>
-            <li>Can be derived from EDEN daily water level surfaces and ground elevation surface using the EDEN Depth&amp;DaysSinceDry Tool, available for download at <a href="http://sofia.usgs.gov/eden/edenapps/index.php">http://sofia.usgs.gov/eden/edenapps/index.php</a></li>
+            <li>Can be derived from EDEN daily water level surfaces and ground elevation surface using the EDEN Depth&amp;DaysSinceDry Tool, available for download at <a href="/../eden/edenapps/index.php">http://sofia.usgs.gov/eden/edenapps/index.php</a></li>
           </ul>
         </li>
       </ol>
@@ -78,5 +78,5 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
     <td class="gvegtablehead">We're looking for feedback! Please <a href="../contacts.php">contact us</a>.</td>
   </tr>
 </table>
-<p><strong>The <abbr title='Everglades Depth Estimation Network applications'>EDENapps</abbr> are no longer available on <abbr title='Comprehensive Everglades Restoration Plan'>CERPZone</abbr>. Java-based versions of <abbr title='Everglades Depth Estimation Network applications'>EDENapps</abbr> are downloadable at: <a href='http://sofia.usgs.gov/eden/edenapps/index.php'>http://sofia.usgs.gov/eden/edenapps/index.php</a></strong></p>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<p><strong>The <abbr title='Everglades Depth Estimation Network applications'>EDENapps</abbr> are no longer available on <abbr title='Comprehensive Everglades Restoration Plan'>CERPZone</abbr>. Java-based versions of <abbr title='Everglades Depth Estimation Network applications'>EDENapps</abbr> are downloadable at: <a href='/../eden/edenapps/index.php'>http://sofia.usgs.gov/eden/edenapps/index.php</a></strong></p>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

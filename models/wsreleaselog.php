@@ -1,6 +1,6 @@
 <?php
 $title = "<title>Water Surfaces: Release Log - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h2>Water Surfaces - Release Log</h2>
 <table style="width:95%;margin-bottom:20px">
@@ -290,4 +290,4 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
     <td>Provisional data replaces real-time data. Data gaps filled using simple regression with nearby gage data.</td>
   </tr>
 </table>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

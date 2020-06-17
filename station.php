@@ -1,5 +1,5 @@
 <?php
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/login.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
 mysql_select_db('eden_new');
 
 $stn_name = htmlentities(trim($_GET['stn_name']), ENT_QUOTES);
@@ -47,7 +47,7 @@ if ($val && $in_database)
 	$title .= "EDEN Station: $val - ";
 $title .= "Everglades Depth Estimation Network (EDEN)</title>\n";
 $link = "<link rel='stylesheet' href='./css/leaflet.css'>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 
 if ($val && $in_database) {
 	echo "<h3>EDEN station name: {$row['station_name_web']}<br>Location Area: <a href='stationlist-area.php?area=$area'>{$row['location']}</a></h3>
@@ -279,4 +279,4 @@ var myIcon = L.icon({
 
 var mkr = L.marker([<?php echo $dec_lat; ?>, <?php echo $dec_long; ?>], { icon: myIcon }).bindPopup('Station <strong><?php echo $row['station_name_web']; ?></strong><br>Latitude: <?php echo round($dec_lat, 2); ?>&deg;<br>Longitude: <?php echo round($dec_long, 2); ?>&deg;').addTo(map);
 </script>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

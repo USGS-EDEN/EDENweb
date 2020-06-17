@@ -1,6 +1,6 @@
 <?php
 $title = "<title>Water-Level Data - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h2>Gage Data for EDEN Network</h2>
 <div style="text-align:center">
@@ -80,7 +80,7 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
   </div>
   <a id="stationlisting"></a>
 <?php
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/login.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
 mysql_select_db('eden_new');
 echo "<table style='width:450px;margin:20px auto'><tr class='gtablehead'><th>Station Listing</th></tr>\n";
 echo "<tr class='gvegtablehead'><td style='text-align:center'>[ ";
@@ -166,4 +166,4 @@ foreach ($letter_range as $letter) {
 	echo "</table>\n";
 ?>
 </div>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

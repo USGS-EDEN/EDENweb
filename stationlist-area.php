@@ -1,5 +1,5 @@
 <?php
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/login.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
 mysql_select_db('eden_new');
 
 $area = htmlspecialchars($_GET['area']);
@@ -42,7 +42,7 @@ $num_results = mysql_num_rows($result);
 $title = "<title>$area_long - Everglades Depth Estimation Network (EDEN)</title>\n";
 $link = "<link rel='stylesheet' href='./css/leaflet.css'>
   <link rel='stylesheet' href='./css/leaflet.label.css'>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <p style="text-align:center"><a href="stationlist-area.php?area=WCA1">WCA1</a> | <a href="stationlist-area.php?area=WCA2">WCA2</a> | <a href="stationlist-area.php?area=WCA3">WCA3</a> | <a href="stationlist-area.php?area=BCNP">Big Cypress National Preserve</a> | <a href="stationlist-area.php?area=ENP">Everglades National Park</a> | <a href="stationlist-area.php?area=Pennsuco">Pennsuco Wetlands</a> | 
 <a href="stationlist-area.php?area=FLBay">Coast of Florida Bay</a> | <a href="stationlist-area.php?area=GOM">Coast of Gulf of Mexico</a></p>
@@ -140,4 +140,4 @@ for ($i = 0; $i < $num_results; $i++) {
 }
 ?>
 </table>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

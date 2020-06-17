@@ -6,7 +6,7 @@ var b=document.getElementsByTagName('script')[0];
 a.src=document.location.protocol+'//script.crazyegg.com/pages/scripts/0020/3757.js?'+Math.floor(new Date().getTime()/3600000);
 a.async=true;a.type='text/javascript';b.parentNode.insertBefore(a,b)}, 1);
   </script>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <div style="text-align:center">
   <img src="images/logos/EDEN-logoth.gif" alt="" height="111" width="288">
@@ -58,4 +58,4 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
     <p>USGS Fact Sheets on EDEN: &quot;<a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/publications/fs/2006-3087/index.html">The Everglades Depth Estimation Network (EDEN) for Support of Ecological and Biological Assessments</a>&quot; and &quot;<a href="http://pubs.usgs.gov/fs/2009/3052/">Everglades Depth Estimation Network (EDEN) Applications: <em>Tools to View, Extract, Plot, and Manipulate EDEN Data</em></a>.&quot; Or visit our &quot;<a href="abouteden.php">Learn About EDEN</a>&quot; page</p>
   </div>
 </div>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

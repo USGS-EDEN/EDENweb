@@ -1,10 +1,10 @@
 <?php
 $title = "<title>Benchmarks Network - Everglades Depth Estimation Network (EDEN)</title>\n";
-$link = "<link rel='stylesheet' href='/eden/css/leaflet.css'>
-  <link rel='stylesheet' href='/eden/css/leaflet.label.css'>\n";
-$script = "<script src='/eden/js/leaflet.js'></script>
-  <script src='/eden/js/leaflet.label-src.js'></script>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+$link = "<link rel='stylesheet' href='/../eden/css/leaflet.css'>
+  <link rel='stylesheet' href='/../eden/css/leaflet.label.css'>\n";
+$script = "<script src='/../eden/js/leaflet.js'></script>
+  <script src='/../eden/js/leaflet.label-src.js'></script>\n";
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h2>Network of Benchmarks Used to Evaluate and Verify the EDEN Surface-Water Model</h2>
 <table style="width:700px;border:3px solid #4b7e83;margin:10px auto">
@@ -31,7 +31,7 @@ var greenIcon = L.icon({
     labelAnchor: [7, 21]
 });
 <?php
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/login.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
 mysql_select_db('eden_new');
 $stations_query = 'select * from benchmark2 where kind = 1';
 $stations_result = mysql_query($stations_query);
@@ -81,4 +81,4 @@ foreach ($benchmark as $a) {
 }
 ?>
 </table>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

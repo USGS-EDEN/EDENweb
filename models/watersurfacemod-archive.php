@@ -1,6 +1,6 @@
 <?php
 $title = "<title>Water Surfaces Archive - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h2>Water Surfaces - Archived Files</h2>
 <p>The files provided below are archived files of previously released EDEN surfaces and associated files. <a href="watersurfacemod_download.php"><strong>Current surfaces are available on a separate page</strong></a>. Please view the note below each file to see the date or status for each data set.</p>
@@ -733,4 +733,4 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
     <td colspan="5" style="text-align:center"><strong><a href="watersurfacemod_download.php#dmsoutput">Current Daily Median Server files are available on a separate page.</a></strong></td>
   </tr>
 </table>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

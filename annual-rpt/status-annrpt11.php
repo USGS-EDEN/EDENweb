@@ -1,6 +1,6 @@
 <?php
 $title = "<title>Learn About EDEN - Fiscal Year 2011 Status Report - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h4>Learn About EDEN</h4>
 <h3>Status Report - <abbr title="Fiscal Year 2011">FY11</abbr></h3>
@@ -193,4 +193,4 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
   <li>As of 9/30/11, all of the <abbr title="Fiscal Year 2011">FY11</abbr> funding under <abbr title="U.S. Geological Survey">USGS</abbr> IA #28 has been expended or obligated. Invoices will be electronically submitted to the <abbr title="U.S. Army Corps of Engineers">USACE</abbr> within the next few months.</li>
   <li><abbr title="U.S. Geological Survey">USGS</abbr> <abbr title="Priority Ecosystems Science">Priority Ecosystem Science (PES)</abbr> funding in <abbr title="Fiscal Year 2011">FY2011</abbr> was  to multiple principal investigators in support for EDEN research efforts. This level of support is expected to be continued in <abbr title="Fiscal Year 2012">FY2012</abbr> with a potential 10% cut.</li>
 </ul>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

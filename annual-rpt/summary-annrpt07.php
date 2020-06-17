@@ -1,6 +1,6 @@
 <?php
 $title = "<title>Learn About EDEN - Fiscal Year 2007 Status Report - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h4>Learn About EDEN</h4>
 <h3>Status Report</h3>
@@ -90,4 +90,4 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
 <ul>
   <li>As of 9/21/07, all <abbr title="Fiscal Year 2007">FY07</abbr> funding has been expended or obligated.</li>
 </ul>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

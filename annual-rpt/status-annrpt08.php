@@ -1,6 +1,6 @@
 <?php
 $title = "<title>Learn About EDEN - Fiscal Year 2008 Status Report - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h4>Learn About EDEN</h4>
 <h3>Status Report - <abbr title="Fiscal Year">FY</abbr>08</h3>
@@ -130,4 +130,4 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
   <li>As of 9/26/08, all <abbr title="fiscal year">FY</abbr>08 funding has been expended or obligated.</li>
   <li>On 9/3/08, the total funding for <abbr title="fiscal year">FY</abbr>09 ($530,263) was accepted by <abbr title="U.S. Geological Survey">USGS</abbr>. These funds were &quot;no-year&quot; funds and the <abbr title="U.S. Geological Survey">USGS</abbr> will hold until 10/1/08 when they will be available to expend or obligate as needed for <abbr title="fiscal year">FY</abbr>09 activities.</li>
 </ul>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

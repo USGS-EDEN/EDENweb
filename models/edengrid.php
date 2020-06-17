@@ -1,6 +1,6 @@
 <?php
 $title = "<title>EDEN Grid GIS Files - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h3>EDEN Grid</h3>
 <div style="width:200px;border:1px solid #710a11;background-color:#f4e1b4;float:left;font-size:12px;padding:2px;margin-right:10px">
@@ -27,4 +27,4 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
     </td>
   </tr>
 </table>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

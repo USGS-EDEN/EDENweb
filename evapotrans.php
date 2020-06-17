@@ -1,6 +1,6 @@
 <?php
 $title = "<title>Evapotranspiration Data - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h3>Evapotranspiration Data</h3>
 <div class="tablecell" style="width:200px;background-color:#f4e1b4;border:1px solid #663340;float:left;margin:5px;padding:5px">
@@ -54,4 +54,4 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
     <td><p>Scientists working atop tower. [<a href="images/bcnp_et/scientists_on_towerx.jpg">larger version</a>]</p></td>
   </tr>
 </table>					
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

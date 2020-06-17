@@ -1,6 +1,6 @@
 <?php
 $title = "<title>Water Depth Measurement Data - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h3><strong>Calling all those with water depth measurements in the Everglades:</strong></h3>
 <p>The EDEN project is compiling water depth data collected by scientists and field personnel since 1990 to current. These data will be used to help test and improve the EDEN water surface model and the ground elevation model.</p>
@@ -48,4 +48,4 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
     <td style="background-color:#f4e1b4"><a id="wdtemplate"></a><p><a href="../data/water_depth/Water_Depth_Entry_for_EDEN_PI-NAME.xls">Download .xls template<br></a>(note: please replace &quot;PI-NAME&quot; in the file name with your own name before sending the file.</p></td>
   </tr>
 </table>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

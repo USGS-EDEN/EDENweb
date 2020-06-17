@@ -1,6 +1,6 @@
 <?php
 $title = "<title>Explanation: Water-Level Data - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h2>Average Ground Elevation within a Vegetation Community</h2>
 <p>Water depth was measured or ground elevation was surveyed at a minimum of 6 locations in the major vegetation community surrounding the water level gaging station. For water depth measurements, the ground elevation at each site was calculated by subtracting the water depth from the water level reading at the gage. The ground elevations for all measurements were averaged to compute the reported value.</p>
@@ -18,4 +18,4 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
   <li>If the gage was on the edge or transition of a community, a judgment was made to determine the major vegetation community. The data collector walked 20 paces from the gage into the adjacent major community and used that as the center point to begin walking the "spokes".</li>
   <li>Water depth was also recorded or ground elevation was surveyed at 3 random locations at least 10 meters apart and not more than 400 meters from the gage in the next major vegetative community. If there was no next major vegetative community within 400 meters of the gage, none available was recorded. If more than one vegetative community was identified, then both are reported. These points were centered twenty paces into the community from the edge, with the 10-pace spokes oriented at 0&deg;, 120&deg;, and 240&deg;. Measurements were not collected in communities that were too small to conduct the random measurements.</li>
   <li>NA is recorded if the major or secondary vegetation community was dry during the site visit and no ground elevation could be computed.</li></ul>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

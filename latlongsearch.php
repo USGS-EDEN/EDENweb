@@ -1,5 +1,5 @@
 <?php
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/login.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
 mysql_select_db('eden_new');
 
 if ($_POST['lat_from'] && $_POST['lat_to'] && $_POST['long_from'] && $_POST['long_to']) {
@@ -29,11 +29,11 @@ elseif ($long_from > $long_to) {
 $lat_cent = ($lat_to + $lat_from) / 2;
 $long_cent = ($long_to + $long_from) / 2;
 $title = "<title>Everglades Depth Estimation Network (EDEN) - Latitude/Longitude Query</title>\n";
-$link = "<link rel='stylesheet' href='/eden/css/leaflet.css'>
-  <link rel='stylesheet' href='/eden/css/leaflet.label.css'>\n";
-$script = "<script src='/eden/js/leaflet.js'></script>
-  <script src='/eden/js/leaflet.label-src.js'></script>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+$link = "<link rel='stylesheet' href='/../eden/css/leaflet.css'>
+  <link rel='stylesheet' href='/../eden/css/leaflet.label.css'>\n";
+$script = "<script src='/../eden/js/leaflet.js'></script>
+  <script src='/../eden/js/leaflet.label-src.js'></script>\n";
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h3>Bounding Coordinates Search</h3>
 <div style="width:350px;background-color:#ffffcc;border:1px solid black;padding-left:5px">
@@ -97,7 +97,7 @@ if ($num_results != 0) {
 	echo "<table style='border: 0px; margin-bottom: 20px'><tr class='gtablehead' style='background-color:white'><th style='border:0px'>Station name</th><th style='border:0px'>Latitude</th><th style='border:0px'>Longitude</th></tr>\n";
 	for ($i=0; $i<$num_results; $i++) {
 		$row = mysql_fetch_array($result);
-		echo "<tr class='gtablecell' style='background-color:white'><td style='border:0px'><a href='http://sofia.usgs.gov/eden/station.php?stn_name={$row['station_name_web']}";
+		echo "<tr class='gtablecell' style='background-color:white'><td style='border:0px'><a href='/../eden/station.php?stn_name={$row['station_name_web']}";
 		if ($row['station_name_web'] == 'S150_T')
 			echo "&op_agency=SFWMD";
 		echo "'>{$row['station_name_web']}</a></td><td style='border:0px'>" . round($row['lat'], 2) . "&deg; N</td><td style='border:0px'>" . round($row['lon'], 2) . "&deg; W</td></tr>\n";
@@ -105,4 +105,4 @@ if ($num_results != 0) {
 	echo "</table>\n";
 }
 ?>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

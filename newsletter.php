@@ -1,6 +1,6 @@
 <?php
 $title = "<title>Newsletter - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h3>EDEN Newsletter</h3>
 <table style="width:200px;border:2px solid #477489;float:right">
@@ -35,4 +35,4 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
 <p>You can unsubscribe at anytime; just follow the link at the bottom of any of the emails we send you. You can also send an email to <a href="mailto:hhenkel@usgs.gov">hhenkel@usgs.gov</a> and we will unsubscribe you.</p>
 <p class="sectionheader">What does it cost?</p>
 <p>This is a free newsletter.</p>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

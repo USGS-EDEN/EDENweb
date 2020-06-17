@@ -1,6 +1,6 @@
 <?php
 $title = "<title>Publications - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h2>EDEN Publications</h2>
 <p style="text-align:center">| <a href="#papers">Papers, <abbr title="U.S. Geological Survey">USGS</abbr> Publications, etc.</a> | <a href="#annualreports">Annual Reports</a> | <a href="#posters">Posters and Talks</a> | <a href="#outside">Outside Articles on EDEN</a> |</p>
@@ -45,4 +45,4 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
   <li>Palm Beach Post: &quot;<a href="http://www.palmbeachpost.com/search/content/local_news/epaper/2009/09/19/0919fauglades.html">Project to map Everglades water levels aims to protect wildlife</a>&quot;</li>
   <li><abbr title="University of Florida">UF</abbr> News Release: &quot;<a href="http://news.ufl.edu/2009/09/17/eden/">New water-depth evaluation system will aid Everglades research, <abbr title="University of Florida">UF</abbr> study show</a>&quot;</li>
 </ul>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

@@ -1,6 +1,6 @@
 <?php
 $title = "<title>Water Depth - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h2>Water-Depth Surfaces - Archived Files</h2>
 <p>The files provided below are archived files of previously released EDEN water depth surfaces and associated files. Current surfaces are <a href="water_depth.php">available on a separate page</a>. Please view the note below each file to see the date or status for each data set.</p>
@@ -55,4 +55,4 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
     <td colspan="5"><strong>Current Water-depth surfaces are available <a href="water_depth.php"> on a separate page</a>.</strong></td>
   </tr>
 </table>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>

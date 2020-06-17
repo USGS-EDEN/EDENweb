@@ -1,6 +1,6 @@
 <?php
 $title = "<title>Ground Elevation Model - Everglades Depth Estimation Network (EDEN)</title>\n";
-require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h2>Ground Elevation Model</h2>
 <div style="width:230px;border:1px solid #710a11;background-color:#f4e1b4;float:left;font-size:12px;padding:2px;margin-right:10px">
@@ -49,4 +49,4 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-head.php');
 <ul>
   <li>The <a href="edengrid.php">EDEN grid</a> is used to grid the ground elevation <abbr title="Digital Elevation Model">DEM</abbr> into 400<abbr title="meter">m</abbr> by 400<abbr title="meter">m</abbr> rectangles (&ldquo;cells&rdquo;) and allows for georeferenced layering with other EDEN datasets.</li>
 </ul>
-<?php require ($_SERVER['DOCUMENT_ROOT'] . '/eden/ssi/eden-foot.php'); ?>
+<?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>
