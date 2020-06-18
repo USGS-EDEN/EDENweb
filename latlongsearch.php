@@ -17,6 +17,7 @@ if ($lat_from < 25) $lat_from = 25;
 if ($lat_to > 27) $lat_to = 27;
 if ($long_from < 80) $long_from = 80;
 if ($long_to > 82) $long_to = 82;
+$err = '';
 if ($lat_from > $lat_to) {
 	$lat_from = 25;
 	$err = "<p><strong>Please select a 'From' latitude smaller (further south) than the 'To' latitude.</strong></p>";
