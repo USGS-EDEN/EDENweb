@@ -2,9 +2,10 @@
 require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
 
 $stn_name = htmlentities(trim($_GET['stn_name']), ENT_QUOTES);
-$op_agency = htmlentities(trim($_GET['op_agency']), ENT_QUOTES);
+if (isset($_GET['op_agency']))
+  $op_agency = htmlentities(trim($_GET['op_agency']), ENT_QUOTES);
 
-if (eregi('^[a-zA-Z0-9_-]*[a-zA-Z0-9]$', $stn_name))
+if (preg_match('/^[a-zA-Z0-9_-]*[a-zA-Z0-9]$/i', $stn_name))
 	$val = $stn_name;
 else
 	exit('That is not a valid station name. Please choose another station.');
