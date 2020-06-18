@@ -2,8 +2,8 @@
 require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
 
 $benchmark = htmlentities(trim($_GET['benchmark']), ENT_QUOTES);
-$result = mysql_query("SELECT * FROM benchmark2 WHERE benchmark = '$benchmark' LIMIT 1");
-$row = mysql_fetch_array($result);
+$result = mysqli_query($db, "SELECT * FROM benchmark2 WHERE benchmark = '$benchmark' LIMIT 1");
+$row = mysqli_fetch_array($result);
 $abbr = str_replace('WCA', "<abbr title='Water Conservation Area'>WCA</abbr>", str_replace('ENP', "<abbr title='Everglades National Park'>ENP</abbr>", str_replace('BCNP', "<abbr title='Big Cypress National Preserve'>BCNP</abbr>", str_replace('BM', "<abbr title='benchmark'>BM</abbr>", $row['benchmark']))));
 
 $dec_lat = substr(substr($row['latitude'], 0, 2) + (substr($row['latitude'], 2, 2) / 60) + (substr($row['latitude'], 4) / 3600), 0, 8);
@@ -46,13 +46,13 @@ echo !file_exists("Benchmark_Sheets/images/small-resized/{$row['benchmark']}_clo
 echo "</td>
   </tr>\n";
 
-$result = mysql_query("SELECT * FROM rm WHERE benchmark = '$benchmark'");
-$row2 = mysql_fetch_array($result);
+$result = mysqli_query($db, "SELECT * FROM rm WHERE benchmark = '$benchmark'");
+$row2 = mysqli_fetch_array($result);
 if($row2['elevation']) {
 	echo "  <tr class='gtablecell'>
     <td colspan='2'><strong>Reference Mark 1</strong><br><strong>Marker Type:</strong> <abbr title='stainless steel'>S.S.</abbr> ROD DRIVEN TO REFUSAL<br><strong>Magnetic Bearing:</strong> {$row2['bearing']}<br><strong>Reference Distance:</strong> {$row2['distance']} <abbr title='feet'>ft.</abbr><br><strong>Reference Elevation:</strong> {$row2['elevation']} <abbr title='feet'>ft.</abbr> {$row['vert_datum']}<br></td>
   </tr>\n";
-	$row2 = mysql_fetch_array($result2);
+	$row2 = mysqli_fetch_array($result2);
 	echo "  <tr class='gtablecell'>
     <td colspan='2'><strong>Reference Mark 2</strong><br><strong>Marker Type:</strong> <abbr title='stainless steel'>S.S.</abbr> ROD DRIVEN TO REFUSAL<br><strong>Magnetic Bearing:</strong> {$row2['bearing']}<br><strong>Reference Distance:</strong> {$row2['distance']} <abbr title='feet'>ft.</abbr><br><strong>Reference Elevation:</strong> {$row2['elevation']} <abbr title='feet'>ft.</abbr> {$row['vert_datum']}<br></td>
   </tr>\n";

@@ -60,8 +60,8 @@ if ($submit) {
 
 		if ($_SESSION['field']) {
 			$query = 'select *, agency.agency_acronym as operating_agency from station, station_data, station_datum, station_information, location, agency, vertical_datum, station_type, water_type where station.station_id = station_data.station_id and station.station_id = station_datum.station_id and station.station_id = station_information.station_id and station.location_id = location.location_id and station.operating_agency_id = agency.agency_id and station.vertical_datum_id = vertical_datum.vertical_datum_id and station_information.station_type_id = station_type.station_type_id and station_information.water_type_id = water_type.water_type_id';
-			$result = mysql_query($query);
-			$num_results = mysql_num_rows($result);
+			$result = mysqli_query($db, $query);
+			$num_results = mysqli_num_rows($result);
 			foreach ((array) $_SESSION['field'] as $a) {
 				if ($a == 'station_name_web')
 					$field_list .= "EDEN Station Name\t";
@@ -94,7 +94,7 @@ if ($submit) {
 			}
 			fwrite($fp, substr($field_list, 0, -1) . "\n");
 			for ($i=0; $i<$num_results; $i++) {
-				$row = mysql_fetch_array($result);
+				$row = mysqli_fetch_array($result);
 				if (in_array($row['station_id'], $_SESSION['station'])) {
 					$row['latitude'] = substr($row['latitude'], 0, 2) . '?' . substr($row['latitude'], 3, 2) . "'" . substr($row['latitude'], 6) . '"';
 					$row['longitude'] = -substr($row['longitude'], 0, 2) . '?' . substr($row['longitude'], 3, 2) . "'" . substr($row['longitude'], 6) . '"';
@@ -114,8 +114,8 @@ if ($submit) {
 
 		if ($_SESSION['vegetation']) {
 			$query2 = 'select * from station, station_vegetation, vegetation_community_level, vegetation_community where station.station_id = station_vegetation.station_id and station_vegetation.community_level_id = vegetation_community_level.vegetation_community_level_id and station_vegetation.vegetation_community_id = vegetation_community.vegetation_community_id order by station_name_web, community_level_id';
-			$result2 = mysql_query($query2);
-			$num_results2 = mysql_num_rows($result2);
+			$result2 = mysqli_query($db, $query2);
+			$num_results2 = mysqli_num_rows($result2);
 			foreach ((array) $_SESSION['vegetation'] as $f) {
 				if ($f == 'station_name_web')
 					$vegetation_list .= "EDEN Station Name\t";
@@ -136,7 +136,7 @@ if ($submit) {
 			}
 			fwrite($fp2, substr($vegetation_list, 0, -1) . "\n");
 			for ($i=0; $i<$num_results2; $i++) {
-				$row2 = mysql_fetch_array($result2);
+				$row2 = mysqli_fetch_array($result2);
 				if (in_array($row2['station_id'], $_SESSION['station'])) {
 					$row2['agency_date'] = strip_tags($row2['agency_date']);
 					unset($station_data);
@@ -159,8 +159,8 @@ if ($submit) {
 }
 
 $query = 'select station_id, station_name_web, operating_agency_id from station where display = 1 ORDER BY station_name_web';
-$result = mysql_query($query);
-$num_results = mysql_num_rows($result);
+$result = mysqli_query($db, $query);
+$num_results = mysqli_num_rows($result);
 
 if ($fields_all == 1) {
 	$_SESSION['field']['station_name_web'] = 'station_name_web';
@@ -304,14 +304,14 @@ elseif ($fields_clear == 1) {
   </tr>
 <?php
 $query2 = 'select max(station_id) as max from station';
-$result2 = mysql_query($query2);
-$row2 = mysql_fetch_array($result2);
+$result2 = mysqli_query($db, $query2);
+$row2 = mysqli_fetch_array($result2);
 if ($stations_all == 1)
 	$_SESSION['station'] = range(0, $row2['max']);
 elseif ($stations_clear == 1)
 	$_SESSION['station'] = array();
 for ($i = 0; $i < $num_results; $i++) {
-	$row = mysql_fetch_array($result);
+	$row = mysqli_fetch_array($result);
 	
 	if (!($i % 3) && !($i % 2))
 		echo "<tr class='gtablecell'>";

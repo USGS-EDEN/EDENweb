@@ -33,10 +33,10 @@ var greenIcon = L.icon({
 <?php
 require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
 $stations_query = 'select * from benchmark2 where kind = 1';
-$stations_result = mysql_query($stations_query);
-$stations_num_results = mysql_num_rows($stations_result);
+$stations_result = mysqli_query($db, $stations_query);
+$stations_num_results = mysqli_num_rows($stations_result);
 for ($i = 0; $i < $stations_num_results; $i++) {
-	$stations_row = mysql_fetch_array($stations_result);
+	$stations_row = mysqli_fetch_array($stations_result);
 	$abbr = str_replace('WCA', "<abbr title='Water Conservation Area'>WCA</abbr>", str_replace('ENP', "<abbr title='Everglades National Park'>ENP</abbr>", str_replace('BCNP', "<abbr title='Big Cypress National Preserve'>BCNP</abbr>", str_replace('BM', "<abbr title='benchmark'>BM</abbr>", $stations_row['benchmark']))));
 	$benchmark[$i] = $stations_row['benchmark']; // Populate array to human-readable alphabatize benchmark list
 	$stn = str_replace(' ', '_', str_replace('-', '_', $stations_row['benchmark']));
@@ -69,8 +69,8 @@ natcasesort($benchmark);
 $row_color = 0;
 foreach ($benchmark as $a) {
 	$query = "select benchmark from benchmark2 where benchmark = '$a'";
-	$result = mysql_query($query);
-	$row = mysql_fetch_array($result);
+	$result = mysqli_query($query);
+	$row = mysqli_fetch_array($result);
 	echo "    <tr class='gtablecell";
 	if ($row_color % 2)
 		echo '2';

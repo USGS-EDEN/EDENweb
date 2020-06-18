@@ -6,18 +6,18 @@ $name = htmlentities(trim($_GET['name']), ENT_QUOTES);
 
 if ($type == 'gage') {
 	$type_long = "<abbr title='Everglades Depth Estimation Network'>EDEN</abbr> Station Name";
-	$result = mysql_query("SELECT station_name_web AS name, latitude, longitude, average_elevation AS elevation, location_shortname AS basin, vertical_conversion AS conversion FROM station, location, station_vegetation, station_datum WHERE station.station_id = station_vegetation.station_id AND station_vegetation.community_level_id = 1 AND station.location_id = location.location_id AND station.station_id = station_datum.station_id AND ertp_ge_flag IS NOT NULL AND station_name_web = '$name'");
-	$row = mysql_fetch_array($result);
+	$result = mysqli_query($db, "SELECT station_name_web AS name, latitude, longitude, average_elevation AS elevation, location_shortname AS basin, vertical_conversion AS conversion FROM station, location, station_vegetation, station_datum WHERE station.station_id = station_vegetation.station_id AND station_vegetation.community_level_id = 1 AND station.location_id = location.location_id AND station.station_id = station_datum.station_id AND ertp_ge_flag IS NOT NULL AND station_name_web = '$name'");
+	$row = mysqli_fetch_array($result);
 	if (!$row) { //graphs for non-ERTP gages on CSSS app -- no elevation
-		$result = mysql_query("SELECT station_name_web AS name, latitude, longitude, location_shortname AS basin, vertical_conversion AS conversion FROM station, location, station_datum WHERE station.location_id = location.location_id AND station.station_id = station_datum.station_id AND station_name_web = '$name'");
-		$row = mysql_fetch_array($result);
+		$result = mysqli_query($db, "SELECT station_name_web AS name, latitude, longitude, location_shortname AS basin, vertical_conversion AS conversion FROM station, location, station_datum WHERE station.location_id = location.location_id AND station.station_id = station_datum.station_id AND station_name_web = '$name'");
+		$row = mysqli_fetch_array($result);
 		$row['elevation'] = 'NA';
 	}
 }
 else {
 	$type_long = "Tree Island <abbr title='identification'>ID</abbr>";
-	$result = mysql_query("SELECT island AS name, latitude AS dec_latitude, longitude AS dec_longitude, basin, elevation, conversion FROM tree_islands WHERE island = '$name'");
-	$row = mysql_fetch_array($result);
+	$result = mysqli_query($db, "SELECT island AS name, latitude AS dec_latitude, longitude AS dec_longitude, basin, elevation, conversion FROM tree_islands WHERE island = '$name'");
+	$row = mysqli_fetch_array($result);
 }
 if ($type == 'treeisland') {
 	$row['latitude'] = substr($row['dec_latitude'], 0, 2) . ',' . substr(substr($row['dec_latitude'], 2) * 60, 0, 2) . ',' . substr(substr($row['dec_latitude'], 2) * 60, 2) * 60;

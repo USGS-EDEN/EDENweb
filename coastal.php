@@ -234,10 +234,10 @@ var blackUp = L.icon({
     labelAnchor: [7, 21]
 });
 <?php
-$stations_result = mysql_query("SELECT * FROM station WHERE coastal LIKE '%" . substr($_SESSION['field'], 0, 2) . "%' ORDER BY station_name_web");
-$stations_num_results = mysql_num_rows($stations_result);
+$stations_result = mysqli_query($db, "SELECT * FROM station WHERE coastal LIKE '%" . substr($_SESSION['field'], 0, 2) . "%' ORDER BY station_name_web");
+$stations_num_results = mysqli_num_rows($stations_result);
 for ($i = 0; $i < $stations_num_results; $i++) {
-	$stations_row = mysql_fetch_array($stations_result);
+	$stations_row = mysqli_fetch_array($stations_result);
 	$dec_lat = round(substr($stations_row['latitude'], 0, 2) + substr($stations_row['latitude'], 3, 2) / 60 + substr($stations_row['latitude'], 6) / 3600, 2);
 	$dec_long = -round(substr($stations_row['longitude'], 0, 2) + substr($stations_row['longitude'], 3, 2) / 60 + substr($stations_row['longitude'], 6) / 3600, 2);
 	if ($_SESSION['stat'] == '7dayavg')
@@ -246,8 +246,8 @@ for ($i = 0; $i < $stations_num_results; $i++) {
 		$sal_query = "SELECT AVG(`{$stations_row['station_name_web']}_{$_SESSION['field']}`) AS {$_SESSION['field']} FROM coastal WHERE datetime BETWEEN '" . date('Ymd', time() - 86400) . "000000' AND '" . date('Ymd') . "234500'";
 	else
 		$sal_query = "SELECT (SELECT AVG(`{$stations_row['station_name_web']}_{$_SESSION['field']}`) FROM coastal WHERE datetime BETWEEN '" . date('Ymd', time() - 518400) . "000000' AND '" . date('Ymd') . "234500') - (SELECT AVG(`{$stations_row['station_name_web']}_{$_SESSION['field']}`) FROM coastal WHERE datetime BETWEEN '" . date('Ymd', time() - 1123200) . "000000' AND '" . date('Ymd', time() - 604800) . "234500') as {$_SESSION['field']}";
-	$sal_result = mysql_query($sal_query);
-	$sal_row = mysql_fetch_array($sal_result);
+	$sal_result = mysqli_query($db, $sal_query);
+	$sal_row = mysqli_fetch_array($sal_result);
 	$sal = $sal_row[$_SESSION['field']];
 	if (is_null($sal)) {
 		$icon = 'blackIcon';
@@ -300,10 +300,10 @@ for ($i = 0; $i < $stations_num_results; $i++) {
   <tr class='gtablehead'><th colspan='5'><a id='stations'>Stations</a></th></tr>
   <tr class='gvegtablehead'><td colspan='5' style="font-size:small">Coastal <abbr title='Everglades Depth Estimation Network'>EDEN</abbr> stations and measured parameters are listed below. Click the station name to go to the <abbr title='Everglades Depth Estimation Network'>EDEN</abbr> Station Information page.</td></tr>
 <?php
-$result = mysql_query('SELECT station_name_web, coastal FROM station WHERE coastal IS NOT NULL ORDER BY station_name_web');
-$num_results = mysql_num_rows($result);
+$result = mysqli_query($db, 'SELECT station_name_web, coastal FROM station WHERE coastal IS NOT NULL ORDER BY station_name_web');
+$num_results = mysqli_num_rows($result);
 for ($i = 1; $i <= $num_results; $i++) {
-	$row = mysql_fetch_array($result);
+	$row = mysqli_fetch_array($result);
 	$name = str_replace('_', ' ', $row['station_name_web']);
 	if ($i % 5 == 1)
 		echo "<tr class='gtablecell'>";

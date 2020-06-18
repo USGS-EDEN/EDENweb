@@ -86,8 +86,8 @@ echo "<tr class='gvegtablehead'><td style='text-align:center'>[ ";
 
 // Letter navigation
 $letter_query = "select distinct left(station_name, 1) as 'left' from station";
-$letter_result = mysql_query($letter_query);
-while ($letter_row = mysql_fetch_array($letter_result))
+$letter_result = mysqli_query($db, $letter_query);
+while ($letter_row = mysqli_fetch_array($letter_result))
 	$used_letters[] = $letter_row['left'];
 
 foreach (array_merge(range('0', '9'), range('A', 'Z')) as $letter) {
@@ -99,8 +99,8 @@ echo "]</td></tr>\n";
 
 // Generate array of gages
 $gage_query = 'select station_name_web from station where display = 1';
-$gage_result = mysql_query($gage_query);
-while ($gage_row = mysql_fetch_array($gage_result))
+$gage_result = mysqli_query($db, $gage_query);
+while ($gage_row = mysqli_fetch_array($gage_result))
 	$gage[] = $gage_row['station_name_web'];
 natcasesort($gage);
 $gage = array_reverse($gage);
@@ -114,8 +114,8 @@ foreach ($letter_range as $letter) {
 	$j = 0;
 	while (substr($one_gage, 0, 1) == $letter) {
 		$query = "select station_name_web from station where display = 1 and station_name_web = '$one_gage'";
-		$result = mysql_query($query);
-		$row = mysql_fetch_array($result);
+		$result = mysqli_query($db, $query);
+		$row = mysqli_fetch_array($result);
 		echo "<tr class='gtablecell";
 		if ($row_color % 2)
 			echo '2';

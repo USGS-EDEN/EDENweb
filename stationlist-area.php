@@ -33,10 +33,10 @@ else {
 	$area = 'GOM';
 	$area_long = 'Coast of Gulf of Mexico';
 }
-$result = mysql_query($query.$query_sup);
-$row1 = mysql_fetch_array($result);
-$result = mysql_query("SELECT * FROM station WHERE display = 1");
-$num_results = mysql_num_rows($result);
+$result = mysqli_query($db, $query.$query_sup);
+$row1 = mysqli_fetch_array($result);
+$result = mysqli_query($db, "SELECT * FROM station WHERE display = 1");
+$num_results = mysqli_num_rows($result);
 
 $title = "<title>$area_long - Everglades Depth Estimation Network (EDEN)</title>\n";
 $link = "<link rel='stylesheet' href='./css/leaflet.css'>
@@ -86,7 +86,7 @@ var gom = L.polygon([[25.88053760711531, -81.32261925226069], [25.8817589869959,
 var flbay = L.polygon([[25.20300329988366, -80.8147456805238], [25.03435229917259, -80.81268387229878], [25.1069197500362, -80.40179957627855], [25.2546710296135, -80.43751136273966], [25.24572491482209, -80.58487672127104]], { weight: 3, color: '#00f33f' }).bindLabel('Florida Bay').addTo(map);
 <?php
 for ($i = 0; $i < $num_results; $i++) {
-	$row = mysql_fetch_array($result);
+	$row = mysqli_fetch_array($result);
 	$dec_lat = substr(substr($row['latitude'], 0, 2) + (substr($row['latitude'], 3, 2) / 60) + (substr($row['latitude'], 6) / 3600), 0, 8);
 	$dec_long = -substr(substr($row['longitude'], 0, 2) + (substr($row['longitude'], 3, 2) / 60) + (substr($row['longitude'], 6) / 3600), 0, 8);
 	echo "var mkr_$i = L.marker([$dec_lat, $dec_long], { icon: ";
@@ -124,10 +124,10 @@ echo 'map.fitBounds(' . strtolower($area) . '.getBounds());';
     <th>
 <?php
 echo "$area_long EDEN Station Listing</th></tr>\n";
-$result = mysql_query("SELECT station.* FROM station, location WHERE display = 1 AND station.location_id = location.location_id AND ($query_sup ORDER BY station_name_web");
-$num_results = mysql_num_rows($result);
+$result = mysqli_query($db, "SELECT station.* FROM station, location WHERE display = 1 AND station.location_id = location.location_id AND ($query_sup ORDER BY station_name_web");
+$num_results = mysqli_num_rows($result);
 for ($i = 0; $i < $num_results; $i++) {
-	$row = mysql_fetch_array($result);
+	$row = mysqli_fetch_array($result);
 	
 	echo "<tr class='gtablecell";
 	echo $i % 2 ? '2' : '';

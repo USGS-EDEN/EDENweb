@@ -10,13 +10,13 @@ if ($op_agency == 'USGS')
 	$query .= ' AND operating_agency_id = 4';
 else if ($op_agency == 'SFWMD')
 	$query .= ' AND operating_agency_id = 3';
-$result = mysql_query($query);
-$row = mysql_fetch_array($result);
+$result = mysqli_query($db, $query);
+$row = mysqli_fetch_array($result);
 $dec_lat = substr(substr($row['latitude'], 0, 2) + (substr($row['latitude'], 3, 2) / 60) + (substr($row['latitude'], 6) / 3600), 0, 8);
 $dec_long = -substr(substr($row['longitude'], 0, 2) + (substr($row['longitude'], 3, 2) / 60) + (substr($row['longitude'], 6) / 3600), 0, 8);
 
-$check_result = mysql_query("SELECT * FROM station WHERE station_name_web = '$val'");
-$check_num_results = mysql_num_rows($check_result);
+$check_result = mysqli_query($db, "SELECT * FROM station WHERE station_name_web = '$val'");
+$check_num_results = mysqli_num_rows($check_result);
 
 if ($check_num_results != '0')
 	$in_database = 'yes';
@@ -127,8 +127,8 @@ if ($val && $in_database) {
   </tr>
 </table>";
 
-	$wl_check_result = mysql_query("SELECT table_name FROM information_schema.columns WHERE column_name LIKE 'stage_$val'");
-	$wl_check_num_results = mysql_num_rows($wl_check_result);
+	$wl_check_result = mysqli_query($db, "SELECT table_name FROM information_schema.columns WHERE column_name LIKE 'stage_$val'");
+	$wl_check_num_results = mysqli_num_rows($wl_check_result);
 
 // Data Links
 	echo "<a id='datalinks'></a>
@@ -183,10 +183,10 @@ if ($val && $in_database) {
 	echo "</table>\n";
 
 // Vegetation Information
-	$veg_table_result = mysql_query("SELECT * FROM station_vegetation, vegetation_community_level, vegetation_community WHERE station_vegetation.vegetation_community_id = vegetation_community.vegetation_community_id AND station_vegetation.community_level_id = vegetation_community_level.vegetation_community_level_id AND station_id = {$row['station_id']}");
+	$veg_table_result = mysqli_query($db, "SELECT * FROM station_vegetation, vegetation_community_level, vegetation_community WHERE station_vegetation.vegetation_community_id = vegetation_community.vegetation_community_id AND station_vegetation.community_level_id = vegetation_community_level.vegetation_community_level_id AND station_id = {$row['station_id']}");
 
 	echo "<a id='vegetation'></a>\n";
-	if ($veg_num_results = mysql_num_rows($veg_table_result)) {
+	if ($veg_num_results = mysqli_num_rows($veg_table_result)) {
 		echo "<table style='width:500px;margin:20px auto'>
   <tr class='gtablehead'>
     <th colspan='2'>Ground Elevation and Vegetation Information for $val</th>
@@ -195,7 +195,7 @@ if ($val && $in_database) {
     <td colspan='2' style='text-align:center'>[<a href='explanation.php#groundelev'>How was this collected?</a>]</td>
   </tr>\n";
 		for ($i = 0; $i < $veg_num_results; $i++) {
-			$veg_row = mysql_fetch_array($veg_table_result);
+			$veg_row = mysqli_fetch_array($veg_table_result);
 			echo "  <tr class='gvegtablehead'>
     <th colspan='2'>{$veg_row['community_level']} Vegetation Community</th>
   </tr>
@@ -250,10 +250,10 @@ if ($val && $in_database) {
     <td><a href='explanation.php#typeofstation'>Type of Station</a> (Freshwater/Tidal):</td>
     <td>{$row['water_type']}</td>
   </tr>\n";
-		$result = mysql_query("SELECT point_id FROM gage_site_survey WHERE EDEN_name = '{$row['station_name_web']}'");
-	$num_results = mysql_num_rows($result);
+		$result = mysqli_query($db, "SELECT point_id FROM gage_site_survey WHERE EDEN_name = '{$row['station_name_web']}'");
+	$num_results = mysqli_num_rows($result);
 	for ($i = 0; $i < $num_results; $i++) {
-		$row2 = mysql_fetch_array($result);
+		$row2 = mysqli_fetch_array($result);
 		echo "  <tr class='gtablecell'>
     <td colspan='2'><a href='https://archive.usgs.gov/archive/sites/sofia.usgs.gov/exchange/gazetteer/gagesite.php-point_id={$row2['point_id']}.html'>USGS Everglades Gage Gazetteer (Geodetic Point ID: {$row2['point_id']})</a> <img src='images/leavingwebsitesm.gif' alt='' height='16' width='36'></td>
   </tr>\n";

@@ -1,7 +1,7 @@
 <?php
 require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
 
-$result = mysql_query("SELECT REPLACE(short_name, '-', '_') AS sname, station_name_web, SUBSTR(latitude, 1, 2) + SUBSTR(latitude, 4, 2) / 60 + SUBSTR(latitude, 7) / 3600 AS lat, -(SUBSTR(longitude, 1, 2) + SUBSTR(longitude, 4, 2) / 60 + SUBSTR(longitude, 7) / 3600) AS `long`, convert_to_navd88_feet AS conv 
+$result = mysqli_query($db, "SELECT REPLACE(short_name, '-', '_') AS sname, station_name_web, SUBSTR(latitude, 1, 2) + SUBSTR(latitude, 4, 2) / 60 + SUBSTR(latitude, 7) / 3600 AS lat, -(SUBSTR(longitude, 1, 2) + SUBSTR(longitude, 4, 2) / 60 + SUBSTR(longitude, 7) / 3600) AS `long`, convert_to_navd88_feet AS conv 
 FROM station JOIN station_datum ON station.station_id = station_datum.station_id 
 WHERE (display = 1 AND utm_northing < 2861000 AND utm_easting > 501900 AND ertp_ge_flag IS NOT NULL) 
 OR station_name_web = 'EPSW' OR station_name_web = 'NCL' OR station_name_web = 'NMP' OR station_name_web = 'SPARO' OR station_name_web LIKE 'S12%' 
@@ -9,7 +9,7 @@ OR station_name_web = 'G-1502' OR station_name_web LIKE 'S332%' OR station_name_
 OR station_name_web = 'BCA9' OR station_name_web = 'BCA5' OR station_name_web LIKE 'LOOP%' OR station_name_web = 'EDEN_1' 
 OR station_name_web = 'Tamiami_Canal_40-Mile_Bend_to_Monroe' OR station_name_web = 'S344_T' OR station_name_web LIKE 'S343%' OR station_name_web LIKE 'S333%' 
 OR station_name_web LIKE 'S334%' GROUP BY station_name_web");
-$num_results = mysql_num_rows($result);
+$num_results = mysqli_num_rows($result);
 
 $title = "<title>Wading Bird Depth Viewer -- Everglades Depth Estimation Network (EDEN)</title>\n";
 $link = "<link rel='stylesheet' href='../css/leaflet.css'>\n";
@@ -394,9 +394,9 @@ var myIcon3 = L.icon({
 
 <?php
 for ($i = 0; $i < $num_results; $i++) {
-	$row = mysql_fetch_array($result);
-	$wl_result = mysql_query("SELECT date, `stage_{$row['station_name_web']}` + {$row['conv']} AS stage FROM stage_daily WHERE `stage_{$row['station_name_web']}` IS NOT NULL ORDER BY date DESC LIMIT 1");
-	$wl_row = mysql_fetch_array($wl_result);
+	$row = mysqli_fetch_array($result);
+	$wl_result = mysqli_query($db, "SELECT date, `stage_{$row['station_name_web']}` + {$row['conv']} AS stage FROM stage_daily WHERE `stage_{$row['station_name_web']}` IS NOT NULL ORDER BY date DESC LIMIT 1");
+	$wl_row = mysqli_fetch_array($wl_result);
 	echo "var gage{$row['sname']} = L.marker([{$row['lat']}, {$row['long']}], { icon: myIcon";
 	echo (substr($row['sname'], 0, 1) == 'G') ? 2 : 3;
 	echo ", title: '{$row['sname']}'}).bindPopup('Gage: <strong><a href=\"../station.php?stn_name={$row['station_name_web']}\" target=\"_blank\">{$row['sname']}</a></strong> (<a href=\"../eve/index.php?site_list%5B%5D={$row['station_name_web']}\" target=\"_blank\"><abbr title=\"Explore and View EDEN\">EVE</abbr></a>)<br>" . round($row['lat'], 2) . "&deg;<abbr title=\"north\">N</abbr> " . round($row['long'], 2) . "&deg;<abbr title=\"west\">W</abbr><br><strong>{$wl_row['date']}</strong> Water Level: <strong>" . round($wl_row['stage'], 2) . " ft.</strong> <abbr title=\"North American Vertical Datum of 1988\">NAVD88</abbr><br><a href=\"/../eden/water_level_percentiles.php?name={$row['station_name_web']}&amp;type=gage\" target=\"_blank\"><img src=\"../thumbnails/{$row['station_name_web']}_monthly_thumb.jpg\" alt=\"{$row['sname']} hydrograph thumbnail\" height=\"160\" width=\"240\"><br><font size=\"1\">[larger graph with axes]</font></a>').addTo(map);
@@ -444,18 +444,18 @@ function showdt(dy) {
 function show_gages() {
 	if(document.getElementById('gages').checked) {
 <?php
-mysql_data_seek($result, 0);
+mysqli_data_seek($result, 0);
 for ($i = 0; $i < $num_results; $i++) {
-	$row = mysql_fetch_array($result);
+	$row = mysqli_fetch_array($result);
 	echo "gage{$row['sname']}.setOpacity(1);\n";
 }
 ?>
 	}
 	else {
 <?php
-mysql_data_seek($result, 0);
+mysqli_data_seek($result, 0);
 for ($i = 0; $i < $num_results; $i++) {
-	$row = mysql_fetch_array($result);
+	$row = mysqli_fetch_array($result);
 	echo "gage{$row['sname']}.setOpacity(0);\n";
 }
 ?>

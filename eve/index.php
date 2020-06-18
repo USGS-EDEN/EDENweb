@@ -8,8 +8,8 @@ foreach ((array) $_GET['site_list'] as $a => $c)
 	$site_list[$a] = htmlentities(trim($c), ENT_QUOTES);
 
 foreach ((array) $site_list as $a => $c) {
-	$gage_chk_result = mysql_query("SELECT station_name_web, vertical_datum_id FROM station WHERE station_name_web = '$c' LIMIT 1");
-	$gage_chk_row = mysql_fetch_array($gage_chk_result);
+	$gage_chk_result = mysqli_query($db, "SELECT station_name_web, vertical_datum_id FROM station WHERE station_name_web = '$c' LIMIT 1");
+	$gage_chk_row = mysqli_fetch_array($gage_chk_result);
 	if (!$gage_chk_row) {
 		$gage_chk_warning .= "<h3 style='color:red'>***$c is not a recognized gage. Please select gages from the Site List table.***</h3>\n";
 		unset($site_list[$a]);
@@ -52,27 +52,27 @@ if ($water_level) {
 	$init_query = $data_query = $day_hour == 'daily' ? 'SELECT date' : 'SELECT datetime AS date';
 	$tab = $day_hour == 'daily' ? 'stage_daily' : 'stage';
 	foreach ((array) $site_list as $c) {
-		$conv_result = mysql_query("SELECT convert_to_navd88_feet AS conv, vertical_conversion, dry_elevation FROM station, station_datum WHERE station.station_id = station_datum.station_id AND station_name_web = '$c'");
-		$conv_row = mysql_fetch_array($conv_result);
+		$conv_result = mysqli_query($db, "SELECT convert_to_navd88_feet AS conv, vertical_conversion, dry_elevation FROM station, station_datum WHERE station.station_id = station_datum.station_id AND station_name_web = '$c'");
+		$conv_row = mysqli_fetch_array($conv_result);
 		if (!$conv_row['dry_elevation']) $conv_row['dry_elevation'] = -9999;
-		$hindcast_check_result = mysql_query("SELECT MIN(datetime) AS hdate FROM stage WHERE `stage_$c` IS NOT NULL AND `flag_$c` IS NULL");
-		$hindcast_check_row = mysql_fetch_array($hindcast_check_result);
+		$hindcast_check_result = mysqli_query($db, "SELECT MIN(datetime) AS hdate FROM stage WHERE `stage_$c` IS NOT NULL AND `flag_$c` IS NULL");
+		$hindcast_check_row = mysqli_fetch_array($hindcast_check_result);
 		$data_query .= ", `stage_$c` + {$conv_row['conv']} AS `$c`, ";
 		if ($dry == 'dry') $data_query .= $day_hour == 'daily' ? "`flag_$c`" : "CASE WHEN `stage_$c`+{$conv_row['conv']} < {$conv_row['dry_elevation']} THEN 'D' WHEN datetime < '{$hindcast_check_row['hdate']}' THEN 'H' WHEN `flag_$c` IN ('G', 'H', 'L', 'I', 'E') THEN 'E' WHEN `flag_$c` IN ('M', 'S') THEN 'M' ELSE 'O' END AS `flag_$c`";
 		else $data_query .= $day_hour == 'daily' ? "`flag_$c`" : "CASE WHEN datetime < '{$hindcast_check_row['hdate']}' THEN 'H' WHEN `flag_$c` IN ('G', 'H', 'L', 'I', 'E') THEN 'E' WHEN `flag_$c` IN ('M', 'S') THEN 'M' ELSE 'O' END AS `flag_$c`";
 		if ($gapfill) {
-			$gap_result = mysql_query("SELECT MAX(predictor_rank) AS max FROM station_gapfill, station WHERE station.station_id = station_gapfill.station_id AND station_name_web = '$c'");
-			$gap_row = mysql_fetch_array($gap_result);
+			$gap_result = mysqli_query($db, "SELECT MAX(predictor_rank) AS max FROM station_gapfill, station WHERE station.station_id = station_gapfill.station_id AND station_name_web = '$c'");
+			$gap_row = mysqli_fetch_array($gap_result);
 			for ($i = 1; $i <= $gap_row['max']; $i++) {
-				${"gap_result$i"} = mysql_query("SELECT b.station_name_web AS predictor, pearson, slope, intercept FROM station AS a, station AS b, station_gapfill WHERE a.station_id = station_gapfill.station_id AND b.station_id = station_gapfill.predictor_station_id AND a.station_name_web = '$c' AND predictor_rank = $i");
-				${"gap_row$i"} = mysql_fetch_array(${"gap_result$i"});
-				${"gap_pred_result$i"} = mysql_query($init_query . ', `stage_' . ${"gap_row$i"}['predictor'] . '` * ' . ${"gap_row$i"}['slope'] . ' + ' . ${"gap_row$i"}['intercept'] . " + {$conv_row['conv']} AS `" . ${"gap_row$i"}['predictor'] . "` FROM $tab HAVING date >= '$timeseries_start' AND date <= '$timeseries_end' ORDER BY date");
-				${"gap_pred_num_results$i"} = mysql_num_rows(${"gap_pred_result$i"});
+				${"gap_result$i"} = mysqli_query($db, "SELECT b.station_name_web AS predictor, pearson, slope, intercept FROM station AS a, station AS b, station_gapfill WHERE a.station_id = station_gapfill.station_id AND b.station_id = station_gapfill.predictor_station_id AND a.station_name_web = '$c' AND predictor_rank = $i");
+				${"gap_row$i"} = mysqli_fetch_array(${"gap_result$i"});
+				${"gap_pred_result$i"} = mysqli_query($db, $init_query . ', `stage_' . ${"gap_row$i"}['predictor'] . '` * ' . ${"gap_row$i"}['slope'] . ' + ' . ${"gap_row$i"}['intercept'] . " + {$conv_row['conv']} AS `" . ${"gap_row$i"}['predictor'] . "` FROM $tab HAVING date >= '$timeseries_start' AND date <= '$timeseries_end' ORDER BY date");
+				${"gap_pred_num_results$i"} = mysqli_num_rows(${"gap_pred_result$i"});
 			}
 		}
 	}
-	$data_result = mysql_query($data_query . " FROM $tab HAVING date >= '$timeseries_start' AND date <= '$timeseries_end' ORDER BY date");
-	$data_num_results = mysql_num_rows($data_result);
+	$data_result = mysqli_query($db, $data_query . " FROM $tab HAVING date >= '$timeseries_start' AND date <= '$timeseries_end' ORDER BY date");
+	$data_num_results = mysqli_num_rows($data_result);
 	$prov_file = glob('../data/netcdf/v2/20*prov.zip');
 	switch (substr($prov_file[0], 24, 1)) {
 		case 1: $mo = '01'; break;
@@ -88,15 +88,15 @@ if ($rainfall) {
 	$rain_query = 'SELECT date';
 	foreach ((array) $site_list as $c)
 		$rain_query .= ", `rainfall_$c` AS `$c`";
-	$rain_result = mysql_query($rain_query . " FROM rainfall WHERE date >= '$timeseries_start' AND date <= '$timeseries_end' ORDER BY date");
-	$rain_num_results = mysql_num_rows($rain_result);
+	$rain_result = mysqli_query($db, $rain_query . " FROM rainfall WHERE date >= '$timeseries_start' AND date <= '$timeseries_end' ORDER BY date");
+	$rain_num_results = mysqli_num_rows($rain_result);
 }
 if ($et) {
 	$et_query = 'SELECT date';
 	foreach ((array) $site_list as $c)
 		$et_query .= ", `et_$c` AS `$c`";
-	$et_result = mysql_query($et_query . " FROM et WHERE date >= '$timeseries_start' AND date <= '$timeseries_end' ORDER BY date");
-	$et_num_results = mysql_num_rows($et_result);
+	$et_result = mysqli_query($db, $et_query . " FROM et WHERE date >= '$timeseries_start' AND date <= '$timeseries_end' ORDER BY date");
+	$et_num_results = mysqli_num_rows($et_result);
 }
 $arb_datum = array('New_River_at_Sunday_Bay', 'Turner_River_nr_Chokoloskee_Island');
 $title = "<title>Explore and View EDEN (EVE) - Everglades Depth Estimation Network (EDEN)</title>\n";
@@ -147,7 +147,7 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 require_once('../pclzip.lib.php');
 echo "<div id='plot_data' style='display:none'>\n";
 for ($i = 0; $i < $data_num_results; $i++) {
-	$data_row = mysql_fetch_array($data_result);
+	$data_row = mysqli_fetch_array($data_result);
 	echo $data_row['date'];
 	foreach ((array) $site_list as $a => $c)
 		if ($a < $max)
@@ -170,7 +170,7 @@ for ($i = 0; $i < $data_num_results; $i++) {
 			echo ',,,,' . ($data_row[1] - $conv_row['vertical_conversion']);
 	if ($gapfill)
 		for ($j = 1; $j <= $gap_row['max']; $j++) {
-			${"gap_pred_row$j"} = mysql_fetch_array(${"gap_pred_result$j"});
+			${"gap_pred_row$j"} = mysqli_fetch_array(${"gap_pred_result$j"});
 			echo ',' . ${"gap_pred_row$j"}[${"gap_row$j"}['predictor']];
 		}
 	echo "\n";
@@ -178,7 +178,7 @@ for ($i = 0; $i < $data_num_results; $i++) {
 echo "</div>
 <div id='plot_rain' style='display:none'>\n";
 for ($i = 0; $i < $rain_num_results; $i++) {
-	$rain_row = mysql_fetch_array($rain_result);
+	$rain_row = mysqli_fetch_array($rain_result);
 	echo $rain_row['date'];
 	foreach ((array) $site_list as $a => $c)
 		if ($a < $max)
@@ -190,7 +190,7 @@ for ($i = 0; $i < $rain_num_results; $i++) {
 echo "</div>
 <div id='plot_et' style='display:none'>\n";
 for ($i = 0; $i < $et_num_results; $i++) {
-	$et_row = mysql_fetch_array($et_result);
+	$et_row = mysqli_fetch_array($et_result);
 	echo $et_row['date'];
 	foreach ((array) $site_list as $a => $c)
 		if ($a < $max)
@@ -224,10 +224,10 @@ echo "</div>\n$gage_chk_warning";
           <td class="gtablecell">
             <select multiple="multiple" name="site_list[]" size="20">
 <?php
-$gages = mysql_query("SELECT station_id, short_name, station_name_web FROM station WHERE display = 1 AND station_name_web != 'Alligator_Creek' AND station_name_web != 'East_Side_Creek' AND station_name_web != 'G-3777' AND station_name_web != 'Manatee_Bay_Creek' AND station_name_web != 'Raulerson_Brothers_Canal' AND station_name_web != 'Barron_River' AND station_name_web != 'TS2' ORDER BY station_name_web");
-$num_gages = mysql_num_rows($gages);
+$gages = mysqli_query($db, "SELECT station_id, short_name, station_name_web FROM station WHERE display = 1 AND station_name_web != 'Alligator_Creek' AND station_name_web != 'East_Side_Creek' AND station_name_web != 'G-3777' AND station_name_web != 'Manatee_Bay_Creek' AND station_name_web != 'Raulerson_Brothers_Canal' AND station_name_web != 'Barron_River' AND station_name_web != 'TS2' ORDER BY station_name_web");
+$num_gages = mysqli_num_rows($gages);
 for ($i = 0; $i < $num_gages; $i++) {
-	$row = mysql_fetch_array($gages);
+	$row = mysqli_fetch_array($gages);
 	echo "              <option value='{$row['station_name_web']}'";
 	if (in_array($row['station_name_web'], $site_list))
 		echo ' selected';
@@ -284,9 +284,9 @@ if ($water_level) {
 		$file .= ",$c Water level data type (O=observed; E=estimated; H=hindcasted; D=dry; M=missing)";
 	}
 	$file .= ",Water level quality flag (F=final; P=provisional; R=real-time)\n";
-	if ($data_num_results >= 1) mysql_data_seek($data_result, 0);
+	if ($data_num_results >= 1) mysqli_data_seek($data_result, 0);
 	for ($i = 0; $i < $data_num_results; $i++) {
-		$data_row = mysql_fetch_assoc($data_result);
+		$data_row = mysqli_fetch_assoc($data_result);
 		if(date($data_row['date']) >= $rt_start)
 			$rpf = 'R';
 		elseif(date($data_row['date']) >= $prov_start)
@@ -308,9 +308,9 @@ if ($rainfall) {
 	foreach ((array) $site_list as $c)
 		$file .= ",$c Rainfall (inches)";
 	$file .= "\n";
-	if ($rain_num_results >= 1) mysql_data_seek($rain_result, 0);
+	if ($rain_num_results >= 1) mysqli_data_seek($rain_result, 0);
 	for ($i = 0; $i < $rain_num_results; $i++) {
-		$rain_row = mysql_fetch_assoc($rain_result);
+		$rain_row = mysqli_fetch_assoc($rain_result);
 		$file .= $rain_row['date'];
 		foreach ($site_list as $c)
 			$file .= ",$rain_row[$c]";
@@ -326,9 +326,9 @@ if ($et) {
 	foreach ((array) $site_list as $c)
 		$file .= ",$c Potential evapotranspiration (millimeters)";
 	$file .= "\n";
-	if ($et_num_results >= 1) mysql_data_seek($et_result, 0);
+	if ($et_num_results >= 1) mysqli_data_seek($et_result, 0);
 	for ($i = 0; $i < $et_num_results; $i++) {
-		$et_row = mysql_fetch_assoc($et_result);
+		$et_row = mysqli_fetch_assoc($et_result);
 		$file .= $et_row['date'];
 		foreach ($site_list as $c)
 			$file .= ',' . round($et_row[$c], 2);
@@ -354,14 +354,14 @@ foreach ((array) $site_list as $a => $c)
 echo "</ul>\n";
 foreach ((array) $site_list as $a => $c) {
 	if ($a < $max) {
-		$stn_result = mysql_query("SELECT *, agency.agency_acronym AS operating_agency FROM station, station_data, station_datum, agency, vertical_datum WHERE station.station_id = station_data.station_id AND station.station_id = station_datum.station_id AND station.operating_agency_id = agency.agency_id AND station.vertical_datum_id = vertical_datum.vertical_datum_id AND station_name_web = '$c'");
-		$stn_row = mysql_fetch_array($stn_result);
-		$wl_range_result = mysql_query("SELECT DATE(MIN(datetime)) AS min, DATE(MAX(datetime)) AS max FROM stage WHERE `stage_$c` IS NOT NULL AND `flag_$c` IS NULL");
-		$wl_range_row = mysql_fetch_array($wl_range_result);
-		$rf_range_result = mysql_query("SELECT MIN(date) AS min, MAX(date) AS max FROM rainfall WHERE `rainfall_$c` IS NOT NULL");
-		$rf_range_row = mysql_fetch_array($rf_range_result);
-		$et_range_result = mysql_query("SELECT MIN(date) AS min, MAX(date) AS max FROM et WHERE `et_$c` IS NOT NULL");
-		$et_range_row = mysql_fetch_array($et_range_result);
+		$stn_result = mysqli_query($db, "SELECT *, agency.agency_acronym AS operating_agency FROM station, station_data, station_datum, agency, vertical_datum WHERE station.station_id = station_data.station_id AND station.station_id = station_datum.station_id AND station.operating_agency_id = agency.agency_id AND station.vertical_datum_id = vertical_datum.vertical_datum_id AND station_name_web = '$c'");
+		$stn_row = mysqli_fetch_array($stn_result);
+		$wl_range_result = mysqli_query($db, "SELECT DATE(MIN(datetime)) AS min, DATE(MAX(datetime)) AS max FROM stage WHERE `stage_$c` IS NOT NULL AND `flag_$c` IS NULL");
+		$wl_range_row = mysqli_fetch_array($wl_range_result);
+		$rf_range_result = mysqli_query($db, "SELECT MIN(date) AS min, MAX(date) AS max FROM rainfall WHERE `rainfall_$c` IS NOT NULL");
+		$rf_range_row = mysqli_fetch_array($rf_range_result);
+		$et_range_result = mysqli_query($db, "SELECT MIN(date) AS min, MAX(date) AS max FROM et WHERE `et_$c` IS NOT NULL");
+		$et_range_row = mysqli_fetch_array($et_range_result);
 		echo "<div id='a$c' class='content'>
   <p>Go to <abbr title='Everglades Depth Estimation Network'>EDEN</abbr> station page for <a href='../station.php?stn_name=$c'>{$stn_row['station_name_web']}</a></p>
   <p><strong><a href='../explanation.php#opagency'>Operating Agency</a>:</strong> <abbr title='{$stn_row['agency_name']}'>{$stn_row['operating_agency']}</abbr> (<a href='javascript:Popup(\"popup.php?popup={$stn_row['operating_agency']}\")'>Agency <abbr title='point of contact'>POC</abbr></a>)</p>\n";
@@ -441,23 +441,23 @@ if ($table && (count($site_list) == 1)) {
 	if ($rainfall) echo "<td class='tablehead'>Rainfall (in.)</td>\n";
 	if ($et) echo "<td class='tablehead'>Evapotranspiration<br>(mm)</td>\n";
 	echo "</tr>\n";
-	if ($data_num_results >= 1) mysql_data_seek($data_result, 0);
-	if ($rain_num_results >= 1) mysql_data_seek($rain_result, 0);
-	if ($et_num_results >= 1) mysql_data_seek($et_result, 0);
+	if ($data_num_results >= 1) mysqli_data_seek($data_result, 0);
+	if ($rain_num_results >= 1) mysqli_data_seek($rain_result, 0);
+	if ($et_num_results >= 1) mysqli_data_seek($et_result, 0);
 	if ($gapfill)
 		for ($j = 1; $j <= $gap_row['max']; $j++)
-			if(mysql_num_rows(${"gap_pred_result$j"}) >= 1) mysql_data_seek(${"gap_pred_result$j"}, 0);
+			if(mysqli_num_rows(${"gap_pred_result$j"}) >= 1) mysqli_data_seek(${"gap_pred_result$j"}, 0);
 	for ($i = 0; $i < max($data_num_results, $rain_num_results, $et_num_results); $i++) {
-		$data_row = mysql_fetch_array($data_result);
+		$data_row = mysqli_fetch_array($data_result);
 		if (!$water_level || $day_hour == 'daily' || ($day_hour == 'hourly' && $i % 24 == 0))
-			$rain_row = $rain_num_results > $i % 24 ? mysql_fetch_array($rain_result) : NULL;
+			$rain_row = $rain_num_results > $i % 24 ? mysqli_fetch_array($rain_result) : NULL;
 		else $rain_row[$site_list[0]] = NULL;
 		if (!$water_level || $day_hour == 'daily' || ($day_hour == 'hourly' && $i % 24 == 0))
-			$et_row = $et_num_results > $i % 24 ? mysql_fetch_array($et_result) : NULL;
+			$et_row = $et_num_results > $i % 24 ? mysqli_fetch_array($et_result) : NULL;
 		else $et_row[$site_list[0]] = NULL;
 		if ($gapfill)
 			for ($j = 1; $j <= $gap_row['max']; $j++)
-				${"gap_pred_row$j"} = mysql_fetch_array(${"gap_pred_result$j"});
+				${"gap_pred_row$j"} = mysqli_fetch_array(${"gap_pred_result$j"});
 		if ($data_row['date'] && date($data_row['date']) >= $rt_start)
 			$col = '#ffffa5';
 		elseif ($data_row['date'] && date($data_row['date']) >= $prov_start)
@@ -508,9 +508,9 @@ if ($table && (count($site_list) != 1)) {
 	foreach ((array) $site_list as $a => $c)
 		echo "<td class='tablehead'>$c</td><td class='tablehead'><abbr title='Data Type'>DT</abbr></td>\n";
 	echo "</tr>\n";
-	if ($data_num_results >= 1) mysql_data_seek($data_result, 0);
+	if ($data_num_results >= 1) mysqli_data_seek($data_result, 0);
 	for ($i = 0; $i < $data_num_results; $i++) {
-		$data_row = mysql_fetch_array($data_result);
+		$data_row = mysqli_fetch_array($data_result);
 		if(date($data_row['date']) >= $rt_start)
 			$col = '#ffffa5';
 		elseif(date($data_row['date']) >= $prov_start)
@@ -538,9 +538,9 @@ if ($table && (count($site_list) != 1)) {
 	foreach ((array) $site_list as $a => $c)
 		echo "<td class='tablehead'>$c</td>\n";
 	echo "</tr>\n";
-	if ($rain_num_results >= 1) mysql_data_seek($rain_result, 0);
+	if ($rain_num_results >= 1) mysqli_data_seek($rain_result, 0);
 	for ($i = 0; $i < $rain_num_results; $i++) {
-		$rain_row = mysql_fetch_array($rain_result);
+		$rain_row = mysqli_fetch_array($rain_result);
 		echo "<tr>
   <td class='tablehead'>{$rain_row['date']}</td>\n";
 		foreach ((array) $site_list as $c) {
@@ -561,9 +561,9 @@ if ($table && (count($site_list) != 1)) {
 	foreach ((array) $site_list as $a => $c)
 		echo "<td class='tablehead'>$c</td>\n";
 	echo "</tr>\n";
-	if ($et_num_results >= 1) mysql_data_seek($et_result, 0);
+	if ($et_num_results >= 1) mysqli_data_seek($et_result, 0);
 	for ($i = 0; $i < $et_num_results; $i++) {
-		$et_row = mysql_fetch_array($et_result);
+		$et_row = mysqli_fetch_array($et_result);
 		echo "<tr>
     <td class='tablehead'>{$et_row['date']}</td>\n";
 		foreach ((array) $site_list as $c) {

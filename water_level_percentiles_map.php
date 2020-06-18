@@ -1,10 +1,10 @@
 <?php
 require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
 
-$gage_result = mysql_query('SELECT station_name_web AS name, SUBSTRING(latitude, 1, 2) + SUBSTRING(latitude, 4, 2) / 60 + SUBSTRING(latitude, 7) / 3600 AS latitude, SUBSTRING(longitude, 1, 2) + SUBSTRING(longitude, 4, 2) / 60 + SUBSTRING(longitude, 7) / 3600 AS longitude FROM station WHERE ertp_ge_flag IS NOT NULL AND edenmaster_end = "curren" ORDER BY name');
-$ti_result = mysql_query('SELECT island AS name, latitude, longitude FROM tree_islands ORDER BY `order`');
-$gage_num_results = mysql_num_rows($gage_result);
-$ti_num_results = mysql_num_rows($ti_result);
+$gage_result = mysqli_query($db, 'SELECT station_name_web AS name, SUBSTRING(latitude, 1, 2) + SUBSTRING(latitude, 4, 2) / 60 + SUBSTRING(latitude, 7) / 3600 AS latitude, SUBSTRING(longitude, 1, 2) + SUBSTRING(longitude, 4, 2) / 60 + SUBSTRING(longitude, 7) / 3600 AS longitude FROM station WHERE ertp_ge_flag IS NOT NULL AND edenmaster_end = "curren" ORDER BY name');
+$ti_result = mysqli_query($db, 'SELECT island AS name, latitude, longitude FROM tree_islands ORDER BY `order`');
+$gage_num_results = mysqli_num_rows($gage_result);
+$ti_num_results = mysqli_num_rows($ti_result);
 $title = "<title>Daily Water Level Percentiles by Month for Gages and Tree Islands - Everglades Depth Estimation Network (EDEN)</title>\n";
 $link = "<link rel='stylesheet' href='./css/leaflet.css'>
   <link rel='stylesheet' href='./css/leaflet.label.css'>\n";
@@ -46,7 +46,7 @@ foreach($type as $a => $b) {
 	$names = $a . '_names'; //variable of names to construct table
   $r = $a . '_table';
 	for ($i = 0; $i < $$num_results; $i++) {
-		$row = mysql_fetch_array($$result);
+		$row = mysqli_fetch_array($$result);
 		$filename = '/var/www/eden/table/' . $row['name'] . '.txt';
 		$contents = trim(file_get_contents($filename));
 		$rowcontents = explode("\n", $contents);

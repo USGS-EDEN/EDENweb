@@ -2,10 +2,10 @@
 require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
 
 if ($_POST['lat_from'] && $_POST['lat_to'] && $_POST['long_from'] && $_POST['long_to']) {
-	$lat_from = (float) mysql_real_escape_string(htmlspecialchars($_POST['lat_from']));
-	$lat_to = (float) mysql_real_escape_string(htmlspecialchars($_POST['lat_to']));
-	$long_from = (float) mysql_real_escape_string(htmlspecialchars($_POST['long_from']));
-	$long_to = (float) mysql_real_escape_string(htmlspecialchars($_POST['long_to']));
+	$lat_from = (float) mysqli_real_escape_string(htmlspecialchars($_POST['lat_from']));
+	$lat_to = (float) mysqli_real_escape_string(htmlspecialchars($_POST['lat_to']));
+	$long_from = (float) mysqli_real_escape_string(htmlspecialchars($_POST['long_from']));
+	$long_to = (float) mysqli_real_escape_string(htmlspecialchars($_POST['long_to']));
 }
 else {
 	$lat_from = 25;
@@ -53,8 +53,8 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 echo "{$err}<p>You have selected stations located from " . round($lat_from, 2) . '&#176; to ' . round($lat_to, 2) . '&#176; N.<br> and from ' . round($long_from, 2) . '&#176; to ' . round($long_to, 2) . '&#176; W.</p>';
 
 $query = "select station_name_web, substring(latitude,1,2) + substring(latitude,4,2) / 60 + substring(latitude,7) / 3600 as lat, substring(longitude,1,2) + substring(longitude,4,2) / 60 + substring(longitude,7) / 3600 as lon from station where display = 1 having lat > $lat_from and lat < $lat_to and lon > $long_from and lon < $long_to ORDER BY lat, lon";
-$result = mysql_query($query);
-$num_results = mysql_num_rows($result);
+$result = mysqli_query($db, $query);
+$num_results = mysqli_num_rows($result);
 echo "<p>$num_results stations fall within those bounding coordinates.</p>
 <table style='width: 800px'>
   <tr>
@@ -75,7 +75,7 @@ var myIcon = L.icon({
     labelAnchor: [7, 21]
 });\n";
 for ($i = 0; $i < $num_results; $i++) {
-	$row = mysql_fetch_array($result);
+	$row = mysqli_fetch_array($result);
 	$dec_lat = $row['lat'];
 	$dec_long = $row['lon'];
 	echo "var stn_$i = L.marker([$dec_lat, -$dec_long], {icon: myIcon}).bindPopup(\"Station <strong><a href='./station.php?stn_name={$row['station_name_web']}";
@@ -92,10 +92,10 @@ echo "map.fitBounds([[$lat_from, -$long_to], [$lat_to, -$long_from]]);</script>
   </tr>
 </table><br><br>\n";
 if ($num_results != 0) {
-	mysql_data_seek($result, 0);
+	mysqli_data_seek($result, 0);
 	echo "<table style='border: 0px; margin-bottom: 20px'><tr class='gtablehead' style='background-color:white'><th style='border:0px'>Station name</th><th style='border:0px'>Latitude</th><th style='border:0px'>Longitude</th></tr>\n";
 	for ($i=0; $i<$num_results; $i++) {
-		$row = mysql_fetch_array($result);
+		$row = mysqli_fetch_array($result);
 		echo "<tr class='gtablecell' style='background-color:white'><td style='border:0px'><a href='/../eden/station.php?stn_name={$row['station_name_web']}";
 		if ($row['station_name_web'] == 'S150_T')
 			echo "&op_agency=SFWMD";
