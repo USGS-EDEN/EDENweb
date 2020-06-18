@@ -2,8 +2,7 @@
 require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
 
 $stn_name = htmlentities(trim($_GET['stn_name']), ENT_QUOTES);
-if (isset($_GET['op_agency']))
-  $op_agency = htmlentities(trim($_GET['op_agency']), ENT_QUOTES);
+$op_agency = isset($_GET['op_agency']) ? htmlentities(trim($_GET['op_agency']), ENT_QUOTES) : '';
 
 if (preg_match('/^[a-zA-Z0-9_-]*[a-zA-Z0-9]$/i', $stn_name))
 	$val = $stn_name;
@@ -240,7 +239,7 @@ if ($val && $in_database) {
     <td><a href='explanation.php#typeofstation'>Type of Station</a> (Freshwater/Tidal):</td>
     <td>{$row['water_type']}</td>
   </tr>\n";
-		$result = mysqli_query($db, "SELECT point_id FROM gage_site_survey WHERE EDEN_name = '{$row['station_name_web']}'");
+	$result = mysqli_query($db, "SELECT point_id FROM gage_site_survey WHERE EDEN_name = '{$row['station_name_web']}'");
 	$num_results = mysqli_num_rows($result);
 	for ($i = 0; $i < $num_results; $i++) {
 		$row2 = mysqli_fetch_array($result);
