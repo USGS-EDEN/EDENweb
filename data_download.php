@@ -1,34 +1,40 @@
 <?php
 session_start();
-$fields_all = htmlentities(trim($_GET['fields_all']), ENT_QUOTES);
-$fields_clear = htmlentities(trim($_GET['fields_clear']), ENT_QUOTES);
-$stations_all = htmlentities(trim($_GET['stations_all']), ENT_QUOTES);
-$stations_clear = htmlentities(trim($_GET['stations_clear']), ENT_QUOTES);
-$submit = htmlentities(trim($_POST['submit']), ENT_QUOTES);
-foreach ((array) $_POST['field'] as $c) {
-	$c = htmlentities(trim($c), ENT_QUOTES);
-	$_SESSION['field'][$c] = $c;
-}
-foreach ((array) $_POST['vegetation'] as $d) {
-	$d = htmlentities(trim($d), ENT_QUOTES);
-	$_SESSION['vegetation'][$d] = $d;
-}
-foreach ((array) $_POST['station'] as $e) {
-	$e = htmlentities(trim($e), ENT_QUOTES);
-	$_SESSION['station'][$e] = $e;
-}
-foreach ((array) $_SESSION['field'] as $f) {
-	if (!in_array($f, $_POST['field']) && !($stations_all || $stations_clear))
-		unset($_SESSION['field'][$f]);
-}
-foreach ((array) $_SESSION['vegetation'] as $g) {
-	if (!in_array($g, $_POST['vegetation']) && !($stations_all || $stations_clear))
-		unset($_SESSION['vegetation'][$g]);
-}
-foreach ((array) $_SESSION['station'] as $h) {
-	if (!in_array($h, $_POST['station']) && !($fields_all || $fields_clear))
-		unset($_SESSION['station'][$h]);
-}
+$fields_all = isset($_GET['fields_all']) ? htmlentities(trim($_GET['fields_all']), ENT_QUOTES) : 0;
+$fields_clear = isset($_GET['fields_clear']) ? htmlentities(trim($_GET['fields_clear']), ENT_QUOTES) : 0;
+$stations_all = isset($_GET['stations_all']) ? htmlentities(trim($_GET['stations_all']), ENT_QUOTES) : 0;
+$stations_clear = isset($_GET['stations_clear']) ? htmlentities(trim($_GET['stations_clear']), ENT_QUOTES) : 0;
+$submit = isset($_GET['submit']) ? htmlentities(trim($_POST['submit']), ENT_QUOTES) : 0;
+if (isset($_POST['field']))
+	foreach ((array) $_POST['field'] as $c) {
+		$c = htmlentities(trim($c), ENT_QUOTES);
+		$_SESSION['field'][$c] = $c;
+	}
+if (isset($_POST['vegetation']))
+	foreach ((array) $_POST['vegetation'] as $d) {
+		$d = htmlentities(trim($d), ENT_QUOTES);
+		$_SESSION['vegetation'][$d] = $d;
+	}
+if (isset($_POST['station']))
+	foreach ((array) $_POST['station'] as $e) {
+		$e = htmlentities(trim($e), ENT_QUOTES);
+		$_SESSION['station'][$e] = $e;
+	}
+if (isset($_SESSION['field']))
+	foreach ((array) $_SESSION['field'] as $f) {
+		if (!in_array($f, $_POST['field']) && !($stations_all || $stations_clear))
+			unset($_SESSION['field'][$f]);
+	}
+if (isset($_SESSION['vegetation']))
+	foreach ((array) $_SESSION['vegetation'] as $g) {
+		if (!in_array($g, $_POST['vegetation']) && !($stations_all || $stations_clear))
+			unset($_SESSION['vegetation'][$g]);
+	}
+if (isset($_SESSION['station']))
+	foreach ((array) $_SESSION['station'] as $h) {
+		if (!in_array($h, $_POST['station']) && !($fields_all || $fields_clear))
+			unset($_SESSION['station'][$h]);
+	}
 if (empty($_SESSION['field'])) $_SESSION['field']['station_name_web'] = 'station_name_web';
 $title = "<title>EDEN Station Information Data Download - Everglades Depth Estimation Network (EDEN)</title>\n";
 $style = "p, h2, table { text-align:center }\n";
