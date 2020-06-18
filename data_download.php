@@ -22,16 +22,16 @@ if (isset($_POST['station']))
 	}
 if (isset($_SESSION['field']))
 	foreach ((array) $_SESSION['field'] as $f) {
-		if (!in_array($f, $_POST['field']) && !($stations_all || $stations_clear))
+		if (!in_array($f, (array) $_POST['field']) && !($stations_all || $stations_clear))
 			unset($_SESSION['field'][$f]);
 	}
 if (isset($_SESSION['vegetation']))
-	foreach ((array) $_SESSION['vegetation'] as $g) {
+	foreach ((array) (array) $_SESSION['vegetation'] as $g) {
 		if (!in_array($g, $_POST['vegetation']) && !($stations_all || $stations_clear))
 			unset($_SESSION['vegetation'][$g]);
 	}
 if (isset($_SESSION['station']))
-	foreach ((array) $_SESSION['station'] as $h) {
+	foreach ((array) (array) $_SESSION['station'] as $h) {
 		if (!in_array($h, $_POST['station']) && !($fields_all || $fields_clear))
 			unset($_SESSION['station'][$h]);
 	}
@@ -208,59 +208,59 @@ elseif ($fields_clear == 1) {
     <td colspan='2'><a href='/../eden/data_download.php?fields_all=1'>Select All Data/Ground Elevation & Vegetation</a> | <a href='/../eden/data_download.php?fields_clear=1'>Clear Selected Data/Ground Elevation & Vegetation</a></td>
   </tr>
   <tr class="gtablecell">
-    <td><input type='checkbox' name='field[]' value='station_name_web'<?php echo $_SESSION['field']['station_name_web'] ? ' checked' : ''; ?>></td>
+    <td><input type='checkbox' name='field[]' value='station_name_web'<?php echo isset($_SESSION['field']) && $_SESSION['field']['station_name_web'] ? ' checked' : ''; ?>></td>
     <td>EDEN Station Name</td>
   </tr>
   <tr class="gtablecell2">
-    <td><input type='checkbox' name='field[]' value='operating_agency'<?php echo $_SESSION['field']['operating_agency'] ? ' checked' : ''; ?>></td>
+    <td><input type='checkbox' name='field[]' value='operating_agency'<?php echo isset($_SESSION['field']) && $_SESSION['field']['operating_agency'] ? ' checked' : ''; ?>></td>
     <td>Operating Agency</td>
   </tr>
   <tr class="gtablecell">
-    <td><input type='checkbox' name='field[]' value='latitude'<?php echo $_SESSION['field']['latitude'] ? ' checked' : ''; ?>></td>
+    <td><input type='checkbox' name='field[]' value='latitude'<?php echo isset($_SESSION['field']) && $_SESSION['field']['latitude'] ? ' checked' : ''; ?>></td>
     <td>Latitude (NAD83)</td>
   </tr>
   <tr class="gtablecell2">
-    <td><input type='checkbox' name='field[]' value='longitude'<?php echo $_SESSION['field']['longitude'] ? ' checked' : ''; ?>></td>
+    <td><input type='checkbox' name='field[]' value='longitude'<?php echo isset($_SESSION['field']) && $_SESSION['field']['longitude'] ? ' checked' : ''; ?>></td>
     <td>Longitude (NAD83)</td>
   </tr>
   <tr class="gtablecell">
-    <td><input type='checkbox' name='field[]' value='utm_easting'<?php echo $_SESSION['field']['utm_easting'] ? ' checked' : ''; ?>></td>
+    <td><input type='checkbox' name='field[]' value='utm_easting'<?php echo isset($_SESSION['field']) && $_SESSION['field']['utm_easting'] ? ' checked' : ''; ?>></td>
     <td>UTM Easting Zone 17N (meters NAD83)</td>
   </tr>
   <tr class="gtablecell2">
-    <td><input type='checkbox' name='field[]' value='utm_northing'<?php echo $_SESSION['field']['utm_northing'] ? ' checked' : ''; ?>></td>
+    <td><input type='checkbox' name='field[]' value='utm_northing'<?php echo isset($_SESSION['field']) && $_SESSION['field']['utm_northing'] ? ' checked' : ''; ?>></td>
     <td>UTM Northing Zone 17N (meters NAD83)</td>
   </tr>
   <tr class="gtablecell">
-    <td><input type='checkbox' name='field[]' value='location'<?php echo $_SESSION['field']['location'] ? ' checked' : ''; ?>></td>
+    <td><input type='checkbox' name='field[]' value='location'<?php echo isset($_SESSION['field']) && $_SESSION['field']['location'] ? ' checked' : ''; ?>></td>
     <td>Location Area</td>
   </tr>
   <tr class="gtablecell2">
-    <td><input type='checkbox' name='field[]' value='location_description'<?php echo $_SESSION['field']['location_description'] ? ' checked' : ''; ?>></td>
+    <td><input type='checkbox' name='field[]' value='location_description'<?php echo isset($_SESSION['field']) && $_SESSION['field']['location_description'] ? ' checked' : ''; ?>></td>
     <td>Location Description</td>
   </tr>
   <tr class="gtablecell">
-    <td><input type='checkbox' name='field[]' value='recent_hourly_data'<?php echo $_SESSION['field']['recent_hourly_data'] ? ' checked' : ''; ?>></td>
+    <td><input type='checkbox' name='field[]' value='recent_hourly_data'<?php echo isset($_SESSION['field']) && $_SESSION['field']['recent_hourly_data'] ? ' checked' : ''; ?>></td>
     <td>Real-Time Daily Data Available (Yes/No)</td>
   </tr>
   <tr class="gtablecell2">
-    <td><input type='checkbox' name='field[]' value='vertical_datum'<?php echo $_SESSION['field']['vertical_datum'] ? ' checked' : ''; ?>></td>
+    <td><input type='checkbox' name='field[]' value='vertical_datum'<?php echo isset($_SESSION['field']) && $_SESSION['field']['vertical_datum'] ? ' checked' : ''; ?>></td>
     <td>Vertical Datum for Water Level Data</td>
   </tr>
   <tr class="gtablecell">
-    <td><input type='checkbox' name='field[]' value='vertical_conversion'<?php echo $_SESSION['field']['vertical_conversion'] ? ' checked' : ''; ?>></td>
+    <td><input type='checkbox' name='field[]' value='vertical_conversion'<?php echo isset($_SESSION['field']) && $_SESSION['field']['vertical_conversion'] ? ' checked' : ''; ?>></td>
     <td>Vertical Conversion at Gage (ft) (NGVD29 to NAVD88)</td>
   </tr>
   <tr class="gtablecell2">
-    <td><input type='checkbox' name='field[]' value='station_type'<?php echo $_SESSION['field']['station_type'] ? ' checked' : ''; ?>></td>
+    <td><input type='checkbox' name='field[]' value='station_type'<?php echo isset($_SESSION['field']) && $_SESSION['field']['station_type'] ? ' checked' : ''; ?>></td>
     <td>Type of Station (Physical Location)</td>
   </tr>
   <tr class="gtablecell">
-    <td><input type='checkbox' name='field[]' value='water_type'<?php echo $_SESSION['field']['water_type'] ? ' checked' : ''; ?>></td>
+    <td><input type='checkbox' name='field[]' value='water_type'<?php echo isset($_SESSION['field']) && $_SESSION['field']['water_type'] ? ' checked' : ''; ?>></td>
     <td>Type of Station (Freshwater/Tidal)</td>
   </tr>
   <tr class="gtablecell2">
-    <td><input type='checkbox' name='field[]' value='edenmaster_new'<?php echo $_SESSION['field']['edenmaster_new'] ? ' checked' : ''; ?>></td>
+    <td><input type='checkbox' name='field[]' value='edenmaster_new'<?php echo isset($_SESSION['field']) && $_SESSION['field']['edenmaster_new'] ? ' checked' : ''; ?>></td>
     <td>Station Used in Surfacing Program?</td>
   </tr>
 </table>
@@ -269,35 +269,35 @@ elseif ($fields_clear == 1) {
     <th colspan='2'>Ground Elevation & Vegetation fields</th>
   </tr>
   <tr class="gtablecell">
-    <td><input type='checkbox' name='vegetation[]' value='station_name_web'<?php echo $_SESSION['vegetation']['station_name_web'] ? ' checked' : ''; ?>></td>
+    <td><input type='checkbox' name='vegetation[]' value='station_name_web'<?php echo isset($_SESSION['vegetation']) && $_SESSION['vegetation']['station_name_web'] ? ' checked' : ''; ?>></td>
     <td>EDEN Station Name</td>
   </tr>
   <tr class="gtablecell2">
-    <td><input type='checkbox' name='vegetation[]' value='community_level'<?php echo $_SESSION['vegetation']['community_level'] ? ' checked' : ''; ?>></td>
+    <td><input type='checkbox' name='vegetation[]' value='community_level'<?php echo isset($_SESSION['vegetation']) && $_SESSION['vegetation']['community_level'] ? ' checked' : ''; ?>></td>
     <td>Vegetation Community (Major/Secondary)</td>
   </tr>
   <tr class="gtablecell">
-    <td><input type='checkbox' name='vegetation[]' value='vegetation_community'<?php echo $_SESSION['vegetation']['vegetation_community'] ? ' checked' : ''; ?>></td>
+    <td><input type='checkbox' name='vegetation[]' value='vegetation_community'<?php echo isset($_SESSION['vegetation']) && $_SESSION['vegetation']['vegetation_community'] ? ' checked' : ''; ?>></td>
     <td>Vegetation Community</td>
   </tr>
   <tr class="gtablecell2">
-    <td><input type='checkbox' name='vegetation[]' value='average_elevation'<?php echo $_SESSION['vegetation']['average_elevation'] ? ' checked' : ''; ?>></td>
+    <td><input type='checkbox' name='vegetation[]' value='average_elevation'<?php echo isset($_SESSION['vegetation']) && $_SESSION['vegetation']['average_elevation'] ? ' checked' : ''; ?>></td>
     <td>Average Ground Elevation (ft NAVD88)</td>
   </tr>
   <tr class="gtablecell">
-    <td><input type='checkbox' name='vegetation[]' value='maximum_elevation'<?php echo $_SESSION['vegetation']['maximum_elevation'] ? ' checked' : ''; ?>></td>
+    <td><input type='checkbox' name='vegetation[]' value='maximum_elevation'<?php echo isset($_SESSION['vegetation']) && $_SESSION['vegetation']['maximum_elevation'] ? ' checked' : ''; ?>></td>
     <td>Maximum Ground Elevation (ft NAVD88)</td>
   </tr>
   <tr class="gtablecell2">
-    <td><input type='checkbox' name='vegetation[]' value='minimum_elevation'<?php echo $_SESSION['vegetation']['minimum_elevation'] ? ' checked' : ''; ?>></td>
+    <td><input type='checkbox' name='vegetation[]' value='minimum_elevation'<?php echo isset($_SESSION['vegetation']) && $_SESSION['vegetation']['minimum_elevation'] ? ' checked' : ''; ?>></td>
     <td>Minimum Ground Elevation (ft NAVD88)</td>
   </tr>
   <tr class="gtablecell">
-    <td><input type='checkbox' name='vegetation[]' value='measurements'<?php echo $_SESSION['vegetation']['measurements'] ? ' checked' : ''; ?>></td>
+    <td><input type='checkbox' name='vegetation[]' value='measurements'<?php echo isset($_SESSION['vegetation']) && $_SESSION['vegetation']['measurements'] ? ' checked' : ''; ?>></td>
     <td>Number of Measurements</td>
   </tr>
   <tr class="gtablecell2">
-    <td><input type='checkbox' name='vegetation[]' value='agency_date'<?php echo $_SESSION['vegetation']['agency_date'] ? ' checked' : ''; ?>></td>
+    <td><input type='checkbox' name='vegetation[]' value='agency_date'<?php echo isset($_SESSION['vegetation']) && $_SESSION['vegetation']['agency_date'] ? ' checked' : ''; ?>></td>
     <td>Collecting Agency and Date</td>
   </tr>
 </table>
@@ -325,7 +325,7 @@ for ($i = 0; $i < $num_results; $i++) {
 		echo "<tr class='gtablecell2'>";
 
 	echo "<td><input type='checkbox' name='station[]' value= '{$row['station_id']}'";
-	if ($_SESSION['station'][$row['station_id']])
+	if (isset($_SESSION['station']) && $_SESSION['station'][$row['station_id']])
 		echo ' checked';
 	echo "></td>\n<td>{$row['station_name_web']}</td>\n";
 	if ($i % 3 == 2)
