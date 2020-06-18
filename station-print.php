@@ -2,7 +2,7 @@
 require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
 
 $stn_name = htmlentities(trim($_GET['stn_name']), ENT_QUOTES);
-$op_agency = htmlentities(trim($_GET['op_agency']), ENT_QUOTES);
+$op_agency = isset($_GET['op_agency']) ? htmlentities(trim($_GET['op_agency']), ENT_QUOTES) : '';
 
 $val = $stn_name;
 $query = "SELECT *, agency.agency_acronym AS operating_agency, usgs_nwis_agency.agency_acronym AS usgs_nwis_agency FROM station, station_data, station_datum, station_information, location, agency, usgs_nwis_agency, vertical_datum, conversion, station_type, water_type WHERE station_name_web = '$val' AND station.station_id = station_data.station_id AND station.station_id = station_datum.station_id AND station.station_id = station_information.station_id AND station.location_id = location.location_id and station.operating_agency_id = agency.agency_id AND station.usgs_nwis_agency_id = usgs_nwis_agency.usgs_nwis_agency_id AND station.vertical_datum_id = vertical_datum.vertical_datum_id AND station_datum.conversion_id = conversion.conversion_id AND station_information.station_type_id = station_type.station_type_id AND station_information.water_type_id = water_type.water_type_id";
@@ -36,7 +36,6 @@ $style = ".pagetopheaderprint { font-family: arial, helvetica, sans-serif; color
   <link rel='stylesheet' href='/../eden/css/eden-dbweb-html5.css'>
   <?php echo $link; ?>
   <script src='https://www2.usgs.gov/scripts/analytics/usgs-analytics.js'></script>
-  <?php echo $script; ?>
   <style>
     table { border-collapse: collapse }
     table, td, th { border: 1px solid #477489 }
@@ -110,7 +109,7 @@ if ($val && $in_database) {
   </tr>
   <tr class='gtablecell'>
     <td><a href='explanation.php#locationarea'>Location Area</a>:</td>
-    <td><a href='stationlist-area.php?area=$area'>{$row['location']}</a></td>
+    <td>{$row['location']}</td>
   </tr>\n" . ($row['location_description'] != '' ? "<tr class='gtablecell'>
     <td>Location Description:</td>
     <td>{$row['location_description']}</td>
@@ -149,7 +148,7 @@ if ($val && $in_database) {
       </ul></a>
     </td>
   </tr>\n";
-	if ($row['duration_elevation'] != '' && $row['edenmaster_end'] == 'curren')
+	if ($row['ertp_ge_flag'] != '' && $row['edenmaster_end'] == 'curren')
 		echo "  <tr class='gtablecell'>
     <td align='left'><p><a href='water_level_percentiles.php?name={$row['station_name_web']}&type=gage'>Daily Water Level Percentiles</a> (by Month)</p></td>
   </tr>\n";
