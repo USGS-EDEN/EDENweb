@@ -126,7 +126,7 @@ if ($val && $in_database) {
       </ul></a>
     </td>
   </tr>\n";
-	if ($row['duration_elevation'] != '' && $row['edenmaster_end'] == 'curren')
+	if ($row['ertp_ge_flag'] != '' && $row['edenmaster_end'] == 'curren')
 		echo "  <tr class='gtablecell'>
     <td align='left'><p><a href='water_level_percentiles.php?name={$row['station_name_web']}&type=gage'>Daily Water Level Percentiles</a> (by Month)</p></td>
   </tr>\n";
