@@ -22,17 +22,17 @@ if (isset($_POST['station']))
 	}
 if (isset($_SESSION['field']))
 	foreach ((array) $_SESSION['field'] as $f) {
-		if (!in_array($f, (array) $_POST['field']) && !($stations_all || $stations_clear))
+		if (isset($_POST['field']) && !in_array($f, (array) $_POST['field']) && !($stations_all || $stations_clear))
 			unset($_SESSION['field'][$f]);
 	}
 if (isset($_SESSION['vegetation']))
 	foreach ((array) (array) $_SESSION['vegetation'] as $g) {
-		if (!in_array($g, $_POST['vegetation']) && !($stations_all || $stations_clear))
+		if (isset($_POST['vegetation']) && !in_array($g, $_POST['vegetation']) && !($stations_all || $stations_clear))
 			unset($_SESSION['vegetation'][$g]);
 	}
 if (isset($_SESSION['station']))
 	foreach ((array) (array) $_SESSION['station'] as $h) {
-		if (!in_array($h, $_POST['station']) && !($fields_all || $fields_clear))
+		if (isset($_POST['station']) && !in_array($h, $_POST['station']) && !($fields_all || $fields_clear))
 			unset($_SESSION['station'][$h]);
 	}
 if (empty($_SESSION['field'])) $_SESSION['field']['station_name_web'] = 'station_name_web';
