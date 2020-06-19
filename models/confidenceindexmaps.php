@@ -34,7 +34,7 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 <p>Plots of the gage distance parameter, canal distance parameter, and <abbr title="cross-validation error">CVE</abbr> parameter show that none of these parameters are strongly correlated with the water-level differences at the benchmarks. Likewise, the differences do not correlate with the <abbr title="confidence index">CI</abbr>.</p>
 <table style="width:310px;margin:20px auto">
   <tr>
-    <td><a href="../images/maps/freq_vs_waterleveldiff.gif"><img src="../images/maps/freq_vs_waterleveldiffth.gif" alt="Graph showing plot of water-level distance versus frequenc" height="216" width="296"></a></td>
+    <td><a href="../images/maps/freq_vs_waterleveldiff.gif"><img src="../images/maps/freq_vs_waterleveldiffth.gif" alt="Graph showing plot of water-level distance versus frequency" height="216" width="296"></a></td>
   </tr>
   <tr>
     <td class="caption" style="background-color:#e5f4cc">
