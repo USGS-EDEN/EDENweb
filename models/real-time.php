@@ -3,7 +3,7 @@
 $viewExt2 = '_v3rt_nc.zip';
 $dirHandle = opendir('../data/realtime2/');
 while ($file = readdir($dirHandle))
-  if (eregi("($viewExt2)$", $file))
+  if (preg_match("/($viewExt2)$/i", $file))
     $stack2[] = $file;
 closedir($dirHandle);
 rsort($stack2);
@@ -16,7 +16,7 @@ foreach($stack2 as $value2) {
   // Add only those files from the quarter to $stack
   $stack = array();
   while ($file = readdir($dirHandle))
-    if (eregi("($viewExt)$", $file) && ceil(substr($file, 4, 2) / 3) == substr($value2, 6, 1)) //check month of file in current qtr
+    if (preg_match("/($viewExt)$/i", $file) && ceil(substr($file, 4, 2) / 3) == substr($value2, 6, 1)) //check month of file in current qtr
       $stack[] = $file;
   closedir($dirHandle);
   rsort($stack);
