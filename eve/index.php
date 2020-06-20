@@ -388,7 +388,7 @@ foreach ((array) $site_list as $a => $c) {
 	}
 }
 if ($graph) {
-	echo "<div id='hydrograph_legend' style='border:solid #4b7e83;border-radius:5px;width:240px;padding:3px;float:right;margin-bottom:25px'>
+	echo "<div id='hydrograph_legend' style='border:solid #4b7e83;border-radius:5px;width:240px;padding:3px;float:right;margin-bottom:50px'>
 <table style='width:100%;border:0px'>
   <tr><th class='gtablehead' style='background:#ccd' colspan='2'>Legend</th></tr>\n";
 	$colors = array("#000080", "#FFA500", "#800000", "#008000", "#000000", "#00FFA5", "#A500FF", "#FF00A5", "#00A5FF", "#A5FF00");
@@ -406,7 +406,7 @@ if ($graph) {
 	if ($water_level) echo "<tr><td colspan='2' class='gtablecell' style='font-size:75%'><hr>Recent water levels subject to<br>revision. Non-final data are either<br><span style='background:#ffffa5'>real-time</span> or <span style='background:#cecee5'>provisional</span>.</td></tr>\n";
 	echo "</table>
 </div></div>
-<div id='graph' style='border:2px solid;height:500px;width:100%;clear:both";
+<div id='graph' style='border:2px solid;height:500px;width:100%;clear:right";
 	if (!$water_level) echo ';display:none';
 	echo "'></div>
             <div id='rain_graph' style='border:2px solid;height:100px;width:100%;margin-top:5px;clear:right";
