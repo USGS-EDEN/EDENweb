@@ -22,13 +22,13 @@ var imageBuf = [];
 var loadCount = 0;
 // determine number of surfaces to load
 var file_count = {\n";
-$dirs = array_filter(glob('imgs4/*'), 'is_dir');
+$dirs = array_filter(glob('images/*'), 'is_dir');
 foreach($dirs as $dir) {
   $i = 0;
   $dir = substr($dir, 6);
-  if ($handle = opendir('imgs4/'.$dir))
+  if ($handle = opendir('images/' . $dir))
     while (($file = readdir($handle)) !== false)
-      if (!in_array($file, array('.', '..', '.DS_Store')) && !is_dir('imgs4/' . $dir . $file)) 
+      if (!in_array($file, array('.', '..', '.DS_Store')) && !is_dir('images/' . $dir . $file)) 
         $i++;
   $script .= "a$dir: $i, ";
 }
@@ -84,7 +84,7 @@ function preloadimgs() {
     if (i.toString().length < 2) timeval = '00' + i;
     else if (i.toString().length < 3) timeval = '0' + i;
     else timeval = i;
-    imgList.push('../csss/imgs4/' + selval + '/trans0' + timeval + '.png');
+    imgList.push('../csss/images/' + selval + '/trans0' + timeval + '.png');
   }
   initimg(imgList);
 };
@@ -657,7 +657,7 @@ var demUrl = 'dem.png',
 	layerOptions = { opacity: 0.0 };
 var dem = L.imageOverlay(demUrl, imageBounds, layerOptions).addTo(map);
 
-var imageUrl = '../csss/imgs4/2020/trans0000.png',
+var imageUrl = '../csss/images/2020/trans0000.png',
 	imageBounds = [[25.222, -81.363], [26.688, -80.222]],
 	layerOptions = { opacity: 1.0 };
 var eden = L.imageOverlay(imageUrl, imageBounds, layerOptions).addTo(map);
@@ -747,7 +747,7 @@ function imgtime(timeval) {
 	var selval = dtrange.options[dtrange.selectedIndex].value;
 	if (timeval.length < 2) timeval = '00' + timeval;
 	if (timeval.length < 3) timeval = '0' + timeval;
-	eden.setUrl("../csss/imgs4/" + selval + "/trans0" + timeval + ".png");
+	eden.setUrl("../csss/images/" + selval + "/trans0" + timeval + ".png");
 }
 
 var per_dry_label_AX = new L.marker([25.67, -80.78], {icon: myIcon});
@@ -1026,7 +1026,7 @@ function showdt(dy) {
 function show_gages() {
 	if(document.getElementById('gages').checked) {
 <?php
-mysqlidata_seek($result, 0);
+mysqli_data_seek($result, 0);
 for ($i = 0; $i < $num_results; $i++) {
 	$row = mysqli_fetch_array($result);
 	echo "gage{$row['sname']}.setOpacity(1);\n";
