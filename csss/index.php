@@ -25,7 +25,7 @@ var file_count = {\n";
 $dirs = array_filter(glob('images/*'), 'is_dir');
 foreach($dirs as $dir) {
   $i = 0;
-  $dir = substr($dir, 6);
+  $dir = substr($dir, 7);
   if ($handle = opendir('images/' . $dir))
     while (($file = readdir($handle)) !== false)
       if (!in_array($file, array('.', '..', '.DS_Store')) && !is_dir('images/' . $dir . $file)) 
