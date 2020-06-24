@@ -3,12 +3,7 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
 
 $result = mysqli_query($db, "SELECT REPLACE(short_name, '-', '_') AS sname, station_name_web, SUBSTR(latitude, 1, 2) + SUBSTR(latitude, 4, 2) / 60 + SUBSTR(latitude, 7) / 3600 AS lat, -(SUBSTR(longitude, 1, 2) + SUBSTR(longitude, 4, 2) / 60 + SUBSTR(longitude, 7) / 3600) AS `long`, convert_to_navd88_feet AS conv 
 FROM station JOIN station_datum ON station.station_id = station_datum.station_id 
-WHERE (display = 1 AND utm_northing < 2861000 AND utm_easting > 501900 AND ertp_ge_flag IS NOT NULL) 
-OR station_name_web = 'EPSW' OR station_name_web = 'NCL' OR station_name_web = 'NMP' OR station_name_web = 'SPARO' OR station_name_web LIKE 'S12%' 
-OR station_name_web = 'G-1502' OR station_name_web LIKE 'S332%' OR station_name_web LIKE 'S175%' OR station_name_web = 'S18C_T' OR station_name_web = 'BCA20' 
-OR station_name_web = 'BCA9' OR station_name_web = 'BCA5' OR station_name_web LIKE 'LOOP%' OR station_name_web = 'EDEN_1' 
-OR station_name_web = 'Tamiami_Canal_40-Mile_Bend_to_Monroe' OR station_name_web = 'S344_T' OR station_name_web LIKE 'S343%' OR station_name_web LIKE 'S333%' 
-OR station_name_web LIKE 'S334%' GROUP BY station_name_web");
+WHERE display = 1 GROUP BY station_name_web");
 $num_results = mysqli_num_rows($result);
 
 $title = "<title>Wading Bird Depth Viewer -- Everglades Depth Estimation Network (EDEN)</title>\n";
