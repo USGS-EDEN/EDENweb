@@ -32,7 +32,7 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
       <ul>
         <li><a href="../data/dem/eden_dem_cm_oc11.zip">NetCDF</a>
           <ul>
-            <li>zipped, with metadata files, 168 <abbr title="kilobytes">KB</abbr>)</li>
+            <li>zipped, with metadata files, 168 <abbr title="kilobytes">KB</abbr></li>
           </ul></li>
         <li><a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/metadata/sflwww/eden_em_oc11.html">EDEN <abbr title="Digital Elevation Model">DEM</abbr> Metadata file</a></li>
       </ul>
