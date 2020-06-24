@@ -3,7 +3,7 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/login.php');
 
 $result = mysqli_query($db, "SELECT REPLACE(short_name, '-', '_') AS sname, station_name_web, SUBSTR(latitude, 1, 2) + SUBSTR(latitude, 4, 2) / 60 + SUBSTR(latitude, 7) / 3600 AS lat, -(SUBSTR(longitude, 1, 2) + SUBSTR(longitude, 4, 2) / 60 + SUBSTR(longitude, 7) / 3600) AS `long`, convert_to_navd88_feet AS conv 
 FROM station JOIN station_datum ON station.station_id = station_datum.station_id 
-WHERE display = 1 GROUP BY station_name_web");
+WHERE edenmaster = 1 GROUP BY station_name_web");
 $num_results = mysqli_num_rows($result);
 
 $title = "<title>Wading Bird Depth Viewer -- Everglades Depth Estimation Network (EDEN)</title>\n";
