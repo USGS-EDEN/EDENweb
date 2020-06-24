@@ -193,7 +193,7 @@ $style = ".tabs {
   }\n";
 require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
-<p style="color:#009999"><strong><em>WADEM Wading Bird Viewer</em></strong></p>
+<p style="color:#009999"><strong><em>Wading Birds Depth Viewer</em></strong></p>
 <!--MAP STUFF-->
 <div id="tabset">
 <div class="tabs">
@@ -202,14 +202,14 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
   <a href='#mapobjs' class='tab tab-active'>Water-Depth Map</a>
 </div>
 <div id="intro" class="tabcontentdiv">
-  <h2><img src="../csss/CSSS1.jpg" alt="Photo of a sparrow" style="float:right;margin-left:5px">WADEM Wading Bird Viewer</h2>
+  <h2><img src="../csss/CSSS1.jpg" alt="Photo of a sparrow" style="float:right;margin-left:5px">Wading Birds Depth Viewer</h2>
   <h3>Monitoring water depths in wading bird habitats</h3>
   <p>Loren ipsum.</p>
   <p>Please send any questions or comments to the <a href="mailto:bmccloskey@usgs.gov">EDEN team</a>.</p>
 </div>
 <div id="inst" class="tabcontentdiv">
-  <h2>Using the Cape Sable Seaside Sparrow (CSSS) Viewer</h2>
-  <p>The WADEM Water-Depth Maps contain daily water depth based on the daily <abbr title='Everglades Depth Estimation Network'>EDEN</abbr> water-level surfaces, which are generated each day using water-level gage data, and ground elevation data. Water-depth values are displayed in both centimeters and inches (relative to North American Vertical Datum of 1988 (NAVD 88)). The data is served using the same 400 meters by 400 meters grid as other <abbr title='Everglades Depth Estimation Network'>EDEN</abbr> data. See details below ("Quality water-level data used to generate the daily water-level surfaces") about the daily water-level surfaces based on the quality of the water-level gage data.</p>
+  <h2>Using the Wading Birds Depth Viewer</h2>
+  <p>The Wading Birds Water-Depth Maps contain daily water depth based on the daily <abbr title='Everglades Depth Estimation Network'>EDEN</abbr> water-level surfaces, which are generated each day using water-level gage data, and ground elevation data. Water-depth values are displayed in both centimeters and inches (relative to North American Vertical Datum of 1988 (NAVD 88)). The data is served using the same 400 meters by 400 meters grid as other <abbr title='Everglades Depth Estimation Network'>EDEN</abbr> data. See details below ("Quality water-level data used to generate the daily water-level surfaces") about the daily water-level surfaces based on the quality of the water-level gage data.</p>
   <p>From the Water-Depth Map tab:</p>
   <ol>
     <li>Water-depth data
