@@ -28,6 +28,14 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
   <tr>
     <td style="width:40%"><a href="../images/maps/EDEN_oc11_release_graphic_lg.gif"><img src="../images/maps/EDEN_oc11_release_graphic_s.gif" alt="Thumbnail image of EDEN Digital Elevation Model map" height="288" width="191"></a></td>
     <td style="background-color:#f1fcdd">
+      <p><strong>Centimeter Version (<abbr title="North American Vertical Datum of 1988">NAVD88</abbr>):</strong></p>
+      <ul>
+        <li><a href="../data/dem/eden_dem_cm_oc11.zip">NetCDF</a>
+          <ul>
+            <li>zipped, with metadata files, 168 <abbr title="kilobytes">KB</abbr>)</li>
+          </ul></li>
+        <li><a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/metadata/sflwww/eden_em_oc11.html">EDEN <abbr title="Digital Elevation Model">DEM</abbr> Metadata file</a></li>
+      </ul>
       <p><strong>Meter Version (<abbr title="North American Vertical Datum of 1988">NAVD88</abbr>):</strong></p>
       <ul>
         <li><a href="../data/dem/eden_em_oc11.zip">Arc .e00</a>
@@ -36,11 +44,6 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
           </ul></li>
         <li><a href="../images/maps/EDEN_oc11_release_graphic_lg.gif">GIF</a> (for web browsing)</li>
         <li><a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/metadata/sflwww/eden_em_oc11.html">EDEN <abbr title="Digital Elevation Model">DEM</abbr> Metadata file</a></li>
-      </ul>
-      <p><strong>Centimeter (EDENapps) Version (<abbr title="North American Vertical Datum of 1988">NAVD88</abbr>):</strong></p>
-      <ul>
-        <li><a href="../data/dem/eden_dem_cm_oc11.zip">EDENapps <abbr title="Digital Elevation Model">DEM</abbr></a>&nbsp;(for use with EDENapps Tools only) (.zip, 168 <abbr title="kilobytes">KB</abbr>)</li>
-        <li><a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/metadata/sflwww/eden_em_cm_oc11.html">Metadata</a></li>
       </ul>
     </td>
   </tr>
