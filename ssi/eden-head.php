@@ -121,7 +121,7 @@ echo "  <div class='" . ($filename == '/eden/models/edengrid.php' ? "rightnavbut
   <div class='navbump'></div>
   <div class='" . ($filename == '/eden/eve/index.php' ? "rightnavbuttoncurrent'>Explore and View EDEN (EVE)" : "rightnavbutton'><a href='/eden/eve/index.php'>Explore and View EDEN (EVE)</a>") . "</div>
   <div class='" . ($filename == '/eden/csss/index.php' ? "rightnavbuttoncurrent'>Cape Sable Seaside Sparrow (CSSS) Viewer" : "rightnavbutton'><a href='/eden/csss/index.php'>Cape Sable Seaside Sparrow (CSSS) Viewer</a>") . "</div>
-  <div class='" . ($filename == '/eden/wadem/index.php' ? "rightnavbuttoncurrent'>WADEM<br>Wading Bird Viewer" : "rightnavbutton'><a href='/eden/wadem/index.php'>WADEM<br>Wading Bird Viewer</a>") . "</div>
+  <div class='" . ($filename == '/eden/wadingbirds/index.php' ? "rightnavbuttoncurrent'>Wading Bird<br>Depth Viewer" : "rightnavbutton'><a href='/eden/wadingbirds/index.php'>Wading Bird<br>Depth Viewer</a>") . "</div>
   <div class='" . ($filename == '/eden/coastal.php' ? "rightnavbuttoncurrent'>Coastal EDEN" : "rightnavbutton'><a href='/eden/coastal.php'>Coastal EDEN</a>") . "</div>\n";
 if ($filename == '/eden/water_level_percentiles_map.php')
   echo "  <div class='rightnavbuttoncurrent'>Daily Water Level Percentiles by Month</div>\n";
