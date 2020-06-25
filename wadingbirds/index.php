@@ -198,77 +198,19 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 <div id="tabset">
 <div class="tabs">
   <a href='#intro' class='tab'>Introduction</a>
-  <a href='#inst' class='tab'>Instructions</a>
   <a href='#mapobjs' class='tab tab-active'>Water-Depth Map</a>
 </div>
 <div id="intro" class="tabcontentdiv">
   <h2><img src="../csss/CSSS1.jpg" alt="Photo of a sparrow" style="float:right;margin-left:5px">Wading Birds Depth Viewer</h2>
   <h3>Monitoring water depths in wading bird habitats</h3>
-  <p>Loren ipsum.</p>
+  <p>Wading birds are important indicator species for South Florida's Greater Everglades. Hydrologic modifications to the Everglades, including drainage, compartmentalization, and flow alterations, have led to declining wading bird populations and nesting numbers. One goal of the Comprehensive Everglades Restoration Plan (CERP) is to restore historic flow and increase suitable hydrologic conditions for birds such as the White Ibis (<em>Eudocimus albus</em>) and Great Egret (<em>Ardea alba</em>).</p>
+  <p>The Everglades Depth Estimation Network (EDEN) provides daily water-level and water-depth surfaces for the freshwater Everglades from 1991 to present. The EDEN Wading Bird Viewer was developed to support scientists and managers with an easy-to-use tool to assess current hydrologic conditions for wading birds in the Everglades. Successful wading bird reproduction is highly dependent on the availability of prey (fish and aquatic invertebrates). Prey concentration and abundance determine prey availability and are closely related to water depths and recession rates. The EDEN Wading Bird Viewer draws on Wading Distribution and Evaluation Modeling (WADEM) and displays water depth and 14-day recession rate across the EDEN spatial domain. Optimal depths and recession rates are shown daily for White Ibis and Great Egret.</p>
   <p>Please send any questions or comments to the <a href="mailto:bmccloskey@usgs.gov">EDEN team</a>.</p>
+  <p>References:<br>
+  Beerens, J.M., E.G. Noonburg, and D.E. Gawlik. 2015. Linking Dynamic Habitat Selection with Wading Bird Foraging Distributions across Resource Gradients. PLoS ONE 10(6): e0128182. DOI: 10.1371/journal.pone.0128182.</p>
+  <p>Beerens, J.M., P.C. Frederick, E.G. Noonburg, and D.E. Gawlik. 2015. Determining Habitat Quality for Species that Demonstrate Dynamic Habitat Selection. Ecology and Evolution 5(23): 5685-5697. DOI: 10.1002/ece3.1813.</p>
+</p>
 </div>
-<div id="inst" class="tabcontentdiv">
-  <h2>Using the Wading Birds Depth Viewer</h2>
-  <p>The Wading Birds Water-Depth Maps contain daily water depth based on the daily <abbr title='Everglades Depth Estimation Network'>EDEN</abbr> water-level surfaces, which are generated each day using water-level gage data, and ground elevation data. Water-depth values are displayed in both centimeters and inches (relative to North American Vertical Datum of 1988 (NAVD 88)). The data is served using the same 400 meters by 400 meters grid as other <abbr title='Everglades Depth Estimation Network'>EDEN</abbr> data. See details below ("Quality water-level data used to generate the daily water-level surfaces") about the daily water-level surfaces based on the quality of the water-level gage data.</p>
-  <p>From the Water-Depth Map tab:</p>
-  <ol>
-    <li>Water-depth data
-      <ol type="A">
-        <li>Water-depth value ranges have been pre-selected for this version.</li>
-        <li>To set the water-depth transparency level, move the slider from left (full transparency) to right (no transparency).</li>
-      </ol>
-    </li>
-    <li>Setting data range
-      <ol type="A">
-        <li>Time periods have been pre-selected based on anticipated user needs for this version.</li>
-        <li>To change dates, select the data range from the top drop down box.</li>
-        <li>Once the time period is selected, the maps begin to load into the viewer. The status of the loading process is displayed in the bottom left of the viewing window ("Loading image..."). All of the daily maps are viewable when the status is 'Loaded'.</li>
-      </ol>
-    </li>
-    <li>Animation of daily maps
-      <ol type="A">
-        <li>The map view can be animated using the arrow button which toggles the animation on and off.</li>
-        <li>The Time range slider allows users to move quickly between maps without using the animation button.</li>
-      </ol>
-    </li>
-    <li>Ground elevation data
-      <ol type="A">
-        <li>The ground elevation allows users to see the topography of dry areas.</li>
-        <li>To set the ground elevation transparency level, move the slider from left (full transparency) to right (no transparency).</li>
-      </ol>
-    </li>
-    <li>Locations of nearby water-level gages
-      <ol type="A">
-        <li>Gages will display on the viewer by checking the box next to "show gages." Deselecting the box will remove the gage markers.</li>
-        <li>Current hydrographs at each gage can be viewed by clicking the gage pin on the map.
-          <ul>
-            <li>The hydrographs are those used for the <abbr title='Everglades Restoration Transition Plan'>ERTP</abbr> monitoring application for this beta version</li>
-          </ul>
-        </li>
-      </ol>
-    </li>
-    <li>Zooming and Panning
-      <ol type="A">
-        <li>The map view can be zoomed in and out as well as panned using several methods
-          <ul>
-            <li>clicking on the "+" and "-" buttons in the upper-right of the map will zoom in or zoom out</li>
-            <li>double-clicking the map will zoom in to that location</li>
-            <li>clicking and holding the left mouse button allows you to move the map</li>
-            <li>the arrow keys on the keyboard allows you to move around the map</li>
-            <li>computer mice equipped with mouse wheels can use the wheels to zoom in and out</li>
-          </ul>
-        </li>
-      </ol>
-    </li>
-    <li>Display date &mdash; the date of the map displayed is shown in the bottom right of the display window</li>
-  </ol>
-  <h3>Quality water-level data used to generate the daily water-level surfaces:</h3>
-  <ul>
-    <li>Water-level surfaces for the most recent quarter are based on real-time gage data. Real-time water-level data for the gages are transmitted daily by satellite or other telemetry and have received little or no review from the operating agency. The <abbr title='Everglades Depth Estimation Network'>EDEN</abbr> team uses the <abbr title='Automated Data Assurance and Management'>ADAM</abbr> software to quality-assure the data and estimate missing data. Subsequent reviews and edits of the data may result in significant revisions to the data.</li>
-    <li>Water-level surfaces for all previous quarters in the current water year (<abbr title='October'>Oct</abbr> 1 to <abbr title='September'>Sept</abbr> 30) are based on provisional gage data. Provisional water-level data for the gages are provided on a quarterly basis from the operating agencies and have received some review and edits by them. For some agencies, the review is near final while for others, the review is preliminary. Then, the <abbr title='Everglades Depth Estimation Network'>EDEN</abbr> team uses the <abbr title='Automated Data Assurance and Management'>ADAM</abbr> software to further quality-assure the data and estimate missing data.</li>
-    <li>Water-level surfaces for the water years prior to the current one are based on final gage data. Final water-level data for the gages are provided on an annual basis from the operating agencies. The <abbr title='Everglades Depth Estimation Network'>EDEN</abbr> team uses the <abbr title='Automated Data Assurance and Management'>ADAM</abbr> software to estimate missing data, if necessary.</li>
-  </ul>
-</div><!--End inst-->
 <div id="mapobjs" class="tabcontentdiv tabcontentdiv-active" style="font-size:12px">
   <div id="map" style="float:left;width:1000px;height:1000px"></div>
   <div style="position:absolute;top:40px;left:1032px"><img src="wadem_legend.png" alt="water depth/recession rate legend">
