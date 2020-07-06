@@ -6,7 +6,7 @@ require_once('/var/www/eden/pclzip.lib.php');
 $title = "<title>Water Surfaces - Everglades Depth Estimation Network (EDEN)</title>\n";
 require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 echo "<h2>Water Surfaces</h2>\n";
-if (($type == 'netcdf' || $type == 'geotiff' || $type == 'dailymedian') && ($year > 1990 && $year < 2100)) {
+if (($type == 'netcdf' || $type == 'geotiff' || $type == 'dailymedian') && $year > 1990 && $year < 2100) {
 	set_time_limit(200);
 	$zipdir = 'surface_zipfiles';
 	if ($handle = opendir($zipdir)) {
@@ -17,10 +17,32 @@ if (($type == 'netcdf' || $type == 'geotiff' || $type == 'dailymedian') && ($yea
 	}
 	$filename = "surface_zipfiles/{$year}_{$type}_files.zip";
 	$archive = new PclZip($filename);
-	$dir = "/var/www/eden/data/$type/v2";
+	for ($i = 2; $i <= 3; $i++) {
+		$dir = "/var/www/eden/data/$type/v$i";
+		if ($handle = opendir($dir)) {
+			while (false !== ($file = readdir($handle)))
+				if (preg_match("/^$year/", $file)) {
+					copy($dir . '/' . $file, $zipdir . '/' . $file);
+					$ziplist[] .= $zipdir . '/' . $file;
+				}
+			closedir($handle);
+		}
+	}
+	$dir = '/var/www/eden/data/realtime2';
 	if ($handle = opendir($dir)) {
+		switch ($type) {
+			case 'netcdf':
+				$t = '_v3rt_nc.zip';
+				break;
+			case 'geotiff':
+				$t = '_v3rt_geotif.zip';
+				break;
+			case 'dailymedian':
+				$t = '_median_flag_v3rt.txt';
+				break;
+		}
 		while (false !== ($file = readdir($handle)))
-			if (preg_match("/^$year/", $file)) {
+			if (preg_match("/^$year.*$t$/", $file)) {
 				copy($dir . '/' . $file, $zipdir . '/' . $file);
 				$ziplist[] .= $zipdir . '/' . $file;
 			}
