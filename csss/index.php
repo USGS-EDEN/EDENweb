@@ -470,6 +470,7 @@ for ($i = 1995; $i <= $yr; $i++) {
       <div style="position:absolute;top:35px;left:245px;width:120px;font-size:14px">Displayed hydroperiod year:<br><a href="" style="text-decoration:none" onclick="return step_year(-1);">&larr;</a>&nbsp;&nbsp;<span id="theDt2" style="font-weight:bold">2020</span>&nbsp;&nbsp;<a href="" style="text-decoration:none" onclick="return step_year(1);">&rarr;</a></div>
     </div>
     <div id="perdry" style="text-align:left;position:absolute;left:500px;top:-7px;width:135px;background:white;padding:3px;border:2px solid black">
+      <input type="checkbox" id="boundaries" name="boundaries" value="show" onclick="show_boundaries();" checked>show boundaries<br>
       <input type="checkbox" id="gages" name="gages" value="show" onclick="show_gages();" checked>show gages<br>
       <strong>Sub-area statistics:</strong><br>
       <input type="checkbox" id="depth_mean" name="stat5" value="depth_mean" onclick="depth_mean();"><a href="javascript:void(null)" onclick="showPos(event,'Mean cm water depth of <abbr title=\'Cape Sable seaside sparrow\'>CSSS</abbr> subpopulation area based on the <abbr title=\'Everglades Depth Estimation Network\'>EDEN</abbr> daily water-level surface for a given day.<br><br><span style=\'font-size:10px\'>Click to dismiss.</span>');">mean water depth</a><br>
@@ -700,34 +701,34 @@ function onEachFeature(feature, sparrows) {
 }
 
 var sparrows2 = L.geoJson(sparrowHome_new, {onEachFeature: onEachFeature, style: function(feature) {
-    switch (feature.properties.UNIT_NUM) {
-        case 'AX': return {color: "#0F0", fillOpacity: "0.0", weight: "1.5"}; break;
-        default: return {color: "#000", fillOpacity: "0.0", weight: "3.5"};
+  switch (feature.properties.UNIT_NUM) {
+    case 'AX': return {color: "#0F0", fillOpacity: "0.0", weight: "1.5"}; break;
+    default: return {color: "#000", fillOpacity: "0.0", weight: "3.5"};
 }}}).addTo(map);
 
 var geojsonMarkerOptions = {
-    radius: 4,
-    fillColor: "#ff7800",
-    color: "#000",
-    weight: 1,
-    opacity: 1,
-    fillOpacity: 0.8
+  radius: 4,
+  fillColor: "#ff7800",
+  color: "#000",
+  weight: 1,
+  opacity: 1,
+  fillOpacity: 0.8
 };
 
 var myIcon = L.icon({
-    iconUrl: 'marker-icon.png',
-    iconSize: [0, 0],
-    labelAnchor: [-6, 0]
+  iconUrl: 'marker-icon.png',
+  iconSize: [0, 0],
+  labelAnchor: [-6, 0]
 });
-L.marker([25.674, -80.800], {icon: myIcon}).bindTooltip('AX', {direction: "left", permanent: true, className: "AXLabelborder"}).addTo(map);
-L.marker([25.636, -81.000], {icon: myIcon}).bindTooltip('A', {direction: "left", permanent: true, className: "ALabelborder"}).addTo(map);
-<?php if($int) echo "L.marker([25.742, -80.823], {icon: myIcon}).bindTooltip('A1', {direction: 'left', permanent: true, className: 'A1Labelborder'}).addTo(map);
-L.marker([25.553, -80.883], {icon: myIcon}).bindTooltip('A2', {direction: 'left', permanent: true, className: 'A2Labelborder'}).addTo(map);\n"; ?>
-L.marker([25.363, -80.837], {icon: myIcon}).bindTooltip('B', {direction: "left", permanent: true, className: "BLabelborder"}).addTo(map);
-L.marker([25.427, -80.653], {icon: myIcon}).bindTooltip('C', {direction: "left", permanent: true, className: "CLabelborder"}).addTo(map);
-L.marker([25.338, -80.588], {icon: myIcon}).bindTooltip('D', {direction: "left", permanent: true, className: "DLabelborder"}).addTo(map);
-L.marker([25.448, -80.786], {icon: myIcon}).bindTooltip('E', {direction: "left", permanent: true, className: "ELabelborder"}).addTo(map);
-L.marker([25.542, -80.616], {icon: myIcon}).bindTooltip('F', {direction: "left", permanent: true, className: "FLabelborder"}).addTo(map);
+var AXbal = L.marker([25.674, -80.800], {icon: myIcon}).bindTooltip('AX', {direction: "left", permanent: true, className: "AXLabelborder"}).addTo(map);
+var Abal = L.marker([25.636, -81.000], {icon: myIcon}).bindTooltip('A', {direction: "left", permanent: true, className: "ALabelborder"}).addTo(map);
+<?php if($int) echo "var A1bal = L.marker([25.742, -80.823], {icon: myIcon}).bindTooltip('A1', {direction: 'left', permanent: true, className: 'A1Labelborder'}).addTo(map);
+var A2bal = L.marker([25.553, -80.883], {icon: myIcon}).bindTooltip('A2', {direction: 'left', permanent: true, className: 'A2Labelborder'}).addTo(map);\n"; ?>
+var Bbal = L.marker([25.363, -80.837], {icon: myIcon}).bindTooltip('B', {direction: "left", permanent: true, className: "BLabelborder"}).addTo(map);
+var Cbal = L.marker([25.427, -80.653], {icon: myIcon}).bindTooltip('C', {direction: "left", permanent: true, className: "CLabelborder"}).addTo(map);
+var Dbal = L.marker([25.338, -80.588], {icon: myIcon}).bindTooltip('D', {direction: "left", permanent: true, className: "DLabelborder"}).addTo(map);
+var Ebal = L.marker([25.448, -80.786], {icon: myIcon}).bindTooltip('E', {direction: "left", permanent: true, className: "ELabelborder"}).addTo(map);
+var Fbal = L.marker([25.542, -80.616], {icon: myIcon}).bindTooltip('F', {direction: "left", permanent: true, className: "FLabelborder"}).addTo(map);
 
 function imgtrans(transval) {
 	eden.setOpacity(transval / 10);
@@ -1042,6 +1043,33 @@ for ($i = 0; $i < $num_results; $i++) {
 }
 ?>
 	}
+}
+
+function show_boundaries() {
+  if(document.getElementById('boundaries').checked) {
+    sparrows2.addTo(map);
+    AXbal.addTo(map);
+    Abal.addTo(map);
+<?php if($int) echo "    A1bal.addTo(map);
+    A2bal.addTo(map);\n"; ?>
+    Bbal.addTo(map);
+    Cbal.addTo(map);
+    Dbal.addTo(map);
+    Ebal.addTo(map);
+    Fbal.addTo(map);
+  }
+  else {
+    sparrows2.removeFrom(map);
+    AXbal.removeFrom(map);
+    Abal.removeFrom(map);
+<?php if($int) echo "    A1bal.removeFrom(map);
+    A2bal.removeFrom(map);\n"; ?>
+    Bbal.removeFrom(map);
+    Cbal.removeFrom(map);
+    Dbal.removeFrom(map);
+    Ebal.removeFrom(map);
+    Fbal.removeFrom(map);
+  }
 }
 
 function per_dry() {

@@ -213,34 +213,36 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 </div>
 <div id="mapobjs" class="tabcontentdiv tabcontentdiv-active" style="font-size:12px">
   <div id="map" style="float:left;width:1000px;height:1000px"></div>
-  <div style="position:absolute;top:40px;left:1032px"><img src="wadem_legend.png" alt="water depth/recession rate legend">
+  <div style="position:absolute;top:40px;left:1032px"><img src="wading_bird_legend.png" alt="water depth legend">
     <div style="position:absolute;top:0px;left:35px">(<abbr title="centimeters">cm</abbr>)</div>
-    <div style="position:absolute;top:300px;left:-28px;text-align:right;width:22px">(<abbr title="centimeters">cm/<br>day</abbr>)</div>
     <div style="position:absolute;top:28px;left:35px">43.53</div>
-    <div style="position:absolute;top:37px;left:-28px;text-align:right;width:22px">1.02</div>
     <div style="position:absolute;top:76px;left:35px">31.36</div>
-    <div style="position:absolute;top:85px;left:-28px;text-align:right;width:22px">0.78</div>
     <div style="position:absolute;top:124px;left:35px">19.88</div>
-    <div style="position:absolute;top:133px;left:-28px;text-align:right;width:22px">0.51</div>
     <div style="position:absolute;top:172px;left:35px">13.29</div>
-    <div style="position:absolute;top:181px;left:-28px;text-align:right;width:22px">0.2</div>
     <div style="position:absolute;top:220px;left:35px">2.63</div>
-    <div style="position:absolute;top:229px;left:-28px;text-align:right;width:22px">0</div>
     <div style="position:absolute;top:268px;left:35px">-8.93</div>
-    <div style="position:absolute;top:277px;left:-28px;text-align:right;width:22px">-0.41</div>
     <div style="position:absolute;top:-35px;left:30px">Water depth</div>
+  </div>
+  <div style="position:absolute;top:405px;left:1032px"><img src="wading_bird_r_legend.png" alt="recession rate legend">
+    <div style="position:absolute;top:300px;left:-28px;text-align:right;width:22px">(<abbr title="centimeters">cm/<br>day</abbr>)</div>
+    <div style="position:absolute;top:37px;left:-28px;text-align:right;width:22px">1.02</div>
+    <div style="position:absolute;top:85px;left:-28px;text-align:right;width:22px">0.78</div>
+    <div style="position:absolute;top:133px;left:-28px;text-align:right;width:22px">0.51</div>
+    <div style="position:absolute;top:181px;left:-28px;text-align:right;width:22px">0.2</div>
+    <div style="position:absolute;top:229px;left:-28px;text-align:right;width:22px">0</div>
+    <div style="position:absolute;top:277px;left:-28px;text-align:right;width:22px">-0.41</div>
     <div style="position:absolute;top:330px;left:-30px">Recession rate</div>
   </div>
-  <div style="position:absolute;top:555px;left:1035px"><img src="demLegend.PNG" alt="dem legend">
+  <div style="position:absolute;top:815px;left:1035px"><img src="demLegend.PNG" alt="dem legend">
     <div style="position:absolute;top:-2px;left:35px">(<abbr title="centimeters">cm</abbr>)</div>
     <div style="position:absolute;top:15px;left:35px">400</div>
     <div style="position:absolute;top:130px;left:35px">0</div>
     <div style="position:absolute;top:-45px;left:-10px">Ground elevation (<abbr title="North American Vertical Datum of 1988">NAVD88</abbr>)</div>
   </div>
-  <div style="position:absolute;top:905px;left:1015px"><img src="marker-icon-black-lrg-cr.png" alt="surface water gage marker">
+  <div style="position:absolute;top:1070px;left:1015px"><img src="marker-icon-black-lrg-cr.png" alt="surface water gage marker">
     <div style="position:absolute;top:-43px;left:-5px">Surface water gage</div>
   </div>
-  <div style="position:absolute;top:905px;left:1060px"><img src="marker-icon-grey-lrg-sq.png" alt="ground water gage marker">
+  <div style="position:absolute;top:1070px;left:1060px"><img src="marker-icon-grey-lrg-sq.png" alt="ground water gage marker">
     <div style="position:absolute;top:-43px;left:-5px">Ground water gage</div>
   </div>
   <div id="controls" style="position:relative;top:1025px;height:36px">
