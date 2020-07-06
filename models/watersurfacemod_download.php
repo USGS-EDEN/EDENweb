@@ -41,7 +41,7 @@ foreach($size as $a => $b) {
 	    		$v1 = preg_replace('/^v/', 'version ', $v1, 1);
 				$v2 = str_replace('prov', '<strong>prov</strong>', $v[0]);
 				$ft = date('F Y', filemtime($d[$i]));
-	    		${$a . '_tbl'} .=  "<td><a href='" . substr($d[$i], 15) . "'>$c <abbr title='$o[$i] quarter'>Q$i</abbr></a> (zip, " . round(filesize($d[$i]) / 1048576, 1) . " <abbr title='megabytes'>MB</abbr>)<br><abbr title='$v1'>$v2</abbr>, $ft</td>\n";
+	    		${$a . '_tbl'} .=  "<td><a href='../" . substr($d[$i], 14) . "'>$c <abbr title='$o[$i] quarter'>Q$i</abbr></a> (zip, " . round(filesize($d[$i]) / 1048576, 1) . " <abbr title='megabytes'>MB</abbr>)<br><abbr title='$v1'>$v2</abbr>, $ft</td>\n";
 	    	}
     	}
 		${$a . '_tbl'} .=  "</tr>\n";

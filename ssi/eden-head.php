@@ -71,29 +71,29 @@ elseif (in_array($filename, array('/eden/stationlist.php', '/eden/explanation.ph
 echo "  <div class='" . ($filename == '/eden/models/watersurfacemod.php' ? "rightnavbuttoncurrent'>Water Surfaces" : "rightnavbutton'><a href='/eden/models/watersurfacemod.php'>Water Surfaces</a>") . "</div>\n";
 if ($filename == '/eden/models/watersurfacemod_download.php')
   echo "  <div class='rightnavbuttoncurrent'>- Download Surfaces</div>\n";
-elseif ($filename == '/eden/models/release_notes_watersurfaces.php')
+elseif (in_array($filename, array('/eden/models/watersurfacemod_download_1990s.php', '/eden/models/watersurfacemod-proc.php', '/eden/models/release_notes_watersurfaces.php')))
   echo "  <div class='rightnavbuttoncurrent'>- <a href='/eden/models/watersurfacemod_download.php'>Download Surfaces</a></div>\n";
-elseif (in_array($filename, array('/eden/models/watersurfacemod.php', '/eden/models/wsreleaselog.php', '/eden/models/real-time.php', '/eden/models/differencemaps.php', '/eden/models/confidenceindexmaps.php', '/eden/models/watersurfacemod-archive.php', '/eden/models/release_notes_watersurfaces.php')))
+elseif (in_array($filename, array('/eden/models/watersurfacemod.php', '/eden/models/wsreleaselog.php', '/eden/models/real-time.php', '/eden/models/differencemaps.php', '/eden/models/confidenceindexmaps.php', '/eden/models/watersurfacemod-archive.php', '/eden/models/watersurfacemod_download_1990s.php', '/eden/models/watersurfacemod-proc.php', '/eden/models/release_notes_watersurfaces.php')))
   echo "  <div class='rightnavbutton'>- <a href='/eden/models/watersurfacemod_download.php'>Download Surfaces</a></div>\n";
 if ($filename == '/eden/models/wsreleaselog.php')
   echo "  <div class='rightnavbuttoncurrent'>- Release Log</div>\n";
-elseif (in_array($filename, array('/eden/models/watersurfacemod.php', '/eden/models/watersurfacemod_download.php', '/eden/models/real-time.php', '/eden/models/differencemaps.php', '/eden/models/confidenceindexmaps.php', '/eden/models/watersurfacemod-archive.php', '/eden/models/release_notes_watersurfaces.php')))
+elseif (in_array($filename, array('/eden/models/watersurfacemod.php', '/eden/models/watersurfacemod_download.php', '/eden/models/real-time.php', '/eden/models/differencemaps.php', '/eden/models/confidenceindexmaps.php', '/eden/models/watersurfacemod-archive.php', '/eden/models/watersurfacemod_download_1990s.php', '/eden/models/watersurfacemod-proc.php', '/eden/models/release_notes_watersurfaces.php')))
   echo "  <div class='rightnavbutton'>- <a href='/eden/models/wsreleaselog.php'>Release Log</a></div>\n";
 if ($filename == '/eden/models/real-time.php')
   echo "  <div class='rightnavbuttoncurrent'>- Real-Time Surfaces</div>\n";
-elseif (in_array($filename, array('/eden/models/watersurfacemod.php', '/eden/models/watersurfacemod_download.php', '/eden/models/wsreleaselog.php', '/eden/models/differencemaps.php', '/eden/models/confidenceindexmaps.php', '/eden/models/watersurfacemod-archive.php', '/eden/models/release_notes_watersurfaces.php')))
+elseif (in_array($filename, array('/eden/models/watersurfacemod.php', '/eden/models/watersurfacemod_download.php', '/eden/models/wsreleaselog.php', '/eden/models/differencemaps.php', '/eden/models/confidenceindexmaps.php', '/eden/models/watersurfacemod-archive.php', '/eden/models/watersurfacemod_download_1990s.php', '/eden/models/watersurfacemod-proc.php', '/eden/models/release_notes_watersurfaces.php')))
   echo "  <div class='rightnavbutton'>- <a href='/eden/models/real-time.php'>Real-Time Surfaces</a></div>\n";
 if ($filename == '/eden/models/differencemaps.php')
   echo "  <div class='rightnavbuttoncurrent'>- Difference Maps</div>\n";
-elseif (in_array($filename, array('/eden/models/watersurfacemod.php', '/eden/models/watersurfacemod_download.php', '/eden/models/wsreleaselog.php', '/eden/models/real-time.php', '/eden/models/confidenceindexmaps.php', '/eden/models/watersurfacemod-archive.php', '/eden/models/release_notes_watersurfaces.php')))
+elseif (in_array($filename, array('/eden/models/watersurfacemod.php', '/eden/models/watersurfacemod_download.php', '/eden/models/wsreleaselog.php', '/eden/models/real-time.php', '/eden/models/confidenceindexmaps.php', '/eden/models/watersurfacemod-archive.php', '/eden/models/watersurfacemod_download_1990s.php', '/eden/models/watersurfacemod-proc.php', '/eden/models/release_notes_watersurfaces.php')))
   echo "  <div class='rightnavbutton'>- <a href='/eden/models/differencemaps.php'>Difference Maps</a></div>\n";
 if ($filename == '/eden/models/confidenceindexmaps.php')
   echo "  <div class='rightnavbuttoncurrent'>- Confidence Index Maps</div>\n";
-elseif (in_array($filename, array('/eden/models/watersurfacemod.php', '/eden/models/watersurfacemod_download.php', '/eden/models/wsreleaselog.php', '/eden/models/real-time.php', '/eden/models/differencemaps.php', '/eden/models/watersurfacemod-archive.php', '/eden/models/release_notes_watersurfaces.php')))
+elseif (in_array($filename, array('/eden/models/watersurfacemod.php', '/eden/models/watersurfacemod_download.php', '/eden/models/wsreleaselog.php', '/eden/models/real-time.php', '/eden/models/differencemaps.php', '/eden/models/watersurfacemod-archive.php', '/eden/models/watersurfacemod_download_1990s.php', '/eden/models/watersurfacemod-proc.php', '/eden/models/release_notes_watersurfaces.php')))
   echo "  <div class='rightnavbutton'>- <a href='/eden/models/confidenceindexmaps.php'>Confidence Index Maps</a></div>\n";
 if ($filename == '/eden/models/watersurfacemod-archive.php')
   echo "  <div class='rightnavbuttoncurrent'>- Archived Files</div>\n";
-elseif (in_array($filename, array('/eden/models/watersurfacemod.php', '/eden/models/watersurfacemod_download.php', '/eden/models/wsreleaselog.php', '/eden/models/real-time.php', '/eden/models/differencemaps.php', '/eden/models/confidenceindexmaps.php', '/eden/models/release_notes_watersurfaces.php')))
+elseif (in_array($filename, array('/eden/models/watersurfacemod.php', '/eden/models/watersurfacemod_download.php', '/eden/models/wsreleaselog.php', '/eden/models/real-time.php', '/eden/models/differencemaps.php', '/eden/models/confidenceindexmaps.php', '/eden/models/watersurfacemod_download_1990s.php', '/eden/models/watersurfacemod-proc.php', '/eden/models/release_notes_watersurfaces.php')))
   echo "  <div class='rightnavbutton'>- <a href='/eden/models/watersurfacemod-archive.php'>Archived Files</a></div>\n";
 echo "  <div class='" . ($filename == '/eden/models/water_depth.php' ? "rightnavbuttoncurrent'>Water Depth" : "rightnavbutton'><a href='/eden/models/water_depth.php'>Water Depth</a>") . "</div>\n";
 if ($filename == '/eden/models/water_depth_data.php')

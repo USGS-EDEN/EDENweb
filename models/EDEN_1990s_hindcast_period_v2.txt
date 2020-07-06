@@ -1,0 +1,239 @@
+Gage Name	Structure gage having no data estimated prior to construction (post-1990)	Structure gage with missing data that has not been estimated	Period of measured record	Period of hindcasted record
+2A300	N	N	1/1/90 - current	None
+3A-5	N	N	9/21/05 - current	1/1/90 - 9/20/05
+3A10	N	N	1/1/90 - current	None
+3A11	N	N	1/1/90 - current	None
+3A12	N	N	1/18/90 - current	1/1/90 - 1/17/90
+3A9	N	N	1/1/90 - current	None
+3AN1W1	N	N	7/18/02 - current	1/1/90 - 7/17/02
+3ANE	N	N	1/1/90 - current	None
+3ANW	N	N	1/1/90 - current	None
+3AS	N	N	1/1/90 - current	None
+3AS3W1	N	N	5/9/00 - current	1/1/90 - 5/8/00
+3ASW	N	N	1/1/90 - current	None
+3B-SE	N	N	1/1/90 - current	None
+3BS1W1	N	N	5/9/00 - current	1/1/90 - 5/8/00
+A13	N	N	9/25/96 - current	1/1/90 - 9/24/96
+ANGEL	N	N	1/1/90 - current	None
+BARW4	N	N	3/18/05 - current	1/1/90 - 3/17/05
+BARW6A	N	N	2/25/05 - current	1/1/90 - 2/24/05
+BCA1	N	N	1/4/90 - current	1/1/90 - 1/3/90
+BCA10	N	N	1/1/90 - current	None
+BCA11	N	N	12/28/90 - current	1/1/90 - 12/27/90
+BCA12	N	N	1/1/92 - current	1/1/90 - 12/31/91
+BCA13	N	N	3/20/91 - current	1/1/90 - 3/19/91
+BCA14	N	N	3/20/91 - current	1/1/90 - 3/19/91
+BCA15	N	N	12/4/00 - current	1/1/90 - 12/3/00
+BCA16	N	N	4/26/01 - current	1/1/90 - 4/25/01
+BCA17	N	N	11/16/00 - current	1/1/90 - 11/15/00
+BCA18	N	N	12/5/00 - current	1/1/90 - 12/4/00
+BCA19	N	N	12/13/00 - current	1/1/90 - 12/12/00
+BCA2	N	N	1/10/91 - current	1/1/90 - 1/9/91
+BCA20	N	N	1/21/01 - current	1/1/90 - 1/20/01
+BCA3	N	N	1/1/92 - current	1/1/90 - 12/31/91
+BCA4	N	N	2/22/91 - current	1/1/90 - 2/21/91
+BCA5	N	N	1/18/91 - current	1/1/90 - 1/17/91
+BCA6	N	N	3/10/95 - current	1/1/90 - 3/9/05
+BCA7	N	N	1/21/05 - current	1/1/90 - 1/20/05
+BCA9	N	N	1/1/00 - current	1/1/90 - 12/31/99
+C111_wetland_east_of_FIU_LTER_TSPH5	N	N	10/3/03 - current	1/1/90 - 10/2/03
+CP	N	N	1/1/90 - current	None
+CR2	N	N	6/8/96 - current	1/1/90 - 6/7/96
+CR3	N	N	6/7/96 - current	1/1/90 - 6/6/96
+CT27R	N	N	1/1/90 - current	None
+CT50R	N	N	2/23/90 - current	1/1/90 - 2/22/90
+CV5NR	N	N	1/1/90 - current	None
+CY2	N	N	9/21/96 - current	1/1/90 - 9/20/96
+CY3	N	N	8/23/96 - current	1/1/90 - 8/22/96
+DO1	N	N	1/1/90 - current	None
+DO2	N	N	8/8/96 - current	1/1/90 - 8/7/96
+E112	N	N	3/22/94 - current	1/1/90 - 3/21/94
+E146	N	N	3/24/94 - current	1/1/90 - 3/23/94
+EDEN_1	N	N	1/13/06 - current	1/1/90 - 1/12/06
+EDEN_10	N	N	6/8/06 - current	1/1/90 - 6/7/06
+EDEN_11	N	N	6/9/06 - current	1/1/90 - 6/8/06
+EDEN_12	N	N	6/6/06 - current	1/1/90 - 6/5/06
+EDEN_13	N	N	6/8/06 - current	1/1/90 - 6/7/06
+EDEN_14	N	N	7/2/06 - current	1/1/90 - 7/1/06
+EDEN_3	N	N	11/9/05 - current	1/1/90 - 11/8/05
+EDEN_4	N	N	6/9/06 - current	1/1/90 - 6/8/06
+EDEN_5	N	N	8/23/06 - current	1/1/90 - 8/22/06
+EDEN_6	N	N	7/10/06 - current	1/1/90 - 7/9/06
+EDEN_7	N	N	6/8/06 - current	1/1/90 - 6/7/06
+EDEN_8	N	N	6/7/06 - current	1/1/90 - 6/6/06
+EDEN_9	N	N	8/7/06 - current	1/1/90 - 8/6/06
+EP1R	N	N	1/1/90 - current	None
+EPSW	N	N	1/1/90 - current	None
+EVER4	N	N	1/1/90 - current	None
+EVER5A	N	N	1/1/90 - current	None
+EVER6	N	N	12/24/91 - current	1/1/90 - 12/23/91
+EVER7	N	N	12/24/91 - current	1/1/90 - 12/23/91
+EVER8	N	N	12/24/91 - current	1/1/90 - 12/23/91
+G-1251	N	N	1/1/90 - current	None
+G-1488	N	N	1/1/90 - current	None
+G-3272	N	N	10/15/95 - current	1/1/90 - 10/14/95
+G-3273	N	N	1/1/90 - current	None
+G-3437	N	N	1/1/90 - current	None
+G-3567	N	N	9/1/94 - current	1/1/90 - 8/31/94
+G-3574	N	N	2/15/95 - current	1/1/90 - 2/14/95
+G-3575	N	N	2/14/95 - current	1/1/90 - 2/13/95
+G-3576	N	N	3/10/95 - current	1/1/90 - 3/9/95
+G-3577	N	N	3/10/95 - current	1/1/90 - 3/9/95
+G-3578	N	N	3/10/95 - current	1/1/90 - 3/9/95
+G-3626	N	N	7/4/96 - current	1/1/90 - 7/3/96
+G-3628	N	N	7/4/96 - current	1/1/90 - 7/3/96
+G-3676	N	N	12/10/98 - current	1/1/90 - 12/9/98
+G-3761	N	N	7/11/01 - current	1/1/90 - 7/10/01
+G-3818	N	N	1/25/05 - current	1/1/90 - 1/24/05
+G-596	N	N	1/1/90 - current	None
+G-620	N	N	1/1/90 - current	None
+G-975	N	N	1/1/90 - current	None
+G300_T	Y	N	11/2/99 - current	None
+G339_H	Y	N	3/6/01 - current	None
+G339_T	Y	N	3/6/01 - current	None
+Joe_Bay_2E	N	N	7/19/01 - current	1/1/90 - 7/18/01
+L28_GAP	N	N	1/1/90 - current	None
+L28S1	N	N	1/1/90 - current	None
+L28S2	N	N	1/1/90 - current	None
+L31W	N	N	1/1/90 - current	None
+LO1	N	N	4/26/00 - current	1/1/90 - 4/25/00
+LOOP1_H	N	N	1/1/90 - current	None
+LOOP1_T	N	N	5/29/94 - current	1/1/90 - 5/28/94
+LOOP2_H	N	N	1/1/90 - current	None
+LOOP2_T	N	N	1/1/90 - current	None
+McCormick_Creek_at_mouth	N	N	2/10/95 - current	1/1/90 - 2/9/95
+MET-1	N	N	7/8/06 - current	1/1/90 - 6/8/06
+Mud_Creek_at_mouth	N	N	10/16/95 - current	1/1/90 - 10/15/95
+NCL	N	N	3/14/96 - current	1/1/90 - 3/13/96
+NESRS1	N	N	1/1/90 - current	None
+NESRS2	N	N	4/29/90 - current	1/1/90 - 4/28/90
+NESRS4	N	N	1/1/90 - current	None
+NESRS5	N	N	6/26/90 - current	1/1/90 - 6/25/90
+NMP	N	N	1/1/00 - current	1/1/90 - 12/31/99
+NORTH_CA1	N	N	6/20/01 - current	1/1/90 - 6/19/01
+NP201	N	N	1/1/90 - current	None
+NP202	N	N	1/1/90 - current	None
+NP203	N	N	1/1/90 - current	None
+NP205	N	N	1/1/90 - current	None
+NP206	N	N	1/1/90 - current	None
+NP44	N	N	1/1/90 - current	None
+NP46	N	N	1/1/90 - current	None
+NP62	N	N	1/1/90 - current	None
+NP67	N	N	1/1/90 - current	None
+NP72	N	N	1/1/90 - current	None
+NTS1	N	N	1/1/90 - current	None
+NTS10	N	N	3/11/94 - current	1/1/90 - 3/10/94
+NTS14	N	N	3/15/94 - current	1/1/90 - 3/14/94
+NTS18	N	N	4/23/98 - current	1/1/90 - 4/22/98
+OL	N	N	4/10/96 - current	1/1/90 - 4/9/96
+OT	N	N	1/1/90 - current	None
+P33	N	N	1/1/90 - current	None
+P34	N	N	1/1/90 - current	None
+P35	N	N	1/1/90 - current	None
+P36	N	N	1/1/90 - current	None
+P37	N	N	1/1/90 - current	None
+P38	N	N	1/1/90 - current	None
+R127	N	N	1/1/90 - current	None
+R3110	N	N	1/1/90 - current	None
+RG1	N	N	9/14/96 - current	1/1/90 - 9/13/96
+RG2	N	N	11/21/96 - current	1/1/90 - 11/20/96
+RG3	N	N	6/9/00 - current	1/1/90 - 6/8/00
+S10A_H	N	N	1/3/90 - current	1/1/90 - 1/2/90
+S10A_T	N	N	1/1/90 - current	None
+S10C_H	N	N	1/3/90 - current	1/1/90 - 1/2/90
+S10C_T	N	N	1/1/90 - current	None
+S10D_H	N	N	1/3/90 - current	1/1/90 - 1/2/90
+S10D_T	N	N	1/9/90 - current	1/1/90 - 1/8/90
+S11A_H	N	N	1/1/90 - current	None
+S11A_T	N	N	1/1/90 - current	None
+S11B_H	N	N	1/1/90 - current	None
+S11B_T	N	N	1/1/90 - current	None
+S11C_H	N	N	1/1/90 - current	None
+S11C_T	N	N	1/1/90 - current	None
+S12A_H	N	N	3/1/90 - current	1/1/90 - 2/28/90
+S12A_T	N	N	1/1/90 - current	None
+S12B_H	N	N	3/1/90 - current	1/1/90 - 2/28/90
+S12B_T	N	N	1/1/90 - current	None
+S12C_H	N	N	3/17/90 - current	1/1/90 - 3/16/90
+S12C_T	N	N	1/1/90 - current	None
+S12D_H	N	N	1/1/90 - current	None
+S12D_T	N	N	1/1/90 - current	None
+S140_H	N	N	1/1/90 - current	None
+S140_T	N	N	1/1/90 - current	None
+S141_H	N	N	1/3/00 - current	1/1/90 - 1/2/00
+S141_T	N	N	1/3/00 - current	1/1/90 - 1/2/00
+S142_H	N	N	11/20/96 - current	1/1/90 - 11/19/96
+S142_T	N	N	11/20/96 - current	1/1/90 - 11/19/96
+S143_T	N	N	10/14/92 - current	1/1/90 - 10/13/92
+S144_H	N	Y	4/27/93 - current	None
+S144_T	N	Y	7/1/91 - current	None
+S145_H	N	Y	4/27/93 - current	None
+S145_T	N	Y	7/1/91 - current	None
+S146_H	N	Y	4/27/93 - current	None
+S146_T	N	Y	6/22/92 - current	None
+S150_T	N	N	1/1/90 - current	None
+S151_H	N	N	1/1/90 - current	None
+S175_H	N	N	1/1/90 - current	None
+S18C_T	N	N	1/1/90 - current	None
+S190_T	N	N	1/1/90 - current	None
+S332_T	N	N	1/1/90 - current	None
+S333_H	N	N	1/1/90 - current	None
+S334_H	N	N	1/1/90 - current	None
+S334_T	N	N	1/1/90 - current	None
+S34_H	N	N	1/1/90 - current	None
+S343A_H	N	N	2/9/95 - current	1/1/90 - 2/8/95
+S343A_T	N	N	2/9/95 - current	1/1/90 - 2/8/95
+S343B_H	N	N	12/28/94 - current	1/1/90 - 12/27/94
+S343B_T	N	N	12/28/94 - current	1/1/90 - 12/27/94
+S344_H	N	N	1/1/90 - current	None
+S344_T	N	Y	7/4/91 - current	None
+S39_H	N	N	1/1/90 - current	None
+S7_T	N	N	1/1/90 - current	None
+S8_T	N	N	8/28/90 - current	1/1/90 - 8/27/90
+S9A_T	N	N	4/3/01 - current	1/1/90 - 4/2/01
+SH1	N	N	1/12/96 - current	1/1/90 - 1/11/96
+SITE_17	N	N	1/1/90 - current	None
+SITE_19	N	N	10/16/92 - current	1/1/90 - 10/15/92
+SITE_62	N	N	1/1/90 - current	None
+SITE_63	N	N	1/1/90 - current	None
+SITE_64	N	N	1/1/90 - current	None
+SITE_65	N	N	1/1/90 - current	None
+SITE_69W	N	N	10/22/94 - current	1/1/90 - 10/21/94
+SITE_7	N	N	1/2/90 - current	1/1/90 - 1/1/90
+SITE_71	N	N	7/17/91 - current	1/1/90 - 7/16/91
+SITE_76	N	N	7/25/91 - current	1/1/90 - 7/24/91
+SITE_8C	N	N	1/1/90 - current	None
+SITE_8T	N	N	1/3/90 - current	1/1/90 - 1/2/90
+SITE_9	N	N	1/4/90 - current	1/1/90 - 1/3/90
+SITE_99	N	N	7/12/91 - current	1/1/90 - 7/11/91
+SOUTH_CA1	N	N	5/11/01 - current	1/1/90 - 12/31/99
+SP	N	N	9/17/96 - current	1/1/90 - 9/16/96
+SR1	N	N	6/16/99 - current	1/1/90 - 6/15/99
+SRS1	N	N	1/1/90 - current	None
+Stillwater_Creek	N	N	4/28/99 - current	1/1/90 - 4/27/99
+Taylor_River_at_mouth	N	N	10/2/95 - current	1/1/90 - 10/1/95
+Taylor_Slough_wetland_at_E146	N	N	10/4/03 - current	1/1/90 - 10/3/03
+TI-8	N	N	1/23/06 - current	1/1/90 - 1/22/06
+TI-9	N	N	1/23/06 - current	1/1/90 - 1/22/06
+TMC	N	N	3/30/96 - current	1/1/90 - 3/29/96
+Trout_Creek_at_mouth	N	N	1/21/96 - current	1/1/90 - 1/20/96
+TSB	N	N	1/1/90 - current	None
+TSH	N	N	3/12/94 - current	1/1/90 - 3/11/94
+Upstream_Taylor_River	N	N	7/30/99 - current	1/1/90 - 7/29/99
+W11	N	N	1/26/06 - current	1/1/90 - 1/25/06
+W14	N	N	1/25/06 - current	1/1/90 - 1/24/06
+W15	N	N	1/25/06 - current	1/1/90 - 1/24/06
+W18	N	N	8/6/03 - current	1/1/90 - 8/5/03
+W2	N	N	1/24/06 - current	1/1/90 - 1/23/06
+W5	N	N	1/24/06 - current	1/1/90 - 1/23/06
+WC2AN1	N	N	5/22/09 - current	1/1/90 - 5/21/09
+WC2AS1	N	N	6/3/09 - current	1/1/90 - 6/2/09
+WCA1ME	N	N	2/17/96 - current	1/1/90 - 2/16/96
+WCA2E1	N	N	10/27/94 - current	1/1/90 - 10/26/94
+WCA2E4	N	N	10/25/94 - current	1/1/90 - 10/24/94
+WCA2F1	N	N	10/26/94 - current	1/1/90 - 10/25/94
+WCA2F4	N	N	10/26/94 - current	1/1/90 - 10/25/94
+WCA2RT	N	N	12/5/94 - current	1/1/90 - 12/4/94
+WCA2U1	N	N	10/25/94 - current	1/1/90 - 10/24/94
+WCA2U3	N	N	1/4/96 - current	1/1/90 - 1/3/96
+West_Highway_Creek	N	N	2/17/96 - current	1/1/90 - 2/16/96
