@@ -1,4 +1,11 @@
 <?php
+$email = isset($_POST['email']) ? htmlentities(trim($_POST['email']), ENT_QUOTES) : 0;
+if ($email) {
+  $file = fopen('edennews_list.txt', 'a');
+  fwrite($file, "$email\n");
+  fclose($file);
+  $msg = "<h1>$email added to EDEN mailing list</h1>\n";
+}
 $title = "<title>Everglades Depth Estimation Network (EDEN)</title>\n";
 $script = "<script>
 setTimeout(function(){var a=document.createElement('script');
@@ -7,6 +14,7 @@ a.src=document.location.protocol+'//script.crazyegg.com/pages/scripts/0020/3757.
 a.async=true;a.type='text/javascript';b.parentNode.insertBefore(a,b)}, 1);
   </script>\n";
 require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
+if (isset($msg)) echo $msg;
 ?>
 <div style="text-align:center">
   <img src="images/logos/EDEN-logoth.gif" alt="" height="111" width="288">
@@ -19,10 +27,12 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
   <tr>
     <td class="tablecell" style="background-color:#ffffcc">
       <ul>
+        <li><a href="wadingbirds/index.php"><strong>Wading Bird Depth Viewer</strong></a></li>
+        <li><a href="models/watersurfacemod_download.php"><strong><abbr title="water year 2018">WY2018</abbr> Final</strong> Water Surfaces</a></li>
+        <li><a href="models/watersurfacemod_download.php"><strong>2020 <abbr title="first quarter">Q1</abbr> Provisional</strong> Water Surfaces</a></li>
         <li><a href="models/watersurfacemod_download.php"><strong>2019 <abbr title="fourth quarter">Q4</abbr> Provisional</strong> Water Surfaces</a></li>
         <li><a href="models/watersurfacemod_download.php"><strong>2019 <abbr title="third quarter">Q3</abbr> Provisional</strong> Water Surfaces</a></li>
         <li><a href="models/watersurfacemod_download.php"><strong>2019 <abbr title="second quarter">Q2</abbr> Provisional</strong> Water Surfaces</a></li>
-        <li><a href="models/watersurfacemod_download.php"><strong>2019 <abbr title="first quarter">Q1</abbr> Provisional</strong> Water Surfaces</a></li>
       </ul>
     </td>
   </tr>
@@ -33,11 +43,9 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
   </tr>
   <tr>
     <td style="text-align:center">
-      <form action="https://sofia.usgs.gov/cgi-bin/dada/mail.cgi" method="get">
-        <input type="hidden" name="list" value="edennews">
-        <input type="hidden" name="f" value="subscribe">
-        <input type="text" name="email" value="email address" size="16" onfocus="this.value='';">
-        <input type="submit" value="Submit">
+      <form method="post">
+        <input type="text" name="email" placeholder="email address" size="16">
+        <input type="submit" name="submit" value="Submit">
       </form>
     </td>
   </tr>
