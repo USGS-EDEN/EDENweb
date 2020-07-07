@@ -1,10 +1,10 @@
 <?php
 session_start();
-$fields_all = isset($_GET['fields_all']) ? htmlentities(trim($_GET['fields_all']), ENT_QUOTES) : 0;
-$fields_clear = isset($_GET['fields_clear']) ? htmlentities(trim($_GET['fields_clear']), ENT_QUOTES) : 0;
-$stations_all = isset($_GET['stations_all']) ? htmlentities(trim($_GET['stations_all']), ENT_QUOTES) : 0;
-$stations_clear = isset($_GET['stations_clear']) ? htmlentities(trim($_GET['stations_clear']), ENT_QUOTES) : 0;
-$submit = isset($_GET['submit']) ? htmlentities(trim($_POST['submit']), ENT_QUOTES) : 0;
+$fields_all = isset($_POST['fields_all']) ? htmlentities(trim($_POST['fields_all']), ENT_QUOTES) : 0;
+$fields_clear = isset($_POST['fields_clear']) ? htmlentities(trim($_POST['fields_clear']), ENT_QUOTES) : 0;
+$stations_all = isset($_POST['stations_all']) ? htmlentities(trim($_POST['stations_all']), ENT_QUOTES) : 0;
+$stations_clear = isset($_POST['stations_clear']) ? htmlentities(trim($_POST['stations_clear']), ENT_QUOTES) : 0;
+$submit = isset($_POST['submit']) ? htmlentities(trim($_POST['submit']), ENT_QUOTES) : 0;
 if (isset($_POST['field']))
 	foreach ((array) $_POST['field'] as $c) {
 		$c = htmlentities(trim($c), ENT_QUOTES);
