@@ -6,7 +6,7 @@
 $filename = htmlentities($_SERVER['SCRIPT_NAME'], ENT_QUOTES);
 echo "http://sofia.usgs.gov$filename";
 ?>
-  <br>Comments and suggestions? Contact: <a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/comments.html" class="footer">Heather Henkel - Webmaster</a><br>Last updated:
+  <br>Comments and suggestions? Contact: <a href="mailto:bmccloskey@usgs.gov" class="footer">Bryn McCloskey</a><br>Last updated:
 <?php echo date ("F d, Y h:i A", getlastmod()); ?> (BJM)</span>
 </div>
 </body>
