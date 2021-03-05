@@ -88,7 +88,7 @@ echo "map.fitBounds([[$lat_from, -$long_to], [$lat_to, -$long_from]]);</script>
     </td>
   </tr>
   <tr>
-    <td style='background-color:#f8f1bc'><p style='font-size:small'>Leaflet Map (showing location of <strong>$num_results</strong> gages). To use the map, zoom in or out using the buttons on the left. To view information for a gage, click on the orange pin<img src='images/icons/google-orange-bubble.gif' height='13' width='10' alt='orange pin'>. This map requires enabled JavaScript to view; if you cannot fully access the information on this page, please contact <a href='mailto:hhenkel@usgs.gov'>Heather Henkel</a>.</p>
+    <td style='background-color:#f8f1bc'><p style='font-size:small'>Leaflet Map (showing location of <strong>$num_results</strong> gages). To use the map, zoom in or out using the buttons on the left. To view information for a gage, click on the orange pin<img src='images/icons/google-orange-bubble.gif' height='13' width='10' alt='orange pin'>. This map requires enabled JavaScript to view; if you cannot fully access the information on this page, please contact <a href='mailto:bmccloskey@usgs.gov'>Bryan McCloskey</a>.</p>
       <p style='font-size:x-small'>References to non-<abbr title='United States'>U.S.</abbr> Department of the Interior (<abbr title='Department of the Interior'>DOI</abbr>) products do not constitute an endorsement by the <abbr title='Department of the Interior'>DOI</abbr>.</p></td>
   </tr>
 </table><br><br>\n";
