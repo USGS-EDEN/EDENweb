@@ -25,18 +25,20 @@ foreach($size as $a => $b) {
 		closedir($handle);
 	}
 	ksort($files[$a]);
+  ${$a . '_tbl'} = '';
 	foreach ($files[$a] as $c => $d) {
 		$odd = $c % 2 ? '2' : '';
 		${$a . '_tbl'} .= "<tr class='gtablecell$odd'><td>";
 		${$a . '_tbl'} .= $size[$a][$c] ? "<a href='watersurfacemod-proc.php?year=$c&type=$a'>$c</a><br>(zip, " . round($size[$a][$c]) . " <abbr title='megabytes'>MB</abbr>)" : $c;
 		${$a . '_tbl'} .= "</td>\n";
     	for ($i = 1; $i <= 4; $i++) {
-    		if (!$d[$i])
+    		if (!array_key_exists($i, $d))
     			${$a . '_tbl'} .=  "<td></td>\n";
     		elseif ($d[$i] == 'realtime')
     			${$a . '_tbl'} .=  "<td style='background-color:#f1b7a6'><a href='real-time.php'><strong>Real-Time Data</strong></a></td>\n";
     		else {
-	    		$v = explode('.', end(explode('_', $d[$i])));
+          $v = explode('_', $d[$i]);
+	    		$v = explode('.', end($v));
 	    		$v1 = strpos($v[0], 'prov') ? str_replace('prov', ', provisional', $v[0]) : str_replace('r', ', release ', $v[0]);
 	    		$v1 = preg_replace('/^v/', 'version ', $v1, 1);
 				$v2 = str_replace('prov', '<strong>prov</strong>', $v[0]);
@@ -50,10 +52,6 @@ foreach($size as $a => $b) {
 $title = "<title>Download Water Surfaces Data - Everglades Depth Estimation Network (EDEN)</title>\n";
 require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
-<div id='PopUp' style='position:absolute;top:200px;left:100px;z-index:1000;border:solid black 1px;padding:50px;background-color:rgb(200,200,225);font-size:16px;font-weight:bold;width:500px;font-family:Arial;text-align:left' onclick="document.getElementById('PopUp').style.display='none';">
-  <span id='PopUpText'>Notice: Starting July 1st, 2019, a newly revised EDEN surface water model (V3) is being used to create EDEN real-time surfaces. As with V2 surfaces, real-time data is considered provisional and may be subject to revision.
-  <br><br>The EDEN project is in the process of releasing a new publication which will document V3 of the model.  The report will specify which updates and modifications were made, as well as identify the differences between the two models.  Overall, the differences between V2 and V3 surfaces are minor.<br><br><br><span style='font-size:14px;color:red'>Click to dismiss.</span></span>
-</div>
 <h2>Download Water Surfaces Data</h2>
 <img src="../images/maps/watersurfacesV2sm.jpg" alt="sample graphic of a version2 water surface map" height="216" width="153" style="float:right">
 <p>Data for modeled EDEN water surfaces are available in two different formats:</p>
@@ -61,7 +59,7 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
   <li><a href="#netcdf"><abbr title="Net C D F">NetCDF</abbr></a></li>
   <li><a href="#geotiff">GeoTiff</a></li>
 </ul>
-<p>A daily median file (two files prior to 5/14/12) provides users with a list of gages and data used to generate the day's water-level surface. Metadata for the water-level surfaces is also provided.</p>
+<p>A daily median file provides users with a list of gages and data used to generate the day's water-level surface. Metadata for the water-level surfaces is also provided.</p>
 <ul>
   <li><a href="#dmsoutput">daily median output file</a></li>
   <li><a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/metadata/sflwww/eden_water_surfs.html">metadata (for water surfaces)</a></li>
@@ -79,7 +77,7 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
         <li>prov = provisional,</li>
         <li>rt = real-time</li>
       </ul>
-      <p style="text-align:left">Note: Dates below the links to quarterly files indicate the month and year the data was processed. You may download a year's worth of data all at once. Simply click the link below for each year. Because of file size limits, the most you can download at one time is a year. If you need to download several year's worth of data at once, please contact Heather Henkel (<a href="mailto:hhenkel@usgs.gov">hhenkel@usgs.gov</a>) and other arrangements can be made.</p>
+      <p style="text-align:left">Note: Dates below the links to quarterly files indicate the month and year the data was processed. You may download a year's worth of data all at once. Simply click the link below for each year. Because of file size limits, the most you can download at one time is a year. If you need to download several year's worth of data at once, please contact Bryan McCloskey (<a href="mailto:bmccloskey@usgs.gov">bmccloskey@usgs.gov</a>) and other arrangements can be made.</p>
     </th>
   </tr>
   <tr class="gvegtablehead">
