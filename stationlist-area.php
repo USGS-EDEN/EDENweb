@@ -113,7 +113,7 @@ echo 'map.fitBounds(' . strtolower($area) . '.getBounds());';
   </tr>
   <tr>
     <td class="gtablecell2">
-      <p>Leaflet Map showing EDEN sub-areas. This map requires enabled JavaScript to view; if you cannot fully access the information on this page, please contact <a href='mailto:hhenkel@usgs.gov'>Heather Henkel</a>.</p>
+      <p>Leaflet Map showing EDEN sub-areas. This map requires enabled JavaScript to view; if you cannot fully access the information on this page, please contact <a href='mailto:bmccloskey@usgs.gov'>Bryan McCloskey</a>.</p>
       <p style="font-size:x-small">References to non-<abbr title='United States'>U.S.</abbr> Department of the Interior (<abbr title='Department of the Interior'>DOI</abbr>) products do not constitute an endorsement by the <abbr title='Department of the Interior'>DOI</abbr>.</p>
     </td>
   </tr>
