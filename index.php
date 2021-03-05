@@ -20,7 +20,7 @@ if (isset($msg)) echo $msg;
   <img src="images/logos/EDEN-logoth.gif" alt="" height="111" width="288">
   <p style="color:#009999;font-weight:bold;font-style:italic;">Providing real-time hydrologic tools for biological and ecological assessments for adaptive management</p>
 </div>
-<table style="width:250px;float:left">
+<table style="width:220px;float:left">
   <tr>
     <th class="gtablehead">What's New @ EDEN</th>
   </tr>
@@ -29,6 +29,8 @@ if (isset($msg)) echo $msg;
       <ul>
         <li><a href="wadingbirds/index.php"><strong>Wading Bird Depth Viewer</strong></a></li>
         <li><a href="models/watersurfacemod_download.php"><strong><abbr title="water year 2018">WY2018</abbr> Final</strong> Water Surfaces</a></li>
+        <li><a href="models/watersurfacemod_download.php"><strong>2020 <abbr title="third quarter">Q3</abbr> Provisional</strong> Water Surfaces</a></li>
+        <li><a href="models/watersurfacemod_download.php"><strong>2020 <abbr title="second quarter">Q2</abbr> Provisional</strong> Water Surfaces</a></li>
         <li><a href="models/watersurfacemod_download.php"><strong>2020 <abbr title="first quarter">Q1</abbr> Provisional</strong> Water Surfaces</a></li>
         <li><a href="models/watersurfacemod_download.php"><strong>2019 <abbr title="fourth quarter">Q4</abbr> Provisional</strong> Water Surfaces</a></li>
         <li><a href="models/watersurfacemod_download.php"><strong>2019 <abbr title="third quarter">Q3</abbr> Provisional</strong> Water Surfaces</a></li>
@@ -51,19 +53,20 @@ if (isset($msg)) echo $msg;
   </tr>
 </table>
 <div style="text-align:center">
-  <div style="display:inline-block;width:60%;border:4px solid #663340;background-color:#fff8ca">
-    <h3 style="color:#663340;text-align:center">EDEN Announcements</h3>
-    <p style="text-align:center"><a href="csss/"><strong>Cape Sable Seaside Sparrow (CSSS) Viewer</strong></a></p>
-    <a href="csss/"><img src="images/CSSS_viewer_update.jpg" width="288" height="260" alt="screenshot of viewer" style="float:left;padding:3px"></a>
-    <p style="text-align:left">Newly added features include a new expanded subarea A sparrow habitat ("AX"), new daily statistics (mean water depth and water depth standard deviation), new display surfaces (4 year hydroperiod and hydroperiod standard deviation), new annual summary statistics (4 year hydroperiod and hydroperiod standard deviation), and some fun new widgets: check out the popup statistics graphs on the Summary Statistics tab linked to the column headers.<br><br>Take a look at the updated <a href="csss/">CSSS Viewer</a>!</p>
+  <div style="display:inline-block;width:70%;border:4px solid #19aa97;background-color:#e1f2f9">
+    <h3 style="color:#ac2c41;text-align:center"><strong>NEW EDEN Surface-Water Interpolation Model Version 3 Released!</strong></h3>
+    <p style="text-align:center"><strong>Download: <a href="https://pubs.er.usgs.gov/publication/sir20205083"><abbr title="United States Geological Survey">USGS</abbr> Scientific Investigations Report 2020-5083</a></strong> - 
+<a href="https://code.usgs.gov/water/eden"><strong>V3 Model Code</strong></a></p>
+    <a href="https://pubs.er.usgs.gov/publication/sir20205083"><img src="images/EDEN_v3_report_cover.png" width="200" height="258" alt="Cover of EDEN Surface-Water Interpolation Model, Version 3 report" style="float:left;padding:10px"></a>
+    <p style="text-align:left"> 
+The EDEN team is excited to announce the latest version of the EDEN interpolation surface-water model, version 3 (V3).  This version replaces the version 2 (V2) model which was released in 2011.  Changes include updates to the interpolation model, the water-level gage network, and groundwater-level estimations.  With these updates, users will find that levees and canals are better represented in the new interpolation scheme in V3.
+</p>
+    <p style="text-align:left"> 
+The additional groundwater levels provide a realistic estimate of the saturated groundwater surface continuous with the surface-water surface for Water Conservation Areas 2A and 2B from 2000 to 2011. This continuous surface is a more accurate estimation of the spatial distribution of water in the hydrologic system than before, providing needed information for ecological studies in areas where depth to water table affects habitats.
+</p>
+    <p style="text-align:left">The <strong>souce code</strong> for the latest version of the EDEN surface-water interpolation model is freely available through the official USGS Source Code Archive.  The package contains the scripts that run the interpolations model to create the daily water surfaces and <a href="https://code.usgs.gov/water/eden">can be downloaded here</a>.
+</p>
   </div>
 </div>
 <p>The Everglades Depth Estimation Network (EDEN) is an integrated network of water-level gages, interpolation models, and applications that generates daily water-level data and derived hydrologic data across the freshwater part of the greater Everglades landscape. The <abbr title="Comprehensive Everglades Restoration Plan">Comprehensive Everglades Restoration Plan (CERP)</abbr> through the U.S. Army Corps of Engineers and U.S. Geological Survey Greater Everglades Priority Ecosystem Sciences provides support for EDEN and for the goal of providing consistent, documented, and readily accessible hydrologic and ground-elevation data for the Everglades.</p>
-<div style="text-align:center">
-  <div style="display:inline-block;width:75%;padding:3px;background-color:#f4e1b4">
-    <a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/publications/fs/2006-3087/index.html"><img src="images/thumbs/fs2006-3087th.jpg" alt="EDEN Fact Sheet" height="216" width="167" style="float:left"></a>
-    <p>For more information:</p>
-    <p>USGS Fact Sheets on EDEN: &quot;<a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/publications/fs/2006-3087/index.html">The Everglades Depth Estimation Network (EDEN) for Support of Ecological and Biological Assessments</a>&quot; and &quot;<a href="http://pubs.usgs.gov/fs/2009/3052/">Everglades Depth Estimation Network (EDEN) Applications: <em>Tools to View, Extract, Plot, and Manipulate EDEN Data</em></a>.&quot; Or visit our &quot;<a href="abouteden.php">Learn About EDEN</a>&quot; page</p>
-  </div>
-</div>
 <?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>
