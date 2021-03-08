@@ -71,7 +71,7 @@ foreach($ti_table as $a => $b) {
   echo "<tr class='gtablecell";
   echo ($a % 2) ? '2' : '';
   echo "'>$b";
-  echo ($gage_table[$a]) ? $gage_table[$a] : "<td></td>\n";
+  echo array_key_exists($a, $gage_table) ? $gage_table[$a] : "<td></td>\n";
   echo "</tr>\n";
 }
 echo "</table>\n";
@@ -130,7 +130,7 @@ map.fitBounds(polygon_iop.getBounds());
     </tr>
     <tr>
       <td colspan="2" style="background-color:#f8f1bc">
-        <p>Leaflet Map showing <abbr title="Everglades Depth Estimation Network">EDEN</abbr>-domain <abbr title="Water Conservation Area 3 A">WCA3A</abbr>, <abbr title="Water Conservation Area 3 B">WCA3B,</abbr> and <abbr title="Everglades National Park">ENP</abbr> gages and tree islands. This map requires enabled JavaScript to view; if you cannot fully access the information on this page, please contact <a href="mailto:hhenkel@usgs.gov">Heather Henkel</a>.</p>
+        <p>Leaflet Map showing <abbr title="Everglades Depth Estimation Network">EDEN</abbr>-domain <abbr title="Water Conservation Area 3 A">WCA3A</abbr>, <abbr title="Water Conservation Area 3 B">WCA3B,</abbr> and <abbr title="Everglades National Park">ENP</abbr> gages and tree islands. This map requires enabled JavaScript to view; if you cannot fully access the information on this page, please contact <a href="mailto:bmccloskey@usgs.gov">Bryan McCloskey</a>.</p>
         <p style="font-size:x-small">References to non-<abbr title="United States">U.S.</abbr> Department of the Interior (<abbr title="Department of the Interior">DOI</abbr>) products do not constitute an endorsement by the <abbr title="Department of the Interior">DOI</abbr>.</p>
       </td>
     </tr>

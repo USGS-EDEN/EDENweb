@@ -129,7 +129,7 @@ Location: Latitude <?php echo substr($row['latitude'], 0, 2) . '&deg;' . substr(
     <td class="tablehead">Maximum</td>
   </tr>
 <?php
-$months=array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
+$months = array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
 foreach($rowcontents as $i => $a) {
 	echo "  <tr>
     <td class='tablehead'>{$months[$i]}</td>";
