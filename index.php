@@ -20,7 +20,7 @@ if (isset($msg)) echo $msg;
   <img src="images/logos/EDEN-logoth.gif" alt="" height="111" width="288">
   <p style="color:#009999;font-weight:bold;font-style:italic;">Providing real-time hydrologic tools for biological and ecological assessments for adaptive management</p>
 </div>
-<table style="width:220px;float:left">
+<table style="width:250px;float:left">
   <tr>
     <th class="gtablehead">What's New @ EDEN</th>
   </tr>
