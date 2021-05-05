@@ -47,10 +47,6 @@ foreach($stack2 as $value2) {
 $title = "<title>Real-Time Water Surfaces and Water Depths - Everglades Depth Estimation Network (EDEN)</title>\n";
 require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
-<div id='PopUp' style='position:absolute;top:200px;left:100px;z-index:1000;border:solid black 1px;padding:50px;background-color:rgb(200,200,225);font-size:16px;font-weight:bold;width:500px;font-family:Arial;text-align:left' onclick="document.getElementById('PopUp').style.display='none';">
-  <span id='PopUpText'>Notice: Starting July 1st, 2019, a newly revised EDEN surface water model (V3) is being used to create EDEN real-time surfaces. As with V2 surfaces, real-time data is considered provisional and may be subject to revision.
-  <br><br>The EDEN project is in the process of releasing a new publication which will document V3 of the model.  The report will specify which updates and modifications were made, as well as identify the differences between the two models.  Overall, the differences between V2 and V3 surfaces are minor.<br><br><br><span style='font-size:14px;color:red'>Click to dismiss.</span></span>
-</div>
 <h2>Real-Time Water Surfaces and Water Depths</h2>
 <p style="color:red"><strong>** We are currently transitioning to the new EDEN v3 model; 2019q3 real-time surfaces are produced using this new model version, and may be subject to revision.</strong></p>
 <p>EDEN real-time water surfaces are created daily using real-time water level data for the EDEN network. Most data relayed by satellite or other telemetry have received little or no review. Inaccuracies in the data may be present because of instrument malfunctions or physical changes at the measurement site. A threshold comparison program eliminates daily values that appear erroneous (i.e. extremely high or low, extremely different from previous days). <strong>Subsequent review of the data may result in significant revisions to the data.</strong></p>

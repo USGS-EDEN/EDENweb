@@ -6,7 +6,7 @@ require_once('/var/www/eden/pclzip.lib.php');
 $title = "<title>Water Surfaces - Everglades Depth Estimation Network (EDEN)</title>\n";
 require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 echo "<h2>Water Surfaces</h2>\n";
-if (($type == 'netcdf' || $type == 'geotiff' || $type == 'dailymedian') && $year > 1990 && $year < 2100) {
+if (($type == 'netcdf' || $type == 'geotiff' || $type == 'dailymedian' || $type == 'depth') && $year > 1990 && $year < 2100) {
 	set_time_limit(200);
 	$zipdir = 'surface_zipfiles';
 	if ($handle = opendir($zipdir)) {
@@ -40,6 +40,9 @@ if (($type == 'netcdf' || $type == 'geotiff' || $type == 'dailymedian') && $year
 			case 'dailymedian':
 				$t = '_median_flag_v3rt.txt';
 				break;
+			case 'depth':
+				$t = 'depth_v3rt_nc.zip';
+				break;
 		}
 		while (false !== ($file = readdir($handle)))
 			if (preg_match("/^$year.*$t$/", $file)) {
@@ -56,5 +59,5 @@ if (($type == 'netcdf' || $type == 'geotiff' || $type == 'dailymedian') && $year
 else
 	echo "<p><strong>You have not selected a recognized year and/or data type to download.</strong></p>\n";
 ?>
-<p>Return to <a href="http://sofia.usgs.gov/eden/models/watersurfacemod_download<?php if ($year >= 1990 && $year <= 1999) echo '_1990s';?>.php">Water Surfaces download page</a>.</p>
+<p>Return to <a href="http://sofia.usgs.gov/eden/models/watersurfacemod_download<?php if ($year >= 1990 && $year <= 1999) echo '_1990s';?>.php">Water Surfaces</a> or <a href="http://sofia.usgs.gov/eden/models/water_depth.php">Water Depth</a> download page.</p>
 <?php require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-foot.php'); ?>
