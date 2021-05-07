@@ -106,7 +106,7 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
   <tr class="gvegtablehead">
     <td colspan="5"><strong>Additional Documentation:</strong>
       <ul style="text-align:left">
-        <li><a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/metadata/sflwww/water_depth.html">Metadata - EDEN Water-Depth Data</a></li>
+        <li><a href="https://sofia.usgs.gov/eden/models/eden_water_surfaces_v3.xml">Metadata - EDEN Water-Depth Data</a></li>
         <li><a href="https://www.jem.gov/Tools/EverView">NetCDF files can be easily viewed using the EverView Data Viewer</a></li>
       </ul>
     </td>

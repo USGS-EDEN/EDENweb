@@ -1,0 +1,501 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Saira Haider</origin>
+        <origin>Bryan McCloskey</origin>
+        <pubdate>201910</pubdate>
+        <title>Everglades Depth Estimation Network (EDEN) Water Surface Data</title>
+        <geoform>digital files</geoform>
+        <onlink>https://sofia.usgs.gov/eden/models/watersurfacemod.php</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>Spatially continuous interpolation of water surface across the greater Everglades is generated for daily mean values of the water level gages for the EDEN network beginning January 1, 1991. The EDEN surface-water model domain includes Water Conservation Areas 1, 2, and 3; the Pennsuco Wetlands; and the freshwater portions of Big Cypress National Preserve (BCNP) and Everglades National Park (ENP). Surfaces are recorded as elevations in centimeters relative to the North American Vertical Datum of 1988 (NAVD 88), and both water level and water depths are produced. Water level and depth surfaces are available as NetCDFs (.nc), GeoTiffs (.tiff), and jpegs (.jpg). Surface input data are available via our Daily Median Files.</abstract>
+      <purpose>Spatially explicit hydrologic information can be critical in understanding and predicting changes in biotic communities in wetland ecosystems.  Repeated field measurements, the traditional method of collecting water surface information, is labor intensive and does not produce spatially continuous data across large areas. For this reason the EDEN project was started to collect data from over 200 real time stage monitoring gages that automatically record and radio-transmit data. The project integrates existing and new telemetered water level gages into a single network. Combined with a high resolution ground elevation model it generates daily continuous water level and water depth surfaces for the freshwater greater Everglades.</purpose>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>19910101</begdate>
+          <enddate>Present</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>ground condition</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>Quarterly</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-81.3699</westbc>
+        <eastbc>-80.2160</eastbc>
+        <northbc>26.6891</northbc>
+        <southbc>25.2242</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>ISO 19115 Topic Category</themekt>
+        <themekey>intelligenceMilitary</themekey>
+        <themekey>location</themekey>
+        <themekey>elevation</themekey>
+        <themekey>biota</themekey>
+        <themekey>boundaries</themekey>
+        <themekey>biota</themekey>
+      </theme>
+      <theme>
+        <themekt>none</themekt>
+        <themekey>water level</themekey>
+        <themekey>hydrology</themekey>
+        <themekey>gages</themekey>
+        <themekey>water surface</themekey>
+        <themekey>stage</themekey>
+      </theme>
+      <place>
+        <placekt>Department of Commerce, 1995, Countries, Dependencies, Areas of Special Sovereignty, and Their Principal Administrative Divisions,  Federal Information Processing Standard (FIPS) 10-4, Washington, DC, National Institute of Standards and Technology</placekt>
+        <placekey>United States</placekey>
+        <placekey>US</placekey>
+      </place>
+      <place>
+        <placekt>U.S. Department of Commerce, 1987, Codes for the identification of the States, the District of Columbia and the outlying areas of the United States, and associated areas (Federal Information Processing Standard 5-2): Washington, DC, NIST</placekt>
+        <placekey>Florida</placekey>
+        <placekey>FL</placekey>
+      </place>
+      <place>
+        <placekt>Department of Commerce, 1990, Counties and Equivalent Entities of the United States, Its Possessions, and Associated Areas, FIPS 6-3, Washington, DC, National Institute of Standards and Technology</placekt>
+        <placekey>Broward County</placekey>
+        <placekey>Collier County</placekey>
+        <placekey>Miami-Dade County</placekey>
+        <placekey>Monroe County</placekey>
+        <placekey>Palm Beach County</placekey>
+      </place>
+      <place>
+        <placekt>USGS Geographic Names Information System</placekt>
+        <placekey>Everglades National Park</placekey>
+        <placekey>Big Cypress National Preserve</placekey>
+        <placekey>Florida Bay</placekey>
+        <placekey>Gulf of Mexico</placekey>
+      </place>
+      <place>
+        <placekt>none</placekt>
+        <placekey>WCA3</placekey>
+        <placekey>Central Everglades</placekey>
+        <placekey>SW Big Cypress</placekey>
+        <placekey>Water Conservation Area 1</placekey>
+        <placekey>Water Conservation Area 2</placekey>
+        <placekey>Water Conservation Area 3</placekey>
+        <placekey>WCA1</placekey>
+        <placekey>WCA2</placekey>
+      </place>
+    </keywords>
+    <accconst>none</accconst>
+    <useconst>none</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Saira M Haider</cntper>
+          <cntorg>U.S. Geological Survey, SOUTHEAST REGION</cntorg>
+        </cntperp>
+        <cntpos>Ecologist</cntpos>
+        <cntaddr>
+          <addrtype>mailing address</addrtype>
+          <address>3321 College Avenue</address>
+          <city>Davie</city>
+          <state>FL</state>
+          <postal>33314</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>954-377-5985</cntvoice>
+        <cntemail>shaider@usgs.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <browse>
+<browsen>https://sofia.usgs.gov/eden/models/watersurfacemod.php</browsen>
+<browsed>The graphic shows the area covered by the water surface data and the colors represent the differences in water surface elevation meters. The graphic is only representative of a single day, other maps will display differently.</browsed>
+<browset>JPEG</browset>
+</browse>
+    <native>Data are available as NetCDF files and as GeoTiff files. Daily Median Output Files are available as text files.</native>
+    <crossref>
+      <citeinfo>
+        <origin>Saira Haider</origin>
+        <origin>Eric Swain</origin>
+        <origin>James Beerens</origin>
+        <origin>Matthew Petkewich</origin>
+        <origin>Bryan McCloskey</origin>
+        <origin>Heather Henkel</origin>
+        <pubdate>2020</pubdate>
+        <title>The Everglades Depth Estimation Network (EDEN) surface-water interpolation model, version 3</title>
+        <geoform>publication</geoform>
+        <pubinfo>
+          <pubplace>n/a</pubplace>
+          <publish>US Geological Survey</publish>
+        </pubinfo>
+        <onlink>https://doi.org/10.3133/sir20205083</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Saira M Haider</origin>
+        <origin>Bryan McCloskey</origin>
+        <pubdate>2020</pubdate>
+        <title>EDEN: Everglades Depth Estimation Network Water Level And Depth Surfaces</title>
+        <geoform>application/service</geoform>
+        <pubinfo>
+          <pubplace>https://www.sciencebase.gov</pubplace>
+          <publish>U.S. Geological Survey</publish>
+        </pubinfo>
+        <onlink>https://doi.org/10.5066/p9uchyvb</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Pamela A. Telis</origin>
+        <origin>Zhixiao Xie</origin>
+        <origin>Zhongwei Liu</origin>
+        <origin>Yingru Li</origin>
+        <origin>Paul Conrads</origin>
+        <pubdate>2015</pubdate>
+        <title>The Everglades Depth Estimation Network (EDEN) surface-water model, version 2</title>
+        <geoform>publication</geoform>
+        <pubinfo>
+          <pubplace>n/a</pubplace>
+          <publish>US Geological Survey</publish>
+        </pubinfo>
+        <onlink>https://doi.org/10.3133/sir20145209</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Matthew D. Petkewich</origin>
+        <origin>Ruby C. Daamen</origin>
+        <origin>Edwin A. Roehl</origin>
+        <origin>Paul Conrads</origin>
+        <pubdate>2016</pubdate>
+        <title>Using inferential sensors for quality control of Everglades Depth Estimation Network water-level data</title>
+        <geoform>publication</geoform>
+        <pubinfo>
+          <pubplace>n/a</pubplace>
+          <publish>US Geological Survey</publish>
+        </pubinfo>
+        <onlink>https://doi.org/10.3133/sir20165094</onlink>
+      </citeinfo>
+    </crossref>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>EDEN daily surfaces are identified by the quality of the input water-level data used to create the surface. Input data is either real-time, provisional, or final:
+
+1. Real-time EDEN water-level surfaces are created daily using real-time water-level data that are relayed by satellite or other telemetry and have received little or no review from the operating agency. Every morning, the Automated Data Assurance and Management (ADAM) program is used for quick and accurate quality-assurance review of the real-time data for the EDEN network and to allow estimation or replacement of missing or erroneous data. Subsequent reviews and edits of the data may result in substantial revisions to the data.
+
+2. Provisional EDEN water-level surfaces are created quarterly using water-level data that have received some review and edits by operating agencies. For some agencies, the review is near final while for others, the review is preliminary. Then, the EDEN team uses ADAM software to further quality-assure the data and estimate missing data. Users are cautioned to consider carefully the provisional nature of the information when using provisional data.
+
+3. Final EDEN water-level surfaces are created annually using final approved data from the operating agencies. EDEN's ADAM software is used to verify the final data and estimate missing data. Occasionally, the EDEN team modifies final data from the operating agency when ADAM indicates significant differences, and final surfaces may be reprocessed to incorporate best data. Within approximately 45 days after the end of each quarter (December 31, March 31, June 30, and September 30), finalized and approved water level data are provided by SFWMD and ENP at which time real-time EDEN surfaces will be replaced by provisional surfaces.  EDEN surfaces created with final, approved water level data from all agency gages will be available in approximately May of each year for the previous year's water year (October - September).
+
+For the provisional water-level surfaces for the period 1991-1999, users are cautioned about the quality of the water-level surfaces for several subareas.
+1. WCA2A for the period 1/1/1991 – 12/31/1999, most of the water-level data for gages in WCA2A were hindcast. Resulting water-level surfaces show inconsistencies compared with surfaces post-2000 and will require further analysis. Water-level surfaces in WCA2A should be used with caution for this period until further analysis is completed and revised surfaces are generated.
+2. WCA2B for the period 1/1/1991 – 4/27/1993, no data is available for the northern boundary structures (S144_T, S145_T, S146_T), therefore the water-level surfaces in WCA3B are not considered valid in the northern portion of the subarea.</attraccr>
+    </attracc>
+    <logic>Prior to 5/14/12, the Daily Median Output Files "median" files contain a list of the stations that were used to create water surfaces for that day. The "median reject" files contain a list of the gages that were not used during the creation of that day's water surface. Starting on 5/14/12, a single daily median file combines the information in the previous two daily median files and includes information about the data type at each gage. The Data Type field informs users whether the water-level data is measured, estimated, dry, or missing at each gage. Gages with missing data are not used for that day's surfacing.</logic>
+    <complete>Data from all the gages were collected and evaluated for use in calculating the water surface for each day.</complete>
+    <posacc>
+      <horizpa>
+        <horizpar>Horizontal positions are established by GPS observations and are referenced to the North American Datum of 1983 (NAD83). The desired horizontal accuracy is +/- 15 centimeters. This level of accuracy is consistent with GPS differential techniques which use two stations - a high-quality dual-frequency GPS receiver base station and a roving GPS station. The density and accuracy of a given GPS data observation varies from a few meters to a few centimeters according to the Position Dilution of Precision (PDOP) in the study area. Generally if the PDOP is observed to be excessive, data collection is discontinued or the data are discarded. The PDOP is an indicator of the positional  accuracy of the GPS that be can derived from the current GPS satellite geometry, which varies continuously. Generally the smaller the PDOP number, the higher the data quality. The PDOP is a permanent part of the recorded data and is also included in the post processing procedures during reduction of the GPS observations to NAD 83. Where possible, the GPS base station has an ellipsoid height to an accuracy of two centimeters relative to the Continuously Operating Reference Stations (CORS) or the High Accuracy Reference Network (HARN), both operated by the National Geodetic Survey (NGS).</horizpar>
+      </horizpa>
+      <vertacc>
+        <vertaccr>For the Digital Elevation Model (DEM), source data from the High Accuracy Elevation Dataset (HAED) was collected to better than +/- 15cm. Standard errors of cross-validation for the DEM range from ~7cm to 17cm depending on the EDEN subarea. For more information on how the DEM was developed, see https://sofia.usgs.gov/eden/data/dem/eden_em_oc11.xml. 
+
+Water level surfaces from the V3 and V2 models were compared to an independently collected set of over 200 field data measurements at 69 elevation benchmark locations. The root mean square error (RMSE) of the difference between the interpolated and measured values was less than 5 centimeters, which indicates the ability of the model to estimate water levels extremely well in most areas of the Everglades. However, because there are fewer gages located in BCNP and in the western coastal areas of ENP, users should be more cautious when working with surfaces in these areas. For more detail on the vertical accuracy of the V3 model, see Haider et al. 2020. Fore more detail on the vertical accuracy of the V2 model, see Telis et al. 2015.</vertaccr>
+      </vertacc>
+    </posacc>
+    <lineage>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>USGS</origin>
+            <pubdate>2021</pubdate>
+            <title>National Water Information System</title>
+            <geoform>tabular digital data</geoform>
+            <onlink>https://waterdata.usgs.gov/nwis</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>Digital and/or Hardcopy</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>1900</begdate>
+              <enddate>2021</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>These data are updated in real time</srccurr>
+        </srctime>
+        <srccitea>NWIS</srccitea>
+        <srccontr>Water level data at gage locations</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>SFWMD</origin>
+            <pubdate>2021</pubdate>
+            <title>SFWMD DBHYDRO</title>
+            <geoform>tabular digital data</geoform>
+            <onlink>https://my.sfwmd.gov/dbhydroplsql/</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>Digital and/or Hardcopy</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>1900</begdate>
+              <enddate>2021</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>These data are updated in real time</srccurr>
+        </srctime>
+        <srccitea>DBHYDRO</srccitea>
+        <srccontr>Water level at gage locations</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>NPS</origin>
+            <pubdate>2021</pubdate>
+            <title>Everglades National Park water level data</title>
+            <geoform>tabular digital data</geoform>
+          </citeinfo>
+        </srccite>
+        <typesrc>Digital and/or Hardcopy</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>1900</begdate>
+              <enddate>2021</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>These data are updated in real time</srccurr>
+        </srctime>
+        <srccitea>DataForEVER</srccitea>
+        <srccontr>Water level data at gage locations</srccontr>
+      </srcinfo>
+      <procstep>
+        <procdesc>For EDEN Version 2, the water surfaces were created with the following steps:
+    
+    1. Water-level data for all the EDEN gages are retrieved
+    2. Water-level data reported in NGVD 29 are converted to NAVD 88 
+    3. Daily median water level is calculated 
+    4. Linear interpolation is used to create boundary conditions along canals and levees 
+    5. Subarea models are created 
+    6. Radial Bias Function multiquadric interpolation of extended data (median water level from gages in marsh and interpolated values along canals) is used to generate continuous water level surfaces daily 
+    7. The subarea models are merged to the full domain model 
+    8. The continuous water surface is predicted on the EDEN grid (400m x 400m) 
+    9. Water depth is estimated by subtracting the EDEN ground digital elevation model (DEM) from the predicted water surface. 
+    
+    The USGS retrieves water level data daily from approximately 250 gaging stations most of which are telemetry-enhanced gages that record and transmit several water level values throughout the day, most hourly from recorders. All gages in the EDEN network are operated and maintained by four separate agencies including Everglades National Park, South Florida Water Management District, Big Cypress National Preserve, and the USGS. Some gages are manually read and added to the database on a quarterly basis. All transmitted data are entered and stored in the National Water Information System (NWIS), a database operated by the USGS. There are approximately 250 gages used for water surface interpolation of the freshwater Everglades. The number of gages used for the surfacing model is constantly changing as gages are installed and discontinued over time.
+    
+    The steps in preparing a daily surface from Everglades stage gaging stations are to collect the gaging station values as daily medians, create boundary conditions along canals/levees, generate the continuous surface using multiquadric radial basis function, and save the output into 400 meter output grids in netCDF and geoTIFF formats. 
+    
+    For each day that the surface is run, values for water stage are obtained from the USGS NWIS server for each gage listed in the EDEN master station list maintained by USGS, St Petersburg, Florida. Median daily values are calculated at each gage and stored in UTM, zone 17, NAD 1983 projection and datum, meter horizontal units. Vertical units are centimeters, NAVD 88. Where gage data is obtained in NGVD 29, it is converted to NAVD 88 using difference values for each gage. The difference values are provided in the EDEN master list. 
+    
+    Median stage values along specific canals are linearly interpolated every 200m between gages and extrapolated up to 3 kilometers beyond a gage when canals extend beyond the last gage. This interpolation/extrapolation will be used in the surfacing process to enforce boundaries at the canals between Everglades water conservation areas. The specific canals and the point locations interpolated/extrapolated in the canals are read from files maintained by USGS, St Petersburg, Florida. 
+    
+    In Version 2 of the model, separate subarea surfacing models are created for WCA1, WCA2B, WCA3B, and Pennsuco Wetlands because water levels in the boundary canal gages are not in hydraulic connection with the interior marshes for these subareas. In order to create subarea water surfaces, the interior gages are extrapolated outward using the radial basis function routine then clipped to the boundaries of the subarea and merged to the full domain model.
+    
+    Median stage for the day at each gage and each interpolated/extrapolated canal point location are combined as input for surface interpolation using the radial basis function routine in ArcGIS geostatistical analyst. The parameters are: 
+    Kernel Functions: Multiquadric; Parameter = 16.77 Neighbors to Include = 1 Include at least = 1 shape type = 8 sectors angle = 350 major semiaxis = 31000 minor semiaxis = 30000 
+    
+    A boundary data layer is used to clip the surface interpolation to the EDEN area. The surface interpolation is saved to an ESRI GRID with 400m cell resolution aligned to the EDEN grid data layer. The prediction grid value at each cell is obtained from the interpolation surface by assigning to the grid cell the prediction value that corresponds to the center position of the grid cell. Both the boundary data layer and the EDEN GRID are maintained by USGS, St Petersburg, Florida. 
+    
+    Interpolation surface GRID files for each day are converted to geoTIFF and CF compliant netCDF files for achieving. The netCDF files collect 3 months of daily surfaces together in each file.</procdesc>
+        <srcused>NWIS</srcused>
+        <srcused>DBHYDRO</srcused>
+        <srcused>DataForEVER</srcused>
+        <procdate>2011</procdate>
+        <proccont>
+          <cntinfo>
+            <cntperp>
+              <cntper>Bryan J McCloskey</cntper>
+              <cntorg>U.S. Geological Survey, Southeast Region</cntorg>
+            </cntperp>
+            <cntpos>IT Specialist (Data Management/Internet)</cntpos>
+            <cntaddr>
+              <addrtype>mailing address</addrtype>
+              <address>600 4Th Street South</address>
+              <city>St. Petersburg</city>
+              <state>FL</state>
+              <postal>33701</postal>
+              <country>US</country>
+            </cntaddr>
+            <cntvoice>727-502-8017</cntvoice>
+            <cntfax>727-502-8182</cntfax>
+            <cntemail>bmccloskey@contractor.usgs.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+      <procstep>
+        <procdesc>For EDEN Version 3:
+
+The USGS retrieves water-level data daily from nearly 300 gaging stations. Most gages record and transmit several water-level values throughout the day, mostly hourly from recorders. A subset of these gages do not have telemetry and are manually read and added to the network when provisional and final data is produced. All transmitted data are entered and stored in the EDEN database. There are over 240 gages used for water surface interpolation of the freshwater Everglades.
+
+All gages in the EDEN network are operated and maintained by four separate agencies including Everglades National Park (ENP), South Florida Water Management District (SFWMD), Big Cypress National Preserve (BCNP), and the USGS. Data is transferred via a local USGS FTP server to the EDEN database where it is available for surfacing. These data can also be access via SFWMD's DBHYDRO, DataForEVER, and the National Water Information System (NWIS).
+
+The steps to create the daily water-level surfaces are summarized below:
+
+1. Water-level data for ENP and SFWMD EDEN gages are retrieved from an FTP server; data for USGS gages are retrieved from the National Water Information System.
+2. The Automated Data Assurance and Management (ADAM; Petkewich et al. 2016) program is used for a quick and accurate quality-assurance review and allows estimation or replacement of missing or erroneous data. 
+3. Water-level data reported in NGVD 29 are converted to NAVD 88.
+4. Daily median water levels are calculated at each gage for creation of the surfaces.
+5. Radial Basis Function multiquadric interpolation of gage data is used in each subdomain to generate continuous water-level surfaces. Details of the interpolation methods are provided by Haider and McCloskey 2020. 
+6. The continuous water surface is predicted on the EDEN grid (400 m x 400 m).
+7. Water depth is calculated by subtracting the EDEN ground digital elevation model (DEM; https://sofia.usgs.gov/eden/models/groundelevmod.php) from the predicted water surface. Water depth data is reported for above ground values only (i.e., "negative" water depth values are set to zero).</procdesc>
+        <srcused>NWIS</srcused>
+        <srcused>DBHYDRO</srcused>
+        <srcused>DataForEVER</srcused>
+        <procdate>2019</procdate>
+        <proccont>
+          <cntinfo>
+            <cntperp>
+              <cntper>Bryan J McCloskey</cntper>
+              <cntorg>U.S. Geological Survey, Southeast Region</cntorg>
+            </cntperp>
+            <cntpos>IT Specialist (Data Management/Internet)</cntpos>
+            <cntaddr>
+              <addrtype>mailing address</addrtype>
+              <address>600 4Th Street South</address>
+              <city>St. Petersburg</city>
+              <state>FL</state>
+              <postal>33701</postal>
+              <country>US</country>
+            </cntaddr>
+            <cntvoice>727-502-8017</cntvoice>
+            <cntfax>727-502-8182</cntfax>
+            <cntemail>bmccloskey@contractor.usgs.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <spdoinfo>
+    <direct>Vector</direct>
+    <ptvctinf>
+      <sdtsterm>
+        <sdtstype>G-polygon</sdtstype>
+        <ptvctcnt>1</ptvctcnt>
+      </sdtsterm>
+    </ptvctinf>
+  </spdoinfo>
+  <spref>
+    <horizsys>
+      <planar>
+        <gridsys>
+          <gridsysn>Universal Transverse Mercator</gridsysn>
+          <utm>
+            <utmzone>17</utmzone>
+            <transmer>
+              <sfctrmer>0.9996</sfctrmer>
+              <longcm>-81.0</longcm>
+              <latprjo>0.0</latprjo>
+              <feast>500000.0</feast>
+              <fnorth>0.0</fnorth>
+            </transmer>
+          </utm>
+        </gridsys>
+        <planci>
+          <plance>coordinate pair</plance>
+          <coordrep>
+            <absres>0.6096</absres>
+            <ordres>0.6096</ordres>
+          </coordrep>
+          <plandu>meters</plandu>
+        </planci>
+      </planar>
+      <geodetic>
+        <horizdn>North_American_Datum_1983</horizdn>
+        <ellips>GRS_1980</ellips>
+        <semiaxis>6378137.0</semiaxis>
+        <denflat>298.257222101</denflat>
+      </geodetic>
+    </horizsys>
+    <vertdef>
+      <altsys>
+        <altdatum>North American Vertical Datum of 1988</altdatum>
+        <altres>1</altres>
+        <altunits> cm</altunits>
+        <altenc>Attribute values</altenc>
+      </altsys>
+    </vertdef>
+  </spref>
+  <eainfo>
+    <overview>
+      <eaover>The CF-compliant metadata in the header of the NetCDF file provides spatial information for projecting the data into a GIS as well as the start date and time step for the time-series of data in the file. It also provides information about the conventions used for attributes in the dataset and the source software used to create the dataset.
+
+Prior to 5/14/12, the Daily Median Output text files provide the following information: the agency responsible for the data, the station id, X and Y location in UTM coordinates, median water values in cm, the year, month, and day of collection, Head or Tail gage, and area of data collection. The files list one gage per line and the columns are tab-delimited. Gages are grouped alphabetically by agency. Two files were produced: the median file contained a list of stations used to create water surfaces for that day. The median_reject files contain a list of gages that were not used during the creation of that day's water surfaces.
+
+Starting 5/14/12, a single daily median file combines the information in the previous two daily median files. The following information is provided in this file: agency responsible for the data, the station name, X and Y location in UTM coordinates, daily median water level in centimeters NAVD88, date of water level, and type of data. For data type, conditions at the gage are considered dry (D) if the daily median is equal to or below the average ground elevation at the gage. If the data at a gage is determined to be dry, the data is not identified as measured, estimated, or missing. Missing data (M) means that all hourly data for that day is missing for the gage. If a single hourly value is measured, a daily median is computed and identified as data type of measured (O). Estimated data (E) means that every one of the hourly values is estimated for that day at the gage. A reject file is no longer provided because the revised daily median file provides a list of the gages not used in the daily surfaces.</eaover>
+      <eadetcit>NetCDF Climate and Forecast (CF) Metadata Conventions, Version 1.0, 28 October, 2003 at http://cf-pcmdi.llnl.gov/documents/cf-conventions/1.0/</eadetcit>
+    </overview>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntperp>
+          <cntper>Bryan J McCloskey</cntper>
+          <cntorg>U.S. Geological Survey, Southeast Region</cntorg>
+        </cntperp>
+        <cntpos>IT Specialist (Data Management/Internet)</cntpos>
+        <cntaddr>
+          <addrtype>mailing address</addrtype>
+          <address>600 4Th Street South</address>
+          <city>St. Petersburg</city>
+          <state>FL</state>
+          <postal>33701</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>727-502-8017</cntvoice>
+        <cntfax>727-502-8182</cntfax>
+        <cntemail>bmccloskey@contractor.usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <resdesc>Water Surfaces</resdesc>
+    <distliab>No warrantees are implied or explicit for the data</distliab>
+    <stdorder>
+      <digform><digtinfo>
+<formname>netCDF</formname>
+<formvern>CF-1.0</formvern>
+<formspec>.zip</formspec>
+<formcont>Each file contains the daily data for 3 months</formcont>
+<filedec>The files must be unzipped before use</filedec>
+<transize>16</transize>
+</digtinfo>
+<digtopt><onlinopt><computer><networka><networkr>https://sofia.usgs.gov/eden/</networkr></networka></computer></onlinopt></digtopt></digform>
+      <fees>none</fees>
+    </stdorder>
+  </distinfo>
+  <metainfo>
+    <metd>20210507</metd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>Saira M Haider</cntper>
+          <cntorg>U.S. Geological Survey, SOUTHEAST REGION</cntorg>
+        </cntperp>
+        <cntpos>Ecologist</cntpos>
+        <cntaddr>
+          <addrtype>mailing address</addrtype>
+          <address>3321 College Avenue</address>
+          <city>Davie</city>
+          <state>FL</state>
+          <postal>33314</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>954-377-5985</cntvoice>
+        <cntemail>shaider@usgs.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+    <metac>none</metac>
+    <metuc>This metadata record may have been copied from the SOFIA website and may not be the most recent version. Please check https://sofia.usgs.gov/eden/models/ to be sure you have the most recent version.</metuc>
+  </metainfo>
+</metadata>

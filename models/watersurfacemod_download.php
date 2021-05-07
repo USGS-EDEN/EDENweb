@@ -77,7 +77,7 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 <p>A daily median file provides users with a list of gages and data used to generate the day's water-level surface. Metadata for the water-level surfaces is also provided.</p>
 <ul>
   <li><a href="#dmsoutput">daily median output file</a></li>
-  <li><a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/metadata/sflwww/eden_water_surfs.html">metadata (for water level surfaces)</a></li>
+  <li><a href="https://sofia.usgs.gov/eden/models/eden_water_surfaces_v3.xml">metadata (for water level surfaces)</a></li>
 </ul>
 <h3><a id="netcdf"></a><abbr title="Net C D F">NetCDF</abbr> Files:</h3>
 <p><abbr title="Net C D F">NetCDF</abbr> (Network Common Data Form) is a set of freely-distributed software libraries and machine-independent binary data formats that support the creation, access, and sharing of large array-oriented scientific data. This format replaces the bulky file structure and difficult file management of ESRI GRIDS for EDEN data. It also allows EDEN applications to run on computers without <abbr title="Arc G I S">ArcGIS</abbr> installations.</p>
@@ -108,7 +108,7 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
   <tr class="gvegtablehead">
     <td colspan="5"><strong>Additional Documentation for EDEN <abbr title="Net C D F">NetCDF</abbr> Files:</strong>
       <ul style="text-align:left">
-        <li><a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/metadata/sflwww/eden_water_surfs.html">Metadata</a></li>
+        <li><a href="https://sofia.usgs.gov/eden/models/eden_water_surfaces_v3.xml">Metadata</a></li>
         <li><a href="https://www.jem.gov/Tools/EverView">NetCDF files can be easily viewed using the EverView Data Viewer</a></li>
       </ul>
     </td>
@@ -139,7 +139,7 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
   <tr class="gvegtablehead">
     <td colspan="5"><strong>Additional Documentation for EDEN Geotiff Files:</strong>
       <ul style="text-align:left">
-        <li><a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/metadata/sflwww/eden_water_surfs.html">Metadata</a></li>
+        <li><a href="https://sofia.usgs.gov/eden/models/eden_water_surfaces_v3.xml">Metadata</a></li>
       </ul>
     </td>
   </tr>
