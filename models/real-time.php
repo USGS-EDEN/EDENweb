@@ -48,12 +48,10 @@ $title = "<title>Real-Time Water Surfaces and Water Depths - Everglades Depth Es
 require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
 ?>
 <h2>Real-Time Water Surfaces and Water Depths</h2>
-<p style="color:red"><strong>** We are currently transitioning to the new EDEN v3 model; 2019q3 real-time surfaces are produced using this new model version, and may be subject to revision.</strong></p>
 <p>EDEN real-time water surfaces are created daily using real-time water level data for the EDEN network. Most data relayed by satellite or other telemetry have received little or no review. Inaccuracies in the data may be present because of instrument malfunctions or physical changes at the measurement site. A threshold comparison program eliminates daily values that appear erroneous (i.e. extremely high or low, extremely different from previous days). <strong>Subsequent review of the data may result in significant revisions to the data.</strong></p>
 <p>Users are cautioned to consider carefully the provisional nature of the information when using provisional data.</p>
 <p>Within approximately 45 days after the end of each quarter (December 31, March 31, June 30, September 30), finalized and approved water level data are provided by SFWMD and ENP at which time real-time EDEN surfaces will be <a href="watersurfacemod.php">replaced by provisional surfaces</a>. EDEN surfaces created with final, approved water level data from all agency gages will be available in approximately July of each year for the previous year's water year (October &ndash; September).</p>
 <p>(Note: NetCDF files contain up to three months worth of files; daily geotiff files have been zipped up (.zip) and contain a .tif and .aux file)</p>
-<p style="color:red"><strong>** We are currently transitioning to the new EDEN v3 model; 2019q3 real-time surfaces are produced using this new model version, and may be subject to revision.</strong></p>
 <table style="width:700px;margin:20px auto;text-align:center">
   <tr class="grtablehead">
     <th colspan="7">It is recommended to always review the daily median file to see which gages were used in the production of the daily surface</th>

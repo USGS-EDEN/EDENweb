@@ -68,21 +68,24 @@ if ($filename == '/eden/latlongsearch.php')
   echo "  <div class='rightnavbuttoncurrent'>- Coordinates Search</div>\n";
 elseif (in_array($filename, array('/eden/stationlist.php', '/eden/explanation.php', '/eden/hindcasted.php', '/eden/data_download.php', '/eden/stationlist-area.php', '/eden/station.php', '/eden/geprotocol.php')))
   echo "  <div class='rightnavbutton'>- <a href='/eden/latlongsearch.php'>Coordinates Search</a></div>\n";
-echo "  <div class='" . ($filename == '/eden/models/watersurfacemod.php' ? "rightnavbuttoncurrent'>Water Level" : "rightnavbutton'><a href='/eden/models/watersurfacemod.php'>Water Level</a>") . "</div>\n";
-if ($filename == '/eden/models/watersurfacemod_download.php')
-  echo "  <div class='rightnavbuttoncurrent'>- Download</div>\n";
-elseif (in_array($filename, array('/eden/models/watersurfacemod_download_1990s.php', '/eden/models/watersurfacemod-proc.php')))
-  echo "  <div class='rightnavbuttoncurrent'>- <a href='/eden/models/watersurfacemod_download.php'>Download</a></div>\n";
-elseif (in_array($filename, array('/eden/models/watersurfacemod.php', '/eden/models/real-time.php', '/eden/models/watersurfacemod_download_1990s.php', '/eden/models/watersurfacemod-proc.php')))
-  echo "  <div class='rightnavbutton'>- <a href='/eden/models/watersurfacemod_download.php'>Download</a></div>\n";
+echo "  <div class='" . ($filename == '/eden/models/watersurfacemod.php' ? "rightnavbuttoncurrent'>Surfaces" : "rightnavbutton'><a href='/eden/models/watersurfacemod.php'>Surfaces</a>") . "</div>\n";
 if ($filename == '/eden/models/real-time.php')
   echo "  <div class='rightnavbuttoncurrent'>- Real-Time</div>\n";
-elseif (in_array($filename, array('/eden/models/watersurfacemod.php', '/eden/models/watersurfacemod_download.php', '/eden/models/watersurfacemod_download_1990s.php', '/eden/models/watersurfacemod-proc.php')))
+elseif (in_array($filename, array('/eden/models/watersurfacemod.php', '/eden/models/watersurfacemod_download.php', '/eden/models/watersurfacemod_download_1990s.php', '/eden/models/watersurfacemod-proc.php', '/eden/models/water_depth.php', '/eden/models/water_depth_data.php')))
   echo "  <div class='rightnavbutton'>- <a href='/eden/models/real-time.php'>Real-Time</a></div>\n";
-echo "  <div class='" . ($filename == '/eden/models/water_depth.php' ? "rightnavbuttoncurrent'>Water Depth" : "rightnavbutton'><a href='/eden/models/water_depth.php'>Water Depth</a>") . "</div>\n";
+if ($filename == '/eden/models/watersurfacemod_download.php')
+  echo "  <div class='rightnavbuttoncurrent'>- Water Level Surfaces</div>\n";
+elseif (in_array($filename, array('/eden/models/watersurfacemod_download_1990s.php', '/eden/models/watersurfacemod-proc.php')))
+  echo "  <div class='rightnavbuttoncurrent'>- <a href='/eden/models/watersurfacemod_download.php'>Water Level Surfaces</a></div>\n";
+elseif (in_array($filename, array('/eden/models/watersurfacemod.php', '/eden/models/real-time.php', '/eden/models/watersurfacemod_download_1990s.php', '/eden/models/watersurfacemod-proc.php', '/eden/models/water_depth.php', '/eden/models/water_depth_data.php')))
+  echo "  <div class='rightnavbutton'>- <a href='/eden/models/watersurfacemod_download.php'>Water Level Surfaces</a></div>\n";
+if ($filename == '/eden/models/water_depth.php')
+  echo "  <div class='rightnavbuttoncurrent'>- Water Depth Surfaces</div>\n";
+elseif (in_array($filename, array('/eden/models/watersurfacemod.php', '/eden/models/watersurfacemod_download.php', '/eden/models/real-time.php', '/eden/models/watersurfacemod_download_1990s.php', '/eden/models/watersurfacemod-proc.php', '/eden/models/water_depth_data.php')))
+  echo "  <div class='rightnavbutton'><a href='/eden/models/water_depth.php'>- Water Depth Surfaces</a></div>\n";
 if ($filename == '/eden/models/water_depth_data.php')
   echo "  <div class='rightnavbuttoncurrent'>- Water Depth Measure</div>\n";
-elseif ($filename == '/eden/models/water_depth.php')
+elseif (in_array($filename, array('/eden/models/watersurfacemod.php', '/eden/models/watersurfacemod_download.php', '/eden/models/real-time.php', '/eden/models/watersurfacemod_download_1990s.php', '/eden/models/watersurfacemod-proc.php', '/eden/models/water_depth.php')))
   echo "  <div class='rightnavbutton'>- <a href='/eden/models/water_depth_data.php'>Water Depth Measure</a></div>\n";
 echo "  <div class='" . ($filename == '/eden/models/groundelevmod.php' ? "rightnavbuttoncurrent'>Ground Elevation (<abbr title='Digital Elevation Model'>DEM</abbr>)" : "rightnavbutton'><a href='/eden/models/groundelevmod.php'>Ground Elevation (<abbr title='Digital Elevation Model'>DEM</abbr>)</a>") . "</div>\n";
 if ($filename == '/eden/models/groundelevmod-edenapps.php')

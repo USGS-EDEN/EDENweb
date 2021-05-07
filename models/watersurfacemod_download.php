@@ -109,7 +109,7 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/../eden/ssi/eden-head.php');
     <td colspan="5"><strong>Additional Documentation for EDEN <abbr title="Net C D F">NetCDF</abbr> Files:</strong>
       <ul style="text-align:left">
         <li><a href="https://archive.usgs.gov/archive/sites/sofia.usgs.gov/metadata/sflwww/eden_water_surfs.html">Metadata</a></li>
-        <li><a href="https://www.jem.gov/Tools/EverView">EverVIEW Data Viewer</a></li>
+        <li><a href="https://www.jem.gov/Tools/EverView">NetCDF files can be easily viewed using the EverView Data Viewer</a></li>
       </ul>
     </td>
   </tr>
